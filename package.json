@@ -13,17 +13,26 @@
     "@gridsome/plugin-sitemap": "^0.2.1",
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
+    "@perlatsp/gridsome-source-devto": "^0.0.1",
     "gridsome": "^0.6.5",
     "gridsome-plugin-remark-shiki": "^0.3.0",
+    "gridsome-plugin-remark-twitter": "^0.1.2",
+    "gridsome-plugin-remark-youtube": "^1.0.1",
     "gridsome-plugin-rss": "^1.1.0",
     "medium-zoom": "^1.0.4",
     "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-regular-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "moment": "^2.24.0",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.2",
     "tailwindcss": "^1.0.4",
-    "tailwindcss-transitions": "^2.0.0"
+    "tailwindcss-transitions": "^2.0.0",
+    "vue-svg-loader": "^0.12.0"
   }
 }

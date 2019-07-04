@@ -13,6 +13,7 @@ cover: https://pbs.twimg.com/profile_banners/710394749207896064/1547818514
 
 [Gridsome](https://gridsome.org) is a Vue.js-powered, modern site generator for building the fastest possible websites for any Headless CMS, APIs or Markdown-files. Gridsome makes it easy and fun for developers to create fast, beautiful websites without needing to become a performance expert.
 
+https://twitter.com/ralphruthe/status/1146028754092773377
 
 ## Installation
 
@@ -28,21 +29,21 @@ Alternatively, you can clone or download the [repo on GitHub](https://github.com
 
 ## Features
 
-- Sitemap
-- RSS Feed
-- Google Analytics
-- Custom 404 Page
-- Open Graph meta tags
-- Code syntax highlighting
-- Parallax post image covers
-- Option for fullscreen covers
-- Medium-like image lightbox
-- Taxonomies: Tags and Authors
-- Aproximate read time for posts
-- Post excerpts: automatic or user-defined
-- **Paginated** [blog](/2/), [tag](https://gridsome-starter-bleda.netlify.com/tag/dummy/), and [author](/author/gridsome/) archives
-- Easily show post dates in your locale (moment.js)
-- Posts show a warning if they're older than 1 year (configurable)
+-   Sitemap
+-   RSS Feed
+-   Google Analytics
+-   Custom 404 Page
+-   Open Graph meta tags
+-   Code syntax highlighting
+-   Parallax post image covers
+-   Option for fullscreen covers
+-   Medium-like image lightbox
+-   Taxonomies: Tags and Authors
+-   Aproximate read time for posts
+-   Post excerpts: automatic or user-defined
+-   **Paginated** [blog](/2/), [tag](https://gridsome-starter-bleda.netlify.com/tag/dummy/), and [author](/author/gridsome/) archives
+-   Easily show post dates in your locale (moment.js)
+-   Posts show a warning if they're older than 1 year (configurable)
 
 ## Configuration
 
@@ -112,15 +113,19 @@ Posts that are over one year old will show a warning like this one:
     This post is over a year old, some of this information may be out of date.
 </div>
 
-This is a flexible alert component, defined in `/src/components/Alert.vue` and pulled into `/src/templates/Post.vue`: 
+This is a flexible alert component, defined in `/src/components/Alert.vue` and pulled into `/src/templates/Post.vue`:
 
 ```vue
 <template>
     ...
-    <alert v-if="postIsOlderThanOneYear" color="orange">This post is over a year old, some of this information may be out of date.</alert>
+    <alert v-if="postIsOlderThanOneYear" color="orange"
+        >This post is over a year old, some of this information may be out of
+        date.</alert
+    >
     ...
 </template>
 ```
+
 The `postIsOlderThanOneYear` computed property uses `moment.js`, so you can customise it to any date you need.
 
 The `color` prop can be any color name from your `tailwind.js` config. If you omit it, the alert will use <span class="inline-block bg-blue-lightest border-l-4 border-blue text-blue-darker px-2 py-px stext-sm">blue</span> as a fallback.
@@ -131,12 +136,12 @@ Open `/src/components/PostItem.vue` and `import` your [locale](https://github.co
 
 ```vue
 <script>
-import moment from 'moment'
-import 'moment/locale/ro' // <- add this
+import moment from "moment";
+import "moment/locale/ro"; // <- add this
 
 export default {
-  // ...
-}
+    // ...
+};
 </script>
 ```
 
