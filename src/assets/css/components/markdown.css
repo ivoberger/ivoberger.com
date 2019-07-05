@@ -1,9 +1,12 @@
 .markdown {
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     @apply mb-4;
   }
 
-  ul li, ol li {
+  ul li,
+  ol li {
     @apply mb-4;
   }
 
@@ -15,22 +18,39 @@
     @apply list-decimal pl-4;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold text-black my-6;
   }
 
-  h5, h6 {
+  h5,
+  h6 {
     @apply uppercase;
   }
 
-  h2 { @apply text-2xl; }
-  h3 { @apply text-xl; }
-  h4 { @apply text-lg; }
-  h5 { @apply text-base; }
-  h6 { @apply text-sm; }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
 
   @screen sm {
-    h2 { @apply text-4xl; }
+    h2 {
+      @apply text-4xl;
+    }
   }
 
   a {
@@ -91,24 +111,37 @@
       @apply mx-10;
     }
 
-    h2 { @apply text-4xl; }
-    h3 { @apply text-3xl; }
-    h4 { @apply text-2xl; }
-    h5 { @apply text-xl; }
-    h6 { @apply text-base; }
+    h2 {
+      @apply text-4xl;
+    }
+    h3 {
+      @apply text-3xl;
+    }
+    h4 {
+      @apply text-2xl;
+    }
+    h5 {
+      @apply text-xl;
+    }
+    h6 {
+      @apply text-base;
+    }
   }
 }
 
 .post-cover {
   &::after {
     @apply absolute w-full h-48 left-0 bottom-0 z-0;
-    content: '';
-    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.5) 100%);
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
 
   &.fullscreen::after {
     @apply h-full;
-    background: rgba(0,0,0,.15);
+    background: rgba(0, 0, 0, 0.15);
   }
 }
-

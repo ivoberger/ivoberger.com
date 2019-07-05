@@ -11,7 +11,9 @@ import {
   faPython,
   faReact,
   faVuejs,
-  faJs
+  faJs,
+  faDocker,
+  faMediumM
 } from "@fortawesome/free-brands-svg-icons";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -29,7 +31,9 @@ library.add(
   faReact,
   faVuejs,
   faJs,
-  faCopyright
+  faCopyright,
+  faDocker,
+  faMediumM
 );
 
 export default function(Vue) {
