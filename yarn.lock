@@ -8317,6 +8317,56 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-arvo@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-arvo/-/typeface-arvo-0.0.72.tgz#9cd62d092e46301f754067d98307bd01bbeaf429"
+  integrity sha512-zwOkGXa0RugpL+8CP4kq8yBKfnJ2+cx1JUZ9hP8SguWkavFNkiQ5pD36eqKOafDgShMPo4VuVBzMNV0395TNJA==
+
+typeface-bitter@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/typeface-bitter/-/typeface-bitter-0.0.71.tgz#bfd97a1b3a52c1275319ca169f92e3419c7abf8e"
+  integrity sha512-F8fJUCWtVTkgw2UfxaYOQt3lPsrmGKYiUC3ZOBcS88QuRpN0qd29s07o2q07vow2E+KP8LLuezbrZ/rTMw/XlQ==
+
+typeface-catamaran@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-catamaran/-/typeface-catamaran-0.0.72.tgz#eddb2c8cf2e75696c89f055e25057b85538efc9b"
+  integrity sha512-6l9gq/IPseoC40lv/etxdUlIR2RHBKpAm+vu3lwt03Jd4i2+VOhKS/fOz1n0YpRjkz8QyG2qFwYjcoLT02/2qw==
+
+typeface-cousine@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-cousine/-/typeface-cousine-0.0.72.tgz#b2aba84116d3f50c8fb5079536b4c19f2a6b0277"
+  integrity sha512-8iCf26Ij+9lxKrnm5TQAKQ7jvJxeu/5RS1d04sWPUx4QjTKrQFbVoKYsALH9u6Z4YaDIuOr/phK9xaL7NgnKZg==
+
+typeface-crimson-text@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-crimson-text/-/typeface-crimson-text-0.0.72.tgz#af492f355f1474ec185bebebf4b2aaaae6eec24d"
+  integrity sha512-CLDNCOJ05k1BIbgQ1eAPPaK4eVHls8Y+n5NTIwvlFmhCSLzCXWII4vQ2oV6Iyi3BOVogj/LsWq25IdQINrh5+Q==
+
+typeface-fira-mono@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-fira-mono/-/typeface-fira-mono-0.0.72.tgz#b396d2a08814bb3a32d94ef71c74d37883c3475b"
+  integrity sha512-bouzjtniGMrakhazipUl6mskswe7UvH3qynU5Wsl0O7NMuL178VtZ0pOqUGsjBJ42l64GZo9nUMI1eSK4kvJbQ==
+
+typeface-merriweather@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-0.0.72.tgz#2b990f5293252052d51d170c82d3892319ff0555"
+  integrity sha512-gO0+fcZ1fTyKUsYY1ltYOOTI6FmBGeEdyIfeQg9NL8aInndk0feiJJVJsKHm/DiyYrnQEezraAQhz/KQoqMGtw==
+
+typeface-noto-serif@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-noto-serif/-/typeface-noto-serif-0.0.72.tgz#798e917662322443cec944ac68e2ebd42c2dd2ec"
+  integrity sha512-mhdlDJQF04V50+/mHwiOR+cVV9jl1ITpZhNMnaQF6CqgzS0ujR3+9Alme3OtT1iZd1kp2iM1VxLtzLKhR0Bh3Q==
+
+typeface-source-code-pro@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/typeface-source-code-pro/-/typeface-source-code-pro-0.0.71.tgz#30994f73aed203feb7d616937349bccf656c45a5"
+  integrity sha512-lBpRNuC/wLFVjeFpH1qAby5iTG1jggQFBGteB+kDlMDAlpfguGPj8X0ObXK8xKiAl98+WkGbkumc14AckHr0mQ==
+
+typeface-source-serif-pro@^0.0.73:
+  version "0.0.73"
+  resolved "https://registry.yarnpkg.com/typeface-source-serif-pro/-/typeface-source-serif-pro-0.0.73.tgz#182ea12e355efca7901f6de39703bab95e4288d9"
+  integrity sha512-qqerHufceim/HokhQ+pvgCazsy53JG0rsOkYPdO9XtnqX9Uj/Uso+ziLtCtYu2go+rk86SZuPBp4tBQ4mQCpRg==
+
 uglify-js@3.4.x:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"

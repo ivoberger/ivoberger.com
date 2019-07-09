@@ -3,9 +3,8 @@ title: "Getting started"
 slug: getting-started-with-gridsome-and-bleda
 description: "Getting started with the Bleda blog starter theme for the Gridsome static site generator"
 date: 2019-03-01 14:43:24
-author: bleda
 tags:
-    - getting-started
+  - getting-started
 cover: https://pbs.twimg.com/profile_banners/710394749207896064/1547818514
 ---
 
@@ -29,21 +28,21 @@ Alternatively, you can clone or download the [repo on GitHub](https://github.com
 
 ## Features
 
--   Sitemap
--   RSS Feed
--   Google Analytics
--   Custom 404 Page
--   Open Graph meta tags
--   Code syntax highlighting
--   Parallax post image covers
--   Option for fullscreen covers
--   Medium-like image lightbox
--   Taxonomies: Tags and Authors
--   Aproximate read time for posts
--   Post excerpts: automatic or user-defined
--   **Paginated** [blog](/2/), [tag](https://gridsome-starter-bleda.netlify.com/tag/dummy/), and [author](/author/gridsome/) archives
--   Easily show post dates in your locale (moment.js)
--   Posts show a warning if they're older than 1 year (configurable)
+- Sitemap
+- RSS Feed
+- Google Analytics
+- Custom 404 Page
+- Open Graph meta tags
+- Code syntax highlighting
+- Parallax post image covers
+- Option for fullscreen covers
+- Medium-like image lightbox
+- Taxonomies: Tags and Authors
+- Aproximate read time for posts
+- Post excerpts: automatic or user-defined
+- **Paginated** [blog](/2/), [tag](https://gridsome-starter-bleda.netlify.com/tag/dummy/), and [author](/author/gridsome/) archives
+- Easily show post dates in your locale (moment.js)
+- Posts show a warning if they're older than 1 year (configurable)
 
 ## Configuration
 
@@ -117,12 +116,12 @@ This is a flexible alert component, defined in `/src/components/Alert.vue` and p
 
 ```vue
 <template>
-    ...
-    <alert v-if="postIsOlderThanOneYear" color="orange"
-        >This post is over a year old, some of this information may be out of
-        date.</alert
-    >
-    ...
+  ...
+  <alert v-if="postIsOlderThanOneYear" color="orange"
+    >This post is over a year old, some of this information may be out of
+    date.</alert
+  >
+  ...
 </template>
 ```
 
@@ -140,7 +139,7 @@ import moment from "moment";
 import "moment/locale/ro"; // <- add this
 
 export default {
-    // ...
+  // ...
 };
 </script>
 ```
