@@ -14,6 +14,7 @@ export default function(Vue, { head }) {
   head.script.push({
     src:
       "https://www.google.com/recaptcha/api.js?render=6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx",
-    body: true
+    async: true,
+    defer: true
   });
 }
