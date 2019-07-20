@@ -1,6 +1,6 @@
 ---
 title: "How to Set up Port Forwarding with iptables"
-description: "A qucik guide on simple port-forwarding using NAT and DNAT in iptables"
+description: "A quick guide on simple port-forwarding using NAT and DNAT in iptables"
 date: 2019-07-20 15:40:00
 slug: port-forwarding-with-iptables
 tags:
@@ -9,11 +9,11 @@ tags:
 cover: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjIxMTIzfQ&auto=format&fit=crop&w=1950&q=80"
 ---
 
-If you have a server on a private network and need to access it from the outside (but can't simply give it an external IP) you can use port forwarding on an externally accessible server to get around it. When set up it simply sends all incoming packets that meet a certain criteria to a new IP. That way you can connect to a public server in order to communicate with the private server.
+If you have a server on a private network and need to access it from the outside (but can't simply give it an external IP) you can use port forwarding on an externally accessible server to get around it. Once set up it simply sends all incoming packets that meet certain criteria to a new IP. That way you can connect to a public server in order to communicate with the private server.
 
 ## Setup
 
-All following steps need the be done on the externally accessible machine and need to be run as with root privilege's. I'll assume a scenario where you want to access an internal server with an _internal_ IP `10.0.0.1` on port `80` through a server with an _external_ IP `32.0.0.1` on port `8080` using TCP.
+All following steps need the to be done on the externally accessible machine and need to be run as with root privilege's. I'll assume a scenario where you want to access an internal server with an _internal_ IP `10.0.0.1` on port `80` through a server with an _external_ IP `32.0.0.1` on port `8080` using TCP.
 
 First we need to allow forwarding on the kernel level as this is usually disabled by default. Open `/etc/sysctl.conf` with your favorite editor (and root priviliges) and uncomment the line `net.ipv4.ip_forward=1`. Now run
 
@@ -34,11 +34,11 @@ Now that all incoming traffic will be re-routed we just need to tell iptables to
 
     iptables -t nat -A POSTROUTING ! -s 127.0.0.1 -j MASQUERADE
 
-Now iptables will rewrite the origin of the re-rerouted packages so the target server will answer to the correct machine. I added `! -s 127.0.0.1` to exclude packets originating in `[localhost](http://localhost)` as without it the rule broke DNS resolution to point that `sudo` didn't work properly anymore because it couldn't resolve it's own hostname.
+Now iptables will rewrite the origin of the re-rerouted packages so the target server will answer to the correct machine. I added `! -s 127.0.0.1` to exclude packets originating in `[localhost](http://localhost)` as without it the rule broke DNS resolution to point that `sudo` didn't work properly anymore because it couldn't resolve its own hostname.
 
 ## Making it permanent
 
-iptables doesn't persist rules through restarts on its own. There are packages to take care of that like `iptables-persistent` but that doesn't seem to be available on Ubuntu 18.04 so here's how to do it manually.
+Iptables doesn't persist rules through restarts on its own. There are packages to take care of that like `iptables-persistent` but that doesn't seem to be available on Ubuntu 18.04 so here's how to do it manually.
 
 The ruleset can be easily saved by running `iptables-save > /etc/iptables.rules` and restored with `iptables-restore < /etc/iptables.rules`. Where you save your rules it up to you.
 
