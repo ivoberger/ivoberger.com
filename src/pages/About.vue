@@ -3,9 +3,7 @@
     <main>
       <header class="max-w-xl md:max-w-2xl xl:max-w-3xl mx-auto text-center px-6 pt-24">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">About</h1>
-        <p
-          class="text-grey-dark text-lg sm:text-2xl"
-        >Hey, I'm Ivo and I love writing software that improves lives.</p>
+        <p class="text-grey-dark text-lg sm:text-2xl">Hey, I'm Ivo and I love writing software.</p>
       </header>
       <nav class="absolute top-0 left-0 z-20 mt-6 ml-6">
         <g-link

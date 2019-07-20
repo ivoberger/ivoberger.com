@@ -8,10 +8,15 @@
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">
             <g-link to="/" class="text-black">Ivo Berger</g-link>
           </h1>
-          <h5 class="text-lg sm:text-xl md:text-2xl font-sans mb-1">
-            <g-link to="/about" class="text-gray-600 hover:text-black">About me</g-link>
+          <h5 class="text-xl sm:text-2xl md:text-2xl font-sans mb-1">
+            <g-link
+              to="/about"
+              class="text-gray-600 hover:border-gray-400 border-b border-transparent transition-border-color"
+            >About me</g-link>
           </h5>
-          <p class="text-gray-700 text-lg sm:text-3xl mt-4">Posts on Android, Dart & DevOps</p>
+          <!-- <p
+            class="text-gray-700 text-lg sm:text-3xl mt-4"
+          >Posts on anything I find interesting, helpful or exciting</p>-->
         </div>
       </header>
       <section>
