@@ -112,7 +112,6 @@
                 />
               </div>
             </div>
-            <div class="g-recaptcha" data-sitekey="6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx"></div>
             <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
             <button
               class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 border-4 text-white py-1 px-2 rounded"
@@ -171,16 +170,37 @@ export default {
     config() {
       return config;
     }
+  },
+  mounted() {
+    (function(f, a, t, h, o, m) {
+      a[h] =
+        a[h] ||
+        function() {
+          (a[h].q = a[h].q || []).push(arguments);
+        };
+      (o = f.createElement("script")),
+        (m = f.getElementsByTagName("script")[0]);
+      o.async = 1;
+      o.src = t;
+      o.id = "fathom-script";
+      m.parentNode.insertBefore(o, m);
+    })(
+      document,
+      window,
+      "https://www.google.com/recaptcha/api.js?render=6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx",
+      "grecaptcha"
+    );
+    grecaptcha.ready(function() {
+      grecaptcha
+        .execute("6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx", {
+          action: "homepage"
+        })
+        .then(function(token) {
+          document.getElementById("captchaResponse").value = token;
+        });
+    });
   }
 };
-
-grecaptcha.ready(function() {
-  grecaptcha
-    .execute("6Lc1zqcUAAAAAGjsx7EfSOZGnYmUXRpLqzPirbu5", { action: "homepage" })
-    .then(function(token) {
-      document.getElementById("captchaResponse").value = token;
-    });
-});
 </script>
 
 <style>

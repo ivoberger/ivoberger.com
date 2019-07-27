@@ -11,10 +11,10 @@ export default function(Vue, { head }) {
   head.htmlAttrs = { lang: "en", class: "h-full" };
   head.bodyAttrs = { class: "antialiased font-serif" };
 
-  head.script.push({
-    src:
-      "https://www.google.com/recaptcha/api.js?render=6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx",
-    async: true,
-    defer: true
-  });
+  // head.script.push({
+  //   src:
+  //     "https://www.google.com/recaptcha/api.js?render=6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx",
+  //   async: true,
+  //   defer: true
+  // });
 }
