@@ -66,19 +66,21 @@
           </p>
           <form
             class="w-full max-w-lg"
-            action="https://getform.io/f/54670a34-2877-4cac-8676-68ab27ad83a3"
+            action="https://getform.io/f/1841185a-e923-4f9a-a1a3-f97bfb4e5b83"
             name="contact"
             method="POST"
+            target="_blank"
           >
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="message-name"
+                  for="name"
+                  required="required"
                 >Your Name</label>
                 <input
                   class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="message-name"
+                  name="name"
                   type="text"
                   placeholder="Jane Doe"
                 />
@@ -86,11 +88,11 @@
               <div class="w-full md:w-1/2 px-3">
                 <label
                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="contact-email"
+                  for="email"
                 >Your E-Mail</label>
                 <input
                   class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="contact-email"
+                  name="email"
                   type="email"
                   placeholder="jane.doe@example.com"
                 />
@@ -100,21 +102,22 @@
               <div class="w-full px-3">
                 <label
                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="contact-message"
+                  for="message"
+                  required="required"
                 >Your Message</label>
                 <textarea
                   class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="contact-message"
+                  name="message"
                   type="text"
                 />
               </div>
             </div>
             <div class="g-recaptcha" data-sitekey="6Lc3Q6wUAAAAANQ_gMH1wsWGEiE8PushTXc3uGKx"></div>
-            <input
+            <input type="hidden" id="captchaResponse" name="g-recaptcha-response" />
+            <button
               class="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 border-4 text-white py-1 px-2 rounded"
               type="submit"
-              value="Send"
-            />
+            >Send</button>
           </form>
         </div>
       </article>
@@ -170,6 +173,14 @@ export default {
     }
   }
 };
+
+grecaptcha.ready(function() {
+  grecaptcha
+    .execute("6Lc1zqcUAAAAAGjsx7EfSOZGnYmUXRpLqzPirbu5", { action: "homepage" })
+    .then(function(token) {
+      document.getElementById("captchaResponse").value = token;
+    });
+});
 </script>
 
 <style>
