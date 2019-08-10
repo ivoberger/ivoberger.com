@@ -13,7 +13,7 @@
         <a target="_blank" href="https://stackoverflow.com/users/8568922/ivo">
           <font-awesome :icon="['fab', 'stack-overflow']" class="mx-2" />
         </a>
-        <a target="_blank" href="https://dev.to/iiiuminator">
+        <a target="_blank" href="https://dev.to/ivoberger">
           <font-awesome :icon="['fab', 'dev']" class="mx-2" />
         </a>
         <a target="_blank" href="https://twitter.com/__I__V__O__">
