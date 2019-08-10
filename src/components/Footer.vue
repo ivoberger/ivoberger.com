@@ -4,16 +4,16 @@
   >
     <div class="w-full sm:w-1/2 mb-4 sm:mb-0">
       <p>
-        <a target="_blank" href="https://github.com/IIIuminator">
+        <a target="_blank" href="https://github.com/ivoberger">
           <font-awesome :icon="['fab', 'github']" class="mr-2" />
         </a>
-        <a target="_blank" href="https://gitlab.com/illuminator">
+        <a target="_blank" href="https://gitlab.com/ivoberger">
           <font-awesome :icon="['fab', 'gitlab']" class="mx-2" />
         </a>
-        <a target="_blank" href="https://stackoverflow.com/users/8568922/illuminator">
+        <a target="_blank" href="https://stackoverflow.com/users/8568922/ivo">
           <font-awesome :icon="['fab', 'stack-overflow']" class="mx-2" />
         </a>
-        <a target="_blank" href="https://dev.to/iiiuminator">
+        <a target="_blank" href="https://dev.to/ivoberger">
           <font-awesome :icon="['fab', 'dev']" class="mx-2" />
         </a>
         <a target="_blank" href="https://twitter.com/__I__V__O__">
