@@ -34,16 +34,13 @@ module.exports = {
       options: {
         path: "content/posts/**/*.md",
         typeName: "Post",
-        route: "/:slug",
         refs: {
           tags: {
             typeName: "Tag",
-            route: "/tag/:id",
             create: true
           },
           author: {
             typeName: "Author",
-            route: "/author/:id",
             create: true
           }
         }
@@ -66,7 +63,7 @@ module.exports = {
       options: {
         contentTypeName: "Post",
         feedOptions: {
-          title: "Bleda, a Gridsome blog starter",
+          title: "Ivo's Blog",
           feed_url: "https://ivoberger.com/feed.xml",
           site_url: "https://ivoberger.com"
         },
@@ -84,6 +81,12 @@ module.exports = {
       }
     }
   ],
+
+  templates: {
+    Post: "/:slug",
+    Tag: "/tag/:id",
+    Author: "/author/:id"
+  },
 
   chainWebpack: config => {
     config.module
