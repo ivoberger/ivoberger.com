@@ -1,9 +1,3 @@
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-  }
-}
-
 module.exports = {
   siteName: "Homepage & Blog",
   siteDescription: "Ivo Berger's Homepage & Personal Blog",
@@ -109,7 +103,8 @@ module.exports = {
                 content: ["src/assets/**/*.css", "src/**/*.vue", "src/**/*.js"],
                 extractors: [
                   {
-                    extractor: TailwindExtractor,
+                    extractor: content =>
+                      content.match(/[A-Za-z0-9-_:\/]+/g) || [],
                     extensions: ["css", "vue", "js"]
                   }
                 ],
