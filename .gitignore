@@ -6,3 +6,7 @@ node_modules
 dist
 static/feed.xml
 
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
