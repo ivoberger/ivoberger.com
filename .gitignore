@@ -4,6 +4,7 @@
 src/.temp
 node_modules
 dist
+.next
 static/feed.xml
 
 .yarn/*
