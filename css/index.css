@@ -1,10 +1,36 @@
 /* purgecss start ignore */
 @tailwind base;
+
 @tailwind components;
 /* purgecss end ignore */
-
 @tailwind utilities;
 
 body {
-  @apply bg-blue-400 p-12;
+  @apply antialiased font-serif bg-white;
+}
+
+h1 {
+  @apply font-sans font-bold mb-1 text-4xl;
+}
+
+h2 {
+  @apply font-sans leading-tight mb-1 text-3xl;
+}
+
+@screen sm {
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-3xl mb-2;
+  }
+}
+
+@screen md {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
 }

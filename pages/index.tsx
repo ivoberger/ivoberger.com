@@ -3,8 +3,9 @@ import Link from "next/link";
 
 const Index = () => {
   return (
-    <div className="bg-blue-700">
-      hello
+    <div>
+      <h1>I'm a H1</h1>
+      <h2>I'm a H2</h2>
       <Link href="test">
         <a>Test</a>
       </Link>

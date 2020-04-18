@@ -955,7 +955,7 @@
     postcss "7.0.27"
     purgecss "^2.1.2"
 
-"@next/bundle-analyzer@^9.3.5":
+"@next/bundle-analyzer@9.x":
   version "9.3.5"
   resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-9.3.5.tgz#c35d92e03ac8b5ae05e2eabee4fae433f8cb448d"
   integrity sha512-A1hewPnrObMgVJGBr8HhVsfKkYgrjHdLsPDuKV6Za3P2AB0UiG/A2sWEpORm29IwnLc6pz8uvOaangviAzoROg==
@@ -6921,6 +6921,16 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeface-catamaran@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-catamaran/-/typeface-catamaran-0.0.72.tgz#eddb2c8cf2e75696c89f055e25057b85538efc9b"
+  integrity sha512-6l9gq/IPseoC40lv/etxdUlIR2RHBKpAm+vu3lwt03Jd4i2+VOhKS/fOz1n0YpRjkz8QyG2qFwYjcoLT02/2qw==
+
+typeface-source-sans-pro@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/typeface-source-sans-pro/-/typeface-source-sans-pro-1.1.5.tgz#5b6a009f79888e9d4053d617772805fe79a941cc"
+  integrity sha512-a+KZN2X7gzZ91RUKB/9zAiEtRuD+aX7dwNTo121vpZz2MVODWSJfw81XZQmIwZ4jD/5658EMvPJHttS6qT0gZA==
 
 typescript@3.x:
   version "3.8.3"
