@@ -3,12 +3,15 @@ import Link from "next/link";
 
 const Index = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <h1>I'm a H1</h1>
       <h2>I'm a H2</h2>
-      <Link href="test">
-        <a>Test</a>
-      </Link>
+      <code>I'm a piece of code</code>
+      <p>
+        <Link href="test">
+          <button>Test</button>
+        </Link>
+      </p>
     </div>
   );
 };
