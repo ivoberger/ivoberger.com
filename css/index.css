@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  @apply antialiased font-serif bg-white;
+  @apply bg-white antialiased font-serif text-gray-900;
 }
 
 h1 {
@@ -17,12 +17,19 @@ h2 {
   @apply font-sans leading-tight mb-1 text-3xl;
 }
 
+h5 {
+  @apply font-sans text-xl mb-1;
+}
+
 @screen sm {
   h1 {
     @apply text-5xl;
   }
   h2 {
     @apply text-3xl mb-2;
+  }
+  h5 {
+    @apply text-2xl;
   }
 }
 
@@ -32,5 +39,8 @@ h2 {
   }
   h2 {
     @apply text-4xl;
+  }
+  h5 {
+    @apply text-2xl;
   }
 }
