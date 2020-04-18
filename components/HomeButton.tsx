@@ -5,7 +5,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const HomeButton = () => (
   <Link href="/">
-    <button className="rounded-full transition duration-500 py-2 px-5 bg-gray-100-t border border-gray-100-t group-hover:border-green-500">
+    <a className="rounded-full transition duration-500 py-2 px-5 bg-gray-100-t border border-gray-100-t group-hover:border-green-500">
       <span className="transition-all duration-500 font-sans text-gray-800 group-hover:text-black">
         <FontAwesomeIcon
           className="transition-all duration-500 group-hover:text-green-500 group-hover:-ml-1 group-hover:mr-1"
@@ -13,7 +13,7 @@ const HomeButton = () => (
         />{" "}
         Home
       </span>
-    </button>
+    </a>
   </Link>
 );
 
