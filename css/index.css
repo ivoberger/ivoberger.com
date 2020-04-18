@@ -10,23 +10,36 @@ body {
 }
 
 h1 {
-  @apply font-sans font-bold mb-1 text-4xl;
+  @apply font-sans font-bold leading-tight mb-1 text-3xl;
 }
 
 h2 {
-  @apply font-sans leading-tight mb-1 text-3xl;
+  @apply font-sans font-bold text-gray-900  my-3 text-3xl leading-tight;
 }
 
 h5 {
   @apply font-sans text-xl mb-1;
 }
 
+p {
+  @apply block w-full break-normal whitespace-normal mb-3;
+}
+
+code {
+  @apply block w-full break-normal whitespace-normal bg-gray-100 border border-gray-300 rounded-sm p-2 mb-3;
+  @apply text-sm;
+}
+
+p code {
+  @apply inline rounded p-1;
+}
+
 @screen sm {
   h1 {
-    @apply text-5xl;
+    @apply text-4xl;
   }
   h2 {
-    @apply text-3xl mb-2;
+    @apply text-3xl my-5;
   }
   h5 {
     @apply text-2xl;
@@ -35,7 +48,7 @@ h5 {
 
 @screen md {
   h1 {
-    @apply text-6xl;
+    @apply text-5xl;
   }
   h2 {
     @apply text-4xl;

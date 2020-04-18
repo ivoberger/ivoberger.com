@@ -25,6 +25,7 @@
   "homepage": "https://github.com/ivoberger/ivoberger.com#readme",
   "dependencies": {
     "clsx": "^1.1.0",
+    "date-fns": "^2.12.0",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -34,9 +35,9 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "2.x",
-    "@mdx-js/loader": "^1.5.8",
+    "@mdx-js/loader": "1.x",
     "@next/bundle-analyzer": "9.x",
-    "@next/mdx": "^9.3.5",
+    "@next/mdx": "9.x",
     "@types/node": "13.x",
     "@types/react": "16.x",
     "@types/react-dom": "16.x",
@@ -48,13 +49,20 @@
     "eslint-config-prettier": "6.x",
     "eslint-config-react-app": "5.x",
     "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-prettier": "3.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "2.x",
+    "gray-matter": "^4.0.2",
     "postcss-preset-env": "6.x",
     "prettier": "2.x",
+    "reading-time": "^1.2.0",
+    "rehype-stringify": "^7.0.0",
+    "remark-parse": "^8.0.0",
+    "remark-rehype": "^6.0.0",
     "tailwindcss": "1.x",
-    "typescript": "3.x"
+    "typescript": "3.x",
+    "unified": "9.x"
   },
   "eslintConfig": {
     "extends": [
