@@ -10,6 +10,10 @@ import readingTime from "reading-time";
 
 import React from "react";
 import type { GetStaticProps, GetStaticPaths } from "next";
+import Link from "next/link";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 type PostProps = {
   meta: {
@@ -39,9 +43,22 @@ const Post: React.FC<PostProps> = ({
           </div>
           <img src={cover} alt="Post cover" />
         </div>
+        <nav className="group absolute top-0 left-0 m-4">
+          <Link href="/">
+            <button className="rounded-full transition duration-500 py-2 px-5 bg-gray-100-t border border-gray-100-t group-hover:border-green-500">
+              <span className="transition-all duration-500 font-sans text-gray-800 group-hover:text-black">
+                <FontAwesomeIcon
+                  className="transition-all duration-500 group-hover:text-green-500 group-hover:-ml-1 group-hover:mr-1"
+                  icon={faArrowLeft}
+                />{" "}
+                Home
+              </span>
+            </button>
+          </Link>
+        </nav>
       </header>
       <article
-        className="max-w-2xl md:max-w-3xl xl:max-w-4xl mx-auto px-6 sm:px-12 pt-16 border-b border-grey-lighter pb-10 mb-16 text-gray-700 text-lg"
+        className="max-w-2xl md:max-w-3xl xl:max-w-4xl mx-auto px-6 sm:px-12 pt-16 border-b border-green-500 pb-10 mb-16 text-gray-700 text-lg"
         dangerouslySetInnerHTML={{
           __html: content,
         }}
@@ -67,8 +84,6 @@ export const getStaticProps: GetStaticProps<
   await unifiedProcessor.process(content, function (err, file) {
     postContent = String(file);
   });
-
-  console.log(data);
 
   return {
     props: {
