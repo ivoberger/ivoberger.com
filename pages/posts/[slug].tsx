@@ -10,10 +10,7 @@ import readingTime from "reading-time";
 
 import React from "react";
 import type { GetStaticProps, GetStaticPaths } from "next";
-import Link from "next/link";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { HomeButton, Tags } from "../../components";
 
 type PostProps = {
   meta: {
@@ -29,43 +26,36 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({
-  meta: { title, author, cover, publishDate, readTime, tags },
+  meta: { title, cover, publishDate, readTime, tags },
   content,
-}) => {
-  return (
-    <div>
-      <header>
-        <div className="max-h-cover text-center text-white overflow-hidden relative">
-          <div className="max-w-xl md:max-w-3xl xl:max-w-4xl text-center px-6 absolute z-10 mx-auto bottom-0 inset-x-0 pb-16">
-            <p className="uppercase text-sm">{readTime}</p>
-            <h1>{title}</h1>
-            <p>{publishDate}</p>
-          </div>
-          <img src={cover} alt="Post cover" />
+}) => (
+  <>
+    <header>
+      <div className="max-h-cover text-center text-white overflow-hidden relative">
+        <div className="max-w-xl md:max-w-3xl xl:max-w-4xl text-center px-6 absolute z-10 mx-auto bottom-0 inset-x-0 pb-16">
+          <p className="uppercase text-sm">{readTime}</p>
+          <h1>{title}</h1>
+          <p>{publishDate}</p>
         </div>
-        <nav className="group absolute top-0 left-0 m-4">
-          <Link href="/">
-            <button className="rounded-full transition duration-500 py-2 px-5 bg-gray-100-t border border-gray-100-t group-hover:border-green-500">
-              <span className="transition-all duration-500 font-sans text-gray-800 group-hover:text-black">
-                <FontAwesomeIcon
-                  className="transition-all duration-500 group-hover:text-green-500 group-hover:-ml-1 group-hover:mr-1"
-                  icon={faArrowLeft}
-                />{" "}
-                Home
-              </span>
-            </button>
-          </Link>
-        </nav>
-      </header>
+        <img src={cover} alt="Post cover" />
+      </div>
+      <nav className="group absolute top-0 left-0 m-4">
+        <HomeButton />
+      </nav>
+    </header>
+    <main className="max-w-2xl md:max-w-3xl xl:max-w-4xl mx-auto px-6 sm:px-12 pt-16 border-b border-green-500 pb-10 mb-16 text-gray-700 text-lg">
       <article
-        className="max-w-2xl md:max-w-3xl xl:max-w-4xl mx-auto px-6 sm:px-12 pt-16 border-b border-green-500 pb-10 mb-16 text-gray-700 text-lg"
+        className="mb-10"
         dangerouslySetInnerHTML={{
           __html: content,
         }}
       />
-    </div>
-  );
-};
+      <footer>
+        <Tags tags={tags} />
+      </footer>
+    </main>
+  </>
+);
 
 export const getStaticProps: GetStaticProps<
   PostProps,
