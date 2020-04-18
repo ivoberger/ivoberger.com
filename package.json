@@ -65,6 +65,8 @@
     "remark-parse": "^8.0.0",
     "remark-rehype": "^6.0.0",
     "tailwindcss": "1.x",
+    "tailwindcss-filters": "3.x",
+    "tailwindcss-typography": "^3.0.1",
     "typescript": "3.x",
     "unified": "9.x"
   },

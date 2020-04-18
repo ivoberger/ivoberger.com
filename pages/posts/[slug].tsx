@@ -32,12 +32,17 @@ const Post: React.FC<PostProps> = ({
   <>
     <header>
       <div className="max-h-cover text-center text-white overflow-hidden relative">
-        <div className="max-w-xl md:max-w-3xl xl:max-w-4xl text-center px-6 absolute z-10 mx-auto bottom-0 inset-x-0 pb-16">
+        <div className="max-w-xl md:max-w-3xl xl:max-w-4xl text-center text-shadow-lg px-6 absolute z-10 mx-auto bottom-0 inset-x-0 pb-16">
           <p className="uppercase text-sm">{readTime}</p>
           <h1>{title}</h1>
           <p>{publishDate}</p>
         </div>
-        <img src={cover} alt="Post cover" />
+        <img
+          className="filter-blur"
+          style={{ transform: "scale(1.03)" }}
+          src={cover}
+          alt="Post cover"
+        />
       </div>
       <nav className="group absolute top-0 left-0 m-4">
         <HomeButton />

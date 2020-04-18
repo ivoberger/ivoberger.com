@@ -7842,6 +7842,20 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tailwindcss-filters@3.x:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-filters/-/tailwindcss-filters-3.0.0.tgz#d5d40ca018a54b1aa2bdc57aeb6677529c24c8d8"
+  integrity sha512-xhortqs8fSp9id17EnneYhmruA5DfU6K0zvN6/mgDlEXKaHthjXlR74Ta+4lrX5Lp7tp6YigB09WO0TOWn7VEQ==
+  dependencies:
+    lodash "^4.17.15"
+
+tailwindcss-typography@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-typography/-/tailwindcss-typography-3.0.1.tgz#7c74c46bf80841782024ee854cbf8e4e5cb57b1c"
+  integrity sha512-NnAGJSaw34zFcm6JWMdrrwbb7YaKeEmjsx2aIzs80Manc2BEddnALVvJzz2o4frfrVmKtCDt2Zesd1WtW8MYRQ==
+  dependencies:
+    lodash "^4.17.15"
+
 tailwindcss@1.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.2.0.tgz#5df317cebac4f3131f275d258a39da1ba3a0f291"
