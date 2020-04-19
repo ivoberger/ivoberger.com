@@ -2,7 +2,7 @@ import { getAllPosts, getPost, writePostsSpecToFS } from "lib";
 
 import React from "react";
 import type { GetStaticProps, GetStaticPaths } from "next";
-import { HomeButton, Tags } from "components";
+import { HomeButton, Tags, Footer } from "components";
 
 type PostProps = {
   meta: {
@@ -51,6 +51,7 @@ const Post: React.FC<PostProps> = ({
         <Tags tags={tags} />
       </footer>
     </main>
+    <Footer />
   </>
 );
 

@@ -6,32 +6,36 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white antialiased font-serif text-gray-900;
+  @apply font-serif antialiased text-gray-900 bg-white;
 }
 
 h1 {
-  @apply font-sans font-bold leading-tight mb-1 text-3xl;
+  @apply mb-1 font-sans text-3xl font-bold leading-tight;
 }
 
 h2 {
-  @apply font-sans font-bold text-gray-900  my-3 text-3xl leading-tight;
+  @apply my-3 font-sans text-3xl font-bold leading-tight text-gray-900;
 }
 
 h5 {
-  @apply font-sans text-xl mb-1;
+  @apply mb-1 font-sans text-xl;
 }
 
 p {
-  @apply block w-full break-normal whitespace-normal mb-3;
+  @apply block w-full break-normal whitespace-normal;
+}
+
+article p {
+  @apply mb-3;
 }
 
 code {
-  @apply block w-full break-normal whitespace-normal bg-gray-100 border border-gray-300 rounded-sm p-2 mb-3;
+  @apply block w-full p-2 mb-3 break-normal whitespace-normal bg-gray-100 border border-gray-300 rounded-sm;
   @apply text-sm;
 }
 
 p code {
-  @apply inline rounded p-1;
+  @apply inline p-1 rounded;
 }
 
 @screen sm {
@@ -39,7 +43,7 @@ p code {
     @apply text-4xl;
   }
   h2 {
-    @apply text-3xl my-5;
+    @apply my-5 text-3xl;
   }
   h5 {
     @apply text-2xl;
