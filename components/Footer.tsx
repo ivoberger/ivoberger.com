@@ -46,7 +46,7 @@ const SocialLink = ({
 );
 
 const Footer = () => (
-  <footer className="flex flex-wrap justify-between max-w-3xl px-6 pb-8 mx-auto text-sm leading-normal text-gray-700 sm:px-12 sm:pb-10">
+  <footer className="flex flex-wrap justify-between max-w-2xl px-6 py-8 mx-auto text-sm leading-normal text-gray-700 md:max-w-3xl xl:max-w-4xl sm:px-12 sm:pb-10">
     <div className="w-full mb-4 sm:w-1/2 sm:mb-0">
       <p>
         <SocialLink

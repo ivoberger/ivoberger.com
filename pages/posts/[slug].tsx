@@ -5,20 +5,12 @@ import type { GetStaticProps, GetStaticPaths } from "next";
 import { HomeButton, Tags, Footer } from "components";
 
 type PostProps = {
-  meta: {
-    title: string;
-    author: string;
-    description: string;
-    cover?: string;
-    publishDate: string;
-    readTime: string;
-    tags: string[];
-  };
+  meta: PostMetadata;
   content: string;
 };
 
 const Post: React.FC<PostProps> = ({
-  meta: { title, cover, publishDate, readTime, tags },
+  meta: { title, cover, date, readTime, tags },
   content,
 }) => (
   <>
@@ -27,7 +19,7 @@ const Post: React.FC<PostProps> = ({
         <div className="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-16 mx-auto text-center md:max-w-3xl xl:max-w-4xl text-shadow-lg">
           <p className="text-sm uppercase">{readTime}</p>
           <h1>{title}</h1>
-          <p>{publishDate}</p>
+          <p>{date}</p>
         </div>
         <img
           className="filter-blur"
