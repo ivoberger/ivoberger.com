@@ -85,7 +85,7 @@ const Footer = () => (
         <NavItem text="Home" link="/" />
         <NavItem text="About" />
         <NavItem text="Sitemap" link="/sitemap.xml" />
-        <NavItem text="RSS Feed" link="/feed.xml" />
+        {/* <NavItem text="RSS Feed" link="/feed.xml" /> */}
       </ul>
     </div>
   </footer>
