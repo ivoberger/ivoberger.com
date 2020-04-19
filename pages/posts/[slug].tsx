@@ -56,9 +56,9 @@ const Post: React.FC<PostProps> = ({
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { slug: string; filePath: string }
-> = async ({ params: { slug } }) => ({
-  props: await getPost(slug),
+  { slug: string }
+> = async ({ params }) => ({
+  props: await getPost(params?.slug ?? ""),
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {

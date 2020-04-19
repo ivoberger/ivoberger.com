@@ -17,7 +17,7 @@ export const getPost = async (slug: string) => {
 
   const { content } = matter(readFileSync(filePath, "utf8"));
 
-  let postContent;
+  let postContent = "";
   unifiedProcessor.process(content, function (err, file) {
     err && console.error(err);
     postContent = String(file);
