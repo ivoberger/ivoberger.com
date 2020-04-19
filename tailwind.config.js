@@ -21,13 +21,12 @@ module.exports = {
       colors: {
         gray: {
           ...defaultTheme.colors.gray,
-          "100-t": "rgba(0,0,0, .3)",
+          "100-t": "rgba(0,0,0, 0.3)",
         },
       },
       fontFamily: {
         sans: ["Catamaran", ...defaultTheme.fontFamily.sans],
         serif: ["Source Serif Pro", ...defaultTheme.fontFamily.serif],
-        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
       maxHeight: {
         "0": "0",
