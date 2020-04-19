@@ -29,8 +29,15 @@ article p {
   @apply mb-3;
 }
 
+article a {
+  @apply text-green-500 transition duration-500 border-b border-transparent;
+}
+article a:hover {
+  @apply border-green-500;
+}
+
 code {
-  @apply block w-full p-2 mb-3 break-normal whitespace-normal bg-gray-100 border border-gray-300 rounded-sm;
+  @apply block w-full p-2 mb-3 bg-gray-100 border border-gray-300 rounded-sm;
   @apply text-sm;
 }
 
