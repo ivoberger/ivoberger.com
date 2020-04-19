@@ -64,4 +64,4 @@ you'll need to use `networkd-dispatcher` as `netplan` [doesn't support hooks](ht
 
 The save on `pre-down` and in `off.d` hooks is optional, it's actually safer to leave it out in case you mess something up. That way you can just restart and have the old (working) ruleset running again.
 
-And that's it, know you have a port-forwarding setup that is persistent through reboots and doesn't break DNS resolution!
+And that's it, now you have a port-forwarding setup that is persistent through reboots and doesn't break DNS resolution!

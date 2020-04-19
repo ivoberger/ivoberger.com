@@ -1,8 +1,12 @@
 *.log
 .cache
-.vscode
 src/.temp
 node_modules
 dist
+.next
 static/feed.xml
 
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
