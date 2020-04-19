@@ -21,13 +21,22 @@ module.exports = {
       colors: {
         gray: {
           ...defaultTheme.colors.gray,
-          "100-t": "rgba(0,0,0, .3)",
+          "100-t": "rgba(0,0,0, 0.1)",
+          "200-t": "rgba(0,0,0, 0.2)",
+          "300-t": "rgba(0,0,0, 0.3)",
+          "400-t": "rgba(0,0,0, 0.4)",
+        },
+        brand: {
+          linkedIn: "#0077b5",
+          twitter: "#3d90c4",
+          dev: "#0a0a0a",
+          stackOverflow: "#f48024",
+          github: "#24292e",
         },
       },
       fontFamily: {
         sans: ["Catamaran", ...defaultTheme.fontFamily.sans],
         serif: ["Source Serif Pro", ...defaultTheme.fontFamily.serif],
-        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
       maxHeight: {
         "0": "0",

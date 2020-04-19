@@ -10,9 +10,9 @@ const Tag = React.forwardRef<
   <a
     ref={ref}
     href={href}
-    className="inline-block text-teal-400 hover:text-white hover:bg-teal-400 border border-teal-400 font-sans font-bold text-xs sm:text-sm px-4 py-2 mr-4 mb-2 rounded-full transition duration-300"
+    className="inline-block px-4 py-2 mb-2 mr-4 font-sans text-xs font-bold text-teal-400 transition duration-300 border border-teal-400 rounded-full hover:text-white hover:bg-teal-400 sm:text-sm"
   >
-    <FontAwesomeIcon className="fa-sm text-gray-700 mr-1" icon={faTag} />
+    <FontAwesomeIcon className="mr-1 text-gray-700 fa-sm" icon={faTag} />
     {children}
   </a>
 ));
@@ -25,8 +25,8 @@ type TagsProps = {
 const Tags: React.FC<TagsProps> = ({ tagPath = "tag", tags }) => (
   <div className="flex flex-wrap pb-10 sm:pb-16">
     {tags.map((tag) => (
-      <Link href={`/${tagPath}/${tag}`} passHref>
-        <Tag key={tag}>{tag}</Tag>
+      <Link key={`link_${tag}`} href={`/${tagPath}/${tag}`} passHref>
+        <Tag key={`tag_${tag}`}>{tag}</Tag>
       </Link>
     ))}
   </div>
