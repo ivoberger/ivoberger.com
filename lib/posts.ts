@@ -23,11 +23,7 @@ export const getPost = async (slug: string) => {
     postContent = String(file);
   });
   return {
-    meta: {
-      ...data,
-      publishDate: format(new Date(data.date), "do 'of' MMMM, yyyy"),
-      readTime: readingTime(content).text,
-    },
+    meta: data,
     content: postContent,
   };
 };
@@ -41,9 +37,16 @@ export const getAllPosts: () => Promise<PostSpec[]> = () => {
       const filePath = path.join(postsDirectory, filename);
       const fileContents = readFileSync(filePath, "utf8");
 
-      const { data } = matter(fileContents);
+      const { data, content } = matter(fileContents);
 
-      return { data, filePath };
+      return {
+        data: {
+          ...data,
+          date: format(new Date(data.date), "do 'of' MMMM, yyyy"),
+          readTime: readingTime(content).text,
+        },
+        filePath,
+      } as PostSpec;
     })
   );
 };

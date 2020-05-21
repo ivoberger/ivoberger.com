@@ -10,13 +10,15 @@ export const writePostsSpecToFS = (posts: PostSpec[]) => {
   writeFileSync(
     cachePath,
     JSON.stringify(
-      posts.reduce(
-        (acc, { data: { slug, ...data }, filePath }) => ({
-          ...acc,
-          [slug]: { filePath, data },
-        }),
-        {}
-      )
+      posts
+        .filter(({ data }) => !!data.slug)
+        .reduce(
+          (acc, { data: { slug, ...data }, filePath }) => ({
+            ...acc,
+            [slug!]: { filePath, data },
+          }),
+          {}
+        )
     )
   );
 };

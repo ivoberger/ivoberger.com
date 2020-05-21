@@ -1,4 +1,15 @@
+type PostMetadata = {
+  title: string;
+  author: string;
+  description: string;
+  cover?: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  slug?: string;
+};
+
 type PostSpec = {
-  data: { [key: string]: string };
+  data: PostMetadata;
   filePath: string;
 };
