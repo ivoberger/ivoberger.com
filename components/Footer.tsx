@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
+import Link from "next/link";
 
 const NavItem = ({
   text,
@@ -18,12 +19,11 @@ const NavItem = ({
   link?: string;
 }) => (
   <li className="px-2">
-    <a
-      href={link}
-      className="transition duration-500 border-b border-transparent hover:border-gray-400 transition-border-color active--exact active"
-    >
-      {text}
-    </a>
+    <Link href={link}>
+      <a className="transition duration-500 border-b border-transparent hover:border-gray-400 transition-border-color active--exact active">
+        {text}
+      </a>
+    </Link>
   </li>
 );
 

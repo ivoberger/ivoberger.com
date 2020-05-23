@@ -1,17 +1,7 @@
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx?$/,
-});
-
-module.exports = withBundleAnalyzer(
-  withMDX({
-    target: "serverless",
-    pageExtensions: ["ts", "tsx", "md", "mdx"],
-    experimental: {
-      jsconfigPaths: true, // enables it for both jsconfig.json and tsconfig.json
-    },
-  })
-);
+module.exports = {
+  target: "serverless",
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
+  experimental: {
+    jsconfigPaths: true, // enables it for both jsconfig.json and tsconfig.json
+  },
+};
