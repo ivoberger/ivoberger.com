@@ -22,10 +22,10 @@ type TagsProps = {
   tags: string[];
 };
 
-const Tags: React.FC<TagsProps> = ({ tagPath = "tag", tags }) => (
+const Tags: React.FC<TagsProps> = ({ tags }) => (
   <div className="flex flex-wrap pb-10 sm:pb-16">
     {tags.map((tag) => (
-      <Link key={`link_${tag}`} href={`/${tagPath}/${tag}`} passHref>
+      <Link key={`link_${tag}`} href="/tag/[tag]" as={`/tag/${tag}`} passHref>
         <Tag key={`tag_${tag}`}>{tag}</Tag>
       </Link>
     ))}
