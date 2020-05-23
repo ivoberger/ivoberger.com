@@ -38,7 +38,6 @@
     "typeface-source-sans-pro": "^1.1.5"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "2.x",
     "@mdx-js/loader": "1.x",
     "@next/bundle-analyzer": "9.x",
     "@next/mdx": "9.x",

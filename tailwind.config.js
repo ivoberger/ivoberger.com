@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
   theme: {
     filter: {
       none: "none",
