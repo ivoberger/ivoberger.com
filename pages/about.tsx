@@ -77,17 +77,17 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
   repoUrl,
 }) => (
   <div className="mb-10">
-    <h2>
-      {title}{" "}
+    <div className="flex flex-row">
+      <h2 className="mr-1">{title}</h2>
       {repoUrl && (
         <a
           href={repoUrl}
           target="_blank"
           rel="noreferrer"
-          className={`transition duration-300 text-gray-700 px-2 hover:text-brand-github`}
+          className={`transition duration-300 text-gray-700 p-2 pt-1 hover:text-brand-github`}
         >
           <span className="visible-hidden">Repository for {title}</span>
-          <FontAwesomeIcon className="text-xl" icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
       )}
       {url && (
@@ -95,13 +95,13 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
           href={url}
           target="_blank"
           rel="noreferrer"
-          className={`transition duration-300 text-gray-700 px-2 hover:text-gray-900`}
+          className={`transition duration-300 text-gray-700 p-2 pt-1 hover:text-gray-900`}
         >
           <span className="visible-hidden">Link to {title}</span>
-          <FontAwesomeIcon className="text-xl" icon={faLink} />
+          <FontAwesomeIcon icon={faLink} />
         </a>
       )}
-    </h2>
+    </div>
     <p>{description}</p>
   </div>
 );
