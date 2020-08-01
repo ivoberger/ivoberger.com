@@ -3,8 +3,9 @@ import { compareDesc } from "date-fns";
 
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 import type { GetStaticProps } from "next";
-import { Header, Footer } from "components";
+import { Header } from "components";
 
 const PostInfo: React.FC<PostMetadata> = ({
   title,
@@ -14,6 +15,10 @@ const PostInfo: React.FC<PostMetadata> = ({
   slug,
 }) => (
   <div className="py-4 text-center border-b border-green-300 group sm:py-10">
+    <Head>
+      <title>Ivo's Website</title>
+      <meta name="description" content={description} />
+    </Head>
     <header className="mb-8 ">
       <time className="mb-2 text-xs text-gray-700 uppercase">{date}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
