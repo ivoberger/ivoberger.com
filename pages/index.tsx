@@ -45,14 +45,13 @@ type HomeProps = { posts: PostMetadata[] };
 const Home: React.FC<HomeProps> = ({ posts }) => (
   <>
     <main className="container mx-auto">
-      <Header />
+      <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
       <section className="max-w-3xl px-6 mx-auto mb-10">
         {posts.map((post) => (
           <PostInfo {...post} />
         ))}
       </section>
     </main>
-    <Footer />
   </>
 );
 
