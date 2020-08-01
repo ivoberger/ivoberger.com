@@ -10,7 +10,7 @@ const Header: React.FC<{
     subTitleLink
       ? ({ children }) => (
           <Link href={subTitleLink}>
-            <a className="text-gray-600 transition duration-500 border-b border-transparent hover:text-gray-800 hover:border-gray-400">
+            <a className="text-gray-700 transition duration-500 border-b border-transparent hover:text-gray-800 hover:border-gray-400">
               {children}
             </a>
           </Link>
