@@ -39,6 +39,7 @@ const SocialLink = ({
   <a
     href={link}
     target="_blank"
+    rel="noreferrer"
     className={`transition duration-300  px-2 ${className}`}
   >
     <FontAwesomeIcon icon={icon} />
