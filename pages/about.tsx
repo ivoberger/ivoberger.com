@@ -1,10 +1,11 @@
 import React from "react";
+import Head from "next/head";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 import { Header, Body, HomeButton } from "components";
-import Link from "next/link";
 
 type PortfolioEntryData = {
   title: string;
@@ -57,7 +58,10 @@ const About = () => (
   <>
     <Header title="Stuff I Made" subTitle="You could call it a Portfolio" />
 
-    <HomeButton />
+    <HomeButton
+      title="Stuff I Made"
+      description="A List of projects I have worked on"
+    />
     <Body>{portfolioEntries.map(PortfolioEntry)}</Body>
   </>
 );
