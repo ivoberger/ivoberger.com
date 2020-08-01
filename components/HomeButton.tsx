@@ -8,7 +8,7 @@ const HomeButton: React.FC<{ title: string; description: string }> = ({
   title,
   description,
 }) => (
-  <nav className="absolute top-0 left-0 m-4 group">
+  <nav className="fixed top-0 left-0 m-4 group">
     <Head>
       <title>Ivo's Website - {title}</title>
       <meta name="description" content={description} />
