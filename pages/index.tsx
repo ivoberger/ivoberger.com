@@ -23,7 +23,7 @@ const PostInfo: React.FC<PostMetadata> = ({
       <time className="mb-2 text-xs text-gray-700 uppercase">{date}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
         <a>
-          <h2 className="my-0 mb-1">{title}</h2>
+          <h3 className="my-0 mb-1">{title}</h3>
         </a>
       </Link>
       <p className="text-sm leading-normal text-gray-700 sm:text-base">

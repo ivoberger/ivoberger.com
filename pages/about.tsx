@@ -62,7 +62,11 @@ const About = () => (
       title="Stuff I Made"
       description="A List of projects I have worked on"
     />
-    <Body>{portfolioEntries.map(PortfolioEntry)}</Body>
+    <Body>
+      {portfolioEntries.map((entry) => (
+        <PortfolioEntry key={entry.title} {...entry} />
+      ))}
+    </Body>
   </>
 );
 
@@ -82,6 +86,7 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
           rel="noreferrer"
           className={`transition duration-300 text-gray-700 px-2 hover:text-brand-github`}
         >
+          <span className="visible-hidden">Repository for {title}</span>
           <FontAwesomeIcon className="text-xl" icon={faGithub} />
         </a>
       )}
@@ -92,6 +97,7 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
           rel="noreferrer"
           className={`transition duration-300 text-gray-700 px-2 hover:text-gray-900`}
         >
+          <span className="visible-hidden">Link to {title}</span>
           <FontAwesomeIcon className="text-xl" icon={faLink} />
         </a>
       )}
