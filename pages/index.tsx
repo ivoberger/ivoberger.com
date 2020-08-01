@@ -15,10 +15,6 @@ const PostInfo: React.FC<PostMetadata> = ({
   slug,
 }) => (
   <div className="py-4 text-center border-b border-green-300 group sm:py-10">
-    <Head>
-      <title>Ivo's Website</title>
-      <meta name="description" content={description} />
-    </Head>
     <header className="mb-8 ">
       <time className="mb-2 text-xs text-gray-700 uppercase">{date}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
@@ -50,6 +46,13 @@ type HomeProps = { posts: PostMetadata[] };
 const Home: React.FC<HomeProps> = ({ posts }) => (
   <>
     <main className="container mx-auto">
+      <Head>
+        <title>Ivo's Website</title>
+        <meta
+          name="description"
+          content="Main Page with a List of my Blog Posts"
+        />
+      </Head>
       <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
       <section className="max-w-3xl px-6 mx-auto mb-10">
         {posts.map((post) => (

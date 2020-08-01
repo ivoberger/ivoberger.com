@@ -42,7 +42,7 @@ const SocialLink = ({
     href={link}
     target="_blank"
     rel="noreferrer"
-    className={`transition duration-300  px-2 ${className}`}
+    className={`transition duration-300 p-3 ${className}`}
   >
     <span className="visible-hidden">{title}</span>
     <FontAwesomeIcon icon={icon} />
