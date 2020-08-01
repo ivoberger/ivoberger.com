@@ -2,7 +2,7 @@ import { getAllPosts, getPost, writePostsSpecToFS } from "lib";
 
 import React from "react";
 import type { GetStaticProps, GetStaticPaths } from "next";
-import { HomeButton, Tags, Footer } from "components";
+import { HomeButton, Tags, Body } from "components";
 
 type PostProps = {
   meta: PostMetadata;
@@ -10,7 +10,7 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({
-  meta: { title, cover, date, readTime, tags },
+  meta: { title, cover, date, readTime, tags, description },
   content,
 }) => (
   <>
@@ -28,11 +28,9 @@ const Post: React.FC<PostProps> = ({
           alt="Post cover"
         />
       </div>
-      <nav className="absolute top-0 left-0 m-4 group">
-        <HomeButton />
-      </nav>
+      <HomeButton title={title} description={description} />
     </header>
-    <main className="max-w-2xl px-6 pt-16 pb-10 mx-auto mb-16 text-lg text-gray-700 border-b border-green-500 md:max-w-3xl xl:max-w-4xl sm:px-12">
+    <Body className="text-lg text-gray-700 border-b border-green-500">
       <article
         className="mb-10"
         dangerouslySetInnerHTML={{
@@ -42,8 +40,7 @@ const Post: React.FC<PostProps> = ({
       <footer>
         <Tags tags={tags} />
       </footer>
-    </main>
-    <Footer />
+    </Body>
   </>
 );
 

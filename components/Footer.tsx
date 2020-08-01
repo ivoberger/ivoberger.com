@@ -28,10 +28,12 @@ const NavItem = ({
 );
 
 const SocialLink = ({
+  title,
   link,
   className = "hover:text-black",
   icon,
 }: {
+  title: string;
   link: string;
   className?: string;
   icon: IconDefinition;
@@ -39,8 +41,10 @@ const SocialLink = ({
   <a
     href={link}
     target="_blank"
-    className={`transition duration-300  px-2 ${className}`}
+    rel="noreferrer"
+    className={`transition duration-300 p-3 ${className}`}
   >
+    <span className="visible-hidden">{title}</span>
     <FontAwesomeIcon icon={icon} />
   </a>
 );
@@ -50,26 +54,31 @@ const Footer = () => (
     <div className="w-full mb-4 sm:w-1/2 sm:mb-0">
       <p>
         <SocialLink
+          title="GitHub"
           link="https://github.com/ivoberger"
           icon={faGithub}
           className="pl-0 hover:text-brand-github"
         />
         <SocialLink
+          title="StackOverflow"
           link="https://stackoverflow.com/users/8568922/ivo"
           icon={faStackOverflow}
           className="hover:text-brand-stackOverflow"
         />
         <SocialLink
+          title="DEV.to"
           link="https://dev.to/ivoberger"
           icon={faDev}
           className="hover:text-brand-dev"
         />
         <SocialLink
+          title="Twitter"
           link="https://twitter.com/__I__V__O__"
           icon={faTwitter}
           className="hover:text-brand-twitter"
         />
         <SocialLink
+          title="LinkedIn"
           link="https://www.linkedin.com/in/ivo-berger-00089b15b/"
           icon={faLinkedin}
           className="hover:text-brand-linkedIn"

@@ -3,8 +3,9 @@ import { compareDesc } from "date-fns";
 
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 import type { GetStaticProps } from "next";
-import { Header, Footer } from "components";
+import { Header } from "components";
 
 const PostInfo: React.FC<PostMetadata> = ({
   title,
@@ -18,7 +19,7 @@ const PostInfo: React.FC<PostMetadata> = ({
       <time className="mb-2 text-xs text-gray-700 uppercase">{date}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
         <a>
-          <h2 className="my-0 mb-1">{title}</h2>
+          <h3 className="my-0 mb-1">{title}</h3>
         </a>
       </Link>
       <p className="text-sm leading-normal text-gray-700 sm:text-base">
@@ -45,14 +46,20 @@ type HomeProps = { posts: PostMetadata[] };
 const Home: React.FC<HomeProps> = ({ posts }) => (
   <>
     <main className="container mx-auto">
-      <Header />
+      <Head>
+        <title>Ivo's Website</title>
+        <meta
+          name="description"
+          content="Main Page with a List of my Blog Posts"
+        />
+      </Head>
+      <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
       <section className="max-w-3xl px-6 mx-auto mb-10">
         {posts.map((post) => (
-          <PostInfo {...post} />
+          <PostInfo key={post.title} {...post} />
         ))}
       </section>
     </main>
-    <Footer />
   </>
 );
 
