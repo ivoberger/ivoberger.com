@@ -77,7 +77,7 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
   repoUrl,
 }) => (
   <div className="mb-10">
-    <h5>
+    <h4>
       {title}{" "}
       {repoUrl && (
         <a
@@ -101,7 +101,7 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
           <FontAwesomeIcon className="text-xl" icon={faLink} />
         </a>
       )}
-    </h5>
+    </h4>
     <p>{description}</p>
   </div>
 );
