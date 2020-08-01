@@ -55,7 +55,7 @@ article a:hover {
 
 code {
   @apply block w-full p-2 mb-3 bg-gray-100 border border-gray-300 rounded-sm;
-  @apply text-sm;
+  @apply overflow-x-auto text-sm;
 }
 
 p code {
