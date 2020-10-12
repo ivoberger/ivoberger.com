@@ -10,6 +10,7 @@ import {
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
+import { usePlausible } from "next-plausible";
 
 const NavItem = ({
   text,
@@ -37,17 +38,21 @@ const SocialLink = ({
   link: string;
   className?: string;
   icon: IconDefinition;
-}) => (
-  <a
-    href={link}
-    target="_blank"
-    rel="noreferrer"
-    className={`transition duration-300 p-3 ${className}`}
-  >
-    <span className="visible-hidden">{title}</span>
-    <FontAwesomeIcon icon={icon} />
-  </a>
-);
+}) => {
+  const plausible = usePlausible();
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      className={`transition duration-300 p-3 ${className}`}
+      onClick={() => plausible(`socialLink_${title}`)}
+    >
+      <span className="visible-hidden">{title}</span>
+      <FontAwesomeIcon icon={icon} />
+    </a>
+  );
+};
 
 const Footer = () => (
   <footer className="flex flex-wrap justify-between max-w-2xl px-6 py-8 mx-auto text-sm leading-normal text-gray-700 md:max-w-3xl xl:max-w-4xl sm:px-12 sm:pb-10">
