@@ -32,15 +32,15 @@
     "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "typeface-catamaran": "^0.0.72",
+    "typeface-catamaran": "1.x",
     "typeface-source-sans-pro": "^1.1.5"
   },
   "devDependencies": {
     "@types/node": "14.x",
     "@types/react": "16.x",
     "@types/react-dom": "16.x",
-    "@typescript-eslint/eslint-plugin": "3.x",
-    "@typescript-eslint/parser": "3.x",
+    "@typescript-eslint/eslint-plugin": "4.x",
+    "@typescript-eslint/parser": "4.x",
     "babel-eslint": "10.x",
     "cssnano": "4.x",
     "date-fns": "^2.12.0",
@@ -58,11 +58,11 @@
     "reading-time": "^1.2.0",
     "rehype-stringify": "^8.0.0",
     "remark-parse": "^8.0.0",
-    "remark-rehype": "^7.0.0",
+    "remark-rehype": "8.x",
     "tailwindcss": "1.x",
     "tailwindcss-filters": "3.x",
     "tailwindcss-typography": "^3.0.1",
-    "typescript": "3.x",
+    "typescript": "4.x",
     "unified": "9.x"
   },
   "eslintConfig": {
