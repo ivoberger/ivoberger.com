@@ -9,7 +9,14 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head title="Ivo's Website" />
+        <Head title="Ivo's Website">
+          <script
+            async
+            defer
+            data-domain="ivoberger.com"
+            src="https://plausible.io/js/plausible.js"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
