@@ -1,7 +1,11 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
+  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
   theme: {
     filter: {
       none: "none",
@@ -40,7 +44,7 @@ module.exports = {
         serif: ["Source Serif Pro", ...defaultTheme.fontFamily.serif],
       },
       maxHeight: {
-        "0": "0",
+        0: "0",
         cover: "32rem",
         full: "100%",
       },
