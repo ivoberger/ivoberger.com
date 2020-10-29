@@ -33,8 +33,8 @@
     "next-plausible": "^1.0.4",
     "react": "17.x",
     "react-dom": "17.x",
-    "typeface-catamaran": "1.x",
-    "typeface-source-sans-pro": "^1.1.5"
+    "typeface-catamaran": "^1.1.13",
+    "typeface-source-serif-pro": "^1.1.13"
   },
   "devDependencies": {
     "@types/node": "14.x",
