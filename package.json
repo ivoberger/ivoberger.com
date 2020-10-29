@@ -32,9 +32,7 @@
     "next": "10.x",
     "next-plausible": "^1.0.4",
     "react": "17.x",
-    "react-dom": "17.x",
-    "typeface-catamaran": "1.x",
-    "typeface-source-sans-pro": "^1.1.5"
+    "react-dom": "17.x"
   },
   "devDependencies": {
     "@types/node": "14.x",
