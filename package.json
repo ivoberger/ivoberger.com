@@ -29,12 +29,16 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "@prefresh/next": "^1.3.1",
     "next": "10.x",
-    "next-plausible": "^1.0.4",
-    "react": "17.x",
-    "react-dom": "17.x",
-    "typeface-catamaran": "^1.1.13",
-    "typeface-source-serif-pro": "^1.1.13"
+    "next-plausible": "1.x",
+    "preact": "10.x",
+    "preact-render-to-string": "5.x",
+    "react": "npm:@preact/compat@^0.0.3",
+    "react-dom": "npm:@preact/compat@^0.0.3",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2",
+    "typeface-catamaran": "1.x",
+    "typeface-source-serif-pro": "1.x"
   },
   "devDependencies": {
     "@types/node": "14.x",
