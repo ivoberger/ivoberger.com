@@ -48,10 +48,7 @@ const Home: React.FC<HomeProps> = ({ posts }) => (
     <main className="container mx-auto">
       <Head>
         <title>Ivo's Website</title>
-        <meta
-          name="description"
-          content="Main Page with a List of my Blog Posts"
-        />
+        <meta name="description" content="Blog" />
       </Head>
       <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
       <section className="max-w-3xl px-6 mx-auto mb-10">
