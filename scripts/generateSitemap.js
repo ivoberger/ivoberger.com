@@ -2,7 +2,8 @@ const fs = require("fs");
 const { formatISO } = require("date-fns");
 
 const getPaths = () => {
-  let paths = [];
+  const paths = [];
+  const initialDir = ".next/serverless/pages/";
 
   const walkSync = (dir) => {
     // Get all files of the current directory & iterate over them
@@ -20,24 +21,21 @@ const getPaths = () => {
         if (!ignoredExtensions.some((ext) => filePath.includes(`.${ext}`))) {
           const cleanPath = filePath
             .substr(0, filePath.lastIndexOf("."))
-            .replace(dir, "")
+            .replace(initialDir, "")
             .replace("index", "");
 
           if (cleanPath !== "404") {
-            paths = [
-              ...paths,
-              {
-                path: `https://ivoberger.com/${cleanPath}`,
-                lastModified: fileStat.mtime,
-              },
-            ];
+            paths.push({
+              path: `https://ivoberger.com/${cleanPath}`,
+              lastModified: fileStat.mtime,
+            });
           }
         }
       }
     });
   };
 
-  walkSync(".next/serverless/pages/");
+  walkSync(initialDir);
 
   return paths;
 };
