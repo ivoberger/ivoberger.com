@@ -5,8 +5,9 @@
   "main": "index.tsx",
   "scripts": {
     "dev": "next",
-    "build": "next build && node scripts/generateSitemap.js",
-    "start": "next start"
+    "start": "next start",
+    "build": "next build",
+    "postbuild": "next-sitemap"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "4.x",
     "gray-matter": "^4.0.2",
+    "next-sitemap": "^1.3.2",
     "postcss-preset-env": "6.x",
     "prettier": "2.x",
     "reading-time": "^1.2.0",

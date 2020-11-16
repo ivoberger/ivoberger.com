@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: https://ivoberger.com
+Sitemap: https://ivoberger.com/sitemap.xml
