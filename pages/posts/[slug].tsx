@@ -37,9 +37,10 @@ const Post: React.FC<PostProps> = ({
           __html: content,
         }}
       />
-      <footer>
+      {/* TODO: re-enable once tag pages are implemented
+       <footer>
         <Tags tags={tags} />
-      </footer>
+      </footer> */}
     </Body>
   </>
 );

@@ -22,7 +22,9 @@ const PostInfo: React.FC<PostMetadata> = ({
           <h3 className="my-0 mb-1">{title}</h3>
         </a>
       </Link>
-      <p className="text-sm leading-normal sm:text-base">
+      {/*
+      TODO: re-enable once tag pages are implemented
+       <p className="text-sm leading-normal sm:text-base">
         {tags.length && (
           <>
             in{" "}
@@ -33,7 +35,7 @@ const PostInfo: React.FC<PostMetadata> = ({
             </Link>
           </>
         )}
-      </p>
+      </p> */}
     </header>
     <p className="px-2 text-lg leading-normal sm:px-4 md:px-10">
       {description}
