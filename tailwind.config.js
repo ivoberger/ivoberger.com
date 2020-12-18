@@ -1,6 +1,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
+  darkMode: "media",
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
@@ -22,15 +24,20 @@ module.exports = {
       default: "0 2px 5px rgba(0, 0, 0, 0.5)",
       lg: "0 2px 10px rgba(0, 0, 0, 0.5)",
     },
+    transitionDuration: {
+      ...defaultTheme.transitionDuration,
+      DEFAULT: "300ms",
+    },
     extend: {
       colors: {
         gray: {
-          ...defaultTheme.colors.gray,
+          ...colors.trueGray,
           "100-t": "rgba(0,0,0, 0.1)",
           "200-t": "rgba(0,0,0, 0.2)",
           "300-t": "rgba(0,0,0, 0.3)",
           "400-t": "rgba(0,0,0, 0.4)",
         },
+        lime: colors.lime,
         brand: {
           linkedIn: "#0077b5",
           twitter: "#3d90c4",
@@ -49,12 +56,9 @@ module.exports = {
         full: "100%",
       },
     },
-  },
-  variants: {
-    textColor: ["responsive", "hover", "focus", "group-hover"],
-    borderWidth: ["responsive", "hover", "focus", "group-hover"],
-    borderColor: ["responsive", "hover", "focus", "group-hover"],
-    margin: ["responsive", "hover", "focus", "group-hover"],
+    variants: {
+      extend: { margin: ["hover", "group-hover"] },
+    },
   },
   plugins: [require("tailwindcss-filters"), require("tailwindcss-typography")],
 };

@@ -30,16 +30,17 @@ const Post: React.FC<PostProps> = ({
       </div>
       <HomeButton title={title} description={description} />
     </header>
-    <Body className="text-lg text-gray-700 border-b border-green-500">
+    <Body className="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
       <article
         className="mb-10"
         dangerouslySetInnerHTML={{
           __html: content,
         }}
       />
-      <footer>
+      {/* TODO: re-enable once tag pages are implemented
+       <footer>
         <Tags tags={tags} />
-      </footer>
+      </footer> */}
     </Body>
   </>
 );

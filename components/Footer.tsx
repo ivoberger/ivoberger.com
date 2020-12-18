@@ -21,7 +21,7 @@ const NavItem = ({
 }) => (
   <li className="px-2">
     <Link href={link}>
-      <a className="transition duration-500 border-b border-transparent hover:border-gray-400 transition-border-color active--exact active">
+      <a className="transition duration-500 border-b border-transparent hover:border-gray-400 active--exact active">
         {text}
       </a>
     </Link>
@@ -31,7 +31,7 @@ const NavItem = ({
 const SocialLink = ({
   title,
   link,
-  className = "hover:text-black",
+  className = "hover:text-black dark:hover:text-white",
   icon,
 }: {
   title: string;
@@ -45,7 +45,7 @@ const SocialLink = ({
       href={link}
       target="_blank"
       rel="noreferrer"
-      className={`transition duration-300 p-3 ${className}`}
+      className={`transition p-3 ${className}`}
       onClick={() => plausible(`socialLink_${title}`)}
     >
       <span className="visible-hidden">{title}</span>
@@ -55,14 +55,14 @@ const SocialLink = ({
 };
 
 const Footer = () => (
-  <footer className="flex flex-wrap justify-between max-w-2xl px-6 py-8 mx-auto text-sm leading-normal text-gray-700 md:max-w-3xl xl:max-w-4xl sm:px-12 sm:pb-10">
+  <footer className="flex flex-wrap justify-between max-w-2xl px-6 py-8 mx-auto text-sm leading-normal text-gray-700 dark:text-gray-400 md:max-w-3xl xl:max-w-4xl sm:px-12 sm:pb-10">
     <div className="w-full mb-4 sm:w-1/2 sm:mb-0">
       <p>
         <SocialLink
           title="GitHub"
           link="https://github.com/ivoberger"
           icon={faGithub}
-          className="pl-0 hover:text-brand-github"
+          className="pl-0 hover:text-brand-github dark:hover:text-gray-100"
         />
         <SocialLink
           title="StackOverflow"
@@ -74,7 +74,7 @@ const Footer = () => (
           title="DEV.to"
           link="https://dev.to/ivoberger"
           icon={faDev}
-          className="hover:text-brand-dev"
+          className="hover:text-brand-dev dark:hover:text-gray-100"
         />
         <SocialLink
           title="Twitter"

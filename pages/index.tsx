@@ -14,28 +14,30 @@ const PostInfo: React.FC<PostMetadata> = ({
   tags,
   slug,
 }) => (
-  <div className="py-4 text-center border-b border-green-300 group sm:py-10">
+  <div className="py-4 text-center border-b border-lime-300 group sm:py-10 text-gray-700 dark:text-gray-300">
     <header className="mb-8 ">
-      <time className="mb-2 text-xs text-gray-700 uppercase">{date}</time>
+      <time className="mb-2 text-xs uppercase">{date}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
         <a>
           <h3 className="my-0 mb-1">{title}</h3>
         </a>
       </Link>
-      <p className="text-sm leading-normal text-gray-700 sm:text-base">
+      {/*
+      TODO: re-enable once tag pages are implemented
+       <p className="text-sm leading-normal sm:text-base">
         {tags.length && (
           <>
             in{" "}
             <Link href="/tag/[tag]}" as={`/tag/${tags[0]}`}>
-              <a className="text-gray-700 capitalize transition duration-500 border-b border-transparent hover:border-gray-400">
+              <a className="capitalize transition duration-500 border-b border-transparent hover:border-gray-400">
                 {tags[0]}
               </a>
             </Link>
           </>
         )}
-      </p>
+      </p> */}
     </header>
-    <p className="px-2 text-lg leading-normal text-gray-700 sm:px-4 md:px-10">
+    <p className="px-2 text-lg leading-normal sm:px-4 md:px-10">
       {description}
     </p>
   </div>
