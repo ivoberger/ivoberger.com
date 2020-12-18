@@ -84,7 +84,7 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
           href={repoUrl}
           target="_blank"
           rel="noreferrer"
-          className={`transition duration-300 text-gray-700 p-2 pt-1 hover:text-brand-github`}
+          className={`transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-brand-github dark:hover:text-gray-100`}
         >
           <span className="visible-hidden">Repository for {title}</span>
           <FontAwesomeIcon icon={faGithub} />
@@ -95,7 +95,7 @@ const PortfolioEntry: React.FC<PortfolioEntryData> = ({
           href={url}
           target="_blank"
           rel="noreferrer"
-          className={`transition duration-300 text-gray-700 p-2 pt-1 hover:text-gray-900`}
+          className={`transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100`}
         >
           <span className="visible-hidden">Link to {title}</span>
           <FontAwesomeIcon icon={faLink} />

@@ -10,7 +10,7 @@ const Tag = React.forwardRef<
   <a
     ref={ref}
     href={href}
-    className="inline-block px-4 py-2 mb-2 mr-4 font-sans text-xs font-bold text-teal-400 transition duration-300 border border-teal-400 rounded-full hover:text-white hover:bg-teal-400 sm:text-sm"
+    className="inline-block px-4 py-2 mb-2 mr-4 font-sans text-xs font-bold text-teal-400 transition  border border-teal-400 rounded-full hover:text-white hover:bg-teal-400 sm:text-sm"
   >
     <FontAwesomeIcon className="mr-1 text-gray-700 fa-sm" icon={faTag} />
     {children}
