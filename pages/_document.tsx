@@ -16,6 +16,10 @@ class MyDocument extends Document {
             data-domain="ivoberger.com"
             src="https://plausible.io/js/plausible.js"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Source+Serif+Pro:ital@0;1&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />
