@@ -7,6 +7,9 @@ module.exports = withPrefresh({
   experimental: {
     jsconfigPaths: true, // enables it for both jsconfig.json and tsconfig.json
   },
+  images: {
+    domains: ["images.unsplash.com"],
+  },
   // preact config
   webpack(config, { dev, isServer }) {
     // Move Preact into the framework chunk instead of duplicating in routes:

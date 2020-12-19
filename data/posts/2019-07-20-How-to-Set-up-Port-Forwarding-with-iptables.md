@@ -6,7 +6,7 @@ slug: port-forwarding-with-iptables
 tags:
   - networking
   - guide
-cover: "https://source.unsplash.com/40XgDxBfYXM/2000x600"
+cover: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8"
 ---
 
 If you have a server on a private network and need to access it from the outside (but can't simply give it an external IP) you can use port forwarding on an externally accessible server to get around it. Once set up it simply sends all incoming packets that meet certain criteria to a new IP. That way you can connect to a public server in order to communicate with the private server.
