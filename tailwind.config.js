@@ -55,6 +55,11 @@ module.exports = {
         cover: "32rem",
         full: "100%",
       },
+      minHeight: {
+        0: "0",
+        cover: "14rem",
+        full: "100%",
+      },
     },
     variants: {
       extend: { margin: ["hover", "group-hover"] },

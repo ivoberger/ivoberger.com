@@ -6,6 +6,10 @@ module.exports = withPrefresh({
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   experimental: {
     jsconfigPaths: true, // enables it for both jsconfig.json and tsconfig.json
+    optimizeFonts: true,
+  },
+  images: {
+    domains: ["images.unsplash.com"],
   },
   // preact config
   webpack(config, { dev, isServer }) {

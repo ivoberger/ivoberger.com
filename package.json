@@ -35,11 +35,9 @@
     "next-plausible": "1.x",
     "preact": "10.x",
     "preact-render-to-string": "5.x",
-    "react": "npm:@preact/compat@^3.x",
-    "react-dom": "npm:@preact/compat@^3.x",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2",
-    "typeface-catamaran": "1.x",
-    "typeface-source-serif-pro": "1.x"
+    "react": "npm:@preact/compat@^0.0.3",
+    "react-dom": "npm:@preact/compat@^0.0.3",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2"
   },
   "devDependencies": {
     "@types/node": "14.x",
@@ -47,6 +45,7 @@
     "@types/react-dom": "17.x",
     "@typescript-eslint/eslint-plugin": "4.x",
     "@typescript-eslint/parser": "4.x",
+    "autoprefixer": "^10.1.0",
     "babel-eslint": "10.x",
     "cssnano": "4.x",
     "date-fns": "^2.12.0",
