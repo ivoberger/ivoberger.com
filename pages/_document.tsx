@@ -9,7 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head title="Ivo's Website">
+        <Head title="Ivo's Coding Blog">
           <script
             async
             defer

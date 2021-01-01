@@ -49,7 +49,7 @@ const Home: React.FC<HomeProps> = ({ posts }) => (
   <>
     <main className="container mx-auto">
       <Head>
-        <title>Ivo's Website</title>
+        <title>Ivo's Coding Blog</title>
         <meta name="description" content="Blog" />
       </Head>
       <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
