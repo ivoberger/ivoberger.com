@@ -42,7 +42,7 @@ export const getAllPosts: () => Promise<PostSpec[]> = () => {
       return {
         data: {
           ...data,
-          date: format(new Date(data.date), "do 'of' MMMM, yyyy"),
+          date: format(new Date(data.published), "do 'of' MMMM, yyyy"),
           readTime: readingTime(content).text,
         },
         filePath,

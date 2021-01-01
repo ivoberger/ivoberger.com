@@ -1,11 +1,12 @@
 ---
 title: "How to Set up Port Forwarding with iptables"
 description: "A quick guide on simple port-forwarding using NAT and DNAT in iptables"
-date: 2019-07-20 15:40:00
+published: 2019-07-20
 slug: port-forwarding-with-iptables
 tags:
   - networking
-  - guide
+  - linux
+  - iptables
 cover: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8"
 ---
 
