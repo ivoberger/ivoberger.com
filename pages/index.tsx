@@ -9,14 +9,13 @@ import { Header } from "components";
 
 const PostInfo: React.FC<PostMetadata> = ({
   title,
-  date,
+  published,
   description,
-  tags,
   slug,
 }) => (
   <div className="py-4 text-center border-b border-lime-300 group sm:py-10 text-gray-700 dark:text-gray-300">
     <header className="mb-8 ">
-      <time className="mb-2 text-xs uppercase">{date}</time>
+      <time className="mb-2 text-xs uppercase">{published}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
         <a>
           <h3 className="my-0 mb-1">{title}</h3>
@@ -68,7 +67,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => ({
   props: {
     posts: (await getAllPosts())
       .map(({ data }) => data)
-      .sort(({ date: dateA }, { date: dateB }) =>
+      .sort(({ published: dateA }, { published: dateB }) =>
         compareDesc(new Date(dateA), new Date(dateB))
       ),
   },

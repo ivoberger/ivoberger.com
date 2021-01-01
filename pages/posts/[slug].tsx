@@ -11,7 +11,7 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({
-  meta: { title, cover, date, readTime, description, tags },
+  meta: { title, cover, published, readTime, description, tags },
   content,
 }) => (
   <>
@@ -20,7 +20,7 @@ const Post: React.FC<PostProps> = ({
         <div className="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-16 mx-auto text-center md:max-w-3xl xl:max-w-4xl text-shadow-lg">
           <p className="text-sm uppercase">{readTime}</p>
           <h1>{title}</h1>
-          <p>{date}</p>
+          <p>{published}</p>
         </div>
         {cover && (
           <Image

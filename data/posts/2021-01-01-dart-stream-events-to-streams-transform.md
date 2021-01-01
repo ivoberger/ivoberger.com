@@ -6,7 +6,7 @@ slug: dart-stream-events-to-streams-transform
 tags:
   - dart
   - streams
-cover: "https://images.unsplash.com/photo-1547041270-d3d54e1263cb"`
+cover: "https://images.unsplash.com/photo-1547041270-d3d54e1263cb"
 ---
 
 If you need live updates for anything in your Dart application [Streams](https://api.dart.dev/stable/2.8.4/dart-async/Stream-class.html) are the way to go. They are used for the [BloC architecture](https://pub.dev/packages/bloc), [Cloud Firestore](https://pub.dev/packages/cloud_firestore#usage), [reading large files](https://api.dart.dev/stable/2.8.4/dart-io/File-class.html) and so on.
