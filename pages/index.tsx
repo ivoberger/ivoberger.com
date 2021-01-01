@@ -1,5 +1,5 @@
 import { getAllPosts } from "lib";
-import { compareDesc } from "date-fns";
+import { compareAsc } from "date-fns";
 
 import React from "react";
 import Link from "next/link";
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => ({
     posts: (await getAllPosts())
       .map(({ data }) => data)
       .sort(({ published: dateA }, { published: dateB }) =>
-        compareDesc(new Date(dateA), new Date(dateB))
+        compareAsc(new Date(dateA), new Date(dateB))
       ),
   },
 });
