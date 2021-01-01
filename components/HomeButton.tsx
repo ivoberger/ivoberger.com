@@ -11,11 +11,7 @@ const HomeButton: React.FC<{
 }> = ({ title, description, tags }) => (
   <nav className="fixed top-0 left-0 m-4 group">
     <Head>
-      <meta
-        property="og:title"
-        content={`${title} | Ivo's Coding Blog`}
-        key="title"
-      />
+      <title>{title} | Ivo's Coding Blog</title>
       <meta name="description" content={description} />
       {tags && <meta name="keywords" content={tags.join(",")} />}
     </Head>
