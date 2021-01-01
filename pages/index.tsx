@@ -9,14 +9,13 @@ import { Header } from "components";
 
 const PostInfo: React.FC<PostMetadata> = ({
   title,
-  date,
+  published,
   description,
-  tags,
   slug,
 }) => (
   <div className="py-4 text-center border-b border-lime-300 group sm:py-10 text-gray-700 dark:text-gray-300">
     <header className="mb-8 ">
-      <time className="mb-2 text-xs uppercase">{date}</time>
+      <time className="mb-2 text-xs uppercase">{published}</time>
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
         <a>
           <h3 className="my-0 mb-1">{title}</h3>
@@ -49,8 +48,10 @@ const Home: React.FC<HomeProps> = ({ posts }) => (
   <>
     <main className="container mx-auto">
       <Head>
-        <title>Ivo's Website</title>
-        <meta name="description" content="Blog" />
+        <title>Ivo's Coding Blog</title>
+        <meta name="author" content="Ivo Berger" />
+        <meta name="description" content="Coding Blog" />
+        <meta name="color-scheme" content="dark light" />
       </Head>
       <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
       <section className="max-w-3xl px-6 mx-auto mb-10">

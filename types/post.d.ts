@@ -4,6 +4,7 @@ type PostMetadata = {
   description: string;
   cover?: string;
   date: string;
+  published: string;
   readTime: string;
   tags: string[];
   slug?: string;

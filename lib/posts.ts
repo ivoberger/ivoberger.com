@@ -2,6 +2,7 @@ import path from "path";
 import unified from "unified";
 import markdown from "remark-parse";
 import remark2rehype from "remark-rehype";
+import highlight from "@mapbox/rehype-prism";
 import html from "rehype-stringify";
 import matter from "gray-matter";
 import readingTime from "reading-time";
@@ -11,7 +12,11 @@ import { readdirSync, readFileSync } from "fs";
 import { getPostsSpecFromFS } from "./cache";
 
 export const getPost = async (slug: string) => {
-  const unifiedProcessor = unified().use(markdown).use(remark2rehype).use(html);
+  const unifiedProcessor = unified()
+    .use(markdown)
+    .use(remark2rehype)
+    .use(highlight)
+    .use(html);
 
   const { filePath, data } = getPostsSpecFromFS()[slug];
 
@@ -42,7 +47,8 @@ export const getAllPosts: () => Promise<PostSpec[]> = () => {
       return {
         data: {
           ...data,
-          date: format(new Date(data.date), "do 'of' MMMM, yyyy"),
+          date: new Date(data.published).toISOString(),
+          published: format(new Date(data.published), "do 'of' MMMM, yyyy"),
           readTime: readingTime(content).text,
         },
         filePath,

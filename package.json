@@ -40,6 +40,7 @@
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2"
   },
   "devDependencies": {
+    "@mapbox/rehype-prism": "^0.5.0",
     "@types/node": "14.x",
     "@types/react": "17.x",
     "@types/react-dom": "17.x",
