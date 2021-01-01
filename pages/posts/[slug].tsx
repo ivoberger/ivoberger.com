@@ -11,7 +11,7 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({
-  meta: { title, cover, date, readTime, description },
+  meta: { title, cover, date, readTime, description, tags },
   content,
 }) => (
   <>
@@ -33,7 +33,7 @@ const Post: React.FC<PostProps> = ({
           />
         )}
       </div>
-      <HomeButton title={title} description={description} />
+      <HomeButton title={title} description={description} tags={tags} />
     </header>
     <Body className="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
       <article
