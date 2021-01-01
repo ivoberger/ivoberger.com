@@ -1,5 +1,5 @@
 ---
-title: "Advanced Stream Transforms in Dart"
+title: "Transform each Event of a Dart Stream into a new Stream"
 description: "Streams are a powerful way to propagate updates throughout an application. This post explains how to create a stream from every event of an input stream without leaving any dangling subscriptions."
 published: 2021-01-01
 slug: dart-stream-events-to-streams-transform
