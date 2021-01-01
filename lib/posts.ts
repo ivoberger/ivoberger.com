@@ -47,6 +47,7 @@ export const getAllPosts: () => Promise<PostSpec[]> = () => {
       return {
         data: {
           ...data,
+          date: new Date(data.published).toISOString(),
           published: format(new Date(data.published), "do 'of' MMMM, yyyy"),
           readTime: readingTime(content).text,
         },

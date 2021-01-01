@@ -3,6 +3,7 @@ type PostMetadata = {
   author: string;
   description: string;
   cover?: string;
+  date: string;
   published: string;
   readTime: string;
   tags: string[];
