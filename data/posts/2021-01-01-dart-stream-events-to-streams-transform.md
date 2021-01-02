@@ -124,4 +124,20 @@ class EventsToStream<S, T> extends StreamTransformerBase<S, T> {
 }
 ```
 
+Now this transformer can simply be used. The following example is based on the scenario described at the beginning of the post: each option of a stream of filter options from the UI needs to be turned into a query with these options applied.
+
+```dart
+/// the filter is a simple search term
+Stream<String> filterOptions;
+/// repository class for product fetching. Each function returns a stream of products
+ProductRepository productRepository;
+
+Stream<List<Product>> products;
+products = filterOptions.transform(EventsToStream((filter) => productRepository.search(filter)));
+// or even shorter
+products = filterOptions.transform(EventsToStream(productRepository.search));
+```
+
 And that's it. Now we have a stream transform that'll turn every event of a stream into a new stream with a simple transformer function and no dangling subscriptions.
+
+Thanks for reading!
