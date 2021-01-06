@@ -6,6 +6,7 @@ import Link from "next/link";
 import Head from "next/head";
 import type { GetStaticProps } from "next";
 import { Header } from "components";
+import { NextSeo } from "next-seo";
 
 const PostInfo: React.FC<PostMetadata> = ({
   title,
@@ -46,13 +47,13 @@ type HomeProps = { posts: PostMetadata[] };
 
 const Home: React.FC<HomeProps> = ({ posts }) => (
   <>
+    <NextSeo
+      title="Home"
+      titleTemplate="%s | Ivo's Coding Blog"
+      description="Coding Blog"
+      additionalMetaTags={[{ name: "color-scheme", content: "dark light" }]}
+    />
     <main className="container mx-auto">
-      <Head>
-        <title>Ivo's Coding Blog</title>
-        <meta name="author" content="Ivo Berger" />
-        <meta name="description" content="Coding Blog" />
-        <meta name="color-scheme" content="dark light" />
-      </Head>
       <Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
       <section className="max-w-3xl px-6 mx-auto mb-10">
         {posts.map((post) => (
