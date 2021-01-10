@@ -51,7 +51,7 @@ const portfolioEntries: PortfolioEntryData[] = [
     description: `Metsään Tie is an app developed by RoadsML for the Finnish Forest Center to track road conditions using
     phone sensors and user feedback. It allows the user to record their driving through GPS for location and the accelerometer
     for road condition. It can then be uploaded to a backend and viewed on a openly accessible map by the Finnish Forest Center.
-    Note: App is no longe published as the project has been discontinued.`,
+    Note: App is no longer published as the project has been discontinued.`,
   },
 ];
 
