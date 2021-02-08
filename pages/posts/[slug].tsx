@@ -51,7 +51,7 @@ const Post: React.FC<PostProps> = ({
         <div className="relative overflow-hidden text-center text-white max-h-cover min-h-cover">
           <div className="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-16 mx-auto text-center md:max-w-3xl xl:max-w-4xl text-shadow-lg">
             <p className="text-sm uppercase">{readTime}</p>
-            <h1 itemProp="name">{title}</h1>
+            <h1 itemProp="headline">{title}</h1>
             <p itemProp="datePublished">{published}</p>
           </div>
           {cover && (
@@ -62,12 +62,15 @@ const Post: React.FC<PostProps> = ({
               width={1600}
               height={900}
               layout="responsive"
+              itemProp="image"
             />
           )}
         </div>
         <HomeButton />
+        <meta itemProp="name" content={title} />
         <meta itemProp="description" content={description} />
         <meta itemProp="image" content={resolvedPath} />
+        {!!tags.length && <meta itemProp="keywords" content={tags.join("")} />}
       </header>
       <Body className="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
         <article
