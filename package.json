@@ -72,7 +72,8 @@
     "tailwindcss-filters": "3.x",
     "tailwindcss-typography": "^3.0.1",
     "typescript": "4.x",
-    "unified": "9.x"
+    "unified": "9.x",
+    "webpack": "4.x"
   },
   "eslintConfig": {
     "extends": [

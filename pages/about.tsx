@@ -1,11 +1,15 @@
 import React from "react";
-import Head from "next/head";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 import { Header, Body, HomeButton } from "components";
+import { NextSeo } from "next-seo";
+import { seoData } from "utils";
+
+const title = "Stuff I Made";
+const description = "A List of projects I have worked on";
 
 type PortfolioEntryData = {
   title: string;
@@ -57,12 +61,21 @@ const portfolioEntries: PortfolioEntryData[] = [
 
 const About = () => (
   <>
+    <NextSeo
+      {...seoData}
+      title={title}
+      description={description}
+      openGraph={{
+        ...seoData.openGraph,
+        title,
+        description,
+        type: "profile",
+      }}
+    />
+
     <Header title="Stuff I Made" subTitle="You could call it a Portfolio" />
 
-    <HomeButton
-      title="Stuff I Made"
-      description="A List of projects I have worked on"
-    />
+    <HomeButton />
     <Body>
       {portfolioEntries.map((entry) => (
         <PortfolioEntry key={entry.title} {...entry} />
