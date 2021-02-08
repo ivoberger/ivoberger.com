@@ -11,7 +11,6 @@ module.exports = withPrefresh({
   images: {
     domains: ["images.unsplash.com"],
   },
-  future: { webpack5: true },
   // preact config
   webpack(config, { dev, isServer }) {
     // Move Preact into the framework chunk instead of duplicating in routes:

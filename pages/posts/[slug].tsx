@@ -19,7 +19,7 @@ const Post: React.FC<PostProps> = ({
   const { url, resolvedPath } = useUrl(cover);
 
   return (
-    <>
+    <div itemScope itemType="https://schema.org/TechArticle">
       <NextSeo
         {...seoData}
         title={title}
@@ -51,8 +51,8 @@ const Post: React.FC<PostProps> = ({
         <div className="relative overflow-hidden text-center text-white max-h-cover min-h-cover">
           <div className="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-16 mx-auto text-center md:max-w-3xl xl:max-w-4xl text-shadow-lg">
             <p className="text-sm uppercase">{readTime}</p>
-            <h1>{title}</h1>
-            <p>{published}</p>
+            <h1 itemProp="name">{title}</h1>
+            <p itemProp="datePublished">{published}</p>
           </div>
           {cover && (
             <Image
@@ -66,10 +66,13 @@ const Post: React.FC<PostProps> = ({
           )}
         </div>
         <HomeButton />
+        <meta itemProp="description" content={description} />
+        <meta itemProp="image" content={resolvedPath} />
       </header>
       <Body className="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
         <article
           className="mb-10"
+          itemProp="articleBody"
           dangerouslySetInnerHTML={{
             __html: content,
           }}
@@ -79,7 +82,7 @@ const Post: React.FC<PostProps> = ({
         <Tags tags={tags} />
       </footer> */}
       </Body>
-    </>
+    </div>
   );
 };
 
