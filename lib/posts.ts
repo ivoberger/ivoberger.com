@@ -10,6 +10,7 @@ import { format } from "date-fns";
 import { readdirSync, readFileSync } from "fs";
 
 import { getPostsSpecFromFS } from "./cache";
+import { defaultAuthor } from "utils";
 
 export const getPost = async (slug: string) => {
   const unifiedProcessor = unified()
@@ -47,6 +48,7 @@ export const getAllPosts: () => Promise<PostSpec[]> = () => {
       return {
         data: {
           ...data,
+          author: data.author ?? defaultAuthor,
           date: new Date(data.published).toISOString(),
           published: format(new Date(data.published), "do 'of' MMMM, yyyy"),
           readTime: readingTime(content).text,
