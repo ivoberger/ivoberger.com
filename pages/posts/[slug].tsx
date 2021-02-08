@@ -16,7 +16,7 @@ const Post: React.FC<PostProps> = ({
   meta: { title, cover, date, published, readTime, description, tags, author },
   content,
 }) => {
-  const { url, resolvedPath } = useUrl(cover);
+  const { url, resolvedPath: coverImage } = useUrl(cover);
 
   return (
     <div itemScope itemType="https://schema.org/TechArticle">
@@ -26,7 +26,7 @@ const Post: React.FC<PostProps> = ({
         description={description}
         additionalMetaTags={[
           ...seoData.additionalMetaTags!,
-          { name: "image", content: resolvedPath ?? "" },
+          { name: "image", content: coverImage ?? "" },
           { name: "keywords", content: tags?.join(",") ?? "" },
         ]}
         canonical={url}
@@ -36,8 +36,8 @@ const Post: React.FC<PostProps> = ({
           url,
           description,
           type: "article",
-          images: resolvedPath
-            ? [{ url: resolvedPath, alt: "Article Cover" }]
+          images: coverImage
+            ? [{ url: coverImage, alt: "Article Cover" }]
             : undefined,
           article: {
             publishedTime: date,
@@ -69,8 +69,8 @@ const Post: React.FC<PostProps> = ({
         <HomeButton />
         <meta itemProp="name" content={title} />
         <meta itemProp="description" content={description} />
-        <meta itemProp="image" content={resolvedPath} />
-        {!!tags.length && <meta itemProp="keywords" content={tags.join("")} />}
+        <meta itemProp="image" content={coverImage} />
+        {!!tags.length && <meta itemProp="keywords" content={tags.join(",")} />}
       </header>
       <Body className="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
         <article
