@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script context="module">
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch }) => {
@@ -12,7 +12,7 @@
 	};
 </script>
 
-<script lang="ts">
+<script>
 	import { Header } from '$lib/components';
 	export let posts: PostMetadata[];
 </script>

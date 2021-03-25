@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Icon from 'svelte-awesome';
 	import {
 		faGithub,

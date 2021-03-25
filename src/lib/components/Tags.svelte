@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Icon from 'svelte-awesome';
 	import { faTag } from '@fortawesome/free-solid-svg-icons';
 	export let tags: string[];

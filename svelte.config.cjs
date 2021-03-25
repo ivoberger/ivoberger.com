@@ -8,6 +8,7 @@ module.exports = {
 	// for more information about preprocessors
 	preprocess: sveltePreprocess({
 		defaults: {
+			script: 'typescript',
 			style: 'postcss'
 		},
 		postcss: true
@@ -17,7 +18,6 @@ module.exports = {
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-
 		vite: {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})

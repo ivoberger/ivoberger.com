@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 	import Icon from 'svelte-awesome';
 	export let link: string;

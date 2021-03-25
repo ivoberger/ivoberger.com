@@ -1,7 +1,7 @@
-<script lang="ts">
-	export let title;
-	export let subTitle;
-	export let subTitleLink;
+<script>
+	export let title: string;
+	export let subTitle: string;
+	export let subTitleLink: string;
 </script>
 
 <header class="mb-10">

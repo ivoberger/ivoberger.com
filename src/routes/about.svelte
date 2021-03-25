@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	type PortfolioEntryData = {
 		title: string;
 		url?: string;

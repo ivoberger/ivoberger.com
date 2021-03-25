@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import './_global.css';
 	import { onMount } from 'svelte';
 	import { dev } from '$app/env';

@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script context="module">
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ page: { params, path }, fetch }) => {
@@ -13,7 +13,7 @@
 	};
 </script>
 
-<script lang="ts">
+<script>
 	import { onMount } from 'svelte';
 	import { Body, HomeButton } from '$lib/components';
 
