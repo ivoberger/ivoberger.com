@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://ivoberger.com
+
+# Sitemaps
+Sitemap: https://ivoberger.com/sitemap.xml

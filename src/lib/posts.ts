@@ -7,12 +7,11 @@ import html from 'rehype-stringify';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { format } from 'date-fns';
-import { readdirSync, readFileSync } from 'fs';
+import { readdirSync, readFileSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 
-import { getPostsSpecFromFS } from './cache';
 import { defaultAuthor } from '../utils/seoConstants';
 
-export const getPost = (slug: string): { meta: PostMetadata; content: string } => {
+export function getPost(slug: string): { meta: PostMetadata; content: string } {
 	const unifiedProcessor = unified().use(markdown).use(remark2rehype).use(highlight).use(html);
 
 	const { filePath, data } = getPostsSpecFromFS()[slug];
@@ -28,9 +27,9 @@ export const getPost = (slug: string): { meta: PostMetadata; content: string } =
 		meta: data,
 		content: postContent
 	};
-};
+}
 
-export const getAllPosts = (): PostSpec[] => {
+export function getAllPosts(): PostSpec[] {
 	const postsDirectory = path.join(process.cwd(), 'data/posts');
 	const filenames = readdirSync(postsDirectory);
 
@@ -51,4 +50,38 @@ export const getAllPosts = (): PostSpec[] => {
 			filePath
 		} as PostSpec;
 	});
-};
+}
+
+const cacheDir = path.join(process.cwd(), '.svelte/cache');
+const cachePath = path.join(cacheDir, 'posts.json');
+if (!existsSync(cacheDir)) {
+	mkdirSync(cacheDir);
+}
+
+export function getPostsSpecFromFS(): { [key: string]: PostSpec } {
+	if (!existsSync(cachePath)) {
+		const posts = getAllPosts();
+		console.log(posts);
+
+		writePostsSpecToFS(posts);
+	}
+	return JSON.parse(readFileSync(cachePath, 'utf8'));
+}
+
+export function writePostsSpecToFS(posts: PostSpec[]): void {
+	writeFileSync(
+		cachePath,
+		JSON.stringify(
+			posts
+				.filter(({ data }) => !!data.slug)
+				.reduce(
+					(acc, { data: { slug, ...data }, filePath }) => ({
+						...acc,
+						[slug]: { filePath, data }
+					}),
+					{}
+				)
+		),
+		{ encoding: 'utf8' }
+	);
+}
