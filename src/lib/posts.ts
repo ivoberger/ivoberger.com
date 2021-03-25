@@ -61,8 +61,6 @@ if (!existsSync(cacheDir)) {
 export function getPostsSpecFromFS(): { [key: string]: PostSpec } {
 	if (!existsSync(cachePath)) {
 		const posts = getAllPosts();
-		console.log(posts);
-
 		writePostsSpecToFS(posts);
 	}
 	return JSON.parse(readFileSync(cachePath, 'utf8'));

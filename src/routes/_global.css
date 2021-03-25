@@ -87,3 +87,11 @@ p code {
 		@apply text-4xl;
 	}
 }
+
+.fa-icon {
+	height: 1em;
+	width: 1em;
+	vertical-align: -0.125em;
+	font-size: inherit;
+	overflow: visible;
+}
