@@ -1,88 +1,52 @@
 {
-  "name": "ivoberger.com",
-  "version": "0.1.0",
-  "description": "My Personal Website",
-  "main": "index.tsx",
-  "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build",
-    "postbuild": "next-sitemap"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ivoberger/ivoberger.com.git"
-  },
-  "keywords": [
-    "react",
-    "nextjs",
-    "next"
-  ],
-  "author": "Ivo Berger",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ivoberger/ivoberger.com/issues"
-  },
-  "homepage": "https://github.com/ivoberger/ivoberger.com#readme",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-brands-svg-icons": "^5.13.0",
-    "@fortawesome/free-regular-svg-icons": "^5.13.0",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@fortawesome/react-fontawesome": "^0.1.9",
-    "@prefresh/next": "^1.3.1",
-    "next": "10.x",
-    "next-plausible": "1.x",
-    "next-seo": "^4.17.0",
-    "preact": "10.x",
-    "preact-render-to-string": "5.x",
-    "react": "npm:@preact/compat@^0.0.4",
-    "react-dom": "npm:@preact/compat@^0.0.4",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.3"
-  },
-  "devDependencies": {
-    "@mapbox/rehype-prism": "^0.6.0",
-    "@types/node": "14.x",
-    "@types/react": "17.x",
-    "@types/react-dom": "17.x",
-    "@typescript-eslint/eslint-plugin": "4.x",
-    "@typescript-eslint/parser": "4.x",
-    "autoprefixer": "^10.1.0",
-    "babel-eslint": "10.x",
-    "cssnano": "4.x",
-    "date-fns": "^2.12.0",
-    "eslint": "7.x",
-    "eslint-config-prettier": "8.x",
-    "eslint-config-react-app": "6.x",
-    "eslint-plugin-import": "2.x",
-    "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-prettier": "3.x",
-    "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "4.x",
-    "gray-matter": "^4.0.2",
-    "next-sitemap": "^1.3.2",
-    "postcss": "^8.2.1",
-    "postcss-preset-env": "6.x",
-    "prettier": "2.x",
-    "reading-time": "^1.2.0",
-    "rehype-stringify": "^8.0.0",
-    "remark-parse": "9.x",
-    "remark-rehype": "8.x",
-    "tailwindcss": "2.x",
-    "tailwindcss-filters": "3.x",
-    "tailwindcss-typography": "^3.0.1",
-    "typescript": "4.x",
-    "unified": "9.x",
-    "webpack": "5.x"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "plugin:prettier/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "rules": {
-      "jsx-a11y/anchor-is-valid": "off"
-    }
-  }
+	"name": "ivoberger.com",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"start": "svelte-kit start",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"type": "module",
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.35",
+		"@fortawesome/free-brands-svg-icons": "^5.15.3",
+		"@fortawesome/free-regular-svg-icons": "^5.15.3",
+		"@fortawesome/free-solid-svg-icons": "^5.15.3",
+		"date-fns": "^2.19.0",
+		"svelte-awesome": "^2.3.0"
+	},
+	"devDependencies": {
+		"@mapbox/rehype-prism": "^0.6.0",
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
+		"@tailwindcss/jit": "^0.1.8",
+		"@typescript-eslint/eslint-plugin": "^4.19.0",
+		"@typescript-eslint/parser": "^4.19.0",
+		"autoprefixer": "^10.2.5",
+		"cssnano": "^4.1.10",
+		"eslint": "^7.22.0",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-plugin-svelte3": "^3.1.0",
+		"gray-matter": "^4.0.2",
+		"postcss": "^8.2.8",
+		"postcss-load-config": "^3.0.1",
+		"postcss-preset-env": "^6.7.0",
+		"prettier": "~2.2.1",
+		"prettier-plugin-svelte": "^2.2.0",
+		"reading-time": "^1.3.0",
+		"rehype-stringify": "^8.0.0",
+		"remark-parse": "^9.0.0",
+		"remark-rehype": "^8.0.0",
+		"svelte": "^3.29.0",
+		"svelte-preprocess": "^4.0.0",
+		"tailwindcss": "^2.0.4",
+		"tailwindcss-filters": "^3.0.0",
+		"tailwindcss-typography": "^3.1.0",
+		"tslib": "^2.0.0",
+		"typescript": "^4.0.0",
+		"unified": "^9.2.1",
+		"vite": "^2.1.0"
+	}
 }

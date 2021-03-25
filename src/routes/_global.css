@@ -1,0 +1,92 @@
+/* purgecss start ignore */
+@tailwind base;
+
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+body {
+	@apply font-serif antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100;
+}
+
+h1 {
+	@apply mb-1 font-sans text-3xl font-bold leading-tight;
+}
+
+h2,
+h4 {
+	@apply mb-1 font-sans text-xl;
+}
+
+h3 {
+	@apply my-3 font-sans text-3xl font-bold leading-tight;
+}
+
+.visible-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.visible-hidden:focus {
+	clip: auto;
+	height: auto;
+	overflow: auto;
+	position: absolute;
+	width: auto;
+}
+
+p {
+	@apply block w-full break-normal whitespace-normal;
+}
+
+article p {
+	@apply mb-3;
+}
+
+article a {
+	@apply text-lime-500 transition duration-500 border-b border-transparent;
+}
+article a:hover {
+	@apply border-lime-500;
+}
+
+code {
+	@apply block w-full p-2 border rounded-sm;
+	@apply overflow-x-auto text-sm;
+	@apply bg-gray-100 border-gray-300;
+	@apply dark:bg-gray-800 dark:border-lime-900;
+}
+
+p code {
+	@apply inline p-1 rounded dark:border-transparent;
+}
+
+@screen sm {
+	h1 {
+		@apply text-4xl;
+	}
+	h2,
+	h4 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply my-5 text-3xl;
+	}
+}
+
+@screen md {
+	h1 {
+		@apply text-5xl;
+	}
+	h2,
+	h4 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply text-4xl;
+	}
+}
