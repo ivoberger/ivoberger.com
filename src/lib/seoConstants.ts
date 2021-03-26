@@ -1,8 +1,8 @@
 export const defaultAuthor = 'Ivo Berger';
 
 export const rootUrl = 'ivoberger.com';
-const defaultTitle = "Ivo's Coding Blog";
-const defaultDesc = 'Technical articles about everything related to programming';
+export const defaultTitle = "Ivo's Coding Blog";
+export const defaultDesc = 'Technical articles about everything related to programming';
 
 export const seoData = ({
 	title = defaultTitle,
