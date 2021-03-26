@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@mapbox/rehype-prism": "^0.6.0",
 		"@sveltejs/adapter-static": "next",
-		"@sveltejs/kit": "next",
+		"@sveltejs/kit": "^1.0.0-next.61",
 		"@tailwindcss/jit": "^0.1.8",
 		"@typescript-eslint/eslint-plugin": "^4.19.0",
 		"@typescript-eslint/parser": "^4.19.0",
