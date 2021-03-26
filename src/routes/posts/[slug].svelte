@@ -1,8 +1,8 @@
 <script context="module">
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ page: { params, path }, fetch }) => {
-		const res = await fetch(`${params.slug}.json`);
+	export const load: Load = async ({ page: { path }, fetch }) => {
+		const res = await fetch(`${path}.json`);
 
 		return {
 			props: {
@@ -15,7 +15,9 @@
 
 <script>
 	import { onMount } from 'svelte';
+	import SvelteSeo from 'svelte-seo';
 	import { Body, HomeButton } from '$lib/components';
+	import { defaultAuthor, seoData } from '$lib/seoConstants';
 
 	export let post: PostData;
 	export let path: string;
@@ -24,7 +26,7 @@
 
 	$: ({
 		content,
-		meta: { readTime, published, cover, title, description, tags }
+		meta: { readTime, published, cover, title, description, tags, author = defaultAuthor, date }
 	} = post);
 
 	onMount(() => {
@@ -34,36 +36,36 @@
 		fullPageUrl = `${baseUrl}${path}`;
 		fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
 	});
+	$: seo = seoData({
+		title,
+		description,
+		tags,
+		canonical: fullPageUrl,
+		author,
+		type: 'article',
+		image: fullImgPath
+	});
 </script>
 
+<svelte:head>
+	<meta name="image" content={fullImgPath} />
+</svelte:head>
+
+<SvelteSeo
+	{...seo}
+	openGraph={{
+		...seo.openGraph,
+		images: fullImgPath ? [{ url: fullImgPath, alt: 'Article Cover' }] : undefined,
+		article: {
+			publishedTime: date,
+			authors: [author],
+			section: tags?.[0],
+			tags
+		}
+	}}
+/>
+
 <div itemScope itemType="https://schema.org/TechArticle">
-	<!-- <NextSeo
-      {...seoData}
-      title={title}
-      description={description}
-      additionalMetaTags={[
-        ...seoData.additionalMetaTags!,
-        { name: "image", content: coverImage ?? "" },
-        { name: "keywords", content: tags?.join(",") ?? "" },
-      ]}
-      canonical={url}
-      openGraph={{
-        ...seoData.openGraph,
-        title,
-        url,
-        description,
-        type: "article",
-        images: coverImage
-          ? [{ url: coverImage, alt: "Article Cover" }]
-          : undefined,
-        article: {
-          publishedTime: date,
-          authors: [author],
-          section: defaultSection,
-          tags,
-        }, 
-      }}
-    /> -->
 	<header>
 		<div class="relative overflow-hidden text-center text-white max-h-cover min-h-cover">
 			<div

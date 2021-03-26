@@ -9,7 +9,7 @@ import readingTime from 'reading-time';
 import { format } from 'date-fns';
 import { readdirSync, readFileSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 
-import { defaultAuthor } from '../utils/seoConstants';
+import { defaultAuthor } from './seoConstants';
 
 export function getPost(slug: string): { meta: PostMetadata; content: string } {
 	const unifiedProcessor = unified().use(markdown).use(remark2rehype).use(highlight).use(html);

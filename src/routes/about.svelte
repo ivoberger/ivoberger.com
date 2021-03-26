@@ -48,11 +48,15 @@
 		}
 	];
 
+	import SvelteSeo from 'svelte-seo';
 	import Icon from 'svelte-awesome';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { faLink } from '@fortawesome/free-solid-svg-icons';
 	import { Header, HomeButton, Body } from '$lib/components';
+	import { seoData } from '$lib/seoConstants';
 </script>
+
+<SvelteSeo {...seoData({ title: 'About Me', description: 'My Portfolio' })} />
 
 <Header title="Stuff I Made" subTitle="You could call it a Portfolio" />
 

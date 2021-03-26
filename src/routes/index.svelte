@@ -13,9 +13,13 @@
 </script>
 
 <script>
+	import SvelteSeo from 'svelte-seo';
+	import { seoData } from '$lib/seoConstants';
 	import { Header } from '$lib/components';
 	export let posts: PostMetadata[];
 </script>
+
+<SvelteSeo {...seoData({})} />
 
 <main class="container mx-auto">
 	<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
@@ -27,7 +31,7 @@
 				<header class="mb-8 ">
 					<time class="mb-2 text-xs uppercase">{published}</time>
 
-					<a href={`/posts/${slug}`}>
+					<a sveltekit:prefetch href={`/posts/${slug}`}>
 						<h3 class="my-0 mb-1">{title}</h3>
 					</a>
 					<!-- TODO: re-enable once tag pages are implemented

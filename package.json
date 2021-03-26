@@ -15,7 +15,8 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
 		"date-fns": "^2.19.0",
-		"svelte-awesome": "^2.3.0"
+		"svelte-awesome": "^2.3.0",
+		"svelte-seo": "^1.1.0"
 	},
 	"devDependencies": {
 		"@mapbox/rehype-prism": "^0.6.0",

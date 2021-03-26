@@ -2,36 +2,28 @@
 	import './_global.css';
 	import { onMount } from 'svelte';
 	import { dev } from '$app/env';
+	import { rootUrl } from '$lib/seoConstants';
 	import Footer from '$lib/components/Footer';
 
-	let prismStylesheet;
+	let prismStylesheet = 'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/';
 
 	onMount(() => {
 		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			// dark mode
-			prismStylesheet =
-				'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/prism-atom-dark.css';
+			prismStylesheet += 'prism-atom-dark.css';
 		} else {
-			prismStylesheet =
-				'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/prism-ghcolors.css';
+			prismStylesheet += 'prism-ghcolors.css';
 		}
 	});
 </script>
 
 <svelte:head>
 	{#if !dev}
-		<script
-			async
-			defer
-			data-domain="ivoberger.com"
-			src="https://plausible.io/js/plausible.js"></script>
+		<script async defer data-domain={rootUrl} src="https://plausible.io/js/plausible.js"></script>
 	{/if}
 	<link href={prismStylesheet} rel="stylesheet" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Source+Serif+Pro:ital@0;1&display=swap"
-		rel="stylesheet"
-	/>
-	<title>Ivo's Coding Blog</title>
+	<meta name="color-scheme" content="dark light" />
 </svelte:head>
+
 <slot />
 <Footer />
