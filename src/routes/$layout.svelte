@@ -9,7 +9,7 @@
 
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID as string;
 	if (browser && analyticsId) {
-		page.subscribe(({ path }) => webVitals({ page: path, analyticsId }));
+		page.subscribe(({ path, params }) => webVitals({ path, params, analyticsId }));
 	}
 
 	let prismStylesheet = 'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/';

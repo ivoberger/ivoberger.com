@@ -2,7 +2,8 @@ import type { Metric } from 'web-vitals';
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
 
 export type AnalyticsOptions = {
-	page: string;
+	params: Record<string, string>;
+	path: string;
 	analyticsId: string;
 	debug?: true;
 };
@@ -18,10 +19,15 @@ function getConnectionSpeed(): string {
 }
 
 function sendToAnalytics(metric: Metric, options: AnalyticsOptions) {
+	const page = Object.entries(options.params).reduce(
+		(acc, [key, value]) => acc.replace(value, `[${key}]`),
+		options.path
+	);
+
 	const body = {
 		dsn: options.analyticsId,
 		id: metric.id,
-		page: options.page,
+		page,
 		href: location.href,
 		event_name: metric.name,
 		value: metric.value.toString(),
