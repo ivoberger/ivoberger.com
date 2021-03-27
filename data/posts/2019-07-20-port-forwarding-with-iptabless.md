@@ -1,13 +1,13 @@
 ---
-title: "How to Set up Port Forwarding with iptables"
-description: "A quick guide on simple port-forwarding using NAT and DNAT in iptables"
+title: 'How to Set up Port Forwarding with iptables'
+description: 'A quick guide on simple port-forwarding using NAT and DNAT in iptables'
 published: 2019-07-20
 slug: port-forwarding-with-iptables
 tags:
   - networking
   - linux
   - iptables
-cover: "/images/post_covers/networking.jpg"
+cover: '/post_covers/networking.jpg'
 ---
 
 If you have a server on a private network and need to access it from the outside (but can't simply give it an external IP) you can use port forwarding on an externally accessible server to get around it. Once set up it simply sends all incoming packets that meet certain criteria to a new IP. That way you can connect to a public server in order to communicate with the private server.
