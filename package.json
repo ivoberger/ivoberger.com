@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "cat .env && echo $VERCEL_ANALYTICS_ID && svelte-kit build",
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."

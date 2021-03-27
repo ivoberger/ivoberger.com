@@ -1,3 +1,14 @@
+<script context="module">
+	import type { Load } from '@sveltejs/kit';
+
+	console.log('[Analytics|module]', import.meta.env.VITE_VERCEL_ANALYTICS_ID);
+	export const load: Load = () => ({
+		props: {
+			analyticsId: import.meta.env.VITE_VERCEL_ANALYTICS_ID
+		}
+	});
+</script>
+
 <script>
 	import './_global.css';
 	import { onMount } from 'svelte';
@@ -7,13 +18,13 @@
 	import Footer from '$lib/components/Footer';
 	import { webVitals } from '$lib/webvitals';
 
-	const analyticsId = import.meta.env.VITE_VERCEL_ANALYTICS_ID as string;
+	export let analyticsId: string | undefined;
 	console.log('[Analytics]', analyticsId);
-	let prismStylesheet = 'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/';
-
 	if (browser && analyticsId) {
 		page.subscribe(({ path }) => webVitals({ page: path, analyticsId }));
 	}
+
+	let prismStylesheet = 'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/';
 	onMount(() => {
 		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			// dark mode
