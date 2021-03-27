@@ -8,10 +8,10 @@
 	import { webVitals } from '$lib/webvitals';
 
 	const analyticsId = import.meta.env.VITE_VERCEL_ANALYTICS_ID as string;
+	console.log('[Analytics]', analyticsId);
 	let prismStylesheet = 'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/';
 
 	if (browser && analyticsId) {
-		console.log('[Analytics]', analyticsId);
 		page.subscribe(({ path }) => webVitals({ page: path, analyticsId }));
 	}
 	onMount(() => {
@@ -28,7 +28,9 @@
 	{#if !dev}
 		<script async defer data-domain={rootUrl} src="https://plausible.io/js/plausible.js"></script>
 	{/if}
-	<link href={prismStylesheet} rel="stylesheet" />
+	{#if prismStylesheet.includes('.css')}
+		<link href={prismStylesheet} rel="stylesheet" />
+	{/if}
 	<meta name="color-scheme" content="dark light" />
 </svelte:head>
 
