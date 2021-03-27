@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "echo $VERCEL_ANALYTICS_ID && svelte-kit build",
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
@@ -16,7 +16,8 @@
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
 		"date-fns": "^2.19.0",
 		"svelte-awesome": "^2.3.0",
-		"svelte-seo": "^1.1.0"
+		"svelte-seo": "^1.1.0",
+		"web-vitals": "^1.1.1"
 	},
 	"devDependencies": {
 		"@mapbox/rehype-prism": "^0.6.0",
