@@ -11,7 +11,10 @@ module.exports = {
 			script: 'typescript',
 			style: 'postcss'
 		},
-		postcss: true
+		postcss: true,
+		replace: [
+			['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
+		]
 	}),
 	kit: {
 		adapter: static(),
