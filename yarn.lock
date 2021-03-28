@@ -157,9 +157,9 @@
     svelte-hmr "^0.13.3"
 
 "@tailwindcss/jit@^0.1.8":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.13.tgz#247e1d88908173d59b8868b0cf658c94e5aaac21"
-  integrity sha512-UJ3dR4IrY5v7KK7u7qPa/ffoOcLrW183WLsRXFORZF3TxnwZAVFChZ0lLFE0Vd1DCgH2Lp5DyDFQrxglfPq09Q==
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.15.tgz#9b734f7567773e5bf2b69f4fa1ee93933c914500"
+  integrity sha512-jqYaVs5XLI8ub/Yv2iIFXF2okc2S9asow0M5Jxm7d221LUEoMN1Q3KGZNQsYf9qdl5iEEkrC0oAybk5XbFDHHQ==
   dependencies:
     chokidar "^3.5.1"
     dlv "^1.1.3"
@@ -2964,9 +2964,9 @@ rimraf@^3.0.2:
     glob "^7.1.3"
 
 rollup@^2.38.5:
-  version "2.43.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.43.0.tgz#05d1ed0bbb37080a63e68c530a84d34f61ceb56a"
-  integrity sha512-FRsYGqlo1iF/w3bv319iStAK0hyhhwon35Cbo7sGUoXaOpsZFy6Lel7UoGb5bNDE4OsoWjMH94WiVvpOM26l3g==
+  version "2.43.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.43.1.tgz#9e5c9208c2011de227ac6c93101e11dc12e88e04"
+  integrity sha512-kvRE6VJbiv4d8m2nGeccc3qRpzOMghAhu2KeITjyZVCjneIFLPQ3zm2Wmqnl0LcUg3FvDaV0MfKnG4NCMbiSfw==
   optionalDependencies:
     fsevents "~2.3.1"
 

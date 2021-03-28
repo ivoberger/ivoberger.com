@@ -16,7 +16,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import SvelteSeo from 'svelte-seo';
-	import { Body, HomeButton } from '$lib/components';
+	import { Body } from '$lib/components';
 	import { defaultAuthor, seoData } from '$lib/seoConstants';
 
 	export let post: PostData;
@@ -66,26 +66,18 @@
 />
 
 <div itemScope itemType="https://schema.org/TechArticle">
-	<header>
-		<div class="relative overflow-hidden text-center text-white max-h-cover min-h-cover">
-			<div
-				class="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-16 mx-auto text-center md:max-w-3xl xl:max-w-4xl text-shadow-lg"
-			>
-				<p class="text-sm uppercase">{readTime}</p>
-				<h1 itemProp="headline">{title}</h1>
-				<p itemProp="datePublished">{published}</p>
-			</div>
-
-			<img
-				class="filter-blur"
-				src={cover}
-				alt="Post cover"
-				width={1600}
-				height={900}
-				itemProp="image"
-			/>
+	<header class="relative overflow-hidden h-96 ">
+		<div
+			class="absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat"
+			style="background-image: url({cover});"
+		/>
+		<div
+			class="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-14 mx-auto text-center text-white md:max-w-3xl xl:max-w-4xl text-shadow-lg"
+		>
+			<p class="text-sm uppercase">{readTime}</p>
+			<h1 itemProp="headline">{title}</h1>
+			<p itemProp="datePublished">{published}</p>
 		</div>
-		<HomeButton />
 		<meta itemProp="name" content={title} />
 		<meta itemProp="description" content={description} />
 		<meta itemProp="image" content={fullImgPath} />

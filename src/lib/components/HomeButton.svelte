@@ -3,7 +3,7 @@
 	import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 </script>
 
-<nav class="fixed top-0 left-0 m-4 group">
+<nav class="fixed top-0 left-0 m-4 group z-50">
 	<a
 		sveltekit:prefetch
 		href="/"
