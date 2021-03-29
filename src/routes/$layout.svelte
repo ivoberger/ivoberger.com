@@ -25,7 +25,11 @@
 
 <svelte:head>
 	{#if !dev}
-		<script async defer data-domain={rootUrl} src="https://plausible.io/js/plausible.js"></script>
+		<script
+			async
+			defer
+			data-domain={rootUrl}
+			src="https://stats.ivoberger.com/js/index.js"></script>
 	{/if}
 	{#if prismStylesheet.includes('.css')}
 		<link href={prismStylesheet} rel="stylesheet" />
