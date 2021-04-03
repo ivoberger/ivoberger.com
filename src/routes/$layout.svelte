@@ -12,7 +12,6 @@
 <script>
 	import './_global.css';
 	import { onMount } from 'svelte';
-	import { dev } from '$app/env';
 	import { rootUrl } from '$lib/seoConstants';
 	import Footer from '$lib/components/Footer';
 	import { webVitals } from '$lib/webvitals';
@@ -34,9 +33,7 @@
 </script>
 
 <svelte:head>
-	{#if !dev}
-		<script async defer data-domain={rootUrl} src="https://plausible.io/js/plausible.js"></script>
-	{/if}
+	<script async defer data-domain={rootUrl} src="https://stats.ivoberger.com/js/index.js"></script>
 	{#if prismStylesheet.includes('.css')}
 		<link href={prismStylesheet} rel="stylesheet" />
 	{/if}
