@@ -42,6 +42,7 @@ module.exports = {
 			...defaultTheme.transitionDuration,
 			DEFAULT: '300ms'
 		},
+		scale: { 105: '1.05' },
 		extend: {
 			colors: {
 				gray: {
@@ -71,7 +72,7 @@ module.exports = {
 			},
 			minHeight: {
 				0: '0',
-				cover: '14rem',
+				cover: '20rem',
 				full: '100%'
 			}
 		},
