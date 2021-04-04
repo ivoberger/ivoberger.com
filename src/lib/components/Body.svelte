@@ -1,5 +1,5 @@
 <script>
-	export let classes: string;
+	export let classes: string = '';
 </script>
 
 <main
