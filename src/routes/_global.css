@@ -53,7 +53,7 @@ article a:hover {
 
 code {
 	@apply block w-full p-2 border rounded-sm;
-	@apply overflow-x-auto text-sm;
+	@apply overflow-x-auto;
 	@apply bg-gray-100 border-gray-300;
 	@apply dark:bg-gray-800 dark:border-lime-900;
 }
@@ -85,6 +85,12 @@ p code {
 	}
 	h3 {
 		@apply text-4xl;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.prose {
+		@apply prose-light;
 	}
 }
 

@@ -84,7 +84,12 @@
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
 	<Body classes="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
-		<article class="mb-10" itemProp="articleBody">{@html content}</article>
+		<article
+			class="mb-10 max-w-none prose prose-lime dark:prose-light xl:prose-lg"
+			itemProp="articleBody"
+		>
+			{@html content}
+		</article>
 		<!-- TODO: re-enable once tag pages are implemented
      <footer>
       <Tags tags={tags} />

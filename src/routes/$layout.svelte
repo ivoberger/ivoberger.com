@@ -11,6 +11,8 @@
 
 <script>
 	import './_global.css';
+	import 'typeface-catamaran';
+	import 'typeface-source-serif-pro';
 	import { onMount } from 'svelte';
 	import { rootUrl } from '$lib/seoConstants';
 	import Footer from '$lib/components/Footer';
