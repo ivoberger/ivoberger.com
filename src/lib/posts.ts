@@ -1,4 +1,6 @@
 import path from 'path';
+import { readdirSync, readFileSync } from 'fs';
+
 import unified from 'unified';
 import markdown from 'remark-parse';
 import remark2rehype from 'remark-rehype';
@@ -7,14 +9,14 @@ import html from 'rehype-stringify';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import { format } from 'date-fns';
-import { readdirSync, readFileSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 
 import { defaultAuthor } from './seoConstants';
+const postsDirectory = path.join(process.cwd(), 'data/posts');
 
 export function getPost(slug: string): { meta: PostMetadata; content: string } {
 	const unifiedProcessor = unified().use(markdown).use(remark2rehype).use(highlight).use(html);
 
-	const { filePath, data } = getPostsSpecFromFS()[slug];
+	const { filePath, data } = readPostSpecFromFile(slug + '.md');
 
 	const { content } = matter(readFileSync(filePath, 'utf8'));
 
@@ -30,56 +32,26 @@ export function getPost(slug: string): { meta: PostMetadata; content: string } {
 }
 
 export function getAllPosts(): PostSpec[] {
-	const postsDirectory = path.join(process.cwd(), 'data/posts');
-	const filenames = readdirSync(postsDirectory);
-
-	return filenames.map((filename) => {
-		const filePath = path.join(postsDirectory, filename);
-		const fileContents = readFileSync(filePath, 'utf8');
-
-		const { data, content } = matter(fileContents);
-
-		return {
-			data: {
-				...data,
-				author: data.author ?? defaultAuthor,
-				date: new Date(data.published).toISOString(),
-				published: format(new Date(data.published), "do 'of' MMMM, yyyy"),
-				readTime: readingTime(content).text
-			},
-			filePath
-		} as PostSpec;
-	});
+	return readdirSync(postsDirectory).map(readPostSpecFromFile);
 }
 
-const cacheDir = path.join(process.cwd(), '.svelte/cache');
-const cachePath = path.join(cacheDir, 'posts.json');
-if (!existsSync(cacheDir)) {
-	mkdirSync(cacheDir);
-}
+function readPostSpecFromFile(filename: string): PostSpec {
+	const filePath = path.join(postsDirectory, filename);
+	const fileContents = readFileSync(filePath, 'utf8');
 
-export function getPostsSpecFromFS(): { [key: string]: PostSpec } {
-	if (!existsSync(cachePath)) {
-		const posts = getAllPosts();
-		writePostsSpecToFS(posts);
-	}
-	return JSON.parse(readFileSync(cachePath, 'utf8'));
-}
+	const { data, content } = matter(fileContents);
+	const publishDate = new Date(data.published);
+	const slug = filename.split('.')[0];
 
-export function writePostsSpecToFS(posts: PostSpec[]): void {
-	writeFileSync(
-		cachePath,
-		JSON.stringify(
-			posts
-				.filter(({ data }) => !!data.slug)
-				.reduce(
-					(acc, { data: { slug, ...data }, filePath }) => ({
-						...acc,
-						[slug]: { filePath, data }
-					}),
-					{}
-				)
-		),
-		{ encoding: 'utf8' }
-	);
+	return {
+		data: {
+			...data,
+			slug,
+			author: data.author ?? defaultAuthor,
+			date: publishDate.toISOString(),
+			published: format(publishDate, "do 'of' MMMM, yyyy"),
+			readTime: readingTime(content).text
+		},
+		filePath
+	} as PostSpec;
 }
