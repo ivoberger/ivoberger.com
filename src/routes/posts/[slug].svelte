@@ -34,7 +34,7 @@
 		const protocol = window.location.protocol;
 		const baseUrl = `${protocol}//${host}`;
 		fullPageUrl = `${baseUrl}${path}`;
-		fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
+		if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
 	});
 	$: seo = seoData({
 		title,
@@ -67,12 +67,15 @@
 
 <div itemScope itemType="https://schema.org/TechArticle">
 	<header class="relative overflow-hidden h-96 ">
+		{#if cover}
+			<div
+				class="absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat"
+				style="background-image: url({cover});"
+			/>
+		{/if}
 		<div
-			class="absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat"
-			style="background-image: url({cover});"
-		/>
-		<div
-			class="absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-14 mx-auto text-center text-white md:max-w-3xl xl:max-w-4xl text-shadow-lg"
+			class={`absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-14 mx-auto text-center md:max-w-3xl xl:max-w-4xl 
+			${cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'}`}
 		>
 			<p class="text-sm uppercase">{readTime}</p>
 			<h1 itemProp="headline">{title}</h1>
@@ -80,7 +83,7 @@
 		</div>
 		<meta itemProp="name" content={title} />
 		<meta itemProp="description" content={description} />
-		<meta itemProp="image" content={fullImgPath} />
+		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
 	<Body classes="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
