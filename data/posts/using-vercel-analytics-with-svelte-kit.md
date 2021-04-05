@@ -84,7 +84,7 @@ Vercels docs state that metric are collected in initial page load and not for cl
 
 ### Getting the Analytics ID
 
-The Analytics ID is provided when your app builds on Vercel. It's supplied thorugh the environment as the variable`VERCEL_ANALYTICS_ID`. To be able to access it at runtime I had to add 2 lines to my `svelte.config.cjs` so it get's replaced at runtime:
+The Analytics ID is provided when your app builds on Vercel. It's supplied through the environment as the variable`VERCEL_ANALYTICS_ID`. To be able to access it at runtime I had to add 2 lines to my `svelte.config.cjs` so it gets replaced at runtime:
 
 ```jsx
 const sveltePreprocess = require('svelte-preprocess');
@@ -145,7 +145,7 @@ export const load: Load = async ({ page: { path, params } }) => ({
 });
 ```
 
-The reasoning for doing it server-side is that the only way to get that data client-side is to subscribe to the `[page` store](https://kit.svelte.dev/docs#modules-app-stores) and populate the `page` and `params` variables from that:
+The reasoning for doing it server-side is that the only way to get that data client-side is to subscribe to the [`page` store](https://kit.svelte.dev/docs#modules-app-stores) and populate the `page` and `params` variables from that:
 
 ```tsx
 import { onMount } from 'svelte';

@@ -11,6 +11,7 @@ import readingTime from 'reading-time';
 import { format } from 'date-fns';
 
 import { defaultAuthor } from './seoConstants';
+
 const postsDirectory = path.join(process.cwd(), 'data/posts');
 
 export function getPost(slug: string): { meta: PostMetadata; content: string } {
