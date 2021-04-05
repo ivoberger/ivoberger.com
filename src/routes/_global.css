@@ -5,18 +5,40 @@
 body {
 	@apply font-serif antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100;
 }
-
 h1 {
 	@apply mb-1 font-sans text-3xl font-bold leading-tight;
 }
 
-h2,
-h4 {
+h2 {
 	@apply mb-1 font-sans text-xl;
 }
 
 h3 {
 	@apply my-3 font-sans text-3xl font-bold leading-tight;
+}
+
+@screen sm {
+	h1 {
+		@apply text-4xl;
+	}
+	h2 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply my-5 text-3xl;
+	}
+}
+
+@screen md {
+	h1 {
+		@apply text-5xl;
+	}
+	h2 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply text-4xl;
+	}
 }
 
 .visible-hidden {
@@ -36,65 +58,7 @@ h3 {
 	width: auto;
 }
 
-p {
-	@apply block w-full break-normal whitespace-normal;
-}
-
-article p {
-	@apply mb-3;
-}
-
-article a {
-	@apply text-lime-500 transition duration-500 border-b border-transparent;
-}
-article a:hover {
-	@apply border-lime-500;
-}
-
-code {
-	@apply block w-full p-2 border rounded-sm;
-	@apply overflow-x-auto;
-	@apply bg-gray-100 border-gray-300;
-	@apply dark:bg-gray-800 dark:border-lime-900;
-}
-
-p code {
-	@apply inline p-1 rounded dark:border-transparent;
-}
-
-@screen sm {
-	h1 {
-		@apply text-4xl;
-	}
-	h2,
-	h4 {
-		@apply text-2xl;
-	}
-	h3 {
-		@apply my-5 text-3xl;
-	}
-}
-
-@screen md {
-	h1 {
-		@apply text-5xl;
-	}
-	h2,
-	h4 {
-		@apply text-2xl;
-	}
-	h3 {
-		@apply text-4xl;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.prose {
-		@apply prose-light;
-	}
-}
-
-.fa-icon {
+svg.fa-icon {
 	height: 1em;
 	width: 1em;
 	vertical-align: -0.125em;

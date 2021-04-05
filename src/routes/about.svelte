@@ -67,29 +67,25 @@
 			<div class="flex flex-row">
 				<h2 class="mr-1">{title}</h2>
 				{#if repoUrl}
-					<a
-						href={repoUrl}
-						target="_blank"
-						rel="noreferrer"
-						class={`transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-brand-github dark:hover:text-gray-100`}
-					>
+					<a href={repoUrl} target="_blank" rel="noreferrer" class="icon-link">
 						<span class="visible-hidden">Repository for {title}</span>
 						<Icon data={faGithub} />
 					</a>
 				{/if}
 				{#if url}
-					<a
-						href={url}
-						target="_blank"
-						rel="noreferrer"
-						class={`transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100`}
-					>
+					<a href={url} target="_blank" rel="noreferrer" class="icon-link">
 						<span class="visible-hidden">Link to {title}</span>
 						<Icon data={faLink} />
 					</a>
 				{/if}
 			</div>
-			<p>{description}</p>
+			<p class="prose max-w-none">{description}</p>
 		</div>
 	{/each}
 </Body>
+
+<style>
+	.icon-link {
+		@apply transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100;
+	}
+</style>
