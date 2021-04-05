@@ -6,17 +6,17 @@ tags:
   - analytics
   - javascript
   - svelte
+  - sveltekit
   - vercel
-  - web
 ---
 
-I recently migrated my [website](http://ivoberger.com) from Next.js to [SvelteKit](https://kit.svelte.dev/) as it reached public beta and I've been meaning to try Svelte for a while now. I've been using [Vercel Analytics](https://vercel.com/docs/analytics) since it was introduced alongside [Next.js 10](https://nextjs.org/blog/next-10) in October 2020 to track my site's real-world performance and wanted keep using it with SvelteKit but (to no ones surprise) there's no official integration (yet).
+I recently migrated my [website](https://ivoberger.com/?utm_campaign=VercelAnalytics+SvelteKit&utm_source=Medium&utm_medium=Referral) from Next.js to [SvelteKit](https://kit.svelte.dev/) as it reached public beta and I've been meaning to try Svelte for a while now. I've been using [Vercel Analytics](https://vercel.com/docs/analytics) since it was introduced alongside [Next.js 10](https://nextjs.org/blog/next-10) in October 2020 to track my site's real-world performance and wanted keep using it with SvelteKit but (to no ones surprise) there's no official integration (yet).
 
 ## What is Vercel Analytics?
 
 Vercel Analytics is a tool to track your website's [Web Vitals](https://web.dev/vitals/) on user's devices. You can always run Lighthouse or [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights) to test your site but since it runs on your (or Google's) machine it might not reflect real-world actual user experience.
 
-Vercel Analytics fixes that issue by collecting vitals from your actual users and laying them out in a simple dashboard. It also calculates and overall metric called the _Real Experience Score_, which is a number on a scale from 0 to 100 that summarizes the collected web vitals.
+Vercel Analytics fixes that issue by collecting vitals from your actual users and laying them out in a simple dashboard. It also calculates an overall metric called the _Real Experience Score_, which is a number on a scale from 0 to 100 that summarizes the collected web vitals.
 
 ## What is SvelteKit?
 
@@ -36,7 +36,7 @@ So how can we make it work anyways?
 
 [Vercel's docs](https://vercel.com/docs/analytics) list official support for Gatsby and Nuxt.js (Static Site Generators for React and Vue), through open-source plugins. So I simply checked the [source of the Gatsby plugin](https://github.com/vercel/gatsby-plugin-vercel/blob/main/src/web-vitals.js) and adapted it to work in SvelteKit.
 
-Let's start by looking at what data Vercel expect and where to send it to.
+Let's start by looking at what data Vercel expects and where to send it to.
 
 The Analytics endpoint ([`http://vitals.vercel-insights.com/v1/vitals`](http://vitals.vercel-insights.com/v1/vitals)) expects a `POST` body as follows:
 
@@ -66,7 +66,7 @@ The aforementioned plugins both use Google's [`web-vitals`](https://github.com/G
 
 The page is the route with unresolved route parameters. For example a blog might at `/blog` with the posts being at `/blog/[slug]`.
 
-### URL
+### href
 
 The `href` key simply contains the pages URL. Together with `page` this information helps you to distinguish between issues caused by your general page setup (if the score for a whole route is bad) or just by some large embed that only appears in a single post (if the route looks good but a specific URL is problematic).
 
@@ -76,7 +76,7 @@ Lastly the `speed` key tells Vercel what kind of connection the user uses. It ca
 
 ## Implementation
 
-Now that we know what and where to send our metrics, let's see how we can replicate the Gatsby and Nuxt plugin functionality in SvelteKit.
+Now that we know what to send and where to send it to, let's see how we can replicate the Gatsby and Nuxt plugin functionality in SvelteKit.
 
 First of all, the plugins work a bit differently: the Gatsby plugin sends the metric only on the initial page load (see [here](https://github.com/vercel/gatsby-plugin-vercel/blob/main/src/gatsby-browser.js)) while the Nuxt module seems to be reporting on page load and on every route change (see [here](https://github.com/nuxt-community/web-vitals-module/blob/main/src/runtime/vitals.client.js)).
 
@@ -84,7 +84,7 @@ Vercels docs state that metric are collected in initial page load and not for cl
 
 ### Getting the Analytics ID
 
-The Analytics ID is provided when your app builds on Vercel. It's supplied through the environment as the variable`VERCEL_ANALYTICS_ID`. To be able to access it at runtime I had to add 2 lines to my `svelte.config.cjs` so it gets replaced at runtime:
+The Analytics ID is provided when your app builds on Vercel. It's supplied through the environment as the variable`VERCEL_ANALYTICS_ID`. To be able to access it at runtime I had to add 2 lines to my `svelte.config.cjs` so it gets replaced in the build:
 
 ```jsx
 const sveltePreprocess = require('svelte-preprocess');
@@ -112,7 +112,7 @@ module.exports = {
 };
 ```
 
-I first tried using it by adding an `.env` file and then accessing it through [Vite's built-in support](https://vitejs.dev/guide/env-and-mode.html#env-files) (Vite is the build tool used by SvelteKit), but as there's an [issue with that in SvelteKit](https://github.com/sveltejs/kit/issues/720) I opted for the `replace` config above. I adopted the `import.meta.env.VERCEL_ANALYTICS_ID` syntax from the Vite docs, but you can really replace it with whatever suits you, just make sure to also change it in the following snippet accordingly.
+I first tried using it by adding a `.env` file and then accessing it through [Vite's built-in support](https://vitejs.dev/guide/env-and-mode.html#env-files) (Vite is the build tool used by SvelteKit), but as there's an [issue with that in SvelteKit](https://github.com/sveltejs/kit/issues/720) I opted for the `replace` config above. I adopted the `import.meta.env.VERCEL_ANALYTICS_ID` syntax from the Vite docs, but you can really replace it with whatever suits you, just make sure to also change it in the following snippet accordingly.
 
 ### Triggering the Report
 
@@ -172,7 +172,7 @@ Since my website is entirely statically generated I went with the server-side ap
 
 Lets see what calling`webVitals` actually does. The function is in `src/lib/webvitals.ts` which SvelteKit makes available as `$lib/webvitals` as seen in the previous snippet.
 
-The `webVitals` function itself is quite simple. It registers a callback for all 4 metrics we want to track using the `web-vitals` library. It takes the options we've gathered in the previous sections. The code is wrapped in a `try-catch` block so fails silently if something goes wrong and doesn't cause issues for the actual page.
+The `webVitals` function itself is quite simple. It registers a callback for all 4 metrics we want to track using the `web-vitals` library. The callback takes the options we've gathered in the previous sections. The code is wrapped in a `try-catch` block so fails silently if something goes wrong and doesn't cause issues for the actual page.
 
 ```tsx
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
