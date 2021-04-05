@@ -95,6 +95,9 @@ module.exports = {
 						code: {
 							color: theme('colors.gray.200', colors.gray[200])
 						},
+						'pre code': {
+							color: theme('colors.gray.200', colors.gray[200])
+						},
 						'a code': {
 							color: theme('colors.lime', colors.lime)
 						},

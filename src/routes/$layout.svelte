@@ -22,24 +22,13 @@
 	export let path: string;
 	export let params: Record<string, string>;
 
-	let prismStylesheet = 'https://cdn.jsdelivr.net/gh/PrismJS/prism-themes/themes/';
 	onMount(() => {
 		if (analyticsId) webVitals({ path, params, analyticsId });
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			// dark mode
-			prismStylesheet += 'prism-atom-dark.css';
-		} else {
-			prismStylesheet += 'prism-ghcolors.css';
-		}
 	});
 </script>
 
 <svelte:head>
-	<script async defer data-domain={rootUrl} src="https://stats.ivoberger.com/js/index.js"></script>
-	{#if prismStylesheet.includes('.css')}
-		<link href={prismStylesheet} rel="stylesheet" />
-	{/if}
-	<meta name="color-scheme" content="dark light" />
+	<script async defer data-domain={rootUrl} src="https://p.ivoberger.com/js/index.js"></script>
 </svelte:head>
 
 <slot />

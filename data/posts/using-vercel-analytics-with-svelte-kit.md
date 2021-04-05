@@ -11,7 +11,7 @@ tags:
 cover: ''
 ---
 
-I recently migrated my [website](http://ivoberger.com?utm_campaign=VercelAnalytics+SvelteKit&utm_source=Medium&utm_medium=Referral) from Next.js to [SvelteKit](https://kit.svelte.dev/) as it reached public beta and I've been meaning to try Svelte for a while now. I've been using [Vercel Analytics](https://vercel.com/docs/analytics) since it was introduced alongside [Next.js 10](https://nextjs.org/blog/next-10) in October 2020 to track my site's real-world performance and wanted keep using it with SvelteKit but (to no ones surprise) there's no official integration (yet).
+I recently migrated my [website](http://ivoberger.com) from Next.js to [SvelteKit](https://kit.svelte.dev/) as it reached public beta and I've been meaning to try Svelte for a while now. I've been using [Vercel Analytics](https://vercel.com/docs/analytics) since it was introduced alongside [Next.js 10](https://nextjs.org/blog/next-10) in October 2020 to track my site's real-world performance and wanted keep using it with SvelteKit but (to no ones surprise) there's no official integration (yet).
 
 ## What is Vercel Analytics?
 
