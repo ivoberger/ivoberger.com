@@ -14,11 +14,8 @@
 		"@fortawesome/free-brands-svg-icons": "^5.15.3",
 		"@fortawesome/free-regular-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
-		"date-fns": "^2.19.0",
 		"svelte-awesome": "^2.3.0",
 		"svelte-seo": "^1.1.0",
-		"typeface-catamaran": "^1.1.13",
-		"typeface-source-serif-pro": "^1.1.13",
 		"web-vitals": "^1.1.1"
 	},
 	"devDependencies": {
@@ -31,6 +28,7 @@
 		"@typescript-eslint/parser": "^4.19.0",
 		"autoprefixer": "^10.2.5",
 		"cssnano": "^4.1.10",
+		"date-fns": "^2.19.0",
 		"eslint": "^7.22.0",
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.1.0",
