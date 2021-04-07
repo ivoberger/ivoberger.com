@@ -86,7 +86,7 @@
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
-	<Body classes="text-lg text-gray-700 dark:text-gray-200 border-b border-lime-500">
+	<Body>
 		<article
 			class="mb-10 max-w-none prose prose-lime dark:prose-light xl:prose-lg"
 			itemProp="articleBody"

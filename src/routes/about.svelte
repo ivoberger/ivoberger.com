@@ -79,7 +79,7 @@
 					</a>
 				{/if}
 			</div>
-			<p class="prose max-w-none">{description}</p>
+			<p class="prose dark:prose-light max-w-none">{description}</p>
 		</div>
 	{/each}
 </Body>

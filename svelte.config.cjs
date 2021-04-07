@@ -11,7 +11,6 @@ module.exports = {
 			script: 'typescript',
 			style: 'postcss'
 		},
-		postcss: true,
 		replace: [
 			['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
 		]
@@ -21,7 +20,12 @@ module.exports = {
 		vite: {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
-			}
+			},
+			plugins: [
+				require('vite-plugin-windicss').default({
+					scan: { dirs: ['./src'], fileExtensions: ['css', 'svelte', 'ts'] }
+				})
+			]
 		}
 	}
 };
