@@ -17,7 +17,6 @@ module.exports = {
 	}),
 	kit: {
 		adapter: static(),
-		router: false,
 		vite: {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
