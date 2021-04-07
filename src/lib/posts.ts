@@ -13,22 +13,19 @@ import { format } from 'date-fns';
 import { defaultAuthor } from './seoConstants';
 
 const postsDirectory = path.join(process.cwd(), 'data/posts');
+const unifiedProcessor = unified().use(markdown).use(remark2rehype).use(highlight).use(html);
 
-export function getPost(slug: string): { meta: PostMetadata; content: string } {
-	const unifiedProcessor = unified().use(markdown).use(remark2rehype).use(highlight).use(html);
+export function getPost(slug: string): PostData {
+	const { content: rawContent, meta } = readPostSpecFromFile(slug + '.md');
 
-	const { filePath, data } = readPostSpecFromFile(slug + '.md');
-
-	const { content } = matter(readFileSync(filePath, 'utf8'));
-
-	let postContent = '';
-	unifiedProcessor.process(content, function (err, file) {
+	let content = '';
+	unifiedProcessor.process(rawContent, function (err, file) {
 		err && console.error(err);
-		postContent = String(file);
+		content = String(file);
 	});
 	return {
-		meta: data,
-		content: postContent
+		meta,
+		content
 	};
 }
 
@@ -45,7 +42,7 @@ function readPostSpecFromFile(filename: string): PostSpec {
 	const slug = filename.split('.')[0];
 
 	return {
-		data: {
+		meta: {
 			...data,
 			slug,
 			author: data.author ?? defaultAuthor,
@@ -53,6 +50,6 @@ function readPostSpecFromFile(filename: string): PostSpec {
 			published: format(publishDate, "do 'of' MMMM, yyyy"),
 			readTime: readingTime(content).text
 		},
-		filePath
+		content
 	} as PostSpec;
 }

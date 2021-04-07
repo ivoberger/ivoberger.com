@@ -16,7 +16,7 @@
 	import './_posts.css';
 	import { onMount } from 'svelte';
 	import { rootUrl } from '$lib/seoConstants';
-	import Footer from '$lib/components/Footer';
+	import { Footer } from '$lib/components';
 	import { webVitals } from '$lib/webvitals';
 
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID as string;
