@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-import { getAllPosts } from '$lib/posts';
+import { getAllPosts, getPost } from '$lib/posts';
 import { defaultDesc, defaultTitle, rootUrl } from '$lib/seoConstants';
 
 const makeFeed = (posts: PostSpec[]) => `<?xml version="1.0" encoding="UTF-8" ?>
@@ -13,14 +13,15 @@ const makeFeed = (posts: PostSpec[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 	<language>en-us</language>
     ${posts
 			.map(
-				({ data: { slug, date, title, description, tags } }) => `
+				({ meta: { slug, date, title, description, tags } }) => `
     <item>
 		<title>${title}</title>
 		<description>${description}</description>
+		<content>${getPost(slug).content}</content>
 		${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
         <link>https://${rootUrl}/posts/${slug}</link>
         <guid>https://${rootUrl}/posts/${slug}</guid>
-        <pubDate>${new Date(date).toUTCString()}</pubDate>
+        <pubDate>${new Date(date).toUTCString()}</pubDate>		
     </item>`
 			)
 			.join('')}

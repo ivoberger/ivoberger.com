@@ -16,6 +16,6 @@ type PostMetadata = {
 };
 
 type PostSpec = {
-	data: PostMetadata;
-	filePath: string;
+	meta: PostMetadata;
+	content: string;
 };
