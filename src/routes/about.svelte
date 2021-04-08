@@ -63,8 +63,8 @@
 <HomeButton />
 <Body>
 	{#each portfolioEntries as { title, description, url, repoUrl }}
-		<div class="mb-10">
-			<div class="flex flex-row">
+		<article class="mb-10">
+			<header class="title">
 				<h2 class="mr-1">{title}</h2>
 				{#if repoUrl}
 					<a href={repoUrl} target="_blank" rel="noreferrer" class="icon-link">
@@ -78,14 +78,20 @@
 						<Icon data={faLink} />
 					</a>
 				{/if}
-			</div>
-			<p class="prose dark:prose-light max-w-none">{description}</p>
-		</div>
+			</header>
+			<p class="description">{description}</p>
+		</article>
 	{/each}
 </Body>
 
 <style>
+	.title {
+		@apply flex flex-row;
+	}
 	.icon-link {
 		@apply transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100;
+	}
+	.description {
+		@apply prose dark:prose-light max-w-none;
 	}
 </style>

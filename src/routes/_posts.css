@@ -5,11 +5,7 @@
 	@apply border-lime-500;
 }
 .prose p code {
-	@apply inline p-1 text-lg rounded dark:border-transparent;
-}
-
-.text-shadow-lg {
-	text-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);
+	@apply inline p-1 rounded dark:border-transparent;
 }
 
 code[class*='language-'],
