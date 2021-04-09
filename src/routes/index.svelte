@@ -1,15 +1,10 @@
 <script context="module">
 	import type { Load } from '@sveltejs/kit';
-
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch('/index.json');
-
-		return {
-			props: {
-				posts: await res.json()
-			}
-		};
-	};
+	export const load: Load = async ({ fetch }) => ({
+		props: {
+			posts: await fetch('/index.json').then((res) => res.json())
+		}
+	});
 </script>
 
 <script>
@@ -21,20 +16,17 @@
 
 <SvelteSeo {...seoData({})} />
 
-<main class="container mx-auto">
-	<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
-	<section class="max-w-3xl px-6 mx-auto mb-10">
-		{#each posts as { published, title, description, slug }}
-			<div
-				class="py-4 text-center border-b border-lime-300 group sm:py-10 text-gray-700 dark:text-gray-300"
-			>
-				<header class="mb-8 ">
-					<time class="mb-2 text-xs uppercase">{published}</time>
-
-					<a sveltekit:prefetch href={`/posts/${slug}`}>
-						<h3 class="my-0 mb-1">{title}</h3>
-					</a>
-					<!-- TODO: re-enable once tag pages are implemented
+<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="about" />
+<main class="posts">
+	{#each posts as { published, title, description, slug, date }}
+		<article class="article-summary">
+			<header>
+				<time class="date" datetime={date}>{published}</time>
+				<a sveltekit:prefetch href={`/posts/${slug}`}>
+					<h3 class="my-0">{title}</h3>
+				</a>
+			</header>
+			<!-- TODO: re-enable once tag pages are implemented
        <p class="text-sm leading-normal sm:text-base">
         {tags.length && (
           <>
@@ -45,11 +37,24 @@
           </>
         )}
       </p>  -->
-				</header>
-				<p class="px-2 text-lg leading-normal sm:px-4 md:px-10">
-					{description}
-				</p>
-			</div>
-		{/each}
-	</section>
+			<p class="description">
+				{description}
+			</p>
+		</article>
+	{/each}
 </main>
+
+<style>
+	.posts {
+		@apply max-w-3xl mx-auto px-6 mb-10;
+	}
+	.article-summary {
+		@apply py-4 text-center border-b border-lime-300 sm:py-8 text-gray-700 dark:text-gray-300;
+	}
+	.date {
+		@apply mb-2 text-xs uppercase;
+	}
+	.description {
+		@apply px-2 text-lg leading-normal sm:px-4 md:px-10 mt-8;
+	}
+</style>

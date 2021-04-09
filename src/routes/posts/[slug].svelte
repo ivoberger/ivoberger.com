@@ -65,37 +65,45 @@
 	}}
 />
 
-<div itemScope itemType="https://schema.org/TechArticle">
-	<header class="relative overflow-hidden h-96 ">
+<main itemScope itemType="https://schema.org/TechArticle">
+	<header>
 		{#if cover}
-			<div
-				class="absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat"
-				style="background-image: url({cover});"
-			/>
+			<div class="cover-image" style="background-image: url({cover});" />
 		{/if}
-		<div
-			class={`absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-14 mx-auto text-center md:max-w-3xl xl:max-w-4xl 
-			${cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'}`}
-		>
+		<div class={`cover-text ${cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'}`}>
 			<p class="text-sm uppercase">{readTime}</p>
 			<h1 itemProp="headline">{title}</h1>
-			<p itemProp="datePublished">{published}</p>
+			<time datetime={date} itemProp="datePublished">{published}</time>
 		</div>
 		<meta itemProp="name" content={title} />
 		<meta itemProp="description" content={description} />
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
-	<Body>
-		<article
-			class="mb-10 max-w-none prose prose-lime dark:prose-light xl:prose-lg"
-			itemProp="articleBody"
-		>
-			{@html content}
-		</article>
+	<Body
+		itemProp="articleBody"
+		class="mb-10 max-w-none prose prose-lime dark:prose-light xl:prose-lg"
+	>
+		{@html content}
+
 		<!-- TODO: re-enable once tag pages are implemented
      <footer>
       <Tags tags={tags} />
     </footer> -->
 	</Body>
-</div>
+</main>
+
+<style>
+	header {
+		@apply relative overflow-hidden h-96;
+	}
+	.cover-image {
+		@apply absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat;
+	}
+	.cover-text {
+		@apply absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-14 mx-auto text-center md:max-w-3xl xl:max-w-4xl;
+	}
+	.text-shadow-lg {
+		text-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);
+	}
+</style>
