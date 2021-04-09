@@ -42,6 +42,6 @@
 		"unified": "^9.2.1",
 		"vite": "^2.1.0",
 		"vite-plugin-windicss": "^0.12.5",
-		"windicss": "^2.5.9"
+		"windicss": "^2.5.12"
 	}
 }
