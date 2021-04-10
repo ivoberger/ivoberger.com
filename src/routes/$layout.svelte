@@ -13,13 +13,8 @@
 	import 'virtual:windi.css';
 	import './_global.css';
 	import './_posts.css';
-	import { rootUrl } from '$lib/seoConstants';
 	import { Footer } from '$lib/components';
 </script>
-
-<svelte:head>
-	<script async defer data-domain={rootUrl} src="/stats/plausible.js"></script>
-</svelte:head>
 
 <slot />
 <Footer />
