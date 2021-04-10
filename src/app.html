@@ -5,10 +5,7 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="/fonts.css" rel="stylesheet" />
 		<meta name="color-scheme" content="dark light" />
 		<script>
 			!(function () {
@@ -105,10 +102,7 @@
 				window.addEventListener('load', function () {
 					firebase.initializeApp(fbc).performance();
 				});
-			})(
-				'https://www.gstatic.com/firebasejs/8.3.3/firebase-performance-standalone.js',
-				firebaseConfig
-			);
+			})('/stats/firebase-performance.js', firebaseConfig);
 		</script>
 		%svelte.head%
 	</head>
