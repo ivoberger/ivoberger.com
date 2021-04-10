@@ -7,10 +7,10 @@
   to = "https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700&family=Source+Serif+Pro:ital@0;1&display=swap"
   status = 200
 [[redirects]]
-  from = "/stats/firebase-performance.js"
+  from = "scripts/firebase-performance.js"
   to = "https://www.gstatic.com/firebasejs/8.3.3/firebase-performance-standalone.js"
   status = 200
 [[redirects]]
-  from = "/stats/plausible.js"
+  from = "/scripts/stats.js"
   to = "https://p.ivoberger.com/js/index.js"
   status = 200
