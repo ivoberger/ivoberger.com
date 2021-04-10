@@ -12,7 +12,6 @@
 <script>
 	import 'virtual:windi.css';
 	import './_global.css';
-	import './_fonts.css';
 	import './_posts.css';
 	import { onMount } from 'svelte';
 	import { rootUrl } from '$lib/seoConstants';
