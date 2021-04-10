@@ -17,6 +17,7 @@ module.exports = {
 	}),
 	kit: {
 		adapter: static(),
+		hydrate: false,
 		vite: {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
