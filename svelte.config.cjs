@@ -10,10 +10,7 @@ module.exports = {
 		defaults: {
 			script: 'typescript',
 			style: 'postcss'
-		},
-		replace: [
-			['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
-		]
+		}
 	}),
 	kit: {
 		adapter: static(),
