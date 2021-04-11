@@ -42,16 +42,19 @@ module.exports = defineConfig({
 			},
 			typography: {
 				DEFAULT: {
-					css: { a: { textDecoration: 'none' }, pre: { lineHeight: '1.5', textAlign: 'left' } }
+					css: {
+						a: {
+							color: colors.lime[600],
+							textDecoration: 'none'
+						},
+						pre: { lineHeight: '1.5', textAlign: 'left' }
+					}
 				},
 				light: {
 					css: {
 						color: colors.gray[300],
 						'[class~="lead"]': {
 							color: colors.trueGray[300]
-						},
-						a: {
-							color: colors.lime[500]
 						},
 						strong: {
 							color: colors.trueGray[200]

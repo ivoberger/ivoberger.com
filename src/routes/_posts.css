@@ -1,8 +1,8 @@
 .prose a {
-	@apply transition duration-500 border-b border-transparent;
+	@apply transition-colors duration-500 border-b border-transparent;
 }
 .prose a:hover {
-	@apply border-lime-500;
+	@apply border-lime-600;
 }
 
 /* Inline code */

@@ -80,7 +80,7 @@
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
-	<Body itemProp="articleBody" class="mb-10 prose prose-lime dark:prose-light xl:prose-lg">
+	<Body itemProp="articleBody" class="mb-10 prose dark:prose-light xl:prose-lg">
 		{@html content}
 
 		<!-- TODO: re-enable once tag pages are implemented
