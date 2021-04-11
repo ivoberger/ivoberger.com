@@ -20,7 +20,7 @@ module.exports = defineConfig({
 		scale: { 105: '1.05' },
 		fontFamily: {
 			sans: ['Catamaran', ...defaultTheme.fontFamily.sans],
-			serif: ['Source Serif Pro', ...defaultTheme.fontFamily.serif]
+			serif: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif]
 		},
 		extend: {
 			colors: {
@@ -41,65 +41,70 @@ module.exports = defineConfig({
 				}
 			},
 			typography: {
-				DEFAULT: { css: { a: { textDecoration: 'none' } } },
+				DEFAULT: {
+					css: {
+						a: {
+							color: colors.lime[600],
+							textDecoration: 'none'
+						},
+						pre: { lineHeight: '1.5', textAlign: 'left' }
+					}
+				},
 				light: {
 					css: {
 						color: colors.gray[300],
 						'[class~="lead"]': {
-							color: colors.gray[300]
-						},
-						a: {
-							color: colors.lime[500]
+							color: colors.trueGray[300]
 						},
 						strong: {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						'ol > li::before': {
-							color: colors.gray[400]
+							color: colors.trueGray[400]
 						},
 						'ul > li::before': {
-							backgroundColor: colors.gray[600]
+							backgroundColor: colors.trueGray[600]
 						},
 						hr: {
-							borderColor: colors.gray[700]
+							borderColor: colors.trueGray[700]
 						},
 						blockquote: {
 							color: colors.gray[200],
-							borderLeftColor: colors.gray[700]
+							borderLeftColor: colors.trueGray[700]
 						},
 						h1: {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						h2: {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						h3: {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						h4: {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						'figure figcaption': {
-							color: colors.gray[400]
+							color: colors.trueGray[400]
 						},
 						code: {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						'pre code': {
-							color: colors.gray[200]
+							color: colors.trueGray[200]
 						},
 						'a code': {
-							color: colors.lime
+							color: colors.lime[500]
 						},
 						pre: {
-							color: colors.gray[700]
+							color: colors.trueGray[700]
 						},
 						thead: {
-							color: colors.gray[200],
-							borderBottomColor: colors.gray[600]
+							color: colors.trueGray[200],
+							borderBottomColor: colors.trueGray[600]
 						},
 						'tbody tr': {
-							borderBottomColor: colors.gray[700]
+							borderBottomColor: colors.trueGray[700]
 						}
 					}
 				}

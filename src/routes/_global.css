@@ -1,17 +1,26 @@
 body {
-	@apply font-serif antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100;
+	@apply font-sans antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-serif;
 }
 
 h1 {
-	@apply mb-1 font-sans text-3xl font-bold leading-tight;
+	@apply mb-1 text-3xl font-semibold;
 }
 
 h2 {
-	@apply mb-1 font-sans text-xl;
+	@apply mb-1 text-xl;
 }
 
 h3 {
-	@apply my-3 font-sans text-3xl font-bold leading-tight;
+	@apply my-3 text-3xl font-semibold;
 }
 
 @screen sm {

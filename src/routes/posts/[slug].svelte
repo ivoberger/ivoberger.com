@@ -80,10 +80,7 @@
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
-	<Body
-		itemProp="articleBody"
-		class="mb-10 max-w-none prose prose-lime dark:prose-light xl:prose-lg"
-	>
+	<Body itemProp="articleBody" class="mb-10 prose dark:prose-light xl:prose-lg">
 		{@html content}
 
 		<!-- TODO: re-enable once tag pages are implemented
@@ -101,7 +98,7 @@
 		@apply absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat;
 	}
 	.cover-text {
-		@apply absolute inset-x-0 bottom-0 z-10 max-w-xl px-6 pb-14 mx-auto text-center md:max-w-3xl xl:max-w-4xl;
+		@apply absolute inset-x-0 bottom-0 z-10 px-6 pb-14 mx-auto text-center md:max-w-4xl;
 	}
 	.text-shadow-lg {
 		text-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);

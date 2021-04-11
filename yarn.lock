@@ -1848,9 +1848,9 @@ which@^2.0.1:
     isexe "^2.0.0"
 
 windicss@^2.5.11, windicss@^2.5.9:
-  version "2.5.13"
-  resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.5.13.tgz#a9f6818eb6ca21ebdba3dedd93b0b0d13f288fa1"
-  integrity sha512-Am0Q05X8HN39czbX3as36elW0UcUvU07zsbBKRQlHBZbF6l7F7AbSeWo6aq4G+rm3VZPpgLU3PHqMFHqHvLMqw==
+  version "2.5.14"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.5.14.tgz#41236ccc2517c0947e1adb69e0d5e8aa9bed9c1e"
+  integrity sha512-8Lm7U1M5AzJPbiaVSVz7qWdETRzlkv//5LBMICBBAojos1jo09lUGhNZ5rBzHeldB9JmqYMDOGgrrXHExu0EAg==
 
 word-wrap@^1.2.3:
   version "1.2.3"

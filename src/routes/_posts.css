@@ -1,51 +1,13 @@
 .prose a {
-	@apply transition duration-500 border-b border-transparent;
+	@apply transition-colors duration-500 border-b border-transparent;
 }
 .prose a:hover {
-	@apply border-lime-500;
-}
-.prose p code {
-	@apply inline p-1 rounded dark:border-transparent;
-}
-
-code[class*='language-'],
-pre[class*='language-'] {
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, 'Courier New', Courier, monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*='language-'] {
-	padding: 1em;
-	margin: 0.5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-	background: #1d1f21;
+	@apply border-lime-600;
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
-	padding: 0.1em;
-	border-radius: 0.3em;
+:not(pre) > code {
+	@apply p-1 rounded bg-gray-800;
 }
 
 .token.comment,
@@ -71,7 +33,7 @@ pre[class*='language-'] {
 
 .token.class-name {
 	color: #ffffb6;
-	text-decoration: underline;
+	@apply underline;
 }
 
 .token.boolean,
@@ -138,9 +100,9 @@ pre[class*='language-'] {
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+	@apply font-bold;
 }
 
 .token.italic {
-	font-style: italic;
+	@apply italic;
 }
