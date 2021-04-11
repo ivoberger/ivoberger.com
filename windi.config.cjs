@@ -20,7 +20,7 @@ module.exports = defineConfig({
 		scale: { 105: '1.05' },
 		fontFamily: {
 			sans: ['Catamaran', ...defaultTheme.fontFamily.sans],
-			serif: ['Source Serif Pro', ...defaultTheme.fontFamily.serif]
+			serif: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif]
 		},
 		extend: {
 			colors: {

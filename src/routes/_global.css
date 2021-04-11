@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-	@apply mb-1 font-sans text-3xl font-bold leading-tight;
+	@apply mb-1 font-sans text-3xl font-semibold leading-tight;
 }
 
 h2 {
