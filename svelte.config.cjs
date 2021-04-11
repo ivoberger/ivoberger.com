@@ -2,6 +2,8 @@ const sveltePreprocess = require('svelte-preprocess');
 const static = require('@sveltejs/adapter-static');
 const pkg = require('./package.json');
 
+const windicss = require('vite-plugin-windicss').default;
+
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -19,7 +21,7 @@ module.exports = {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
 			plugins: [
-				require('vite-plugin-windicss').default({
+				windicss({
 					scan: { dirs: ['./src'], fileExtensions: ['css', 'svelte', 'ts'] }
 				})
 			]
