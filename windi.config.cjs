@@ -94,7 +94,7 @@ module.exports = defineConfig({
 							color: colors.trueGray[200]
 						},
 						'a code': {
-							color: colors.lime
+							color: colors.lime[500]
 						},
 						pre: {
 							color: colors.trueGray[700]
