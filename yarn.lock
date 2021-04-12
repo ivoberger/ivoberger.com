@@ -248,18 +248,18 @@
     "@typescript-eslint/types" "4.21.0"
     eslint-visitor-keys "^2.0.0"
 
-"@windicss/plugin-utils@0.12.5":
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.12.5.tgz#d03517d1ae7a48b5b459e3d670e873d38b63e4a1"
-  integrity sha512-4ux2o4s6D/gRTD68os41oxs/0NFk/eSJxHhZL9nN2wy4RGt+pPMQJyOHV56l7zDh9B0ywU5+ZRxDjdw2cl5Yvg==
+"@windicss/plugin-utils@0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.14.0.tgz#ca5459e81d38fbe3c1eac0574ffdc8dba06961a4"
+  integrity sha512-PnXKrCX7dl3tQPkfc2RGOQCqzS+3ApTLelGhr0c1kbHgz+EjaS+pK9vhhQm/8xgzyJLyreYUuQEEAvvPtBRBEQ==
   dependencies:
     debug "^4.3.2"
     fast-glob "^3.2.5"
     magic-string "^0.25.7"
-    micromatch "^4.0.2"
+    micromatch "^4.0.4"
     pirates "^4.0.1"
     sucrase "^3.17.1"
-    windicss "^2.5.11"
+    windicss "^2.5.14"
 
 acorn-jsx@^5.3.1:
   version "5.3.1"
@@ -489,14 +489,7 @@ date-fns@^2.20.0:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.20.1.tgz#7e60b7035284a5f83e37500376e738d9f49ecfd3"
   integrity sha512-8P5M8Kxbnovd0zfvOs7ipkiVJ3/zZQ0F/nrBW4x5E+I0uAZVZ80h6CKd24fSXQ5TLK5hXMtI4yb2O5rEZdUt2A==
 
-debug@^4.0.0, debug@^4.0.1, debug@^4.1.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
-  integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
-  dependencies:
-    ms "2.1.2"
-
-debug@^4.3.2:
+debug@^4.0.0, debug@^4.0.1, debug@^4.1.1, debug@^4.3.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
   integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
@@ -1183,7 +1176,7 @@ micromark@~2.11.0:
     debug "^4.0.0"
     parse-entities "^2.0.0"
 
-micromatch@^4.0.2:
+micromatch@^4.0.2, micromatch@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.4.tgz#896d519dfe9db25fce94ceb7a500919bf881ebf9"
   integrity sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==
@@ -1813,15 +1806,15 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
-vite-plugin-windicss@^0.12.5:
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.12.5.tgz#74a5043db3615fe432855f6ecff13be36f7a6843"
-  integrity sha512-M/eEA+x94kxZNpEEkJLdY7M6Lp3WFhN0Kb/a2zhdPxBviMwaHSA5A7fUqN1xTYMxlQe4xM7D7naxL7EpnSNlmg==
+vite-plugin-windicss@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.14.0.tgz#e2e1c2a14eff7a5a3c417c388e5d865fa6157967"
+  integrity sha512-f4Dgvpgq1i2rvqJ3He4gZ+BYrgz6OiQwHOLMOMU4RbyWY1Vr7gdNs71E/AbN2DWdkm+L/fj/4BNhvlp35I8+fw==
   dependencies:
-    "@windicss/plugin-utils" "0.12.5"
+    "@windicss/plugin-utils" "0.14.0"
     chalk "^4.1.0"
     debug "^4.3.2"
-    windicss "^2.5.11"
+    windicss "^2.5.14"
 
 vite@^2.1.0:
   version "2.1.5"
@@ -1847,7 +1840,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss@^2.5.11, windicss@^2.5.9:
+windicss@^2.5.14, windicss@^2.5.9:
   version "2.5.14"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.5.14.tgz#41236ccc2517c0947e1adb69e0d5e8aa9bed9c1e"
   integrity sha512-8Lm7U1M5AzJPbiaVSVz7qWdETRzlkv//5LBMICBBAojos1jo09lUGhNZ5rBzHeldB9JmqYMDOGgrrXHExu0EAg==
