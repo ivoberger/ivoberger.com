@@ -114,19 +114,19 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.4.tgz#5305a2fedf9d1ec40af6c25384b7542a0337ec4c"
   integrity sha512-Atri/5jyiVmAklqDKb/5czmLkHos6LQOag61k/C6qWozMb8UopvL3bTm62hFQXGKvGnuSRq2xIueDOKWHM/7rA==
 
-"@sveltejs/kit@next":
-  version "1.0.0-next.77"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.77.tgz#1caaf3aa32ab2c4e4904815cce67897c0c0d22d4"
-  integrity sha512-3qxJAa+P8hjKtQt0+VlVkv0ktdxJ3Ouf8DTcttv5wejf9EysDWcnrGEePuJWsU0pVSS4WGHdmPEgHGsaUB18BA==
+"@sveltejs/kit@^1.0.0-next.78":
+  version "1.0.0-next.78"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.78.tgz#ecf62660f190c622cd5d22b7d190316318bfcfd7"
+  integrity sha512-+lFFKZHU2QzuQz48dgnjWE41UNvNzj6xfTli7HIyEf5elkn9EEnafkYfkIVvnJ33EHPYMmza9cVAfkgNIRzU9g==
   dependencies:
-    "@sveltejs/vite-plugin-svelte" "1.0.0-next.5"
+    "@sveltejs/vite-plugin-svelte" "^1.0.0-next.7"
     cheap-watch "^1.0.3"
     sade "^1.7.4"
 
-"@sveltejs/vite-plugin-svelte@1.0.0-next.5":
-  version "1.0.0-next.5"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.5.tgz#8cf608f7a3c33dfa5b648397aae1ba90e6a4883f"
-  integrity sha512-RVjafsqziWwnQm8VEy2y0qNaugNDvRd8tTaCt9rjgQkqaS/BDiyDCluXxA28PRC+ddZjvwUeq9k+0EfbLVObfg==
+"@sveltejs/vite-plugin-svelte@^1.0.0-next.7":
+  version "1.0.0-next.7"
+  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.7.tgz#77e7649ab6fd1452b3ccddd2ad8456c4d63a6026"
+  integrity sha512-ENvKYY36jrvFP7h1G87k5uOoEh5UM1m8n40J2duqV/R3wHnxfW81SCR1aXo+5CVU8Prm3/jtS4TWs8CUTqO1fw==
   dependencies:
     "@rollup/pluginutils" "^4.1.0"
     chalk "^4.1.0"
@@ -135,7 +135,7 @@
     require-relative "^0.8.7"
     slash "^3.0.0"
     source-map "^0.7.3"
-    svelte-hmr "^0.13.3"
+    svelte-hmr "^0.14.0"
 
 "@types/hast@^2.0.0":
   version "2.3.1"
@@ -1607,10 +1607,10 @@ svelte-awesome@^2.3.0:
   dependencies:
     svelte "^3.15.0"
 
-svelte-hmr@^0.13.3:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.13.3.tgz#fba5739b477ea44caf70e542a24a4352bee2b897"
-  integrity sha512-gagW62pLQ2lULmvNA3pIZu9pBCYOaGu3rQikUOv6Nokz5VxUgT9/mQLfMxj9phDEKHCg/lgr3i6PkqZDbO9P2Q==
+svelte-hmr@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.0.tgz#d11c6d2b53d1e7cde51b57cdb7e65c0e4415cb8d"
+  integrity sha512-Rc4w11U+U30m/cHqOJ/xioFSEAY5fd5muiQC7FL6XJuJAuB2OIJoEZl3KEJR2uO1/f4Bw0PdrugtbxcngSsOtQ==
 
 svelte-preprocess@^4.0.0:
   version "4.7.0"
