@@ -248,20 +248,7 @@
     "@typescript-eslint/types" "4.22.0"
     eslint-visitor-keys "^2.0.0"
 
-"@windicss/plugin-utils@0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.14.0.tgz#ca5459e81d38fbe3c1eac0574ffdc8dba06961a4"
-  integrity sha512-PnXKrCX7dl3tQPkfc2RGOQCqzS+3ApTLelGhr0c1kbHgz+EjaS+pK9vhhQm/8xgzyJLyreYUuQEEAvvPtBRBEQ==
-  dependencies:
-    debug "^4.3.2"
-    fast-glob "^3.2.5"
-    magic-string "^0.25.7"
-    micromatch "^4.0.4"
-    pirates "^4.0.1"
-    sucrase "^3.17.1"
-    windicss "^2.5.14"
-
-"@windicss/plugin-utils@^0.14.0":
+"@windicss/plugin-utils@0.14.6", "@windicss/plugin-utils@^0.14.0":
   version "0.14.6"
   resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.14.6.tgz#25d3fdda3a8b0a560f3daed6588abd0a4fbef195"
   integrity sha512-jF+dJ6D4/UqVHSbH5kCdSoPnklLTZDf+seck4unICI0qyzmyPsrO15nmSS/gIvnmCedUfBrQj1MfYOX0tccFjQ==
@@ -498,9 +485,9 @@ cross-spawn@^7.0.2:
     which "^2.0.1"
 
 date-fns@^2.20.2:
-  version "2.20.2"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.20.2.tgz#7f05d1275e1e43c3bdde5998201920098e19c6a1"
-  integrity sha512-QS0Z8SD/ALhKFvhtU4Fhz+1crsI7fPzBquXmdWay33KJPEU7btro2hnmmErpQRmt2D624B1lbjXQKDUMLnQTmQ==
+  version "2.21.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.1.tgz#679a4ccaa584c0706ea70b3fa92262ac3009d2b0"
+  integrity sha512-m1WR0xGiC6j6jNFAyW4Nvh4WxAi4JF4w9jRJwSI8nBmNcyZXPcP9VUQG+6gHQXAmqaGEKDKhOqAtENDC941UkA==
 
 debug@^4.0.0, debug@^4.0.1, debug@^4.1.1:
   version "4.3.1"
@@ -1641,9 +1628,9 @@ svelte-seo@^1.1.0:
   integrity sha512-I4Z0x2ieCwIBOjnXpdg61Btz5HNNmRxjdTx/s1pDNNI1BiGQd7qTxzQkw6fOUA4uB8NwpsTVKRc70A0zwqumIw==
 
 svelte-windicss-preprocess@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/svelte-windicss-preprocess/-/svelte-windicss-preprocess-3.5.2.tgz#c911045dc25eac25d8ca373d615c622633fd69b1"
-  integrity sha512-SkeEedqLSx0arX5N+6m734dqyjzutbxhi3NGwMkccF8gbmgvOBsjHnHn+KSCEfUZwLzbvIACSMsTDNuzM0ty/Q==
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/svelte-windicss-preprocess/-/svelte-windicss-preprocess-3.5.3.tgz#3dbf1010b1c230cd738ce4b0789967f2a33080b0"
+  integrity sha512-k1+DVt8JvO1Dqf1ENlFPICKabtSO4KVMXlsnfTnced7wLBsKZGDxMmxYtw8nnHYJ4EUhAMXBBrJ+sBJye8clhQ==
   dependencies:
     "@windicss/plugin-utils" "^0.14.0"
     chalk "^4.1.0"
@@ -1840,11 +1827,11 @@ vfile@^4.0.0:
     vfile-message "^2.0.0"
 
 vite-plugin-windicss@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.14.0.tgz#e2e1c2a14eff7a5a3c417c388e5d865fa6157967"
-  integrity sha512-f4Dgvpgq1i2rvqJ3He4gZ+BYrgz6OiQwHOLMOMU4RbyWY1Vr7gdNs71E/AbN2DWdkm+L/fj/4BNhvlp35I8+fw==
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.14.6.tgz#c17b66b5f35a3b1ffdfc3e969ce28a528305716e"
+  integrity sha512-bFyKfvnsa3nAab9LgrFInzdQhsIJyeNdCczgjrYMxjO8WlgiQuIFyJ1RTYQnYmQRlbvU9jpOL5XDxsFUMKRLUg==
   dependencies:
-    "@windicss/plugin-utils" "0.14.0"
+    "@windicss/plugin-utils" "0.14.6"
     chalk "^4.1.0"
     debug "^4.3.2"
     windicss "^2.5.14"
