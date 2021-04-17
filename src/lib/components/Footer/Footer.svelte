@@ -19,7 +19,7 @@
 			title="GitHub"
 			link="https://github.com/ivoberger"
 			icon={faGithub}
-			class="pl-0 hover:text-brand-github dark:hover:text-gray-100"
+			class="hover:text-brand-github dark:hover:text-gray-100"
 		/>
 		<SocialLink
 			title="StackOverflow"

@@ -24,11 +24,7 @@ module.exports = {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
-			plugins: [
-				windicss({
-					scan: { dirs: ['./src'], fileExtensions: ['css', 'svelte', 'ts'] }
-				})
-			]
+			plugins: [windicss()]
 		}
 	}
 };
