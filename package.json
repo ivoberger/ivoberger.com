@@ -36,7 +36,7 @@
 		"remark-parse": "^9.0.0",
 		"remark-rehype": "^8.0.0",
 		"svelte": "^3.29.0",
-		"svelte-preprocess": "^4.0.0",
+		"svelte-preprocess": "^4.7.1",
 		"svelte-windicss-preprocess": "^3.5.2",
 		"tslib": "^2.0.0",
 		"typescript": "^4.0.0",
