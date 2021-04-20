@@ -32,39 +32,15 @@
 	}
 
 	h1 {
-		@apply mb-1 text-3xl font-semibold;
+		@apply mb-1 font-semibold text-3xl sm:text-4xl md:text-5xl;
 	}
 
 	h2 {
-		@apply mb-1 text-xl;
+		@apply mb-1 text-xl sm:text-2xl;
 	}
 
 	h3 {
-		@apply my-3 text-3xl font-semibold;
-	}
-
-	@screen sm {
-		h1 {
-			@apply text-4xl;
-		}
-		h2 {
-			@apply text-2xl;
-		}
-		h3 {
-			@apply my-5 text-3xl;
-		}
-	}
-
-	@screen md {
-		h1 {
-			@apply text-5xl;
-		}
-		h2 {
-			@apply text-2xl;
-		}
-		h3 {
-			@apply text-4xl;
-		}
+		@apply my-3 sm:my-5 font-semibold text-3xl sm:text-3xl md:text-4xl;
 	}
 
 	.visible-hidden {
