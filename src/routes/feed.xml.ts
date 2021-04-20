@@ -19,8 +19,8 @@ const makeFeed = (posts: PostSpec[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 		<description>${description}</description>
 		<content>${getPost(slug).content}</content>
 		${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
-        <link>https://${rootUrl}/posts/${slug}</link>
-        <guid>https://${rootUrl}/posts/${slug}</guid>
+        <link>https://${rootUrl}/posts/${slug}/</link>
+        <guid>https://${rootUrl}/posts/${slug}/</guid>
         <pubDate>${new Date(date).toUTCString()}</pubDate>		
     </item>`
 			)
