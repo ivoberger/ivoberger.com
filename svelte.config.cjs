@@ -15,6 +15,8 @@ module.exports = {
 		}
 	}),
 	kit: {
+		hydrate: false,
+		router: false,
 		adapter: static(),
 		vite: {
 			ssr: {
