@@ -13,7 +13,7 @@
 	import SvelteSeo from 'svelte-seo';
 	import { Body } from '$lib/components';
 	import './_posts.css';
-	import { defaultAuthor, seoData } from '$lib/seoConstants';
+	import { defaultAuthor, rootUrl, seoData } from '$lib/seoConstants';
 
 	export let post: PostData;
 	export let path: string;
@@ -25,13 +25,10 @@
 		meta: { readTime, published, cover, title, description, tags, author = defaultAuthor, date }
 	} = post);
 
-	onMount(() => {
-		const host = window.location.host;
-		const protocol = window.location.protocol;
-		const baseUrl = `${protocol}//${host}`;
-		fullPageUrl = `${baseUrl}${path}`;
-		if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
-	});
+	const baseUrl = `https://${rootUrl}`;
+	fullPageUrl = `${baseUrl}${path}`;
+	if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
+
 	$: seo = seoData({
 		title,
 		description,
@@ -44,7 +41,10 @@
 </script>
 
 <svelte:head>
-	<meta name="image" content={fullImgPath} />
+	{#if fullImgPath}
+		<meta name="image" content={fullImgPath} />
+	{/if}
+	<link rel="canonical" href={fullPageUrl} />
 </svelte:head>
 
 <SvelteSeo
