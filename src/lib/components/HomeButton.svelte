@@ -5,7 +5,6 @@
 
 <nav class="fixed top-0 left-0 m-4 group z-50">
 	<a
-		sveltekit:prefetch
 		href="/"
 		class="px-5 py-2 transition border rounded-full border-gray-100-t bg-black group-hover:border-gray-600"
 	>
