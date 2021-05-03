@@ -2,8 +2,7 @@
 .prose a code {
 	@apply transition-colors duration-500 border-b border-transparent;
 }
-.prose a:hover,
-.prose a code:hover {
+.prose a:hover {
 	@apply border-lime-600;
 }
 
