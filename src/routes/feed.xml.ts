@@ -11,7 +11,7 @@ const makeFeed = async (posts: PostSpec[]) => {
 <item>
 <title>${title}</title>
 <description>${description}</description>
-<content>${(await getPost(slug)).content}</content>
+<content><![CDATA[${(await getPost(slug)).content}]]></content>
 ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
 <link>https://${rootUrl}/posts/${slug}</link>
 <guid>https://${rootUrl}/posts/${slug}</guid>
