@@ -37,6 +37,7 @@
 		"rehype-stringify": "^8.0.0",
 		"remark-capitalize": "^1.1.0",
 		"remark-parse": "^9.0.0",
+		"remark-rehype": "^8.1.0",
 		"remark-squeeze-paragraphs": "^4.0.0",
 		"svelte": "^3.38.1",
 		"svelte-preprocess": "^4.7.3",
