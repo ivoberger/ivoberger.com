@@ -13,7 +13,7 @@ import rehypeMinify from 'rehype-preset-minify';
 import html from 'rehype-stringify';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import { format } from 'date-fns';
+import { compareDesc, format } from 'date-fns';
 
 import { defaultAuthor } from './seoConstants';
 
@@ -44,7 +44,11 @@ export function getPost(slug: string): Promise<PostData> {
 }
 
 export function getAllPosts(): PostSpec[] {
-	return readdirSync(postsDirectory).map(readPostSpecFromFile);
+	return readdirSync(postsDirectory)
+		.map(readPostSpecFromFile)
+		.sort(({ meta: { date: dateA } }, { meta: { date: dateB } }) =>
+			compareDesc(new Date(dateA), new Date(dateB))
+		);
 }
 
 function readPostSpecFromFile(filename: string): PostSpec {
