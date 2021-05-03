@@ -47,6 +47,9 @@ module.exports = defineConfig({
 							color: colors.lime[600],
 							textDecoration: 'none'
 						},
+						'a code': {
+							color: colors.lime[600]
+						},
 						pre: { lineHeight: '1.5', textAlign: 'left' }
 					}
 				},
@@ -92,9 +95,6 @@ module.exports = defineConfig({
 						},
 						'pre code': {
 							color: colors.trueGray[200]
-						},
-						'a code': {
-							color: colors.lime[500]
 						},
 						pre: {
 							color: colors.trueGray[700]

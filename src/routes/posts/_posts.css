@@ -1,20 +1,19 @@
-.prose a {
+.prose a,
+.prose a code {
 	@apply transition-colors duration-500 border-b border-transparent;
 }
-.prose a:hover {
+.prose a:hover,
+.prose a code:hover {
 	@apply border-lime-600;
 }
 
 .prose a .icon.icon-link::before {
 	content: '#';
 	@apply transition-colors duration-500;
-	@apply pl-1 text-gray-600;
+	@apply pl-1 text-gray-400 dark:text-gray-600;
 }
 .prose a .icon.icon-link:hover::before {
-	@apply transition-colors text-gray-400;
-}
-.prose a .icon.icon-link:hover::before {
-	@apply text-gray-400;
+	@apply text-gray-600 dark:text-gray-400;
 }
 .prose h1 a:hover,
 .prose h2 a:hover,
@@ -26,6 +25,6 @@
 }
 
 /* Inline code */
-:not(pre) > code {
-	@apply p-1 rounded bg-gray-800;
+code {
+	@apply p-1 rounded bg-gray-100 dark:bg-gray-800;
 }
