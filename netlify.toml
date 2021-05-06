@@ -6,6 +6,10 @@
   from = "/css/fonts.css"
   to = "https://fonts.googleapis.com/css2?family=Catamaran&family=Source+Serif+Pro:wght@400;600;700&display=swap"
   status = 200
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
 
 [[headers]]
   for = "/*"
