@@ -4,8 +4,8 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"start": "svelte-kit preview",
-		"lint": "prettier --check . && eslint .",
+		"preview": "svelte-kit preview",
+		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
 	},
 	"type": "module",
@@ -45,7 +45,7 @@
 		"typescript": "^4.0.0",
 		"unified": "^9.2.1",
 		"vite": "^2.1.0",
-		"vite-plugin-windicss": "^0.15.10",
-		"windicss": "^2.5.9"
+		"vite-plugin-windicss": "next",
+		"windicss": "next"
 	}
 }

@@ -1,11 +1,14 @@
 import { defineConfig } from 'windicss/helpers';
+import defaultTheme from 'windicss/defaultTheme';
+import colors from 'windicss/colors';
+import filters from 'windicss/plugin/filters';
+import typography from 'windicss/plugin/typography';
 
-const defaultTheme = require('windicss/defaultTheme');
-const colors = require('windicss/colors');
-const filters = require('windicss/plugin/filters');
-const typography = require('windicss/plugin/typography');
-
-module.exports = defineConfig({
+export default defineConfig({
+	extract: {
+		include: ['./**/*.{svelte,html}'],
+		exclude: ['node_modules', '.git']
+	},
 	darkMode: 'media',
 	theme: {
 		filter: {
@@ -25,7 +28,7 @@ module.exports = defineConfig({
 		extend: {
 			colors: {
 				gray: {
-					...colors.trueGray,
+					...(colors.trueGray as Record<string | number, string>),
 					'100-t': 'rgba(0,0,0, 0.1)',
 					'200-t': 'rgba(0,0,0, 0.2)',
 					'300-t': 'rgba(0,0,0, 0.3)',
@@ -39,6 +42,9 @@ module.exports = defineConfig({
 					stackOverflow: '#f48024',
 					github: '#24292e'
 				}
+			},
+			boxShadow: {
+				blend: 'inset 0 0 10px 10px rgba(0, 0, 0, 0.06)'
 			},
 			typography: {
 				DEFAULT: {
