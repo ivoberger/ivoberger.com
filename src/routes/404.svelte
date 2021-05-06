@@ -19,7 +19,7 @@
 
 <style>
 	.image-blurred {
-		background-image: url('404.jpg');
+		background-image: url('/404.jpg');
 		width: 100%;
 		height: 25rem;
 		@apply bg-center bg-cover bg-no-repeat;
