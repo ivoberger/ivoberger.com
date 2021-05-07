@@ -22,6 +22,11 @@
 		background-image: url('/404.jpg');
 		width: 100%;
 		height: 25rem;
-		@apply shadow-blend shadow-white dark:shadow-gray-900;
+		@apply bg-center bg-cover bg-no-repeat;
+		box-shadow: 0 0 15px 10px white inset;
+
+		@media (prefers-color-scheme: dark) {
+			box-shadow: 0 0 15px 10px #171717 inset;
+		}
 	}
 </style>

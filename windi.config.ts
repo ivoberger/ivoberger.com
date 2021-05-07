@@ -1,4 +1,4 @@
-import { defineConfig } from 'windicss/helpers';
+import { defineConfig, transform } from 'windicss/helpers';
 import defaultTheme from 'windicss/defaultTheme';
 import colors from 'windicss/colors';
 import filters from 'windicss/plugin/filters';
@@ -42,9 +42,6 @@ export default defineConfig({
 					stackOverflow: '#f48024',
 					github: '#24292e'
 				}
-			},
-			boxShadow: {
-				blend: 'inset 0 0 10px 10px rgba(0, 0, 0, 0.06)'
 			},
 			typography: {
 				DEFAULT: {
