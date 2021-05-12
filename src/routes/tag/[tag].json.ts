@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-import { getPostBySlug } from '$lib/posts';
+import { getPostsByTag } from '$lib/posts';
 
 export const get: RequestHandler = async ({ params }) => ({
-	body: await getPostBySlug(params.slug)
+	body: await getPostsByTag(params.tag)
 });

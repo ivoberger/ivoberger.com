@@ -9,9 +9,8 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import SvelteSeo from 'svelte-seo';
-	import { Body } from '$lib/components';
+	import { Body, Tags } from '$lib/components';
 	import './_posts.css';
 	import { defaultAuthor, rootUrl, seoData } from '$lib/seoConstants';
 
@@ -79,10 +78,9 @@
 	<Body itemProp="articleBody" class="mb-10 prose dark:prose-light xl:prose-lg">
 		{@html content}
 
-		<!-- TODO: re-enable once tag pages are implemented
-     <footer>
-      <Tags tags={tags} />
-    </footer> -->
+		<footer>
+			<Tags {tags} />
+		</footer>
 	</Body>
 </main>
 

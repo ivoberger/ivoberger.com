@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
-import { getAllPosts, getPost } from '$lib/posts';
+import { getAllPosts, getPostBySlug } from '$lib/posts';
 import { defaultDesc, defaultTitle, rootUrl } from '$lib/seoConstants';
 
 const makeFeed = async (posts: PostSpec[]) => {
@@ -11,7 +11,7 @@ const makeFeed = async (posts: PostSpec[]) => {
 <item>
 <title>${title}</title>
 <description>${description}</description>
-<content><![CDATA[${(await getPost(slug)).content}]]></content>
+<content><![CDATA[${(await getPostBySlug(slug)).content}]]></content>
 ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
 <link>https://${rootUrl}/posts/${slug}</link>
 <guid>https://${rootUrl}/posts/${slug}</guid>
@@ -35,7 +35,7 @@ ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
 };
 
 export const get: RequestHandler = async () => {
-	const posts = getAllPosts();
+	const posts = await getAllPosts();
 	const feed = await makeFeed(posts);
 
 	return {

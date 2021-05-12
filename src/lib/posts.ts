@@ -30,28 +30,34 @@ const processor = unified()
 	.use(rehypeMinify)
 	.use(html);
 
-export function getPost(slug: string): Promise<PostData> {
-	const { content: rawContent, meta } = readPostSpecFromFile(slug + '.md');
+let posts: PostData[];
+const postsBySlug: { [slug: string]: PostData } = {};
+const postsByTag: { [tag: string]: PostData[] } = {};
 
-	return new Promise((resolve) =>
-		processor.process(rawContent, (_, file) =>
-			resolve({
-				meta,
-				content: String(file)
-			})
-		)
-	);
+export async function getPostsByTag(tag: string): Promise<PostSpec[]> {
+	await getAllPosts();
+	if (!postsByTag[tag]) {
+		postsByTag[tag] = posts.filter((post) => post.meta.tags.includes(tag));
+	}
+	return postsByTag[tag];
 }
 
-export function getAllPosts(): PostSpec[] {
-	return readdirSync(postsDirectory)
-		.map(readPostSpecFromFile)
-		.sort(({ meta: { date: dateA } }, { meta: { date: dateB } }) =>
+export async function getPostBySlug(slug: string): Promise<PostData> {
+	if (!postsBySlug[slug]) await getAllPosts();
+	return postsBySlug[slug];
+}
+
+export async function getAllPosts(): Promise<PostData[]> {
+	if (!posts) {
+		const specs = await Promise.all(readdirSync(postsDirectory).map(readPostSpecFromFile));
+		posts = specs.sort(({ meta: { date: dateA } }, { meta: { date: dateB } }) =>
 			compareDesc(new Date(dateA), new Date(dateB))
 		);
+	}
+	return posts;
 }
 
-function readPostSpecFromFile(filename: string): PostSpec {
+async function readPostSpecFromFile(filename: string): Promise<PostData> {
 	const filePath = path.join(postsDirectory, filename);
 	const fileContents = readFileSync(filePath, 'utf8');
 
@@ -59,15 +65,23 @@ function readPostSpecFromFile(filename: string): PostSpec {
 	const publishDate = new Date(data.published);
 	const slug = filename.split('.')[0];
 
-	return {
-		meta: {
-			...data,
-			slug,
-			author: data.author ?? defaultAuthor,
-			date: publishDate.toISOString(),
-			published: format(publishDate, "do 'of' MMMM, yyyy"),
-			readTime: readingTime(content).text
-		},
-		content
-	} as PostSpec;
+	const meta = {
+		...data,
+		slug,
+		author: data.author ?? defaultAuthor,
+		date: publishDate.toISOString(),
+		published: format(publishDate, "do 'of' MMMM, yyyy"),
+		readTime: readingTime(content).text
+	} as PostMetadata;
+
+	postsBySlug[slug] = await new Promise((resolve) =>
+		processor.process(content, (_, file) =>
+			resolve({
+				meta,
+				content: String(file)
+			})
+		)
+	);
+
+	return postsBySlug[slug];
 }
