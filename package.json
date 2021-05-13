@@ -4,8 +4,8 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"start": "svelte-kit preview",
-		"lint": "prettier --check . && eslint .",
+		"preview": "svelte-kit preview",
+		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
 	},
 	"type": "module",
@@ -15,11 +15,10 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
 		"svelte-awesome": "^2.3.0",
-		"svelte-seo": "^1.1.0",
-		"web-vitals": "^1.1.1"
+		"svelte-seo": "^1.1.0"
 	},
 	"devDependencies": {
-		"@mapbox/rehype-prism": "^0.6.0",
+		"@stefanprobst/rehype-shiki": "^0.1.2",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
@@ -32,16 +31,20 @@
 		"prettier": "~2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"reading-time": "^1.3.0",
+		"rehype-autolink-headings": "^5.0.1",
+		"rehype-preset-minify": "^5.1.0",
+		"rehype-slug": "^4.0.1",
 		"rehype-stringify": "^8.0.0",
+		"remark-capitalize": "^1.1.0",
 		"remark-parse": "^9.0.0",
-		"remark-rehype": "^8.0.0",
-		"svelte": "^3.29.0",
-		"svelte-preprocess": "^4.0.0",
+		"remark-rehype": "^8.1.0",
+		"remark-squeeze-paragraphs": "^4.0.0",
+		"svelte": "^3.38.1",
+		"svelte-preprocess": "^4.7.3",
 		"tslib": "^2.0.0",
 		"typescript": "^4.0.0",
 		"unified": "^9.2.1",
-		"vite": "^2.1.0",
-		"vite-plugin-windicss": "^0.15.0",
-		"windicss": "^2.5.9"
+		"vite-plugin-windicss": "^0.15.10",
+		"windicss": "^2.5.0"
 	}
 }
