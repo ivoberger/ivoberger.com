@@ -7,11 +7,11 @@
   to = "https://fonts.googleapis.com/css2?family=Catamaran&family=Source+Serif+Pro:wght@400;600;700&display=swap"
   status = 200
 [[redirects]]
-  from = "ivoberger.com/js/script.outbound-links.js"
+  from = "https://ivoberger.com/js/script.outbound-links.js"
   to = "https://plausible.io/js/plausible.outbound-links.js"
   status = 200
 [[redirects]]
-  from = "ivoberger.com/api/event"
+  from = "https://ivoberger.com/api/event"
   to = "https://plausible.io/api/event"
   status = 200
 [[redirects]]
