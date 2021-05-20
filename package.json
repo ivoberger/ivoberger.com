@@ -4,8 +4,8 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"start": "svelte-kit preview",
-		"lint": "prettier --check . && eslint .",
+		"preview": "svelte-kit preview",
+		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write ."
 	},
 	"type": "module",
@@ -28,7 +28,7 @@
 		"eslint-config-prettier": "^8.1.0",
 		"eslint-plugin-svelte3": "^3.1.0",
 		"gray-matter": "^4.0.2",
-		"prettier": "~2.2.1",
+		"prettier": "^2.2.1",
 		"prettier-plugin-svelte": "^2.2.0",
 		"reading-time": "^1.3.0",
 		"rehype-autolink-headings": "^5.0.1",
@@ -44,8 +44,7 @@
 		"tslib": "^2.0.0",
 		"typescript": "^4.0.0",
 		"unified": "^9.2.1",
-		"vite": "^2.1.0",
 		"vite-plugin-windicss": "^0.15.10",
-		"windicss": "^2.5.9"
+		"windicss": "^3.0.9"
 	}
 }
