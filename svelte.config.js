@@ -13,6 +13,7 @@ const config = {
 		}
 	}),
 	kit: {
+		trailingSlash: 'always',
 		hydrate: false,
 		router: false,
 		adapter: adapter(),
