@@ -19,8 +19,8 @@
 	},
 	"devDependencies": {
 		"@stefanprobst/rehype-shiki": "^0.1.2",
-		"@sveltejs/adapter-static": "^1.0.0-next.10",
-		"@sveltejs/kit": "^1.0.0-next.108",
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"date-fns": "^2.20.2",

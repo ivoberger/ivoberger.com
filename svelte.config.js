@@ -13,8 +13,8 @@ const config = {
 		}
 	}),
 	kit: {
-		// hydrate: false,
-		// router: false,
+		hydrate: false,
+		router: false,
 		adapter: adapter(),
 		vite: {
 			plugins: [windicss.default()]
