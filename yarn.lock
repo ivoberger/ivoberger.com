@@ -111,12 +111,12 @@
     unified "^9.2.1"
     unist-util-visit "^2.0.3"
 
-"@sveltejs/adapter-static@^1.0.0-next.10":
+"@sveltejs/adapter-static@next":
   version "1.0.0-next.10"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.10.tgz#dd02fb517c1b9aa5c7c46ecf766676b757838adb"
   integrity sha512-DDsfyl7phvvR5FIoKSejbK8UYLMiVppx/MZdR7HIsPaL/QQqP2s0jIBlCyOwnK1GX/ENWB9Gg19xjGACB98Pwg==
 
-"@sveltejs/kit@^1.0.0-next.108":
+"@sveltejs/kit@next":
   version "1.0.0-next.108"
   resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.108.tgz#25f9cacfc28a6e3b16b3cf0ddc452829c480c6f5"
   integrity sha512-4XPuN1WsL6hksYZionnO1f+aBLifWIM/gFgDgx4u1Fzhln5usgOCe0RqrN3unmhyprawRYY5/1DUPfqfVHxSVQ==
@@ -2475,7 +2475,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss@^2.5.0, windicss@^2.5.14:
+windicss@^2.5.14:
   version "2.5.14"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.5.14.tgz#41236ccc2517c0947e1adb69e0d5e8aa9bed9c1e"
   integrity sha512-8Lm7U1M5AzJPbiaVSVz7qWdETRzlkv//5LBMICBBAojos1jo09lUGhNZ5rBzHeldB9JmqYMDOGgrrXHExu0EAg==
