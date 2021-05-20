@@ -1,5 +1,5 @@
 <script>
-	import Body from '$lib/components/Body.svelte';
+	import { HomeButton, Body } from '$lib/components';
 </script>
 
 <svelte:head>
@@ -9,6 +9,7 @@
 	</script>
 </svelte:head>
 
+<HomeButton />
 <Body class="prose dark:prose-light text-center">
 	<h1>404</h1>
 	<h1>This page doesn't exist</h1>
