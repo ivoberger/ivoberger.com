@@ -1,15 +1,14 @@
 <script context="module">
 	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ page: { path }, fetch }) => ({
+	export const load: Load = async ({ page: { path, params }, fetch }) => ({
 		props: {
-			post: await (await fetch(`${path}.json`)).json(),
+			post: await (await fetch(`/posts/${params.slug}.json`)).json(),
 			path
 		}
 	});
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { Body } from '$lib/components';
 	import './_posts.css';
