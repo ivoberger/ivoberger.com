@@ -16,13 +16,13 @@
 
 <SvelteSeo {...seoData({})} />
 
-<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="/about" />
+<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="/about/" />
 <main class="posts">
 	{#each posts as { published, title, description, slug, date }}
 		<article class="article-summary">
 			<header>
 				<time class="date" datetime={date}>{published}</time>
-				<a href={`/posts/${slug}`}>
+				<a href={`/posts/${slug}/`}>
 					<h3 class="my-0">{title}</h3>
 				</a>
 			</header>
