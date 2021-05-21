@@ -77,11 +77,6 @@
 	</header>
 	<Body itemProp="articleBody" class="mb-10 prose dark:prose-light xl:prose-lg">
 		{@html content}
-
-		<!-- TODO: re-enable once tag pages are implemented
-     <footer>
-      <Tags tags={tags} />
-    </footer> -->
 	</Body>
 </main>
 
