@@ -21,7 +21,16 @@
 
 	$: ({
 		content,
-		meta: { readTime, published, cover, title, description, tags, author = defaultAuthor, date }
+		meta: {
+			readTime,
+			publishedFormatted,
+			publishedDate,
+			cover,
+			title,
+			description,
+			tags,
+			author = defaultAuthor
+		}
 	} = post);
 
 	const baseUrl = `https://${rootUrl}`;
@@ -52,7 +61,7 @@
 		...seo.openGraph,
 		images: fullImgPath ? [{ url: fullImgPath, alt: 'Article Cover' }] : undefined,
 		article: {
-			publishedTime: date,
+			publishedTime: publishedDate,
 			authors: [author],
 			section: tags?.[0],
 			tags
@@ -68,7 +77,7 @@
 		<div class={`cover-text ${cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'}`}>
 			<p class="text-sm uppercase">{readTime}</p>
 			<h1 itemProp="headline">{title}</h1>
-			<time datetime={date} itemProp="datePublished">{published}</time>
+			<time datetime={publishedDate} itemProp="datePublished">{publishedFormatted}</time>
 		</div>
 		<meta itemProp="name" content={title} />
 		<meta itemProp="description" content={description} />

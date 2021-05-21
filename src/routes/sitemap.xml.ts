@@ -9,10 +9,10 @@ const makeSitemap = (pages: string[], posts: PostSpec[]) => `<?xml version="1.0"
     ${pages.map((page) => `<url><loc>https://${rootUrl}/${page}/</loc></url>`).join('')}
     ${posts
 			.map(
-				({ meta: { slug, date } }) => `
+				({ meta: { slug, updatedDate } }) => `
     <url>
         <loc>https://${rootUrl}/posts/${slug}/</loc>
-        <lastmod>${date}</lastmod>
+        <lastmod>${updatedDate}</lastmod>
     </url>`
 			)
 			.join('')}

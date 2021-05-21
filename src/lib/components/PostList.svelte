@@ -3,10 +3,10 @@
 </script>
 
 <main class="posts">
-	{#each posts as { meta: { published, title, description, slug, date, tags } } (slug)}
+	{#each posts as { meta: { publishedFormatted, publishedDate, title, description, slug, tags } } (slug)}
 		<article class="article-summary">
 			<header>
-				<time class="date" datetime={date}>{published}</time>
+				<time class="date" datetime={publishedDate}>{publishedFormatted}</time>
 				<a href={`/posts/${slug}/`}>
 					<h3 class="my-0">{title}</h3>
 				</a>
