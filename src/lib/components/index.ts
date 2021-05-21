@@ -1,3 +1,5 @@
+export { default as PostList } from './PostList.svelte';
+
 export { default as Body } from './Body.svelte';
 export { default as Footer } from './Footer';
 export { default as HomeButton } from './HomeButton.svelte';

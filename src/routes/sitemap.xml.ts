@@ -18,9 +18,9 @@ const makeSitemap = (pages: string[], posts: PostSpec[]) => `<?xml version="1.0"
 			.join('')}
 </urlset>`;
 
-export const get: RequestHandler = () => {
+export const get: RequestHandler = async () => {
 	const pages = ['about'];
-	const posts = getAllPosts();
+	const posts = await getAllPosts();
 	const sitemap = makeSitemap(pages, posts);
 	// TODO: add tags to sitemap
 
