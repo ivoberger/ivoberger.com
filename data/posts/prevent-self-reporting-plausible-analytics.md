@@ -32,7 +32,7 @@ Simply omit the `data-domain` attribute on your script tag and set the `onload` 
 
 You can load the Plausible script directly from [plausible.io](http://plausible.io) or [through a proxy](https://plausible.io/docs/proxy/introduction). Here are the full script tags for both setups. Since [my blog](https://ivoberger.com) is hosted on Netlify I am [proxying it using Netlify Redirects](https://plausible.io/docs/proxy/guides/netlify).
 
-Remember to load the correct script for your use-case if you're using extensions like [outbound link tracking](https://plausible.io/docs/outbound-link-click-tracking)
+Remember to load the correct script for your use-case if you're using extensions like [outbound link tracking](https://plausible.io/docs/outbound-link-click-tracking).
 
 ### Load from plausible.io
 
@@ -60,4 +60,4 @@ Use this if you're [proxying the script and API events through your own domain](
 
 ## Wrap
 
-And that's it. A simple solution fire-and-forget solution. Just beware that this won't work if you want to count visitors on subdomain towards your main domain. In that case you'll either need to modify the `onload` callback to handle that case or just [add it as a separate page in Plausible](https://plausible.io/docs/add-website). Plausible billing works completely off total page view over all your sites, so there's so extra cost to extra sites.
+And that's it. A simple fire-and-forget solution. Just beware that this won't work if you want to count visitors on subdomain towards your primary domain. In that case you'll either need to modify the `onload` callback or just [add it as a separate page in Plausible](https://plausible.io/docs/add-website). Plausible billing works with total page views over all your sites, so there's so extra cost when adding sites.
