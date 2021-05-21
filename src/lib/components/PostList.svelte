@@ -11,13 +11,6 @@
 					<h3 class="my-0">{title}</h3>
 				</a>
 			</header>
-			<p class="text-sm leading-normal sm:text-base">
-				{#each tags as tag (tag)}
-					<a href={`/tag/${tag}/`} class="tag-link">
-						#{tag}
-					</a>
-				{/each}
-			</p>
 			<p class="description">
 				{description}
 			</p>

@@ -10,7 +10,7 @@
 
 <script>
 	import SvelteSeo from 'svelte-seo';
-	import { Body, Tags } from '$lib/components';
+	import { Body } from '$lib/components';
 	import './_posts.css';
 	import { defaultAuthor, rootUrl, seoData } from '$lib/seoConstants';
 
