@@ -13,8 +13,8 @@ const makeFeed = async (posts: PostSpec[]) => {
 <description>${description}</description>
 <content><![CDATA[${(await getPostBySlug(slug)).content}]]></content>
 ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
-<link>https://${rootUrl}/posts/${slug}</link>
-<guid>https://${rootUrl}/posts/${slug}</guid>
+<link>https://${rootUrl}/posts/${slug}/</link>
+<guid>https://${rootUrl}/posts/${slug}/</guid>
 <pubDate>${new Date(date).toUTCString()}</pubDate>		
 </item>`
 			)

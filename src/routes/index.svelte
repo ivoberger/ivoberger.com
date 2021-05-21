@@ -16,5 +16,5 @@
 
 <SvelteSeo {...seoData({})} />
 
-<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="/about" />
+<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="/about/" />
 <PostList {posts} />

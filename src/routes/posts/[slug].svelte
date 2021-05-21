@@ -1,8 +1,8 @@
 <script context="module">
 	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ page: { path }, fetch }) => ({
+	export const load: Load = async ({ page: { path, params }, fetch }) => ({
 		props: {
-			post: await (await fetch(`${path}.json`)).json(),
+			post: await (await fetch(`/posts/${params.slug}.json`)).json(),
 			path
 		}
 	});
@@ -77,10 +77,6 @@
 	</header>
 	<Body itemProp="articleBody" class="mb-10 prose dark:prose-light xl:prose-lg">
 		{@html content}
-
-		<footer>
-			<Tags {tags} />
-		</footer>
 	</Body>
 </main>
 

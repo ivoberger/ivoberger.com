@@ -53,7 +53,7 @@
 	<nav class="w-full sm:w-1/2">
 		<ul class="flex -mx-2 sm:justify-end">
 			<NavItem text="Home" link="/" />
-			<NavItem text="About" />
+			<NavItem text="About" link="/about/" />
 			<NavItem text="Sitemap" link="/sitemap.xml" />
 			<NavItem text="RSS Feed" link="/feed.xml" />
 		</ul>

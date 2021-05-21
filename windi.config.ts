@@ -1,4 +1,4 @@
-import { defineConfig, transform } from 'windicss/helpers';
+import { defineConfig } from 'windicss/helpers';
 import defaultTheme from 'windicss/defaultTheme';
 import colors from 'windicss/colors';
 import filters from 'windicss/plugin/filters';

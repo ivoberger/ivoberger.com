@@ -13,8 +13,10 @@ const config = {
 		}
 	}),
 	kit: {
-		// hydrate: false,
-		// router: false,
+		trailingSlash: 'always',
+		hydrate: false,
+		router: false,
+		prerender: { pages: ['/about/', '/404/'] },
 		adapter: adapter(),
 		vite: {
 			plugins: [windicss.default()]
