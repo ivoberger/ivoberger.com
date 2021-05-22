@@ -39,7 +39,9 @@
   for = "/sitemap.xml"
     [headers.values]
     Content-Type= 'application/xml'
+    cache-control = "max-age=0 must-revalidate,public"
 [[headers]]
   for = "/feed.xml"
     [headers.values]
     Content-Type= 'application/rss+xml'
+    cache-control = "max-age=0,must-revalidate,public"
