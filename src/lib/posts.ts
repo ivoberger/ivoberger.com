@@ -49,6 +49,7 @@ const processor = unified()
 	.use(html);
 
 let posts: PostData[];
+let tags: string[];
 const postsBySlug: { [slug: string]: PostData } = {};
 const postsByTag: { [tag: string]: PostData[] } = {};
 
@@ -65,6 +66,15 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
 	return postsBySlug[slug];
 }
 
+export async function getAllTags(): Promise<string[]> {
+	if (tags) return tags;
+	await getAllPosts();
+	const tagsSet = new Set<string>();
+	posts.forEach(({ meta: { tags } }) => tags.forEach(tagsSet.add, tagsSet));
+	tags = [...tagsSet.values()];
+	return tags;
+}
+
 export async function getAllPosts(): Promise<PostData[]> {
 	if (posts) return posts;
 	const pages = await notion.databases.query({
@@ -79,25 +89,22 @@ export async function getAllPosts(): Promise<PostData[]> {
 
 	posts = await Promise.all(pages.results.map(fetchPostFromApi));
 	return posts;
-
-	if (!posts) {
-		const specs = await Promise.all(readdirSync(postsDirectory).map(readPostSpecFromFile));
-		posts = specs.sort(({ meta: { publishedDate: dateA } }, { meta: { publishedDate: dateB } }) =>
-			compareDesc(new Date(dateA), new Date(dateB))
-		);
-	}
 }
 
 async function fetchPostFromApi(page: Page): Promise<PostData> {
 	const properties = page.properties;
+	const slug = (properties.Slug as RichTextPropertyValue).rich_text[0].plain_text;
+	const publishedDate = (properties['Publish Date'] as DatePropertyValue).date.start;
 
-	const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
-	const markdown = blocksToMarkdown(blocks.results);
+	// const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
+	// const markdown = blocksToMarkdown(blocks.results);
+	const { content: contentMd } = matter(
+		readFileSync(path.join(postsDirectory, `${slug}.md`), 'utf-8')
+	);
 	const content = await new Promise<string>((resolve) =>
-		processor.process(markdown, (_, file) => resolve(String(file)))
+		processor.process(contentMd, (_, file) => resolve(String(file)))
 	);
 
-	const publishedDate = (properties['Publish Date'] as DatePropertyValue).date.start;
 	const meta: PostMetadata = {
 		title: (properties.Name as TitlePropertyValue).title[0].plain_text,
 		author: defaultAuthor,
@@ -105,11 +112,13 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 		updatedDate: (properties['Last Updated'] as LastEditedTimePropertyValue).last_edited_time,
 		publishedDate: publishedDate,
 		publishedFormatted: format(new Date(publishedDate), "do 'of' MMMM, yyyy"),
-		readTime: readingTime(markdown).text,
-		tags: (((properties.Tags as MultiSelectPropertyValue).multi_select as unknown) as {
-			name: string;
-		}[]).map(({ name }) => name),
-		slug: (properties.Slug as RichTextPropertyValue).rich_text[0].plain_text
+		readTime: readingTime(contentMd).text,
+		tags: (
+			(properties.Tags as MultiSelectPropertyValue).multi_select as unknown as {
+				name: string;
+			}[]
+		).map(({ name }) => name),
+		slug
 	};
 
 	const post: PostData = { meta, content };
@@ -170,33 +179,4 @@ function richTextToMarkdown(richText: RichText[]): string {
 	}
 
 	return result;
-}
-
-async function readPostSpecFromFile(filename: string): Promise<PostData> {
-	const filePath = path.join(postsDirectory, filename);
-	const fileContents = readFileSync(filePath, 'utf8');
-
-	const { data, content } = matter(fileContents);
-	const publishDate = new Date(data.published);
-	const slug = filename.split('.')[0];
-
-	const meta = {
-		...data,
-		slug,
-		author: data.author ?? defaultAuthor,
-		publishedDate: publishDate.toISOString(),
-		publishedFormatted: format(publishDate, "do 'of' MMMM, yyyy"),
-		readTime: readingTime(content).text
-	} as PostMetadata;
-
-	postsBySlug[slug] = await new Promise((resolve) =>
-		processor.process(content, (_, file) =>
-			resolve({
-				meta,
-				content: String(file)
-			})
-		)
-	);
-
-	return postsBySlug[slug];
 }
