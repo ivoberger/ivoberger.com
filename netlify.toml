@@ -35,8 +35,7 @@
     cache-control = "public,max-age=31536000,immutable"
 
 [[headers]]
-  # Override cache duration for assets with periods in the filename (i.e. static assets)
-  for = "/*.html"
+  for = "/*/"
     [headers.values]
     cache-control = "public,max-age=60"
 
