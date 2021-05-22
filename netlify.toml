@@ -3,10 +3,6 @@
   publish = "build"
 
 [[redirects]]
-  from = "/css/fonts.css"
-  to = "https://fonts.googleapis.com/css2?family=Catamaran&family=Source+Serif+Pro:wght@400;600;700&display=swap"
-  status = 200
-[[redirects]]
   from = "/js/script.outbound-links.js"
   to = "https://plausible.io/js/plausible.outbound-links.js"
   status = 200
@@ -20,6 +16,31 @@
   status = 404
 
 [[headers]]
+  # Set the default header to the one we want for documents
   for = "/*"
-  [headers.values]
+    [headers.values]
     Permissions-Policy = "interest-cohort=()"
+    cache-control = "public,max-age=60"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Feature-Policy = "camera 'none'; geolocation 'none'; microphone 'none'"
+    Strict-Transport-Security = "max-age=2592000; includeSubDomains"
+    Accept-CH = "Downlink,RTT,Device-Memory,Save-Data,DPR,Width"
+
+[[headers]]
+  # Override cache duration for assets with periods in the filename (i.e. static assets)
+  for = "/*.[css|woff2|js]"
+    [headers.values]
+    cache-control = "public,max-age=31536000,immutable"
+
+[[headers]]
+  for = "/sitemap.xml"
+    [headers.values]
+    Content-Type= 'application/xml'
+    cache-control = "max-age=0 must-revalidate,public"
+[[headers]]
+  for = "/feed.xml"
+    [headers.values]
+    Content-Type= 'application/rss+xml'
+    cache-control = "max-age=0,must-revalidate,public"

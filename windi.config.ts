@@ -22,7 +22,7 @@ export default defineConfig({
 		},
 		scale: { 105: '1.05' },
 		fontFamily: {
-			sans: ['Catamaran', ...defaultTheme.fontFamily.sans],
+			sans: ['CatamaranVariable', ...defaultTheme.fontFamily.sans],
 			serif: ['"Source Serif Pro"', ...defaultTheme.fontFamily.serif]
 		},
 		extend: {

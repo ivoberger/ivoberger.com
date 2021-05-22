@@ -8,11 +8,12 @@ type PostMetadata = {
 	author: string;
 	description: string;
 	cover?: string;
-	date: string;
-	published: string;
+	updatedDate: string;
+	publishedDate: string;
+	publishedFormatted: string;
 	readTime: string;
 	tags: string[];
-	slug?: string;
+	slug: string;
 };
 
 type PostSpec = {

@@ -7,7 +7,7 @@ const makeFeed = async (posts: PostSpec[]) => {
 	const postsData: string = (
 		await Promise.all(
 			posts.map(
-				async ({ meta: { slug, date, title, description, tags } }) => `
+				async ({ meta: { slug, publishedDate, title, description, tags } }) => `
 <item>
 <title>${title}</title>
 <description>${description}</description>
@@ -15,7 +15,7 @@ const makeFeed = async (posts: PostSpec[]) => {
 ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
 <link>https://${rootUrl}/posts/${slug}/</link>
 <guid>https://${rootUrl}/posts/${slug}/</guid>
-<pubDate>${new Date(date).toUTCString()}</pubDate>		
+<pubDate>${new Date(publishedDate).toUTCString()}</pubDate>		
 </item>`
 			)
 		)
@@ -29,6 +29,7 @@ ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
 	<atom:link href="https://${rootUrl}/feed.xml" rel="self" type="application/rss+xml" />
 	<description>${defaultDesc}</description>
 	<language>en-us</language>
+	<lastBuildDate>${new Date(posts[0].meta.publishedDate).toUTCString()}</lastBuildDate>
     ${postsData}
 </channel>
 </rss>`;
@@ -39,7 +40,6 @@ export const get: RequestHandler = async () => {
 	const feed = await makeFeed(posts);
 
 	return {
-		headers: { 'Content-Type': 'application/rss+xml' },
 		body: feed
 	};
 };

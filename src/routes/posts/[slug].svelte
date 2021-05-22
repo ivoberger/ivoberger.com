@@ -17,15 +17,24 @@
 	export let post: PostData;
 	export let path: string;
 	let fullImgPath: string;
-	let fullPageUrl: string;
 
 	$: ({
 		content,
-		meta: { readTime, published, cover, title, description, tags, author = defaultAuthor, date }
+		meta: {
+			readTime,
+			updatedDate,
+			publishedDate,
+			publishedFormatted,
+			cover,
+			title,
+			description,
+			tags,
+			author = defaultAuthor
+		}
 	} = post);
 
 	const baseUrl = `https://${rootUrl}`;
-	fullPageUrl = `${baseUrl}${path}`;
+	const fullPageUrl = `${baseUrl}${path}`;
 	if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
 
 	$: seo = seoData({
@@ -40,9 +49,6 @@
 </script>
 
 <svelte:head>
-	{#if fullImgPath}
-		<meta name="image" content={fullImgPath} />
-	{/if}
 	<link rel="canonical" href={fullPageUrl} />
 </svelte:head>
 
@@ -52,7 +58,7 @@
 		...seo.openGraph,
 		images: fullImgPath ? [{ url: fullImgPath, alt: 'Article Cover' }] : undefined,
 		article: {
-			publishedTime: date,
+			publishedTime: publishedDate,
 			authors: [author],
 			section: tags?.[0],
 			tags
@@ -67,11 +73,12 @@
 		{/if}
 		<div class={`cover-text ${cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'}`}>
 			<p class="text-sm uppercase">{readTime}</p>
-			<h1 itemProp="headline">{title}</h1>
-			<time datetime={date} itemProp="datePublished">{published}</time>
+			<h1 itemProp="name headline">{title}</h1>
+			<time datetime={publishedDate} itemProp="datePublished">{publishedFormatted}</time>
+			<time datetime={updatedDate} itemProp="dateModified" />
 		</div>
-		<meta itemProp="name" content={title} />
-		<meta itemProp="description" content={description} />
+		<meta itemProp="description abstract" content={description} />
+		<meta itemProp="url" content={fullPageUrl} />
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
