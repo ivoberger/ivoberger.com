@@ -11,8 +11,7 @@
 
 <script>
 	import 'virtual:windi.css';
-	import '@fontsource/catamaran/variable.css';
-	import '@fontsource/source-serif-pro/400.css';
+	import './_fonts.css';
 	import { Footer } from '$lib/components';
 </script>
 
