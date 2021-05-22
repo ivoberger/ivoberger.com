@@ -111,13 +111,15 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 		description: (properties.Description as RichTextPropertyValue).rich_text[0].plain_text,
 		updatedDate: (properties['Last Updated'] as LastEditedTimePropertyValue).last_edited_time,
 		publishedDate: publishedDate,
-		publishedFormatted: format(new Date(publishedDate), "do 'of' MMMM, yyyy"),
+		publishedFormatted: format(new Date(publishedDate), "do 'of' MMMM yyyy"),
 		readTime: readingTime(contentMd).text,
 		tags: (
 			(properties.Tags as MultiSelectPropertyValue).multi_select as unknown as {
 				name: string;
 			}[]
-		).map(({ name }) => name),
+		)
+			.map(({ name }) => name)
+			.sort((a, b) => a.localeCompare(b)),
 		slug
 	};
 
