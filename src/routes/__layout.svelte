@@ -11,6 +11,8 @@
 
 <script>
 	import 'virtual:windi.css';
+	import '@fontsource/catamaran/variable.css';
+	import '@fontsource/source-serif-pro/400.css';
 	import { Footer } from '$lib/components';
 </script>
 
@@ -28,7 +30,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-serif;
+		@apply font-serif tracking-tight;
 	}
 
 	h1 {

@@ -38,6 +38,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/catamaran@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/catamaran/-/catamaran-4.3.0.tgz#559e6410d6117e5419be94f4bc7baa203ad74bbf"
+  integrity sha512-VQn0I11NRqcUprCoN/8Xl7NgbyKjKtOusfEt/nCHc1s31McIALhYkx9LgI72yp/6RUCErZGeON8b8XlQEaMRtw==
+
+"@fontsource/source-serif-pro@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/source-serif-pro/-/source-serif-pro-4.3.0.tgz#e36919988e7c898fd13daddd4e62dcf416ebf1d9"
+  integrity sha512-6gEdpp5gUjKPcEBCIA3zTwsHBgXn9hBb8bNvMMVqs8GILm90Hz9Cyf/FfoCchB9pcyOuwyK32Jc1dAQvvaw08g==
+
 "@fortawesome/fontawesome-common-types@^0.2.35":
   version "0.2.35"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.35.tgz#01dd3d054da07a00b764d78748df20daf2b317e9"

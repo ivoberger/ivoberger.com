@@ -10,6 +10,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/catamaran": "^4.3.0",
+		"@fontsource/source-serif-pro": "^4.3.0",
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
 		"@fortawesome/free-brands-svg-icons": "^5.15.3",
 		"@fortawesome/free-regular-svg-icons": "^5.15.3",

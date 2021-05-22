@@ -3,10 +3,6 @@
   publish = "build"
 
 [[redirects]]
-  from = "/css/fonts.css"
-  to = "https://fonts.googleapis.com/css2?family=Catamaran&family=Source+Serif+Pro:wght@400;600;700&display=swap"
-  status = 200
-[[redirects]]
   from = "/js/script.outbound-links.js"
   to = "https://plausible.io/js/plausible.outbound-links.js"
   status = 200
@@ -36,7 +32,7 @@
   # Override cache duration for assets with periods in the filename (i.e. static assets)
   for = "/*.*"
     [headers.values]
-    cache-control = "public,max-age=360000"
+    cache-control = "public,max-age=31536000,immutable"
 
 
 [[headers]]
