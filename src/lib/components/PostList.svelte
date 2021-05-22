@@ -3,13 +3,21 @@
 </script>
 
 <main class="posts">
-	{#each posts as { meta: { publishedFormatted, publishedDate, title, description, slug, tags } } (slug)}
+	{#each posts as { meta: { publishedFormatted, publishedDate, title, description, slug, tags, readTime } } (slug)}
 		<article class="article-summary">
 			<header>
-				<time class="date" datetime={publishedDate}>{publishedFormatted}</time>
+				<time class="date" datetime={publishedDate}>{publishedFormatted}</time>,
+				<span class="readTime"> {readTime} </span>
 				<a href={`/posts/${slug}/`}>
 					<h3 class="my-0">{title}</h3>
 				</a>
+				<p class="text-sm leading-normal sm:text-base">
+					{#each tags as tag (tag)}
+						<a href={`/tag/${tag}/`} class="tag-link">
+							#{tag}
+						</a>
+					{/each}
+				</p>
 			</header>
 			<p class="description">
 				{description}
@@ -30,6 +38,9 @@
 	}
 	.date {
 		@apply mb-2 text-xs uppercase;
+	}
+	.readTime {
+		@apply date ml-1;
 	}
 	.description {
 		@apply px-2 text-lg leading-normal sm:px-4 md:px-10 mt-6;
