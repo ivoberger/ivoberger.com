@@ -11,7 +11,6 @@
 
 <script>
 	import 'virtual:windi.css';
-	import './_fonts.css';
 	import { Footer } from '$lib/components';
 </script>
 
