@@ -11,7 +11,7 @@
 
 <script>
 	import SvelteSeo from 'svelte-seo';
-	import { Header, PostList } from '$lib/components';
+	import { Header, HomeButton, PostList } from '$lib/components';
 	import { rootUrl, seoData } from '$lib/seoConstants';
 
 	export let path: string;
@@ -32,5 +32,6 @@
 
 <SvelteSeo {...seo} />
 
+<HomeButton />
 <Header {title} />
 <PostList {posts} />
