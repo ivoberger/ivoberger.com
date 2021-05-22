@@ -17,7 +17,6 @@
 	export let post: PostData;
 	export let path: string;
 	let fullImgPath: string;
-	let fullPageUrl: string;
 
 	$: ({
 		content,
@@ -35,7 +34,7 @@
 	} = post);
 
 	const baseUrl = `https://${rootUrl}`;
-	fullPageUrl = `${baseUrl}${path}`;
+	const fullPageUrl = `${baseUrl}${path}`;
 	if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
 
 	$: seo = seoData({
