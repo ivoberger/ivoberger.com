@@ -14,8 +14,8 @@ const config = {
 	}),
 	kit: {
 		trailingSlash: 'always',
-		// hydrate: false,
-		// router: false,
+		hydrate: false,
+		router: false,
 		prerender: { pages: ['/about/', '/404/'] },
 		adapter: adapter(),
 		vite: {
