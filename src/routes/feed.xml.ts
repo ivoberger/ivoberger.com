@@ -29,6 +29,7 @@ ${tags.map((tag) => `<category>${tag}</category>`).join('\n')}
 	<atom:link href="https://${rootUrl}/feed.xml" rel="self" type="application/rss+xml" />
 	<description>${defaultDesc}</description>
 	<language>en-us</language>
+	<lastBuildDate>${new Date(posts[0].meta.publishedDate).toUTCString()}</lastBuildDate>
     ${postsData}
 </channel>
 </rss>`;
@@ -39,7 +40,6 @@ export const get: RequestHandler = async () => {
 	const feed = await makeFeed(posts);
 
 	return {
-		headers: { 'Content-Type': 'application/rss+xml' },
 		body: feed
 	};
 };

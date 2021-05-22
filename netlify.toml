@@ -37,3 +37,13 @@
   for = "/*.*"
     [headers.values]
     cache-control = "public,max-age=360000"
+
+
+[[headers]]
+  for = "/sitemap.xml"
+    [headers.values]
+    Content-Type= 'application/xml'
+[[headers]]
+  for = "/feed.xml"
+    [headers.values]
+    Content-Type= 'application/rss+xml'
