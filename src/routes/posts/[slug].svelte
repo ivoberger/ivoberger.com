@@ -23,8 +23,9 @@
 		content,
 		meta: {
 			readTime,
-			publishedFormatted,
+			updatedDate,
 			publishedDate,
+			publishedFormatted,
 			cover,
 			title,
 			description,
@@ -49,9 +50,6 @@
 </script>
 
 <svelte:head>
-	{#if fullImgPath}
-		<meta name="image" content={fullImgPath} />
-	{/if}
 	<link rel="canonical" href={fullPageUrl} />
 </svelte:head>
 
@@ -76,11 +74,12 @@
 		{/if}
 		<div class={`cover-text ${cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'}`}>
 			<p class="text-sm uppercase">{readTime}</p>
-			<h1 itemProp="headline">{title}</h1>
+			<h1 itemProp="name headline">{title}</h1>
 			<time datetime={publishedDate} itemProp="datePublished">{publishedFormatted}</time>
+			<time datetime={updatedDate} itemProp="dateModified" />
 		</div>
-		<meta itemProp="name" content={title} />
-		<meta itemProp="description" content={description} />
+		<meta itemProp="description abstract" content={description} />
+		<meta itemProp="url" content={fullPageUrl} />
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
