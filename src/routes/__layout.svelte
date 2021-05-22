@@ -30,7 +30,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-serif tracking-tight;
+		@apply font-serif;
 	}
 
 	h1 {
