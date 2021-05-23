@@ -113,11 +113,7 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 		publishedDate: publishedDate,
 		publishedFormatted: format(new Date(publishedDate), "do 'of' MMMM yyyy"),
 		readTime: readingTime(contentMd).text,
-		tags: (
-			(properties.Tags as MultiSelectPropertyValue).multi_select as unknown as {
-				name: string;
-			}[]
-		)
+		tags: (properties.Tags as MultiSelectPropertyValue).multi_select
 			.map(({ name }) => name)
 			.sort((a, b) => a.localeCompare(b)),
 		slug
@@ -164,7 +160,7 @@ function blocksToMarkdown(blocks: Block[]): string {
 	return result;
 }
 
-const getTextFromBlock = (block: Block) => (block as unknown)[block.type].text;
+const getTextFromBlock = (block: Block) => block['block.type'].text;
 function richTextToMarkdown(richText: RichText[]): string {
 	let result = '';
 
