@@ -7,7 +7,7 @@ export const defaultDesc = 'Technical articles about everything related to progr
 export const seoData = ({
 	title = defaultTitle,
 	description = defaultDesc,
-	canonical = rootUrl,
+	canonical = `https://${rootUrl}`,
 	type,
 	author = defaultAuthor,
 	tags = [],
