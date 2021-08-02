@@ -13,12 +13,12 @@ import path from 'path';
 import { readFileSync } from 'fs';
 
 import { Client } from '@notionhq/client';
-import unified from 'unified';
+import { unified } from 'unified';
 import markdown from 'remark-parse';
 import capitalize from 'remark-capitalize';
 import squeezeParagraphs from 'remark-squeeze-paragraphs';
 import remark2rehype from 'remark-rehype';
-import * as shiki from 'shiki';
+import { getHighlighter } from 'shiki';
 import rehypeShiki from '@stefanprobst/rehype-shiki';
 import slugs from 'rehype-slug';
 import autolink from 'rehype-autolink-headings';
@@ -117,13 +117,13 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 let processor: Processor;
 async function getProcessor(): Promise<Processor> {
 	if (processor) return processor;
-	const highlighter = await shiki.getHighlighter({ theme: 'dark-plus' });
+	const highlighter = await getHighlighter({ theme: 'dark-plus' });
 	return (processor = unified()
 		.use(markdown)
 		.use(squeezeParagraphs)
 		.use(capitalize)
 		.use(remark2rehype)
-		.use(rehypeShiki, { highlighter })
+		.use(rehypeShiki as any, { highlighter })
 		.use(slugs)
 		.use(autolink, { behavior: 'append' })
 		.use(rehypeMinify)
