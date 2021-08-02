@@ -1,25 +1,24 @@
 import type {
-	Block,
 	DatePropertyValue,
 	Filter,
-	LastEditedByPropertyValue,
 	LastEditedTimePropertyValue,
 	MultiSelectPropertyValue,
 	Page,
-	RichText,
 	RichTextPropertyValue,
 	TitlePropertyValue
 } from '@notionhq/client/build/src/api-types';
+import type { Processor } from 'unified';
 
 import path from 'path';
-import { readdirSync, readFileSync } from 'fs';
+import { readFileSync } from 'fs';
 
 import { Client } from '@notionhq/client';
-import unified from 'unified';
+import { unified } from 'unified';
 import markdown from 'remark-parse';
 import capitalize from 'remark-capitalize';
 import squeezeParagraphs from 'remark-squeeze-paragraphs';
 import remark2rehype from 'remark-rehype';
+import { getHighlighter } from 'shiki';
 import rehypeShiki from '@stefanprobst/rehype-shiki';
 import slugs from 'rehype-slug';
 import autolink from 'rehype-autolink-headings';
@@ -27,7 +26,7 @@ import rehypeMinify from 'rehype-preset-minify';
 import html from 'rehype-stringify';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import { compareDesc, format } from 'date-fns';
+import { format } from 'date-fns';
 
 import { defaultAuthor } from './seoConstants';
 
@@ -36,17 +35,6 @@ const notion = new Client({
 });
 const databaseId = import.meta.env.VITE_NOTION_DATABASE_ID;
 const postsDirectory = path.join(process.cwd(), 'data/posts');
-
-const processor = unified()
-	.use(markdown)
-	.use(squeezeParagraphs)
-	.use(capitalize)
-	.use(remark2rehype)
-	.use(rehypeShiki, { theme: 'dark-plus' })
-	.use(slugs)
-	.use(autolink, { behavior: 'append' })
-	.use(rehypeMinify)
-	.use(html);
 
 let posts: PostData[];
 let tags: string[];
@@ -86,7 +74,7 @@ export async function getAllPosts(): Promise<PostData[]> {
 		} as Filter,
 		sorts: [{ property: 'Publish Date', direction: 'descending' }]
 	});
-
+	await getProcessor();
 	posts = await Promise.all(pages.results.map(fetchPostFromApi));
 	return posts;
 }
@@ -101,6 +89,7 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 	const { content: contentMd } = matter(
 		readFileSync(path.join(postsDirectory, `${slug}.md`), 'utf-8')
 	);
+
 	const content = await new Promise<string>((resolve) =>
 		processor.process(contentMd, (_, file) => resolve(String(file)))
 	);
@@ -125,56 +114,74 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 	return post;
 }
 
-function blocksToMarkdown(blocks: Block[]): string {
-	let result = '';
-	let numListCounter = 1;
-
-	for (const block of blocks) {
-		if (block.type === 'unsupported') continue;
-		if (block.type === 'numbered_list_item') numListCounter = 1;
-
-		const text = richTextToMarkdown(getTextFromBlock(block));
-		switch (block.type) {
-			case 'heading_1':
-				result += `# ${text}`;
-				break;
-			case 'heading_2':
-				result += `## ${text}`;
-				break;
-			case 'heading_3':
-				result += `### ${text}`;
-				break;
-			case 'numbered_list_item':
-				result += `${numListCounter}. ${text}`;
-				numListCounter++;
-				break;
-			case 'bulleted_list_item':
-				result += `- ${text}`;
-				break;
-			default:
-				result += text;
-				break;
-		}
-		result += '\n\n';
-	}
-	return result;
+let processor: Processor;
+async function getProcessor(): Promise<Processor> {
+	if (processor) return processor;
+	const highlighter = await getHighlighter({ theme: 'dark-plus' });
+	return (processor = unified()
+		.use(markdown)
+		.use(squeezeParagraphs)
+		.use(capitalize)
+		.use(remark2rehype)
+		.use(rehypeShiki as any, { highlighter })
+		.use(slugs)
+		.use(autolink, { behavior: 'append' })
+		.use(rehypeMinify)
+		.use(html));
 }
 
-const getTextFromBlock = (block: Block) => block['block.type'].text;
-function richTextToMarkdown(richText: RichText[]): string {
-	let result = '';
+/// Notion to Markdown. Presently unused due to missing features in the Notion API
 
-	for (const text of richText) {
-		if (text.type !== 'text') result += text.plain_text;
-		const annotations = text.annotations;
-		let res = text.plain_text;
-		if (annotations.code) res = `\`${res}\``;
-		if (annotations.bold) res = `**${res}**`;
-		if (annotations.italic) res = `*${res}*`;
-		if (text.href) res = `[${res}](${text.href})`;
+// function blocksToMarkdown(blocks: Block[]): string {
+// 	let result = '';
+// 	let numListCounter = 1;
 
-		result += res;
-	}
+// 	for (const block of blocks) {
+// 		if (block.type === 'unsupported') continue;
+// 		if (block.type === 'numbered_list_item') numListCounter = 1;
 
-	return result;
-}
+// 		const text = richTextToMarkdown(getTextFromBlock(block));
+// 		switch (block.type) {
+// 			case 'heading_1':
+// 				result += `# ${text}`;
+// 				break;
+// 			case 'heading_2':
+// 				result += `## ${text}`;
+// 				break;
+// 			case 'heading_3':
+// 				result += `### ${text}`;
+// 				break;
+// 			case 'numbered_list_item':
+// 				result += `${numListCounter}. ${text}`;
+// 				numListCounter++;
+// 				break;
+// 			case 'bulleted_list_item':
+// 				result += `- ${text}`;
+// 				break;
+// 			default:
+// 				result += text;
+// 				break;
+// 		}
+// 		result += '\n\n';
+// 	}
+// 	return result;
+// }
+
+// const getTextFromBlock = (block: Block) => block['block.type'].text;
+// function richTextToMarkdown(richText: RichText[]): string {
+// 	let result = '';
+
+// 	for (const text of richText) {
+// 		if (text.type !== 'text') result += text.plain_text;
+// 		const annotations = text.annotations;
+// 		let res = text.plain_text;
+// 		if (annotations.code) res = `\`${res}\``;
+// 		if (annotations.bold) res = `**${res}**`;
+// 		if (annotations.italic) res = `*${res}*`;
+// 		if (text.href) res = `[${res}](${text.href})`;
+
+// 		result += res;
+// 	}
+
+// 	return result;
+// }

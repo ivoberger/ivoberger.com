@@ -1,62 +1,53 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
+import { create } from 'xmlbuilder2';
 import { getAllPosts, getAllTags, getPostsByTag } from '$lib/posts';
 import { rootUrl } from '$lib/seoConstants';
 
-const makeSitemap = async (
-	pages: string[],
-	tags: string[],
-	posts: PostSpec[]
-) => `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-    <url>
-		<loc>https://${rootUrl}</loc>
-		<priority>0.6</priority>
-		<changefreq>weekly</changefreq>
-	</url>
-    ${pages
-			.map(
-				(page) =>
-					`<url>
-						<loc>https://${rootUrl}/${page}/</loc>
-						<priority>0.3</priority>
-						<changefreq>monthly</changefreq>
-					</url>`
-			)
-			.join('')}   
-    ${posts
-			.map(
-				({ meta: { slug, updatedDate } }) => `
-    <url>
-        <loc>https://${rootUrl}/posts/${slug}/</loc>
-		<priority>0.8</priority>
-		<changefreq>monthly</changefreq>
-        <lastmod>${updatedDate.split('T')[0]}</lastmod>
-    </url>`
-			)
-			.join('')}
-	${(
-		await Promise.all(
-			tags.map(
-				async (tag) =>
-					`<url>
-					<loc>https://${rootUrl}/tag/${tag}/</loc>
-					<priority>0.5</priority>
-					<changefreq>monthly</changefreq>
-					<lastmod>${(await getPostsByTag(tag))[0].meta.updatedDate.split('T')[0]}</lastmod>
-				</url>`
-			)
-		)
-	).join('')}
-</urlset>`;
+const addUrl = (
+	builder: ReturnType<typeof create>,
+	url: string,
+	changefreq?: 'weekly' | 'monthly',
+	priority?: number,
+	lastmod?: string
+) => {
+	const urlEle = builder.ele('url');
+	urlEle.ele('loc').txt(url);
+	if (changefreq) urlEle.ele('changefreq').txt(changefreq);
+	if (lastmod) urlEle.ele('lastmod').txt(lastmod);
+	if (priority) urlEle.ele('priority').txt(`${priority}`);
+};
 
-export const get: RequestHandler = async () => {
+const buildSitemap = async (): Promise<string> => {
 	const pages = ['about'];
 	const posts = await getAllPosts();
 	const tags = await getAllTags();
-	const sitemap = await makeSitemap(pages, tags, posts);
 
-	return {
-		body: sitemap
-	};
+	const sitemap = create({ version: '1.0' }).ele('urlset', {
+		xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9'
+	});
+	addUrl(sitemap, rootUrl, 'weekly', 0.6);
+	for (const page of pages) {
+		addUrl(sitemap, `https://${rootUrl}/${page}/`, 'monthly', 0.3);
+	}
+	for (const post of posts) {
+		const {
+			meta: { slug, updatedDate }
+		} = post;
+		addUrl(sitemap, `https://${rootUrl}/posts/${slug}/`, 'monthly', 0.8, updatedDate.split('T')[0]);
+	}
+	for (const tag of tags) {
+		addUrl(
+			sitemap,
+			`https://${rootUrl}/tag/${tag}/`,
+			'monthly',
+			0.5,
+			(await getPostsByTag(tag))[0].meta.updatedDate.split('T')[0]
+		);
+	}
+	return sitemap.end({ prettyPrint: true });
 };
+
+export const get: RequestHandler = async () => ({
+	body: await buildSitemap()
+});

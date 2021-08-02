@@ -79,7 +79,7 @@
 					</a>
 				{/if}
 			</header>
-			<p class="description">{description}</p>
+			<p class="prose dark:prose-light max-w-none">{description}</p>
 		</article>
 	{/each}
 </Body>
@@ -90,8 +90,5 @@
 	}
 	.icon-link {
 		@apply transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100;
-	}
-	.description {
-		@apply prose dark:prose-light max-w-none;
 	}
 </style>
