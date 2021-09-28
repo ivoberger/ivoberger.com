@@ -1,12 +1,4 @@
-import type {
-	DatePropertyValue,
-	Filter,
-	LastEditedTimePropertyValue,
-	MultiSelectPropertyValue,
-	Page,
-	RichTextPropertyValue,
-	TitlePropertyValue
-} from '@notionhq/client/build/src/api-types';
+import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Processor } from 'unified';
 
 import path from 'path';
@@ -71,7 +63,7 @@ export async function getAllPosts(): Promise<PostData[]> {
 		filter: {
 			property: 'Status',
 			select: { equals: 'Published' }
-		} as Filter,
+		},
 		sorts: [{ property: 'Publish Date', direction: 'descending' }]
 	});
 	await getProcessor();
@@ -79,10 +71,11 @@ export async function getAllPosts(): Promise<PostData[]> {
 	return posts;
 }
 
-async function fetchPostFromApi(page: Page): Promise<PostData> {
+async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 	const properties = page.properties;
-	const slug = (properties.Slug as RichTextPropertyValue).rich_text[0].plain_text;
-	const publishedDate = (properties['Publish Date'] as DatePropertyValue).date.start;
+	const slug = properties.Slug.type === 'rich_text' && properties.Slug.rich_text[0].plain_text;
+	const publishedDate =
+		properties['Publish Date'].type === 'date' && properties['Publish Date'].date.start;
 
 	// const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
 	// const markdown = blocksToMarkdown(blocks.results);
@@ -95,16 +88,19 @@ async function fetchPostFromApi(page: Page): Promise<PostData> {
 	);
 
 	const meta: PostMetadata = {
-		title: (properties.Name as TitlePropertyValue).title[0].plain_text,
+		title: properties.Name.type === 'title' && properties.Name.title[0].plain_text,
 		author: defaultAuthor,
-		description: (properties.Description as RichTextPropertyValue).rich_text[0].plain_text,
-		updatedDate: (properties['Last Updated'] as LastEditedTimePropertyValue).last_edited_time,
+		description:
+			properties.Description.type === 'rich_text' && properties.Description.rich_text[0].plain_text,
+		updatedDate:
+			properties['Last Updated'].type === 'last_edited_time' &&
+			properties['Last Updated'].last_edited_time,
 		publishedDate: publishedDate,
 		publishedFormatted: format(new Date(publishedDate), "do 'of' MMMM yyyy"),
 		readTime: readingTime(contentMd).text,
-		tags: (properties.Tags as MultiSelectPropertyValue).multi_select
-			.map(({ name }) => name)
-			.sort((a, b) => a.localeCompare(b)),
+		tags:
+			properties.Tags.type === 'multi_select' &&
+			properties.Tags.multi_select.map(({ name }) => name).sort((a, b) => a.localeCompare(b)),
 		slug
 	};
 
@@ -123,7 +119,7 @@ async function getProcessor(): Promise<Processor> {
 		.use(squeezeParagraphs)
 		.use(capitalize)
 		.use(remark2rehype)
-		.use(rehypeShiki as any, { highlighter })
+		.use(rehypeShiki, { highlighter })
 		.use(slugs)
 		.use(autolink, { behavior: 'append' })
 		.use(rehypeMinify)

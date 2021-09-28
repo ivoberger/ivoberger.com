@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Icon from 'svelte-awesome';
 	import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 </script>
