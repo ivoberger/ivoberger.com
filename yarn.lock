@@ -537,30 +537,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@windicss/config@npm:1.4.8":
-  version: 1.4.8
-  resolution: "@windicss/config@npm:1.4.8"
+"@windicss/config@npm:1.4.9":
+  version: 1.4.9
+  resolution: "@windicss/config@npm:1.4.9"
   dependencies:
     debug: ^4.3.2
-    jiti: ^1.12.3
-    tsup: ^5.2.0
-    windicss: ^3.1.7
-  checksum: 4411078fec58897253b8d3c7cbda51600bb70228bd82f4cdd886b9708be3ca9a1868eff82f729e8c17ba160db1ac149978d3f2d5b2b3b3896cd83d2fab0bf014
+    jiti: ^1.12.5
+    tsup: ^5.2.1
+    windicss: ^3.1.8
+  checksum: 25a70b9528d7dd85eb11c4ea9b09c2033ac8893619e685a0f0cdb5191210a3b04e3384fe22d9daf0541d4b26abe666913d20f41bbc1f80500ec4408abfba28fb
   languageName: node
   linkType: hard
 
-"@windicss/plugin-utils@npm:1.4.8":
-  version: 1.4.8
-  resolution: "@windicss/plugin-utils@npm:1.4.8"
+"@windicss/plugin-utils@npm:1.4.9":
+  version: 1.4.9
+  resolution: "@windicss/plugin-utils@npm:1.4.9"
   dependencies:
     "@antfu/utils": ^0.3.0
-    "@windicss/config": 1.4.8
+    "@windicss/config": 1.4.9
     debug: ^4.3.2
     fast-glob: ^3.2.7
     magic-string: ^0.25.7
     micromatch: ^4.0.4
-    windicss: ^3.1.7
-  checksum: b4530d1dcdd73809ebeef2eb5829667205fdba4c647bc87ce2be6313b3a0d541e2556b7d0921b3cc222e5b3742a3230fa3285e875f23829b6f312e6a73ae2778
+    windicss: ^3.1.8
+  checksum: 0064cb75ead95345e9bc3f3ea1a782211b2a1e33c835661c3397b6ad124647edb991676d6c1f33cebf367a06e673d2860533a9557e0146035568c5461c74c852
   languageName: node
   linkType: hard
 
@@ -4472,24 +4472,24 @@ fsevents@~2.3.2:
     remark-rehype: ^9.1.0
     remark-squeeze-paragraphs: ^5.0.0
     shiki: ^0.9.11
-    svelte: ^3.43.0
+    svelte: ^3.43.1
     svelte-awesome: ^2.3.2
-    svelte-preprocess: ^4.9.5
+    svelte-preprocess: ^4.9.7
     svelte-seo: ^1.3.0
     tslib: ^2.3.1
     typescript: ^4.4.3
     unified: ^10.1.0
-    vite-plugin-windicss: ^1.4.8
+    vite-plugin-windicss: ^1.4.9
     xmlbuilder2: ^3.0.2
   languageName: unknown
   linkType: soft
 
-"jiti@npm:^1.12.3":
-  version: 1.12.3
-  resolution: "jiti@npm:1.12.3"
+"jiti@npm:^1.12.5":
+  version: 1.12.5
+  resolution: "jiti@npm:1.12.5"
   bin:
     jiti: bin/jiti.js
-  checksum: bd3e51dcb1f6332978e171532d20df94be97a00c89884b3076b13dfa9b0ccc8dcaf8e514a4cc5cc7ba57c7c5a9b1b270888fe8c8348528a8fa259765d210bc87
+  checksum: 00a1674f38b77c725597c175389da67894d08b386d1d3dac9ecafec3abaf75793b2ea369ed2e688f2e03f495488c843da790c111cc5e24aa533c09051a6fe704
   languageName: node
   linkType: hard
 
@@ -8362,9 +8362,9 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^4.9.5":
-  version: 4.9.5
-  resolution: "svelte-preprocess@npm:4.9.5"
+"svelte-preprocess@npm:^4.9.7":
+  version: 4.9.7
+  resolution: "svelte-preprocess@npm:4.9.7"
   dependencies:
     "@types/pug": ^2.0.4
     "@types/sass": ^1.16.0
@@ -8407,7 +8407,7 @@ resolve@1.1.7:
       optional: true
     typescript:
       optional: true
-  checksum: 587645e7b48f91fecce1fab49ca8f4dc5132711d99684690b82d9c3b2003a82add9b8038f5ae8a3278f82a923e72a34fda8f3f04c1dbcc13608216672930563e
+  checksum: 7e44d2e69e9ed984b8c8a5185a0fd6c7225103758ea11ef406929022aab2ad565590dd74fc1902dd61b2f64f128786cc5ffd5d1ec0f0bea4d92719fd85f887da
   languageName: node
   linkType: hard
 
@@ -8427,10 +8427,10 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.43.0":
-  version: 3.43.0
-  resolution: "svelte@npm:3.43.0"
-  checksum: d987b11ebdead9ea5c0a25ba2ed010ce591a7ca853fdb13421aa68b5e965c28a2cc1fd72944eaed605fe652c1a8384e386140bedaa77a2f47a5e66fe53aa65b2
+"svelte@npm:^3.43.1":
+  version: 3.43.1
+  resolution: "svelte@npm:3.43.1"
+  checksum: c9a28c3d34a129eb62264f1f8ce1c0e9ca4bc2652383268ea99d1f723994a09c4ed711ca899fb0923c4fee8d1006b84b3d910254d6536fc40c5e717294f736ce
   languageName: node
   linkType: hard
 
@@ -8757,7 +8757,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"tsup@npm:^5.2.0":
+"tsup@npm:^5.2.1":
   version: 5.2.1
   resolution: "tsup@npm:5.2.1"
   dependencies:
@@ -8885,11 +8885,11 @@ typescript@^4.4.3:
 
 "typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.4.3
-  resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=d8b4e7"
+  resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 215a59742afb7e0c3668e2c50ca19813deb24b3cc0d16ac3591990e033728050aaa99e159a72b54cb43653f16c778a5cf9dfeed1f51c3b105710ae082c064af7
+  checksum: 28ab98313afab46788ff41014fdb5932430ada6e03cf9e92ac47f406526a2cac1ae2894834e7da61e46b7429318e9c47f45ba8de323332f0cb9af99b72ebae74
   languageName: node
   linkType: hard
 
@@ -9306,17 +9306,17 @@ typescript@^4.4.3:
   languageName: node
   linkType: hard
 
-"vite-plugin-windicss@npm:^1.4.8":
-  version: 1.4.8
-  resolution: "vite-plugin-windicss@npm:1.4.8"
+"vite-plugin-windicss@npm:^1.4.9":
+  version: 1.4.9
+  resolution: "vite-plugin-windicss@npm:1.4.9"
   dependencies:
-    "@windicss/plugin-utils": 1.4.8
+    "@windicss/plugin-utils": 1.4.9
     chalk: ^4.1.2
     debug: ^4.3.2
-    windicss: ^3.1.7
+    windicss: ^3.1.8
   peerDependencies:
     vite: ^2.0.1
-  checksum: 40f4fd0b3aa1e90a23c9821a6e7042099a2f8493e1e8a24ea51a5e26f11ff93813e2359ec8bc336e6b0da58d5309444c02592b28b6409d452df442dc72506e48
+  checksum: 99536aff7e85236f9a69209853ce92b8de1f9bf1c3882a3b8a9462ff2182a73b5742b53603f3706a8b529f044216552269acc9d6ed5f730155f810e62439d562
   languageName: node
   linkType: hard
 
@@ -9478,7 +9478,7 @@ typescript@^4.4.3:
   languageName: node
   linkType: hard
 
-"windicss@npm:^3.1.7":
+"windicss@npm:^3.1.8":
   version: 3.1.8
   resolution: "windicss@npm:3.1.8"
   bin:
