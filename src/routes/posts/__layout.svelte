@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { HomeButton } from '$lib/components';
 </script>
 

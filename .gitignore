@@ -5,3 +5,11 @@ node_modules
 /functions
 *.local
 *.log
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

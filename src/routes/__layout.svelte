@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ page: { path, params } }) => ({
@@ -9,7 +9,7 @@
 	});
 </script>
 
-<script>
+<script lang="ts">
 	import 'virtual:windi.css';
 	import './_fonts.css';
 	import { Footer } from '$lib/components';
@@ -18,7 +18,7 @@
 <slot />
 <Footer />
 
-<style global>
+<style global lang="postcss">
 	body {
 		@apply font-sans antialiased text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100;
 	}

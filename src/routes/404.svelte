@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import { HomeButton, Body } from '$lib/components';
 </script>
 
 <svelte:head>
 	<title>Ooops, there's no page here</title>
-	<script>
+	<script lang="ts">
 		plausible('404', { props: { path: document.location.pathname } });
 	</script>
 </svelte:head>
@@ -18,7 +18,7 @@
 	<p>PS.: It might have sucked in the page you're looking for...</p>
 </Body>
 
-<style>
+<style lang="postcss">
 	.image-blurred {
 		background-image: url('/404.jpg');
 		width: 100%;

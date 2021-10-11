@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let title: string;
 	export let subTitle: string | undefined;
 	export let subTitleLink: string | undefined;

@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
 	export const load: Load = async ({ fetch }) => ({
 		props: {
@@ -7,7 +7,7 @@
 	});
 </script>
 
-<script>
+<script lang="ts">
 	import SvelteSeo from 'svelte-seo';
 	import { seoData } from '$lib/seoConstants';
 	import { Header, PostList } from '$lib/components';

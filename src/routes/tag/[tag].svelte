@@ -1,4 +1,4 @@
-<script context="module">
+<script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
 	export const load: Load = async ({ page: { params, path }, fetch }) => ({
 		props: {
@@ -9,7 +9,7 @@
 	});
 </script>
 
-<script>
+<script lang="ts">
 	import SvelteSeo from 'svelte-seo';
 	import { Header, HomeButton, PostList } from '$lib/components';
 	import { rootUrl, seoData } from '$lib/seoConstants';
