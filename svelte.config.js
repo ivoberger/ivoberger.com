@@ -24,7 +24,8 @@ const config = {
 					'style-to-object',
 					'github-slugger',
 					'clean-css',
-					'uglify-js'
+					'uglify-js',
+					'css-selector-parser'
 				]
 			}
 		}

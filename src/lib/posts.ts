@@ -11,7 +11,7 @@ import { getHighlighter } from 'shiki';
 import rehypeShiki from '@stefanprobst/rehype-shiki';
 import slugs from 'rehype-slug';
 import autolink from 'rehype-autolink-headings';
-import rehypeMinify from 'rehype-preset-minify';
+// import rehypeMinify from 'rehype-preset-minify';
 import html from 'rehype-stringify';
 import { readingTime } from 'reading-time-estimator';
 import { format } from 'date-fns';
@@ -114,7 +114,7 @@ async function getProcessor(): Promise<Processor> {
 		.use(rehypeShiki, { highlighter })
 		.use(slugs)
 		.use(autolink, { behavior: 'append' })
-		.use(rehypeMinify)
+		// .use(rehypeMinify)
 		.use(html));
 }
 
