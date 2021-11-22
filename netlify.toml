@@ -44,9 +44,4 @@
   cache-control = "max-age=0,must-revalidate,public"
 
 [[plugins]]
-  package = "netlify-plugin-subfont"
-  [plugins.inputs]
-  fallbacks = false
-
-[[plugins]]
   package = "netlify-plugin-submit-sitemap"
