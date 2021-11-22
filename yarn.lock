@@ -309,9 +309,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/kit@npm:^1.0.0-next.196":
-  version: 1.0.0-next.196
-  resolution: "@sveltejs/kit@npm:1.0.0-next.196"
+"@sveltejs/kit@npm:^1.0.0-next.197":
+  version: 1.0.0-next.197
+  resolution: "@sveltejs/kit@npm:1.0.0-next.197"
   dependencies:
     "@sveltejs/vite-plugin-svelte": ^1.0.0-next.30
     cheap-watch: ^1.0.4
@@ -321,7 +321,7 @@ __metadata:
     svelte: ^3.44.0
   bin:
     svelte-kit: svelte-kit.js
-  checksum: b956ef7871ff4b2d4aa3cda77b47ddd68b34252bb9687f41a1aabfbfd1c7845ef0d88f0227db8443dbafc3fb0b3e73a24c656c6d3e726e9ebc1df47a7ede49d9
+  checksum: a930f9a7f6eb01d4a9d256a96e37707b2809a6640c390218b42c08473c7497d2aa38793891ef7a093f76227b8a72b013a389b9187894aaa7bdaee74b7a3730ba
   languageName: node
   linkType: hard
 
@@ -663,6 +663,15 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 2e4c1dbed3da327684863debf31d341bf8882c6893c506653872c00977eee45675feb9129255d6c74c88424d2b20d889ca6de5b39776e5e3cccfc756b3ca1da8
+  languageName: node
+  linkType: hard
+
+"acorn@npm:^8.6.0":
+  version: 8.6.0
+  resolution: "acorn@npm:8.6.0"
+  bin:
+    acorn: bin/acorn
+  checksum: 9d0de73b73cb6ea8ccd8263a8144d9e2c4b6af90ea0c429997538af0ebbe83c5addecee814b2a7f91f7f615d0bd1547cc7137b3fa236ce058adc64feccee850b
   languageName: node
   linkType: hard
 
@@ -2654,13 +2663,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "eslint-scope@npm:6.0.0"
+"eslint-scope@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "eslint-scope@npm:7.1.0"
   dependencies:
     esrecurse: ^4.3.0
     estraverse: ^5.2.0
-  checksum: 3f1b3578f288c3820f68ad2aae102300e546be8a98a958f515405dc20cc2fe64fda583d364977628bb14fe3d4f96f37de5e9bc5d6eb26bc310da33ba2a677dc3
+  checksum: 2070470a0725438ed47075b2574a4c03cf59aa32648da8cff9e3548c84f6b0079cfdb9ee1dd7ab0bfe97011f64b2af5bfd4b69cf14a1292130dec661eec7914a
   languageName: node
   linkType: hard
 
@@ -2689,9 +2698,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.2.0":
-  version: 8.2.0
-  resolution: "eslint@npm:8.2.0"
+"eslint-visitor-keys@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "eslint-visitor-keys@npm:3.1.0"
+  checksum: fd2d613bb315bc549068ca97771d868437fb60c8f13ef8d6d54669773ff53f814b759fa9e57966f15e4c50a5f5e11c6ba47060b8f201f9776311f6c5d5c11b70
+  languageName: node
+  linkType: hard
+
+"eslint@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "eslint@npm:8.3.0"
   dependencies:
     "@eslint/eslintrc": ^1.0.4
     "@humanwhocodes/config-array": ^0.6.0
@@ -2702,10 +2718,10 @@ __metadata:
     doctrine: ^3.0.0
     enquirer: ^2.3.5
     escape-string-regexp: ^4.0.0
-    eslint-scope: ^6.0.0
+    eslint-scope: ^7.1.0
     eslint-utils: ^3.0.0
-    eslint-visitor-keys: ^3.0.0
-    espree: ^9.0.0
+    eslint-visitor-keys: ^3.1.0
+    espree: ^9.1.0
     esquery: ^1.4.0
     esutils: ^2.0.2
     fast-deep-equal: ^3.1.3
@@ -2733,7 +2749,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 19f2f4e23bdd1d0f1c99759adb88c0bf01908ce5bd480913ca7b5d3183f4c42d93142ada699b196e228295c074254ad90a3475126784673bd1afeb22e91ceea8
+  checksum: c0338471fc787384077b132fb1496f264a4d7ed032b9072b2f6b8b1c833edc89b0a4890080576781ce6101a2700341af413ecbf1b66f0780aa02601c40fb2008
   languageName: node
   linkType: hard
 
@@ -2745,6 +2761,17 @@ __metadata:
     acorn-jsx: ^5.3.1
     eslint-visitor-keys: ^3.0.0
   checksum: f313c642e35587ce62a419f57ceea47937a719b084c7b31f649d2ca15ed92bc2dde58e2ac4fc381a74364b0db0b97d9cdb2a5d1ca0ccd7483bde9b4b04fe23e8
+  languageName: node
+  linkType: hard
+
+"espree@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "espree@npm:9.1.0"
+  dependencies:
+    acorn: ^8.6.0
+    acorn-jsx: ^5.3.1
+    eslint-visitor-keys: ^3.1.0
+  checksum: ba9b0f759c49c19a098e0bb97f3b9b05441a60dec3f868bc412ae300e00ba20cb0bd2c6a1bdd6c4f0056e6382650bf45b4982d81e67ad0210c1c16b336f73c39
   languageName: node
   linkType: hard
 
@@ -3023,9 +3050,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"font-tracer@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "font-tracer@npm:3.0.0"
+"font-tracer@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "font-tracer@npm:3.0.1"
   dependencies:
     capitalize: ^2.0.3
     counteraction: ^1.3.0
@@ -3033,7 +3060,7 @@ __metadata:
     css-font-weight-names: ^0.2.1
     postcss-value-parser: ^4.1.0
     specificity: ^0.4.1
-  checksum: cd404e0d0c198d89de7f8cda33ae5c234be6b5fba435b3e6cf5b7fe12da93dd91eaee74e4f4122fcf2b98449d6d8d3b6591cdaf27906376fd49b39f4d488537f
+  checksum: 6fc935c2eb66fad57a4eb49fbe04093ab2448bc4598123f606e2c1bf71a0a07327636a235edab9b0a224418992256f7d2ee56ad5d7ec9f3deb831020d5a5b714
   languageName: node
   linkType: hard
 
@@ -3291,7 +3318,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"globby@npm:^11.0.3, globby@npm:^11.0.4":
+"globby@npm:^11.0.4":
   version: 11.0.4
   resolution: "globby@npm:11.0.4"
   dependencies:
@@ -3312,10 +3339,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"harfbuzzjs@npm:^0.1.5":
-  version: 0.1.5
-  resolution: "harfbuzzjs@npm:0.1.5"
-  checksum: c477ef3c6f560c832cf863a6538558ad7e5d9033fad43253acf161462112c13be1ae91945e97a33eb0aff43ee21b1d76e94cadc5cd83666a96e39ee64dafffbe
+"harfbuzzjs@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "harfbuzzjs@npm:0.2.1"
+  checksum: a627c78ee5ab5d8e3aa7aab6c77e054f13b59847cf9f36b2d2b0ad031eccbf864276e3495eda30ce865b99e1754390e6990eb827b9bcf5419c0701731510c805
   languageName: node
   linkType: hard
 
@@ -4171,14 +4198,13 @@ fsevents@~2.3.2:
     "@notionhq/client": ^0.4.9
     "@stefanprobst/rehype-shiki": ^2.1.1
     "@sveltejs/adapter-static": ^1.0.0-next.21
-    "@sveltejs/kit": ^1.0.0-next.196
+    "@sveltejs/kit": ^1.0.0-next.197
     "@typescript-eslint/eslint-plugin": ^5.4.0
     "@typescript-eslint/parser": ^5.4.0
     date-fns: ^2.26.0
-    eslint: ^8.2.0
+    eslint: ^8.3.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-svelte3: ^3.2.1
-    netlify-plugin-subfont: ^6.0.0
     netlify-plugin-submit-sitemap: ^0.2.3
     prettier: ^2.4.1
     prettier-plugin-svelte: ^2.5.0
@@ -4192,6 +4218,7 @@ fsevents@~2.3.2:
     remark-rehype: ^10.0.1
     remark-squeeze-paragraphs: ^5.0.1
     shiki: ^0.9.12
+    subfont: ^6.4.0
     svelte: ^3.44.2
     svelte-awesome: ^2.4.2
     svelte-check: ^2.2.10
@@ -5090,20 +5117,19 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.1.30":
+  version: 3.1.30
+  resolution: "nanoid@npm:3.1.30"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 276d0d4b0c41c46aeefec5f09f093e4085a2352d06881c845db22b84f8ef72cc8defae6d76bfb1d8a2a128eb2dec42ab148d16582be4e7754c97905806ef57b6
+  languageName: node
+  linkType: hard
+
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
   checksum: 23ad088b08f898fc9b53011d7bb78ec48e79de7627e01ab5518e806033861bef68d5b0cd0e2205c2f36690ac9571ff6bcb05eb777ced2eeda8d4ac5b44592c3d
-  languageName: node
-  linkType: hard
-
-"netlify-plugin-subfont@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "netlify-plugin-subfont@npm:6.0.0"
-  dependencies:
-    globby: ^11.0.3
-    subfont: ^6.0.1
-  checksum: a58ec40f6bc3cd5c3026bcd805ce2677a2feea20a25fbc1736f8f26c4caa565f723426128a4682da019e955ef551702d1a590afcd3a6e3d74b63eda2921e09cf
   languageName: node
   linkType: hard
 
@@ -5591,6 +5617,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"picocolors@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "picocolors@npm:1.0.0"
+  checksum: a2e8092dd86c8396bdba9f2b5481032848525b3dc295ce9b57896f931e63fc16f79805144321f72976383fc249584672a75cc18d6777c6b757603f372f745981
+  languageName: node
+  linkType: hard
+
 "picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.2, picomatch@npm:^2.2.3":
   version: 2.3.0
   resolution: "picomatch@npm:2.3.0"
@@ -5963,13 +5996,24 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:^7.0.0, postcss@npm:^7.0.1, postcss@npm:^7.0.14, postcss@npm:^7.0.27, postcss@npm:^7.0.32":
+"postcss@npm:^7.0.0, postcss@npm:^7.0.1, postcss@npm:^7.0.14, postcss@npm:^7.0.27":
   version: 7.0.39
   resolution: "postcss@npm:7.0.39"
   dependencies:
     picocolors: ^0.2.1
     source-map: ^0.6.1
   checksum: 4ac793f506c23259189064bdc921260d869a115a82b5e713973c5af8e94fbb5721a5cc3e1e26840500d7e1f1fa42a209747c5b1a151918a9bc11f0d7ed9048e3
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.3.11":
+  version: 8.3.11
+  resolution: "postcss@npm:8.3.11"
+  dependencies:
+    nanoid: ^3.1.30
+    picocolors: ^1.0.0
+    source-map-js: ^0.6.2
+  checksum: 1a230553d74c66aa9585c90781ed8ea75f19cefea405d2117b67fbeb24b5b5e0e17be2e0c5a07db31dd085643a13394127ab2222e940771b70498331bf20f35e
   languageName: node
   linkType: hard
 
@@ -7460,9 +7504,9 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"subfont@npm:^6.0.1":
-  version: 6.3.0
-  resolution: "subfont@npm:6.3.0"
+"subfont@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "subfont@npm:6.4.0"
   dependencies:
     "@gustavnikolaj/async-main-wrap": ^3.0.1
     assetgraph: ^7.2.0
@@ -7472,36 +7516,36 @@ resolve@1.1.7:
     css-list-helpers: ^2.0.0
     font-family-papandreou: ^0.2.0-patch2
     font-snapper: ^1.2.0
-    font-tracer: ^3.0.0
+    font-tracer: ^3.0.1
     fontkit: ^1.8.0
     fontverter: ^2.0.0
     gettemporaryfilepath: ^1.0.1
     lines-and-columns: ^1.1.6
     lodash: ^4.17.15
     memoizesync: ^1.1.1
-    postcss: ^7.0.32
+    postcss: ^8.3.11
     postcss-value-parser: ^4.0.2
     pretty-bytes: ^5.1.0
     puppeteer-core: ^8.0.0
     specificity: ^0.4.1
-    subset-font: ^1.2.3
+    subset-font: ^1.4.0
     urltools: ^0.4.1
     yargs: ^15.4.0
   bin:
     subfont: lib/cli.js
-  checksum: e2dfd43f4492a765f24aa94e81f4270173f516ff9d5da1cfd5fe5303d7e0d59942caaf68835511388673ce9eea7ba636e9004cf6126283c5032b6fa014d5c908
+  checksum: 205d86d67c03b883eb8fd0469b727a871b882e1acbefa728cca9e1f5793f92c491bdd2cdbfd66f9a5db44c644c525727311df907c4f9fc1435a6618a12eb3abe
   languageName: node
   linkType: hard
 
-"subset-font@npm:^1.2.3":
-  version: 1.3.3
-  resolution: "subset-font@npm:1.3.3"
+"subset-font@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "subset-font@npm:1.4.0"
   dependencies:
     fontverter: ^2.0.0
-    harfbuzzjs: ^0.1.5
+    harfbuzzjs: ^0.2.1
     lodash: ^4.17.21
     p-limit: ^3.1.0
-  checksum: fb456ffba18c6fbb9e47062145c76d8f7418ed8680ab94de1e23d77cc389f29f951a881a2eafde29bff967eea67790720e46e5b756f95e43031bef645a534add
+  checksum: d038bfd299ddd4ba47cfda9f399f31253ebdbbf0e372564c3d136e0b61ad701d8c11f5907655397347bca17e0035d0166d697c226953d6d4fd000592262fb290
   languageName: node
   linkType: hard
 
