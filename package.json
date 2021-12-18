@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build && subfont --root build --no--fallbacks --in-place",
+		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -47,7 +47,6 @@
 		"remark-rehype": "^10.1.0",
 		"remark-squeeze-paragraphs": "^5.0.1",
 		"shiki": "^0.9.15",
-		"subfont": "^6.4.0",
 		"svelte": "^3.44.3",
 		"svelte-check": "^2.2.11",
 		"svelte-preprocess": "^4.9.8",
