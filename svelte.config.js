@@ -12,8 +12,8 @@ const config = {
 	],
 	kit: {
 		trailingSlash: 'ignore',
-		// hydrate: false,
-		// router: false,
+		hydrate: false,
+		router: false,
 		adapter: adapter()
 	}
 };
