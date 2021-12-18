@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@fontsource/catamaran': ^4.5.0
+  '@fontsource/source-serif-pro': ^4.5.0
   '@fortawesome/fontawesome-svg-core': ^1.2.36
   '@fortawesome/free-brands-svg-icons': ^5.15.4
   '@fortawesome/free-regular-svg-icons': ^5.15.4
@@ -20,6 +22,7 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.1
   netlify-plugin-submit-sitemap: ^0.2.3
   postcss: ^8.3.9
+  postcss-import: ^14.0.2
   postcss-load-config: ^3.1.0
   prettier: ^2.5.1
   prettier-plugin-svelte: ^2.5.1
@@ -44,6 +47,8 @@ specifiers:
   xmlbuilder2: ^3.0.2
 
 dependencies:
+  '@fontsource/catamaran': 4.5.0
+  '@fontsource/source-serif-pro': 4.5.0
   '@fortawesome/fontawesome-svg-core': 1.2.36
   '@fortawesome/free-brands-svg-icons': 5.15.4
   '@fortawesome/free-regular-svg-icons': 5.15.4
@@ -67,6 +72,7 @@ devDependencies:
   eslint-plugin-svelte3: 3.2.1_eslint@8.5.0+svelte@3.44.3
   netlify-plugin-submit-sitemap: 0.2.3
   postcss: 8.4.5
+  postcss-import: 14.0.2_postcss@8.4.5
   postcss-load-config: 3.1.0
   prettier: 2.5.1
   prettier-plugin-svelte: 2.5.1_prettier@2.5.1+svelte@3.44.3
@@ -127,6 +133,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@fontsource/catamaran/4.5.0:
+    resolution: {integrity: sha512-ov4yMcJmPX0mDewH7b1XgsnCGBz/vM1soOCNlGQVNajPFo0gPCGWnYvupyl7vmULWegADZsBECLA3ArZko4NhQ==}
+    dev: false
+
+  /@fontsource/source-serif-pro/4.5.0:
+    resolution: {integrity: sha512-v42UCl87ao3+IxNGLy4ZzoUrRoPlLpqIrUXy5RYj8/bupnLYAEjesc7nFDLEkvzzgZQDFUEW8ljpNL1n9ehmAg==}
+    dev: false
 
   /@fortawesome/fontawesome-common-types/0.2.36:
     resolution: {integrity: sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==}
@@ -2375,6 +2389,11 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pify/2.3.0:
+    resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /postcss-calc/8.0.0_postcss@8.4.5:
     resolution: {integrity: sha512-5NglwDrcbiy8XXfPM11F3HeC6hoT9W7GUH/Zi5U/p7u3Irv4rHhdDcIZwG0llHXV4ftsBjpfWMXAnXNl4lnt8g==}
     peerDependencies:
@@ -2442,6 +2461,18 @@ packages:
       postcss: ^8.2.15
     dependencies:
       postcss: 8.4.5
+    dev: true
+
+  /postcss-import/14.0.2_postcss@8.4.5:
+    resolution: {integrity: sha512-BJ2pVK4KhUyMcqjuKs9RijV5tatNzNa73e/32aBVE/ejYPe37iH+6vAu9WvqUkB5OAYgLHzbSvzHnorybJCm9g==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.5
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.20.0
     dev: true
 
   /postcss-js/3.0.3:
@@ -2762,6 +2793,12 @@ packages:
   /quick-lru/5.1.1:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /read-cache/1.0.0:
+    resolution: {integrity: sha1-5mTvMRYRZsl1HNvo28+GtftY93Q=}
+    dependencies:
+      pify: 2.3.0
     dev: true
 
   /readdirp/3.6.0:
