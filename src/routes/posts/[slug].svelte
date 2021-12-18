@@ -82,7 +82,10 @@
 		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
 		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
 	</header>
-	<Body itemProp="articleBody" class="mb-10 prose dark:prose-light xl:prose-lg">
+	<Body
+		itemProp="articleBody"
+		class="mb-10 prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg"
+	>
 		{@html content}
 	</Body>
 </main>
@@ -92,7 +95,7 @@
 		@apply relative overflow-hidden h-96;
 	}
 	.cover-image {
-		@apply absolute inset-0 transform scale-105 filter-blur bg-center bg-cover bg-no-repeat;
+		@apply absolute inset-0 transform scale-105 blur-sm bg-center bg-cover bg-no-repeat;
 	}
 	.cover-text {
 		@apply absolute inset-x-0 bottom-0 z-10 px-6 pb-14 mx-auto text-center md:max-w-4xl;

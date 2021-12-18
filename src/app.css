@@ -1,0 +1,73 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* catamaran-latin-variable-wghtOnly-normal */
+@font-face {
+	font-family: 'CatamaranVariable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url('/fonts/catamaran.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* source-serif-pro-latin-400-normal */
+@font-face {
+	font-family: 'Source Serif Pro';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src: url('/fonts/source-serif-pro.woff2') format('woff2');
+}
+
+body {
+	@apply font-sans antialiased text-gray-900 bg-white dark:bg-neutral-900 dark:text-gray-100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-serif;
+}
+
+h1 {
+	@apply mb-1 font-semibold text-3xl sm:text-4xl md:text-5xl;
+}
+
+h2 {
+	@apply mb-1 text-xl sm:text-2xl;
+}
+
+h3 {
+	@apply my-3 sm:my-5 font-semibold text-3xl sm:text-3xl md:text-4xl;
+}
+
+.visible-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.visible-hidden:focus {
+	clip: auto;
+	height: auto;
+	overflow: auto;
+	position: absolute;
+	width: auto;
+}
+
+svg.fa-icon {
+	height: 1em;
+	width: 1em;
+	vertical-align: -0.125em;
+	font-size: inherit;
+	overflow: visible;
+}
