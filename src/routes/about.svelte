@@ -79,7 +79,7 @@
 					</a>
 				{/if}
 			</header>
-			<p class="prose dark:prose-light max-w-none">{description}</p>
+			<p class="prose dark:prose-invert max-w-none">{description}</p>
 		</article>
 	{/each}
 </Body>

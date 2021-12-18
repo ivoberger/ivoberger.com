@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let title: string;
-	export let subTitle: string | undefined;
-	export let subTitleLink: string | undefined;
+	export let subTitle: string | undefined = undefined;
+	export let subTitleLink: string | undefined = undefined;
 </script>
 
 <header class="mb-10">

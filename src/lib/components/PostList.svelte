@@ -26,7 +26,7 @@
 	{/each}
 </main>
 
-<style>
+<style style="postcss">
 	.posts {
 		@apply max-w-3xl mx-auto px-6 mb-10;
 	}
@@ -34,13 +34,13 @@
 		@apply py-4 text-center border-b border-lime-300 sm:py-8 text-gray-700 dark:text-gray-300;
 	}
 	.tag-link {
-		@apply italic transition duration-500 border-b border-transparent hover:border-gray-400;
+		@apply italic transition duration-500 underline decoration-transparent hover:decoration-gray-400;
 	}
 	.date {
 		@apply mb-2 text-xs uppercase;
 	}
 	.readTime {
-		@apply date ml-1;
+		@apply mb-2 text-xs uppercase ml-1;
 	}
 	.description {
 		@apply px-2 text-lg leading-normal sm:px-4 md:px-10 mt-6;

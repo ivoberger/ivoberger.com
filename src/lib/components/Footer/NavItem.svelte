@@ -6,7 +6,7 @@
 <li class="px-2">
 	<a
 		href={link}
-		class="transition duration-500 border-b border-transparent hover:border-gray-400 active--exact active"
+		class="transition duration-500 underline decoration-transparent hover:decoration-gray-400 active--exact active"
 	>
 		{text}
 	</a>

@@ -1,9 +1,9 @@
 .prose a,
 .prose a code {
-	@apply transition-colors duration-500 border-b border-transparent;
+	@apply transition duration-500 decoration-transparent;
 }
 .prose a:hover {
-	@apply border-lime-600;
+	@apply decoration-lime-700 dark:decoration-lime-500;
 }
 
 .prose a .icon.icon-link::before {
@@ -12,7 +12,7 @@
 	@apply pl-1 text-gray-400 dark:text-gray-600;
 }
 .prose a .icon.icon-link:hover::before {
-	@apply text-gray-600 dark:text-gray-400;
+	@apply text-lime-700 dark:text-lime-500;
 }
 .prose h1 a:hover,
 .prose h2 a:hover,
@@ -25,5 +25,5 @@
 
 /* Inline code */
 code {
-	@apply p-1 rounded bg-gray-100 dark:bg-gray-800;
+	@apply p-1 rounded bg-neutral-100 dark:bg-neutral-800;
 }
