@@ -1,6 +1,9 @@
 [build]
-  command = "yarn build"
+  command = "npx -y pnpm install -r --store=node_modules/.pnpm-store && npx -y pnpm build"
   publish = "build"
+
+[build.environment]
+  NPM_FLAGS="--version"
 
 [[redirects]]
   from = "/js/script.outbound-links.js"
