@@ -14,6 +14,9 @@ const config = {
 		trailingSlash: 'ignore',
 		hydrate: false,
 		router: false,
+		prerender: {
+			concurrency: 4
+		},
 		adapter: adapter()
 	}
 };

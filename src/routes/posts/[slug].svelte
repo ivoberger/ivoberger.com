@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ page: { path, params }, fetch }) => ({
+	export const load: Load = async ({ url, params: { slug }, fetch }) => ({
 		props: {
-			post: await (await fetch(`/posts/${params.slug}.json`)).json(),
-			path
+			post: await (await fetch(`/posts/${slug}.json`)).json(),
+			path: url.pathname
 		}
 	});
 </script>
