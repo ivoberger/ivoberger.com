@@ -6,7 +6,7 @@
 
 <header class="mb-10">
 	<div
-		class="max-w-xl px-6 py-10 mx-auto text-center border-b border-lime-500 md:max-w-3xl xl:max-w-4xl md:py-32"
+		class="mx-auto max-w-xl border-b border-lime-500 px-6 py-10 text-center md:max-w-3xl md:py-32 xl:max-w-4xl"
 	>
 		<h1 class="text-4xl sm:text-5xl md:text-6xl">{title}</h1>
 		{#if subTitle}
@@ -14,7 +14,7 @@
 				{#if subTitleLink}
 					<a
 						href={subTitleLink}
-						class="text-gray-700 dark:text-gray-300 transition duration-500 border-b border-transparent hover:text-gray-800 dark:hover:text-gray-100 hover:border-gray-400"
+						class="border-b border-transparent text-gray-700 transition duration-500 hover:border-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
 					>
 						{subTitle}
 					</a>

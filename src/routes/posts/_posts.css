@@ -1,6 +1,6 @@
 .prose a,
 .prose a code {
-	@apply transition duration-500 decoration-transparent;
+	@apply decoration-transparent transition duration-500;
 }
 .prose a:hover {
 	@apply decoration-lime-700 dark:decoration-lime-500;
@@ -25,5 +25,5 @@
 
 /* Inline code */
 code {
-	@apply p-1 rounded bg-neutral-100 dark:bg-neutral-800;
+	@apply rounded bg-neutral-100 p-1 dark:bg-neutral-800;
 }

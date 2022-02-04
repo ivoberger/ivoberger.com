@@ -51,7 +51,7 @@
 		</p>
 	</div>
 	<nav class="w-full sm:w-1/2">
-		<ul class="flex -mx-2 sm:justify-end">
+		<ul class="-mx-2 flex sm:justify-end">
 			<NavItem text="Home" link="/" />
 			<NavItem text="About" link="/about/" />
 			<NavItem text="Sitemap" link="/sitemap.xml" />
@@ -62,12 +62,12 @@
 
 <style>
 	footer {
-		@apply flex flex-wrap justify-between max-w-2xl px-6 py-8 mx-auto text-sm leading-normal text-gray-700 dark:text-gray-400 md:max-w-3xl xl:max-w-4xl sm:px-12 sm:pb-10;
+		@apply mx-auto flex max-w-2xl flex-wrap justify-between px-6 py-8 text-sm leading-normal text-gray-700 dark:text-gray-400 sm:px-12 sm:pb-10 md:max-w-3xl xl:max-w-4xl;
 	}
 	.links {
-		@apply w-full mb-4 sm:w-1/2 sm:mb-0;
+		@apply mb-4 w-full sm:mb-0 sm:w-1/2;
 	}
 	nav {
-		@apply w-full mb-4 sm:w-1/2 sm:mb-0;
+		@apply mb-4 w-full sm:mb-0 sm:w-1/2;
 	}
 </style>

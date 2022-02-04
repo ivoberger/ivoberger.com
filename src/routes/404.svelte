@@ -10,7 +10,7 @@
 </svelte:head>
 
 <HomeButton />
-<Body class="prose dark:prose-invert text-center">
+<Body class="prose text-center dark:prose-invert">
 	<h1>404</h1>
 	<h1>This page doesn't exist</h1>
 	<p class="text-xl">Here's a cool image of a black hole though.</p>
@@ -20,6 +20,6 @@
 
 <style lang="postcss">
 	.image-blurred {
-		@apply w-full h-96 bg-[url('/404.jpg')] bg-center bg-cover bg-no-repeat shadow-[0_0_15px_10px_inset] shadow-white dark:shadow-neutral-900;
+		@apply h-96 w-full bg-[url('/404.jpg')] bg-cover bg-center bg-no-repeat shadow-[0_0_15px_10px_inset] shadow-white dark:shadow-neutral-900;
 	}
 </style>

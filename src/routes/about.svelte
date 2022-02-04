@@ -79,7 +79,7 @@
 					</a>
 				{/if}
 			</header>
-			<p class="prose dark:prose-invert max-w-none">{description}</p>
+			<p class="prose max-w-none dark:prose-invert">{description}</p>
 		</article>
 	{/each}
 </Body>
@@ -89,6 +89,6 @@
 		@apply flex flex-row;
 	}
 	.icon-link {
-		@apply transition p-2 pt-1 text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100;
+		@apply p-2 pt-1 text-gray-700 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100;
 	}
 </style>
