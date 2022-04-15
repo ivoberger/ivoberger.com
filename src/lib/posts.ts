@@ -1,4 +1,3 @@
-import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints';
 import type { Processor } from 'unified';
 
 import { Client } from '@notionhq/client';
@@ -17,6 +16,7 @@ import { readingTime } from './readingTime';
 import { format } from 'date-fns';
 
 import { defaultAuthor } from './seoConstants';
+import type { BlockObjectResponse, GetPageResponse, RichTextItemResponse } from 'src/types/notion';
 
 const notion = new Client({
 	auth: import.meta.env.VITE_NOTION_TOKEN
@@ -62,8 +62,7 @@ export async function getAllPosts(): Promise<PostData[]> {
 		sorts: [{ property: 'Publish Date', direction: 'descending' }]
 	});
 	await getProcessor();
-	posts = await Promise.all(pages.results.map(fetchPostFromApi));
-	return posts;
+	return (posts = await Promise.all(pages.results.map(fetchPostFromApi)));
 }
 
 async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
@@ -73,7 +72,7 @@ async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 		properties['Publish Date'].type === 'date' && properties['Publish Date'].date.start;
 
 	const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
-	const markdown = blocksToMarkdown(blocks.results);
+	const markdown = blocksToMarkdown(blocks.results as BlockObjectResponse[]);
 
 	const content = await new Promise<string>((resolve) =>
 		processor.process(markdown, (_, file) => resolve(String(file)))
@@ -118,9 +117,7 @@ async function getProcessor(): Promise<Processor> {
 		.use(html));
 }
 
-/// Notion to Markdown. Presently unused due to missing features in the Notion API
-
-function blocksToMarkdown(blocks): string {
+function blocksToMarkdown(blocks: BlockObjectResponse[]): string {
 	let result = '';
 
 	for (const block of blocks) {
@@ -156,8 +153,8 @@ function blocksToMarkdown(blocks): string {
 	return result;
 }
 
-const getTextFromBlock = (block) => block[block.type].text;
-function richTextToMarkdown(richText): string {
+const getTextFromBlock = (block: BlockObjectResponse) => block[block.type].rich_text;
+function richTextToMarkdown(richText: RichTextItemResponse[]): string {
 	let result = '';
 
 	for (const text of richText) {

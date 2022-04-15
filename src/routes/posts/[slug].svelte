@@ -1,13 +1,3 @@
-<script lang="ts" context="module">
-	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ url, params: { slug }, fetch }) => ({
-		props: {
-			post: await (await fetch(`/posts/${slug}.json`)).json(),
-			path: url.pathname
-		}
-	});
-</script>
-
 <script lang="ts">
 	import SvelteSeo from 'svelte-seo';
 	import { Body } from '$lib/components';
