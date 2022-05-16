@@ -1,13 +1,3 @@
-<script lang="ts" context="module">
-	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ url, params: { slug }, fetch }) => ({
-		props: {
-			post: await (await fetch(`/posts/${slug}.json`)).json(),
-			path: url.pathname
-		}
-	});
-</script>
-
 <script lang="ts">
 	import SvelteSeo from 'svelte-seo';
 	import { Body } from '$lib/components';
@@ -84,7 +74,7 @@
 	</header>
 	<Body
 		itemProp="articleBody"
-		class="mb-10 prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg"
+		class="prose mb-10 prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg"
 	>
 		{@html content}
 	</Body>
@@ -92,13 +82,13 @@
 
 <style>
 	header {
-		@apply relative overflow-hidden h-96;
+		@apply relative h-96 overflow-hidden;
 	}
 	.cover-image {
-		@apply absolute inset-0 transform scale-105 blur-sm bg-center bg-cover bg-no-repeat;
+		@apply absolute inset-0 scale-105 transform bg-cover bg-center bg-no-repeat blur-sm;
 	}
 	.cover-text {
-		@apply absolute inset-x-0 bottom-0 z-10 px-6 pb-14 mx-auto text-center md:max-w-4xl;
+		@apply absolute inset-x-0 bottom-0 z-10 mx-auto px-6 pb-14 text-center md:max-w-4xl;
 	}
 	.text-shadow-lg {
 		text-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);

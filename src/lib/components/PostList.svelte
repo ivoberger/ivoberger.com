@@ -28,21 +28,21 @@
 
 <style style="postcss">
 	.posts {
-		@apply max-w-3xl mx-auto px-6 mb-10;
+		@apply mx-auto mb-10 max-w-3xl px-6;
 	}
 	.article-summary {
-		@apply py-4 text-center border-b border-lime-300 sm:py-8 text-gray-700 dark:text-gray-300;
+		@apply border-b border-lime-300 py-4 text-center text-gray-700 dark:text-gray-300 sm:py-8;
 	}
 	.tag-link {
-		@apply italic transition duration-500 underline decoration-transparent hover:decoration-gray-400;
+		@apply italic underline decoration-transparent transition duration-500 hover:decoration-gray-400;
 	}
 	.date {
 		@apply mb-2 text-xs uppercase;
 	}
 	.readTime {
-		@apply mb-2 text-xs uppercase ml-1;
+		@apply mb-2 ml-1 text-xs uppercase;
 	}
 	.description {
-		@apply px-2 text-lg leading-normal sm:px-4 md:px-10 mt-6;
+		@apply mt-6 px-2 text-lg leading-normal sm:px-4 md:px-10;
 	}
 </style>

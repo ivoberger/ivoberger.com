@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	@apply font-sans antialiased text-gray-900 bg-white dark:bg-neutral-900 dark:text-gray-100;
+	@apply bg-white font-sans text-gray-900 antialiased dark:bg-neutral-900 dark:text-gray-100;
 }
 
 h1,
@@ -24,7 +24,7 @@ h6 {
 }
 
 h1 {
-	@apply mb-1 font-semibold text-3xl sm:text-4xl md:text-5xl;
+	@apply mb-1 text-3xl font-semibold sm:text-4xl md:text-5xl;
 }
 
 h2 {
@@ -32,7 +32,7 @@ h2 {
 }
 
 h3 {
-	@apply my-3 sm:my-5 font-semibold text-3xl sm:text-3xl md:text-4xl;
+	@apply my-3 text-3xl font-semibold sm:my-5 sm:text-3xl md:text-4xl;
 }
 
 .visible-hidden {

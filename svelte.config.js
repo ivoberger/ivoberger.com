@@ -12,11 +12,8 @@ const config = {
 	],
 	kit: {
 		trailingSlash: 'ignore',
-		hydrate: false,
-		router: false,
-		prerender: {
-			concurrency: 4
-		},
+		browser: { hydrate: false, router: false },
+		prerender: { concurrency: 4, default: true },
 		adapter: adapter()
 	}
 };
