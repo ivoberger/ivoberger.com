@@ -17,6 +17,7 @@ import { format } from 'date-fns';
 
 import { defaultAuthor } from './seoConstants';
 import type { BlockObjectResponse, GetPageResponse, RichTextItemResponse } from 'src/types/notion';
+import type { GetPagePropertyResponse } from '@notionhq/client/build/src/api-endpoints';
 
 const notion = new Client({
 	auth: import.meta.env.VITE_NOTION_TOKEN
@@ -66,8 +67,18 @@ export async function getAllPosts(): Promise<PostData[]> {
 }
 
 async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
-	const properties = page.properties;
-	const slug = properties.Slug.type === 'rich_text' && properties.Slug.rich_text[0].plain_text;
+	const properties: Record<string, GetPagePropertyResponse> = Object.fromEntries(
+		await Promise.all(
+			Object.entries(page.properties).map(async ([key, { id }]) => [
+				key,
+				await notion.pages.properties.retrieve({ page_id: page.id, property_id: id })
+			])
+		)
+	);
+	const slug =
+		properties.Slug.object === 'list' &&
+		properties.Slug.results[0].type === 'rich_text' &&
+		properties.Slug.results[0].rich_text.plain_text;
 	const publishedDate =
 		properties['Publish Date'].type === 'date' && properties['Publish Date'].date.start;
 
@@ -79,10 +90,15 @@ async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 	);
 
 	const meta: PostMetadata = {
-		title: properties.Name.type === 'title' && properties.Name.title[0].plain_text,
+		title:
+			properties.Name.object === 'list' &&
+			properties.Name.results[0].type === 'title' &&
+			properties.Name.results[0].title.plain_text,
 		author: defaultAuthor,
 		description:
-			properties.Description.type === 'rich_text' && properties.Description.rich_text[0].plain_text,
+			properties.Description.object === 'list' &&
+			properties.Description.results[0].type === 'rich_text' &&
+			properties.Description.results[0].rich_text.plain_text,
 		updatedDate:
 			properties['Last Updated'].type === 'last_edited_time' &&
 			properties['Last Updated'].last_edited_time,
@@ -94,6 +110,7 @@ async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 			properties.Tags.multi_select.map(({ name }) => name).sort((a, b) => a.localeCompare(b)),
 		slug
 	};
+	// console.log('🚀 ~ file: posts.ts ~ line 99 ~ fetchPostFromApi ~ meta', meta);
 
 	const post: PostData = { meta, content };
 	postsBySlug[meta.slug] = post;
