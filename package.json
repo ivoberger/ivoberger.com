@@ -18,7 +18,7 @@
 		"@fontsource/source-serif-pro": "^4.5.7",
 		"@fortawesome/fontawesome-svg-core": "^6.1.1",
 		"@fortawesome/free-brands-svg-icons": "^5.15.4",
-		"@fortawesome/free-regular-svg-icons": "^5.15.4",
+		"@fortawesome/free-regular-svg-icons": "^6.1.2",
 		"@fortawesome/free-solid-svg-icons": "^5.15.4",
 		"svelte-awesome": "^3.0.0",
 		"svelte-seo": "^1.4.0"
