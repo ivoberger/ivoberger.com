@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,9 +7,7 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [preprocess({ postcss: true })],
 	kit: {
-		trailingSlash: 'ignore',
-		// browser: { hydrate: false, router: false },
-		prerender: { concurrency: 4, default: true },
+		prerender: { concurrency: 4 },
 		adapter: adapter()
 	}
 };
