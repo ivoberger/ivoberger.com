@@ -1,10 +1,10 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
 import { create } from 'xmlbuilder2';
 import { getAllPosts, getPostBySlug } from '$lib/posts';
 import { defaultDesc, defaultTitle, rootUrl } from '$lib/seoConstants';
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	const posts = await getAllPosts();
 
 	const feed = create({ version: '1.0' }).ele('rss', {
@@ -40,7 +40,5 @@ export const get: RequestHandler = async () => {
 
 	const xml = feed.end({ prettyPrint: true });
 
-	return {
-		body: xml
-	};
+	return new Response(xml);
 };

@@ -1,4 +1,4 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
 import { create } from 'xmlbuilder2';
 import { getAllPosts, getAllTags, getPostsByTag } from '$lib/posts';
@@ -48,6 +48,4 @@ const buildSitemap = async (): Promise<string> => {
 	return sitemap.end({ prettyPrint: true });
 };
 
-export const get: RequestHandler = async () => ({
-	body: await buildSitemap()
-});
+export const GET: RequestHandler = async () => new Response(await buildSitemap());
