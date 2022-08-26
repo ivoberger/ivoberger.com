@@ -5,14 +5,10 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: [
-		preprocess({
-			postcss: true
-		})
-	],
+	preprocess: [preprocess({ postcss: true })],
 	kit: {
 		trailingSlash: 'ignore',
-		browser: { hydrate: false, router: false },
+		// browser: { hydrate: false, router: false },
 		prerender: { concurrency: 4, default: true },
 		adapter: adapter()
 	}

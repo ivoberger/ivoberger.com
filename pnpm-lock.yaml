@@ -46,6 +46,7 @@ specifiers:
   typescript: ^4.6.4
   unified: ^10.1.2
   vite: ^3.0.0
+  web-vitals: ^3.0.0
   xmlbuilder2: ^3.0.2
 
 dependencies:
@@ -96,6 +97,7 @@ devDependencies:
   typescript: 4.8.2
   unified: 10.1.2
   vite: 3.0.9
+  web-vitals: 3.0.0
   xmlbuilder2: 3.0.2
 
 packages:
@@ -3972,6 +3974,10 @@ packages:
   /web-streams-polyfill/3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /web-vitals/3.0.0:
+    resolution: {integrity: sha512-3Gh6rH5aetFYqfkl9V59KCvjj9vp9U2Tkaep9MO+xpAVg+JULmQfi5zEkcPLkE6iU8pNYVwdjHvIU8RFAchYyQ==}
     dev: true
 
   /webidl-conversions/3.0.1:
