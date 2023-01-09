@@ -5,6 +5,7 @@
 
 <li class="px-2">
 	<a
+		sveltekit:prefetch
 		href={link}
 		class="active--exact active underline decoration-transparent transition duration-500 hover:decoration-gray-400"
 	>

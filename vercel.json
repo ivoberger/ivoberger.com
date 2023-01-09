@@ -1,0 +1,43 @@
+{
+	"trailingSlash": false,
+	"rewrites": [
+		{
+			"source": "/js/script.outbound-links.js",
+			"destination": "https://plausible.io/js/plausible.outbound-links.js"
+		},
+		{
+			"source": "/api/event",
+			"destination": "https://plausible.io/api/event"
+		}
+	],
+	"headers": [
+		{
+			"source": "/(.*)",
+			"headers": [
+				{ "key": "Permissions-Policy", "value": "interest-cohort=()" },
+				{ "key": "Cache-Control", "value": "public,max-age=60" },
+				{ "key": "Referrer-Policy", "value": "no-referrer-when-downgrade" },
+				{ "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+				{ "key": "X-Content-Type-Options", "value": "nosniff" },
+				{
+					"key": "Feature-Policy",
+					"value": "camera 'none'; geolocation 'none'; microphone 'none'"
+				},
+				{ "key": "Strict-Transport-Security", "value": "max-age=2592000; includeSubDomains" },
+				{ "key": "Accept-CH", "value": "Downlink,RTT,Device-Memory,Save-Data,DPR,Width" }
+			]
+		},
+		{
+			"source": "/_app/immutable/(.*)",
+			"headers": [{ "key": "Cache-Control", "value": "public,max-age=31536000,immutable" }]
+		},
+		{
+			"source": "/sitemap.xml",
+			"headers": [{ "key": "Cache-Control", "value": "max-age=0 must-revalidate,public" }]
+		},
+		{
+			"source": "/feed.xml",
+			"headers": [{ "key": "Cache-Control", "value": "max-age=0 must-revalidate,public" }]
+		}
+	]
+}

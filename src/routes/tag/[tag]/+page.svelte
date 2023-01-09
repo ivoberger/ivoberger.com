@@ -1,15 +1,15 @@
 <script lang="ts">
+	import type { PageData } from './$types';
+
 	import SvelteSeo from 'svelte-seo';
 	import { Header, HomeButton, PostList } from '$lib/components';
 	import { rootUrl, seoData } from '$lib/seoConstants';
 
-	export let path: string;
-	export let posts: PostData[];
-	export let tag: string;
+	export let data: PageData;
 
-	const title = `#${tag}`;
+	const title = `#${data.tag}`;
 	const baseUrl = `https://${rootUrl}`;
-	const fullPageUrl = `${baseUrl}${path}`;
+	const fullPageUrl = `${baseUrl}${data.path}`;
 
 	$: seo = seoData({
 		title,
@@ -23,4 +23,4 @@
 
 <HomeButton />
 <Header {title} />
-<PostList {posts} />
+<PostList posts={data.posts} />

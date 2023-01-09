@@ -1,11 +1,12 @@
 <script lang="ts">
+	import type { PageData } from './$types';
+
 	import SvelteSeo from 'svelte-seo';
 	import { Body } from '$lib/components';
-	import './_posts.css';
+	import '../_posts.css';
 	import { defaultAuthor, rootUrl, seoData } from '$lib/seoConstants';
 
-	export let post: PostData;
-	export let path: string;
+	export let data: PageData;
 	let fullImgPath: string;
 
 	$: ({
@@ -21,10 +22,10 @@
 			tags,
 			author = defaultAuthor
 		}
-	} = post);
+	} = data.post);
 
 	const baseUrl = `https://${rootUrl}`;
-	const fullPageUrl = `${baseUrl}${path}`;
+	const fullPageUrl = `${baseUrl}${data.path}`;
 	if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
 
 	$: seo = seoData({
