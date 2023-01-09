@@ -34,12 +34,6 @@
 			class="hover:text-brand-dev dark:hover:text-gray-100"
 		/>
 		<SocialLink
-			title="Twitter"
-			link="https://twitter.com/__I__V__O__"
-			icon={faTwitter}
-			class="hover:text-brand-twitter"
-		/>
-		<SocialLink
 			title="LinkedIn"
 			link="https://www.linkedin.com/in/ivo-berger-00089b15b/"
 			icon={faLinkedin}
