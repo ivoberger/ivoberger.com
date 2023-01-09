@@ -7,9 +7,8 @@
 
 	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-	export const trailingSlash = 'ignore';
+	export const trailingSlash = 'never';
 	export const prerender = true;
-	export const csr = false;
 
 	$: if (browser && analyticsId) {
 		webVitals({
