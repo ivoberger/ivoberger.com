@@ -49,3 +49,4 @@ const buildSitemap = async (): Promise<string> => {
 };
 
 export const GET: RequestHandler = async () => new Response(await buildSitemap());
+export const prerender = true;

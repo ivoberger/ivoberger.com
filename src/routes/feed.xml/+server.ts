@@ -42,3 +42,5 @@ export const GET: RequestHandler = async () => {
 
 	return new Response(xml);
 };
+
+export const prerender = true;
