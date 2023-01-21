@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/catamaran': 4.5.9
+  '@fontsource/catamaran': 4.5.10
   '@fontsource/source-serif-pro': 4.5.9
   '@fortawesome/fontawesome-svg-core': 6.2.1
   '@fortawesome/free-brands-svg-icons': 6.2.1
@@ -50,7 +50,7 @@ specifiers:
   xmlbuilder2: 3.0.2
 
 dependencies:
-  '@fontsource/catamaran': 4.5.9
+  '@fontsource/catamaran': 4.5.10
   '@fontsource/source-serif-pro': 4.5.9
   '@fortawesome/fontawesome-svg-core': 6.2.1
   '@fortawesome/free-brands-svg-icons': 6.2.1
@@ -317,8 +317,8 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/catamaran/4.5.9:
-    resolution: {integrity: sha512-zcpxVOLQoyRQyR5zs2UY5fhTrR+vGcnygWuUdgnMcpv0G6T+F7Yb29WVzpsKMWZ2fV2rdKd0iWzIJXrTzy8yXw==}
+  /@fontsource/catamaran/4.5.10:
+    resolution: {integrity: sha512-Z6+CzgAg1/UInHwRAWIzbSSS2r/20gXF6bmsbouHR7jJs8Mglr4K685RneJZc1VSFpmo9b8fDhhL5eGHGgQfPQ==}
     dev: false
 
   /@fontsource/source-serif-pro/4.5.9:
