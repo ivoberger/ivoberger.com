@@ -35,7 +35,7 @@ specifiers:
   remark-parse: 10.0.1
   remark-rehype: 10.1.0
   remark-squeeze-paragraphs: 5.0.1
-  shiki: 0.12.1
+  shiki: 0.13.0
   svelte: 3.55.1
   svelte-awesome: 3.0.1
   svelte-check: 3.0.3
@@ -61,7 +61,7 @@ dependencies:
 
 devDependencies:
   '@notionhq/client': 2.2.3
-  '@stefanprobst/rehype-shiki': 2.2.0_shiki@0.12.1
+  '@stefanprobst/rehype-shiki': 2.2.0_shiki@0.13.0
   '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.3.2
   '@sveltejs/kit': 1.3.2_svelte@3.55.1+vite@4.0.4
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
@@ -88,7 +88,7 @@ devDependencies:
   remark-parse: 10.0.1
   remark-rehype: 10.1.0
   remark-squeeze-paragraphs: 5.0.1
-  shiki: 0.12.1
+  shiki: 0.13.0
   svelte: 3.55.1
   svelte-check: 3.0.3_gqx7lw3sljhsd4bstor5m2aa2u
   svelte-preprocess: 5.0.1_awginupsaj455aehf5x365sh44
@@ -463,7 +463,7 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@stefanprobst/rehype-shiki/2.2.0_shiki@0.12.1:
+  /@stefanprobst/rehype-shiki/2.2.0_shiki@0.13.0:
     resolution: {integrity: sha512-X/m9hUMifZYJk77pc9dTl8Q5DLWdXegzmHhPZ5yraFpQXG9n/m2jKMLvIR7F6gI8l5plj6aNx/qcMCMnfBwBOA==}
     engines: {node: '>=14.17', yarn: 1.x}
     peerDependencies:
@@ -474,8 +474,8 @@ packages:
       parse-numeric-range: 1.3.0
       remark-parse: 10.0.1
       remark-rehype: 10.1.0
-      shiki: 0.12.1
-      shiki-renderer-hast: 1.1.5_shiki@0.12.1
+      shiki: 0.13.0
+      shiki-renderer-hast: 1.1.5_shiki@0.13.0
       unified: 10.1.2
       unist-util-visit: 4.1.1
     transitivePeerDependencies:
@@ -3556,17 +3556,17 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki-renderer-hast/1.1.5_shiki@0.12.1:
+  /shiki-renderer-hast/1.1.5_shiki@0.13.0:
     resolution: {integrity: sha512-XOHX0/mIRJZnqPNGoyyJ9bUrqUwj/tLUJQ5SuU/UkQLTiSJjiHaCP17HRB7/VSQoor4+WJF3QkT8BXbipyJN0Q==}
     peerDependencies:
       shiki: ^0.9 || ^0.10.0
     dependencies:
       hastscript: 7.2.0
-      shiki: 0.12.1
+      shiki: 0.13.0
     dev: true
 
-  /shiki/0.12.1:
-    resolution: {integrity: sha512-aieaV1m349rZINEBkjxh2QbBvFFQOlgqYTNtCal82hHj4dDZ76oMlQIX+C7ryerBTDiga3e5NfH6smjdJ02BbQ==}
+  /shiki/0.13.0:
+    resolution: {integrity: sha512-QucKtRFyoHgivnde/6tXu+7ZfUhcg02qiFlUSa4X0jQvHVKdtrimWPlbg+q06H2EeNSuj9DcMhtB18GgtDLsmw==}
     dependencies:
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
