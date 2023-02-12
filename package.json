@@ -50,7 +50,7 @@
 		"remark-parse": "10.0.1",
 		"remark-rehype": "10.1.0",
 		"remark-squeeze-paragraphs": "5.0.1",
-		"shiki": "0.14.0",
+		"shiki": "0.14.1",
 		"svelte": "3.55.1",
 		"svelte-check": "3.0.3",
 		"svelte-preprocess": "5.0.1",
