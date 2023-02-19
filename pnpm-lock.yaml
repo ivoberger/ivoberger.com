@@ -10,7 +10,7 @@ specifiers:
   '@notionhq/client': 2.2.3
   '@stefanprobst/rehype-shiki': 2.2.0
   '@sveltejs/adapter-static': 1.0.6
-  '@sveltejs/kit': 1.6.0
+  '@sveltejs/kit': 1.7.0
   '@tailwindcss/typography': 0.5.9
   '@typescript-eslint/eslint-plugin': 5.52.0
   '@typescript-eslint/parser': 5.52.0
@@ -62,8 +62,8 @@ dependencies:
 devDependencies:
   '@notionhq/client': 2.2.3
   '@stefanprobst/rehype-shiki': 2.2.0_shiki@0.14.1
-  '@sveltejs/adapter-static': 1.0.6_@sveltejs+kit@1.6.0
-  '@sveltejs/kit': 1.6.0_svelte@3.55.1+vite@4.1.1
+  '@sveltejs/adapter-static': 1.0.6_@sveltejs+kit@1.7.0
+  '@sveltejs/kit': 1.7.0_svelte@3.55.1+vite@4.1.1
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.6
   '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
   '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
@@ -482,16 +482,16 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-static/1.0.6_@sveltejs+kit@1.6.0:
+  /@sveltejs/adapter-static/1.0.6_@sveltejs+kit@1.7.0:
     resolution: {integrity: sha512-gTus2jW6bEQAZoT1MdmPHWZZmcb6dfLWc0r6dFHnbzSDZ68kifqQ1E+dZDOMF7aXeRV91sgnPuAn2MtpinVdlA==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.6.0_svelte@3.55.1+vite@4.1.1
+      '@sveltejs/kit': 1.7.0_svelte@3.55.1+vite@4.1.1
     dev: true
 
-  /@sveltejs/kit/1.6.0_svelte@3.55.1+vite@4.1.1:
-    resolution: {integrity: sha512-SiY+JVid3SABzksiw4TVOO7+c3z02qFd2aD6T3DO2VScLjrml+C0B9B+QAMLuAPKAuDwmRamPRHURKvFktLbfA==}
+  /@sveltejs/kit/1.7.0_svelte@3.55.1+vite@4.1.1:
+    resolution: {integrity: sha512-Pxrf56vJEaWM64L26gEz3A9C1I4TOoERcxw04CImNR5Mcf6UGTITnEx9T8xGgqrZKhftl25izbxXinoKPFDTYw==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
