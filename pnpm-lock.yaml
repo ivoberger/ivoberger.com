@@ -40,7 +40,7 @@ specifiers:
   svelte-awesome: 3.0.1
   svelte-check: 3.0.4
   svelte-preprocess: 5.0.1
-  svelte-seo: 1.4.1
+  svelte-seo: 1.5.3
   tailwindcss: 3.2.7
   tslib: 2.5.0
   typescript: 4.9.5
@@ -57,7 +57,7 @@ dependencies:
   '@fortawesome/free-regular-svg-icons': 6.3.0
   '@fortawesome/free-solid-svg-icons': 6.3.0
   svelte-awesome: 3.0.1_svelte@3.55.1
-  svelte-seo: 1.4.1_typescript@4.9.5
+  svelte-seo: 1.5.3
 
 devDependencies:
   '@notionhq/client': 2.2.3
@@ -3527,14 +3527,6 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /schema-dts/0.8.3_typescript@4.9.5:
-    resolution: {integrity: sha512-GSLeVkUgEe8DzS8/FGWou1wlC8tQ1KXA5amCqCIH/psUzF74fWswtT0QFlSoJLT08CYyixnc3S/lkAm+RExoLQ==}
-    peerDependencies:
-      typescript: '>=3.4.0'
-    dependencies:
-      typescript: 4.9.5
-    dev: false
-
   /semver/7.3.8:
     resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
     engines: {node: '>=10'}
@@ -3806,12 +3798,8 @@ packages:
       typescript: 4.9.5
     dev: true
 
-  /svelte-seo/1.4.1_typescript@4.9.5:
-    resolution: {integrity: sha512-ud0vdQrAVvZHLFsYznimlKdxWC47GqYWgOBBTr3mYDPouBPQHYDazEFredmwUm5boVoMRffu/aOJ5Yj1xQQibA==}
-    dependencies:
-      schema-dts: 0.8.3_typescript@4.9.5
-    transitivePeerDependencies:
-      - typescript
+  /svelte-seo/1.5.3:
+    resolution: {integrity: sha512-xkaVGNaQOWiNYApx6ehFSEVfdpfzy4pJLKWqQucFepl4SxJWcKDugCcND2k8bF4FskQ1M/4v4/Js35dDE/xFjg==}
     dev: false
 
   /svelte/3.55.1:
@@ -3950,6 +3938,7 @@ packages:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
 
   /uglify-js/3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
