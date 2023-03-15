@@ -46,7 +46,7 @@ specifiers:
   typescript: 4.9.5
   unified: 10.1.2
   vite: 4.1.4
-  web-vitals: 3.1.1
+  web-vitals: 3.3.0
   xmlbuilder2: 3.0.2
 
 dependencies:
@@ -97,7 +97,7 @@ devDependencies:
   typescript: 4.9.5
   unified: 10.1.2
   vite: 4.1.4
-  web-vitals: 3.1.1
+  web-vitals: 3.3.0
   xmlbuilder2: 3.0.2
 
 packages:
@@ -4169,8 +4169,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /web-vitals/3.1.1:
-    resolution: {integrity: sha512-qvllU+ZeQChqzBhZ1oyXmWsjJ8a2jHYpH8AMaVuf29yscOPZfTQTjQFRX6+eADTdsDE8IanOZ0cetweHMs8/2A==}
+  /web-vitals/3.3.0:
+    resolution: {integrity: sha512-GZsEmJBNclIpViS/7QVOTr7Kbt4BgLeR7kQ5zCCtJVuiWsA+K6xTXaoEXssvl8yYFICEyNmA2Nr+vgBYTnS4bA==}
     dev: true
 
   /webidl-conversions/3.0.1:
