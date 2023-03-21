@@ -37,7 +37,7 @@ specifiers:
   remark-squeeze-paragraphs: 5.0.1
   shiki: 0.14.1
   svelte: 3.57.0
-  svelte-awesome: 3.1.0
+  svelte-awesome: 3.2.0
   svelte-check: 3.1.4
   svelte-preprocess: 5.0.3
   svelte-seo: 1.5.3
@@ -56,7 +56,7 @@ dependencies:
   '@fortawesome/free-brands-svg-icons': 6.3.0
   '@fortawesome/free-regular-svg-icons': 6.3.0
   '@fortawesome/free-solid-svg-icons': 6.3.0
-  svelte-awesome: 3.1.0_svelte@3.57.0
+  svelte-awesome: 3.2.0_svelte@3.57.0
   svelte-seo: 1.5.3
 
 devDependencies:
@@ -3699,8 +3699,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-awesome/3.1.0_svelte@3.57.0:
-    resolution: {integrity: sha512-z1fY3/KvwWwY0XHML7f+OLuvW77NXu37Nf2l6rK7qI8Kzz+pyal7V6oRwSj8nNHsiFq+e6pDcPbkI5r1ryr+2A==}
+  /svelte-awesome/3.2.0_svelte@3.57.0:
+    resolution: {integrity: sha512-A9gqgRDs/6EjUgMHIBHz88vJIiY4fVI7e2X9uu43O7J2EYqdVVSnHHH49TxMnNinbq6K9Z/1kMD9LCZhX7ysUQ==}
     peerDependencies:
       svelte: ^3.43.1
     dependencies:
