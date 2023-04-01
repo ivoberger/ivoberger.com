@@ -7,9 +7,6 @@
 
 	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-	export const trailingSlash = 'never';
-	export const prerender = true;
-
 	$: if (browser && analyticsId) {
 		webVitals({
 			path: $page.url.pathname,
