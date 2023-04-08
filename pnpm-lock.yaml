@@ -139,8 +139,8 @@ devDependencies:
     specifier: 4.2.1
     version: 4.2.1
   web-vitals:
-    specifier: 3.3.0
-    version: 3.3.0
+    specifier: 3.3.1
+    version: 3.3.1
   xmlbuilder2:
     specifier: 3.0.2
     version: 3.0.2
@@ -4253,8 +4253,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /web-vitals@3.3.0:
-    resolution: {integrity: sha512-GZsEmJBNclIpViS/7QVOTr7Kbt4BgLeR7kQ5zCCtJVuiWsA+K6xTXaoEXssvl8yYFICEyNmA2Nr+vgBYTnS4bA==}
+  /web-vitals@3.3.1:
+    resolution: {integrity: sha512-LTfY5GjcY3ngFzNsYFSYL+AmVmlWrzPTUxSMDis2rZbf+SzT7HH3NH4Y/l45XOlrAIunOBeURN9qtBHkRskAiA==}
     dev: true
 
   /webidl-conversions@3.0.1:
