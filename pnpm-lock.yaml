@@ -31,8 +31,8 @@ devDependencies:
     specifier: 2.2.4
     version: 2.2.4
   '@stefanprobst/rehype-shiki':
-    specifier: 2.2.0
-    version: 2.2.0(shiki@0.14.1)
+    specifier: 2.2.1
+    version: 2.2.1(shiki@0.14.1)
   '@sveltejs/adapter-static':
     specifier: 2.0.2
     version: 2.0.2(@sveltejs/kit@1.15.7)
@@ -528,11 +528,11 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@stefanprobst/rehype-shiki@2.2.0(shiki@0.14.1):
-    resolution: {integrity: sha512-X/m9hUMifZYJk77pc9dTl8Q5DLWdXegzmHhPZ5yraFpQXG9n/m2jKMLvIR7F6gI8l5plj6aNx/qcMCMnfBwBOA==}
+  /@stefanprobst/rehype-shiki@2.2.1(shiki@0.14.1):
+    resolution: {integrity: sha512-5riyvOc6x9iw4obQxuxMZIOP5gAtym5Pp1vghVXkRXgSTdh8aE14viZL1ooXw76hAmi+rXr2HQdnvEUvt1foBA==}
     engines: {node: '>=14.17', yarn: 1.x}
     peerDependencies:
-      shiki: ^0.10.0
+      shiki: ^0.14.1
     dependencies:
       hast-util-to-string: 2.0.0
       json5: 2.2.3
