@@ -142,8 +142,8 @@ devDependencies:
     specifier: 3.3.1
     version: 3.3.1
   xmlbuilder2:
-    specifier: 3.0.2
-    version: 3.0.2
+    specifier: 3.1.0
+    version: 3.1.0
 
 packages:
 
@@ -4228,8 +4228,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /xmlbuilder2@3.0.2:
-    resolution: {integrity: sha512-h4MUawGY21CTdhV4xm3DG9dgsqyhDkZvVJBx88beqX8wJs3VgyGQgAn5VreHuae6unTQxh115aMK5InCVmOIKw==}
+  /xmlbuilder2@3.1.0:
+    resolution: {integrity: sha512-QAfrowmLOGPh99FbflhSYC6jkNKhP6MtF9A5vIwbOKR+V03MOttdEuFrMzmmramYJoTJimGeyB8PnX9ouIjM7w==}
     engines: {node: '>=12.0'}
     dependencies:
       '@oozcitak/dom': 1.15.10
