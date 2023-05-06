@@ -22,7 +22,7 @@
 		"svelte-seo": "1.5.3"
 	},
 	"devDependencies": {
-		"@notionhq/client": "2.2.4",
+		"@notionhq/client": "2.2.5",
 		"@stefanprobst/rehype-shiki": "2.2.1",
 		"@sveltejs/adapter-static": "2.0.2",
 		"@sveltejs/kit": "1.15.10",
