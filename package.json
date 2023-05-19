@@ -47,7 +47,7 @@
 		"rehype-slug": "5.1.0",
 		"rehype-stringify": "9.0.3",
 		"remark-capitalize": "1.1.0",
-		"remark-parse": "10.0.1",
+		"remark-parse": "10.0.2",
 		"remark-rehype": "10.1.0",
 		"remark-squeeze-paragraphs": "5.0.1",
 		"shiki": "0.14.2",
