@@ -59,7 +59,7 @@
 		"typescript": "5.0.4",
 		"unified": "10.1.2",
 		"vite": "4.3.9",
-		"web-vitals": "3.3.1",
+		"web-vitals": "3.3.2",
 		"xmlbuilder2": "3.1.1"
 	}
 }
