@@ -3,9 +3,8 @@
 	import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 </script>
 
-<nav class="group fixed top-0 left-0 z-50 m-4">
+<nav class="group fixed left-0 top-0 z-50 m-4">
 	<a
-		sveltekit:prefetch
 		href="/"
 		class="rounded-full border border-gray-100-t bg-black px-5 py-2 transition group-hover:border-gray-600"
 	>

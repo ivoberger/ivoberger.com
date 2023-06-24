@@ -13,7 +13,6 @@
 			<h2>
 				{#if subTitleLink}
 					<a
-						sveltekit:prefetch
 						href={subTitleLink}
 						class="border-b border-transparent text-gray-700 transition duration-500 hover:border-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
 					>

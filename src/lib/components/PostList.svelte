@@ -8,12 +8,12 @@
 			<header>
 				<time class="date" datetime={publishedDate}>{publishedFormatted}</time>,
 				<span class="readTime"> {readTime} </span>
-				<a sveltekit:prefetch href={`/posts/${slug}/`}>
+				<a href={`/posts/${slug}/`}>
 					<h3 class="my-0">{title}</h3>
 				</a>
 				<p class="text-sm leading-normal sm:text-base">
 					{#each tags as tag (tag)}
-						<a sveltekit:prefetch href={`/tag/${tag}/`} class="tag-link">
+						<a href={`/tag/${tag}/`} class="tag-link">
 							#{tag}
 						</a>
 					{/each}

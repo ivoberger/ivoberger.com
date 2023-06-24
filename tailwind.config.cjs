@@ -9,8 +9,8 @@ const config = {
 
 		extend: {
 			fontFamily: {
-				sans: ['CatamaranVariable'],
-				serif: ['"Source Serif Pro"']
+				sans: ['Catamaran Variable', 'sans-serif'],
+				serif: ['"Source Serif Pro"', 'serif']
 			},
 			colors: {
 				gray: {
