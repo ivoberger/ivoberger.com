@@ -1,15 +1,5 @@
 {
 	"trailingSlash": false,
-	"rewrites": [
-		{
-			"source": "/js/script.outbound-links.js",
-			"destination": "https://plausible.io/js/plausible.outbound-links.js"
-		},
-		{
-			"source": "/api/event",
-			"destination": "https://plausible.io/api/event"
-		}
-	],
 	"headers": [
 		{
 			"source": "/(.*)",
