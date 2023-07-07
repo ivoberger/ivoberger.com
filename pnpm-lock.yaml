@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@fontsource-variable/catamaran':
-    specifier: 5.0.3
-    version: 5.0.3
+    specifier: 5.0.4
+    version: 5.0.4
   '@fontsource/source-serif-pro':
-    specifier: 5.0.3
-    version: 5.0.3
+    specifier: 5.0.4
+    version: 5.0.4
   '@fortawesome/fontawesome-svg-core':
     specifier: 6.4.0
     version: 6.4.0
@@ -416,12 +416,12 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource-variable/catamaran@5.0.3:
-    resolution: {integrity: sha512-vs/2pXH7ORE54HRMmwz03aaWwMG1FT67VZtR8pR+mmtHI7Sqce9FDYjv3lL2BvChYuE9yEVAEij/rQRdGPmyJQ==}
+  /@fontsource-variable/catamaran@5.0.4:
+    resolution: {integrity: sha512-2T9PczIolcnkD+QnYsLSgnUhIDbFbngAgK7jWpQqlc7UI3moUt0hQ+SWQuHtXHWHkwzIJGpui6YaJmWxHO0RHQ==}
     dev: false
 
-  /@fontsource/source-serif-pro@5.0.3:
-    resolution: {integrity: sha512-aB5vTiNzixwrkMf8nSax7mHKsa5elWNwrFjMx0f9ZcaXARemWSfbohPhU1kQZLfTUhNQTzTAfRmAHPA/JPKqsw==}
+  /@fontsource/source-serif-pro@5.0.4:
+    resolution: {integrity: sha512-mRiXL2urHY6ot3zKxdRgaiCqyce2cebq3KUYfHr7PO0DKc8oNKuWhQ/Rh01YRX1BWHlTuNOQ7u7PVjKSe2rh9A==}
     dev: false
 
   /@fortawesome/fontawesome-common-types@6.4.0:
