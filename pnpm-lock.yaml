@@ -42,13 +42,13 @@ devDependencies:
     version: 2.2.1(shiki@0.14.3)
   '@sveltejs/adapter-static':
     specifier: 2.0.2
-    version: 2.0.2(@sveltejs/kit@1.22.2)
+    version: 2.0.2(@sveltejs/kit@1.22.3)
   '@sveltejs/adapter-vercel':
     specifier: 3.0.2
-    version: 3.0.2(@sveltejs/kit@1.22.2)
+    version: 3.0.2(@sveltejs/kit@1.22.3)
   '@sveltejs/kit':
-    specifier: 1.22.2
-    version: 1.22.2(svelte@4.0.5)(vite@4.4.3)
+    specifier: 1.22.3
+    version: 1.22.3(svelte@4.0.5)(vite@4.4.3)
   '@tailwindcss/typography':
     specifier: 0.5.9
     version: 0.5.9(tailwindcss@3.3.2)
@@ -619,20 +619,20 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-static@2.0.2(@sveltejs/kit@1.22.2):
+  /@sveltejs/adapter-static@2.0.2(@sveltejs/kit@1.22.3):
     resolution: {integrity: sha512-9wYtf6s6ew7DHUHMrt55YpD1FgV7oWql2IGsW5BXquLxqcY9vjrqCFo0TzzDpo+ZPZkW/v77k0eOP6tsAb8HmQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.22.2(svelte@4.0.5)(vite@4.4.3)
+      '@sveltejs/kit': 1.22.3(svelte@4.0.5)(vite@4.4.3)
     dev: true
 
-  /@sveltejs/adapter-vercel@3.0.2(@sveltejs/kit@1.22.2):
+  /@sveltejs/adapter-vercel@3.0.2(@sveltejs/kit@1.22.3):
     resolution: {integrity: sha512-CQcLoKeVmF5Si+sJax0v8KMtXviJXfDXozJt3zfPHHYytCwMcGpJXsgqpqUbkdaF2xxgXuhTD7ClhQRFThbprw==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.22.2(svelte@4.0.5)(vite@4.4.3)
+      '@sveltejs/kit': 1.22.3(svelte@4.0.5)(vite@4.4.3)
       '@vercel/nft': 0.22.6
       esbuild: 0.18.11
     transitivePeerDependencies:
@@ -640,8 +640,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit@1.22.2(svelte@4.0.5)(vite@4.4.3):
-    resolution: {integrity: sha512-T6GY5jSfQgoDnNPNqAuDi9IK+ZW0TspzTV16UAN6GTsxbri67DGVIbw7QOXPg8FMrZQMmda1AtAxPMfXbOqCgw==}
+  /@sveltejs/kit@1.22.3(svelte@4.0.5)(vite@4.4.3):
+    resolution: {integrity: sha512-IpHD5wvuoOIHYaHQUBJ1zERD2Iz+fB/rBXhXjl8InKw6X4VKE9BSus+ttHhE7Ke+Ie9ecfilzX8BnWE3FeQyng==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
