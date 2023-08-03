@@ -26,7 +26,7 @@
 		"@notionhq/client": "2.2.9",
 		"@stefanprobst/rehype-shiki": "2.2.1",
 		"@sveltejs/adapter-static": "2.0.3",
-		"@sveltejs/adapter-vercel": "3.0.2",
+		"@sveltejs/adapter-vercel": "3.0.3",
 		"@sveltejs/kit": "1.22.3",
 		"@tailwindcss/typography": "0.5.9",
 		"@typescript-eslint/eslint-plugin": "5.62.0",
