@@ -14,10 +14,10 @@
 	"dependencies": {
 		"@fontsource-variable/catamaran": "5.0.5",
 		"@fontsource/source-serif-pro": "5.0.5",
-		"@fortawesome/fontawesome-svg-core": "6.4.0",
-		"@fortawesome/free-brands-svg-icons": "6.4.0",
-		"@fortawesome/free-regular-svg-icons": "6.4.0",
-		"@fortawesome/free-solid-svg-icons": "6.4.0",
+		"@fortawesome/fontawesome-svg-core": "6.4.2",
+		"@fortawesome/free-brands-svg-icons": "6.4.2",
+		"@fortawesome/free-regular-svg-icons": "6.4.2",
+		"@fortawesome/free-solid-svg-icons": "6.4.2",
 		"@vercel/analytics": "1.0.1",
 		"svelte-awesome": "3.2.1",
 		"svelte-seo": "1.5.3"
