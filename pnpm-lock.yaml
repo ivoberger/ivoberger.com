@@ -30,8 +30,8 @@ dependencies:
     specifier: 3.2.1
     version: 3.2.1(svelte@4.2.0)
   svelte-seo:
-    specifier: 1.5.3
-    version: 1.5.3
+    specifier: 1.5.4
+    version: 1.5.4(typescript@5.2.2)
 
 devDependencies:
   '@notionhq/client':
@@ -3912,6 +3912,14 @@ packages:
       rimraf: 2.7.1
     dev: true
 
+  /schema-dts@1.1.2(typescript@5.2.2):
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 5.2.2
+    dev: false
+
   /semver@6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
@@ -4208,8 +4216,12 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /svelte-seo@1.5.3:
-    resolution: {integrity: sha512-xkaVGNaQOWiNYApx6ehFSEVfdpfzy4pJLKWqQucFepl4SxJWcKDugCcND2k8bF4FskQ1M/4v4/Js35dDE/xFjg==}
+  /svelte-seo@1.5.4(typescript@5.2.2):
+    resolution: {integrity: sha512-pevGUiWkqLrSWXVkxE0SbkBLNsz2dVaiK8/kBq2eUHYdyzuPEZGbqtUARyJZHouv28xre7IU9t0VnoYt8d4kzA==}
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.2.2)
+    transitivePeerDependencies:
+      - typescript
     dev: false
 
   /svelte@4.2.0:
@@ -4387,7 +4399,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /uglify-js@3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
