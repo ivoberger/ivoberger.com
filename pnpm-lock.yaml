@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@fontsource-variable/catamaran':
-    specifier: 5.0.8
-    version: 5.0.8
+    specifier: 5.0.12
+    version: 5.0.12
   '@fontsource/source-serif-pro':
     specifier: 5.0.8
     version: 5.0.8
@@ -421,8 +421,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@fontsource-variable/catamaran@5.0.8:
-    resolution: {integrity: sha512-e3FbEZny4StW2XMPfEw62t/KJOxucywhkCAgFA1iLlgMz+sUJB438Zi27m5BVe/e5fsmo2r/wDzJUK6FSsRE+A==}
+  /@fontsource-variable/catamaran@5.0.12:
+    resolution: {integrity: sha512-wLlB8Sr+Y19k0kC6Y9DG7irHSqYK7bDXNv6mQV6BB+4Yqg6BlaWUYeXhQlgQmV0mNvyr74e/62w90ZUldalLNg==}
     dev: false
 
   /@fontsource/source-serif-pro@5.0.8:
