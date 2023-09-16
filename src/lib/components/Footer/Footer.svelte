@@ -4,7 +4,6 @@
 		faGithub,
 		faStackOverflow,
 		faDev,
-		faTwitter,
 		faLinkedin
 	} from '@fortawesome/free-brands-svg-icons';
 	import { faCopyright } from '@fortawesome/free-regular-svg-icons';
