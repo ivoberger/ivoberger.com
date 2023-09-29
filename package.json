@@ -38,7 +38,7 @@
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-svelte3": "4.0.0",
     "netlify-plugin-submit-sitemap": "0.4.0",
-    "postcss": "8.4.30",
+    "postcss": "8.4.31",
     "postcss-import": "15.1.0",
     "postcss-load-config": "4.0.1",
     "prettier": "3.0.3",
