@@ -61,7 +61,7 @@
 		"typescript": "5.3.3",
 		"unified": "11.0.4",
 		"vite": "5.0.5",
-		"web-vitals": "3.5.0",
+		"web-vitals": "3.5.1",
 		"xmlbuilder2": "3.1.1"
 	}
 }
