@@ -1,13 +1,10 @@
-import type { Processor } from 'unified';
-
 import { Client } from '@notionhq/client';
 import { unified } from 'unified';
 import markdown from 'remark-parse';
 import capitalize from 'remark-capitalize';
 import squeezeParagraphs from 'remark-squeeze-paragraphs';
 import remark2rehype from 'remark-rehype';
-import { getHighlighter } from 'shiki';
-import rehypeShiki from '@stefanprobst/rehype-shiki';
+import rehypeShiki from '@shikijs/rehype';
 import slugs from 'rehype-slug';
 import autolink from 'rehype-autolink-headings';
 import rehypeMinify from 'rehype-preset-minify';
@@ -16,8 +13,12 @@ import { readingTime } from './readingTime';
 import { format } from 'date-fns';
 
 import { defaultAuthor } from './seoConstants';
-import type { BlockObjectResponse, GetPageResponse, RichTextItemResponse } from 'src/types/notion';
-import type { GetPagePropertyResponse } from '@notionhq/client/build/src/api-endpoints';
+import type {
+	BlockObjectResponse,
+	GetPagePropertyResponse,
+	PageObjectResponse,
+	RichTextItemResponse
+} from '@notionhq/client/build/src/api-endpoints';
 
 const notion = new Client({
 	auth: import.meta.env.VITE_NOTION_TOKEN
@@ -62,11 +63,10 @@ export async function getAllPosts(): Promise<PostData[]> {
 		},
 		sorts: [{ property: 'Publish Date', direction: 'descending' }]
 	});
-	await getProcessor();
 	return (posts = await Promise.all(pages.results.map(fetchPostFromApi)));
 }
 
-async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
+async function fetchPostFromApi(page: PageObjectResponse): Promise<PostData> {
 	const properties: Record<string, GetPagePropertyResponse> = Object.fromEntries(
 		await Promise.all(
 			Object.entries(page.properties).map(async ([key, { id }]) => [
@@ -85,9 +85,7 @@ async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 	const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
 	const markdown = blocksToMarkdown(blocks.results as BlockObjectResponse[]);
 
-	const content = await new Promise<string>((resolve) =>
-		processor.process(markdown, (_, file) => resolve(String(file)))
-	);
+	const content = (await processor.process(markdown)).toString();
 
 	const meta: PostMetadata = {
 		title:
@@ -110,7 +108,6 @@ async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 			properties.Tags.multi_select.map(({ name }) => name).sort((a, b) => a.localeCompare(b)),
 		slug
 	};
-	// console.log('🚀 ~ file: posts.ts ~ line 99 ~ fetchPostFromApi ~ meta', meta);
 
 	const post: PostData = { meta, content };
 	postsBySlug[meta.slug] = post;
@@ -118,21 +115,16 @@ async function fetchPostFromApi(page: GetPageResponse): Promise<PostData> {
 	return post;
 }
 
-let processor: Processor;
-async function getProcessor(): Promise<Processor> {
-	if (processor) return processor;
-	const highlighter = await getHighlighter({ theme: 'dark-plus' });
-	return (processor = unified()
-		.use(markdown)
-		.use(squeezeParagraphs)
-		.use(capitalize)
-		.use(remark2rehype)
-		.use(rehypeShiki, { highlighter })
-		.use(slugs)
-		.use(autolink, { behavior: 'append' })
-		.use(rehypeMinify)
-		.use(html));
-}
+const processor = unified()
+	.use(markdown)
+	.use(squeezeParagraphs)
+	.use(capitalize)
+	.use(remark2rehype)
+	.use(rehypeShiki, { themes: { dark: 'dark-plus', light: 'dark-plus' } })
+	.use(slugs)
+	.use(autolink, { behavior: 'append' })
+	.use(rehypeMinify)
+	.use(html);
 
 function blocksToMarkdown(blocks: BlockObjectResponse[]): string {
 	let result = '';

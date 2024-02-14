@@ -14,7 +14,8 @@ interface ReadingTime {
 	text: string;
 }
 
-const parseWords = (data: string) => data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) ?? [];
+const parseWords = (data: string): RegExpMatchArray =>
+	data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) ?? ([] as unknown as RegExpMatchArray);
 
 const parseChineseWords = (data: string) => data.match(/[\u4E00-\u9FA5]/gu) ?? [];
 
