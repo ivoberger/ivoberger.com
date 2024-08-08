@@ -61,7 +61,7 @@
 		"tslib": "2.6.3",
 		"typescript": "5.5.4",
 		"unified": "11.0.5",
-		"vite": "5.3.5",
+		"vite": "5.4.0",
 		"xmlbuilder2": "3.1.1"
 	}
 }
