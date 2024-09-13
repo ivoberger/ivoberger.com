@@ -12,8 +12,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/catamaran": "5.0.22",
-		"@fontsource/source-serif-pro": "5.0.8",
+		"@fontsource-variable/catamaran": "5.1.0",
+		"@fontsource/source-serif-pro": "5.1.0",
 		"@fortawesome/fontawesome-svg-core": "6.6.0",
 		"@fortawesome/free-brands-svg-icons": "6.6.0",
 		"@fortawesome/free-regular-svg-icons": "6.6.0",
