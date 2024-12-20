@@ -28,7 +28,7 @@
 		"@shikijs/rehype": "1.24.3",
 		"@sveltejs/adapter-static": "3.0.6",
 		"@sveltejs/adapter-vercel": "5.5.2",
-		"@sveltejs/kit": "2.12.1",
+		"@sveltejs/kit": "2.13.0",
 		"@sveltejs/vite-plugin-svelte": "3.1.2",
 		"@tailwindcss/typography": "0.5.15",
 		"@typescript-eslint/eslint-plugin": "7.18.0",
