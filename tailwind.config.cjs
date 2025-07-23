@@ -21,9 +21,7 @@ const config = {
 				},
 				brand: {
 					linkedIn: '#0077b5',
-					twitter: '#3d90c4',
-					dev: '#0a0a0a',
-					stackOverflow: '#f48024',
+					bluesky: '#1185fe',
 					github: '#24292e'
 				}
 			},

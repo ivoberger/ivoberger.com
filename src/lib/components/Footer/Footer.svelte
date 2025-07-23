@@ -1,11 +1,6 @@
 <script lang="ts">
 	import Icon from 'svelte-awesome';
-	import {
-		faGithub,
-		faStackOverflow,
-		faDev,
-		faLinkedin
-	} from '@fortawesome/free-brands-svg-icons';
+	import { faGithub, faLinkedin, faBluesky } from '@fortawesome/free-brands-svg-icons';
 	import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 
 	import NavItem from './NavItem.svelte';
@@ -21,16 +16,10 @@
 			class="hover:text-brand-github dark:hover:text-gray-100"
 		/>
 		<SocialLink
-			title="StackOverflow"
-			link="https://stackoverflow.com/users/8568922/ivo"
-			icon={faStackOverflow}
-			class="hover:text-brand-stackOverflow"
-		/>
-		<SocialLink
-			title="DEV.to"
-			link="https://dev.to/ivoberger"
-			icon={faDev}
-			class="hover:text-brand-dev dark:hover:text-gray-100"
+			title="Bluesky"
+			link="https://bsky.app/profile/berginator.dev"
+			icon={faBluesky}
+			class="hover:text-brand-bluesky"
 		/>
 		<SocialLink
 			title="LinkedIn"
