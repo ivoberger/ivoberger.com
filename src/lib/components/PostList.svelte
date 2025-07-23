@@ -11,7 +11,7 @@
 				<a href={`/posts/${slug}/`}>
 					<h3 class="my-0">{title}</h3>
 				</a>
-				<p class="text-sm leading-normal sm:text-base">
+				<p class="text-sm flex gap-1 justify-center leading-normal sm:text-base">
 					{#each tags as tag (tag)}
 						<a href={`/tag/${tag}/`} class="tag-link">
 							#{tag}
