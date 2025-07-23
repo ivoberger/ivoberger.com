@@ -20,9 +20,7 @@ import type {
 	RichTextItemResponse
 } from '@notionhq/client/build/src/api-endpoints';
 
-const notion = new Client({
-	auth: import.meta.env.VITE_NOTION_TOKEN
-});
+const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN });
 const databaseId = import.meta.env.VITE_NOTION_DATABASE_ID;
 
 let posts: PostData[];
