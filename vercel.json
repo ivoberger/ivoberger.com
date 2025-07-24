@@ -29,5 +29,15 @@
 			"source": "/feed.xml",
 			"headers": [{ "key": "Cache-Control", "value": "max-age=0 must-revalidate,public" }]
 		}
+	],
+	"rewrites": [
+		{
+			"source": "/visitors/js/script.js",
+			"destination": "https://plausible.ivoberger.com/js/script.outbound-links.js"
+		},
+		{
+			"source": "/visitors/api/event",
+			"destination": "https://plausible.ivoberger.com/api/event"
+		}
 	]
 }
