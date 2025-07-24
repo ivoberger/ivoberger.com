@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="color-scheme" content="dark light" />
 
-	<script defer data-domain="ivoberger.com" data-api="/visitors/api/event" src="/visitors/js/script.js"></script>
+	<script defer onload="this.setAttribute('data-domain',window.location.host.replace('www.',''))"
+		data-api="/visitors/api/event" src="/visitors/js/script.js"></script>
 	<script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
 
