@@ -25,7 +25,7 @@
 	},
 	"devDependencies": {
 		"@notionhq/client": "4.0.1",
-		"@shikijs/rehype": "3.9.1",
+		"@shikijs/rehype": "3.9.2",
 		"@sveltejs/adapter-static": "3.0.8",
 		"@sveltejs/adapter-vercel": "5.8.1",
 		"@sveltejs/kit": "2.27.0",
@@ -53,7 +53,7 @@
 		"remark-parse": "11.0.0",
 		"remark-rehype": "11.1.2",
 		"remark-squeeze-paragraphs": "6.0.0",
-		"shiki": "3.9.1",
+		"shiki": "3.9.2",
 		"svelte": "5.37.3",
 		"svelte-check": "4.3.1",
 		"svelte-preprocess": "6.0.3",
