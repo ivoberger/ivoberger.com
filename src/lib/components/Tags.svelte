@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from 'svelte-awesome';
 	import { faTag } from '@fortawesome/free-solid-svg-icons';
-	export let tags: string[];
+	export let tags: Array<string>;
 </script>
 
 <div class="flex flex-wrap pb-10 sm:pb-16">

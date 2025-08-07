@@ -23,12 +23,12 @@ import type {
 const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN });
 const databaseId = import.meta.env.VITE_NOTION_DATABASE_ID;
 
-let posts: PostData[];
-let tags: string[];
+let posts: Array<PostData>;
+let tags: Array<string>;
 const postsBySlug: { [slug: string]: PostData } = {};
-const postsByTag: { [tag: string]: PostData[] } = {};
+const postsByTag: { [tag: string]: Array<PostData> } = {};
 
-export async function getPostsByTag(tag: string): Promise<PostSpec[]> {
+export async function getPostsByTag(tag: string): Promise<Array<PostSpec>> {
 	await getAllPosts();
 	if (!postsByTag[tag]) {
 		postsByTag[tag] = posts.filter((post) => post.meta.tags.includes(tag));
@@ -41,7 +41,7 @@ export async function getPostBySlug(slug: string): Promise<PostData> {
 	return postsBySlug[slug];
 }
 
-export async function getAllTags(): Promise<string[]> {
+export async function getAllTags(): Promise<Array<string>> {
 	if (tags) return tags;
 	await getAllPosts();
 	const tagsSet = new Set<string>();
@@ -50,7 +50,7 @@ export async function getAllTags(): Promise<string[]> {
 	return tags;
 }
 
-export async function getAllPosts(): Promise<PostData[]> {
+export async function getAllPosts(): Promise<Array<PostData>> {
 	if (posts) return posts;
 	const pages = await notion.databases.query({
 		database_id: databaseId,
@@ -81,7 +81,7 @@ async function fetchPostFromApi(page: PageObjectResponse): Promise<PostData> {
 		properties['Publish Date'].type === 'date' && properties['Publish Date'].date.start;
 
 	const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
-	const markdown = blocksToMarkdown(blocks.results as BlockObjectResponse[]);
+	const markdown = blocksToMarkdown(blocks.results as Array<BlockObjectResponse>);
 
 	const content = (await processor.process(markdown)).toString();
 
@@ -124,7 +124,7 @@ const processor = unified()
 	.use(rehypeMinify)
 	.use(html);
 
-function blocksToMarkdown(blocks: BlockObjectResponse[]): string {
+function blocksToMarkdown(blocks: Array<BlockObjectResponse>): string {
 	let result = '';
 
 	for (const block of blocks) {
@@ -161,7 +161,7 @@ function blocksToMarkdown(blocks: BlockObjectResponse[]): string {
 }
 
 const getTextFromBlock = (block: BlockObjectResponse) => block[block.type].rich_text;
-function richTextToMarkdown(richText: RichTextItemResponse[]): string {
+function richTextToMarkdown(richText: Array<RichTextItemResponse>): string {
 	let result = '';
 
 	for (const text of richText) {

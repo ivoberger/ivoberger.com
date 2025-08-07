@@ -18,7 +18,7 @@ export const seoData = ({
 	canonical?: string;
 	type?: string;
 	author?: string;
-	tags?: string[];
+	tags?: Array<string>;
 	image?: string;
 }): {
 	title: string;
@@ -30,8 +30,8 @@ export const seoData = ({
 		type: string;
 		title: string;
 		description: string;
-		authors: string[];
-		tags: string[];
+		authors: Array<string>;
+		tags: Array<string>;
 	};
 	twitter: { site: string; title: string; description: string; image?: string };
 } => ({

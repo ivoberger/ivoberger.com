@@ -1,0 +1,10 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["oxc", "import", "typescript", "unicorn", "promise"],
+	"rules": {
+		"typescript/array-type": ["error", { "default": "generic" }]
+	},
+	"env": {
+		"builtin": true
+	}
+}

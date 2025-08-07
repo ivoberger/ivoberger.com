@@ -7,7 +7,7 @@
 		description: string;
 	};
 
-	const portfolioEntries: PortfolioEntryData[] = [
+	const portfolioEntries: Array<PortfolioEntryData> = [
 		{
 			title: 'This Website',
 			url: 'https://ivoberger.com',

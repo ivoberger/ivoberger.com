@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let posts: PostData[];
+	export let posts: Array<PostData>;
 </script>
 
 <main class="posts">

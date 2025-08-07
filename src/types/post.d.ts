@@ -12,7 +12,7 @@ type PostMetadata = {
 	publishedDate: string;
 	publishedFormatted: string;
 	readTime: string;
-	tags: string[];
+	tags: Array<string>;
 	slug: string;
 };
 
