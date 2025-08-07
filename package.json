@@ -27,7 +27,7 @@
 		"@ctrl/oxlint-config": "^1.2.0",
 		"@notionhq/client": "4.0.1",
 		"@shikijs/rehype": "3.9.2",
-		"@sveltejs/adapter-static": "3.0.8",
+		"@sveltejs/adapter-static": "3.0.9",
 		"@sveltejs/adapter-vercel": "5.8.1",
 		"@sveltejs/kit": "2.27.1",
 		"@sveltejs/vite-plugin-svelte": "6.1.0",
