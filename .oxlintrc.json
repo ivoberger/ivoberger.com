@@ -1,8 +1,9 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["oxc", "import", "typescript", "unicorn", "promise"],
+	"extends": ["@ctrl/oxlint-config"],
 	"rules": {
-		"typescript/array-type": ["error", { "default": "generic" }]
+		"typescript/array-type": ["error", { "default": "generic" }],
+		"eqeqeq": ["error", "smart"]
 	},
 	"env": {
 		"builtin": true

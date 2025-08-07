@@ -16,6 +16,7 @@
         "svelte-seo": "1.6.1",
       },
       "devDependencies": {
+        "@ctrl/oxlint-config": "^1.2.0",
         "@notionhq/client": "4.0.1",
         "@shikijs/rehype": "3.9.2",
         "@sveltejs/adapter-static": "3.0.8",
@@ -58,6 +59,8 @@
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
     "@ampproject/remapping": ["@ampproject/remapping@2.3.0", "", { "dependencies": { "@jridgewell/gen-mapping": "^0.3.5", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw=="],
+
+    "@ctrl/oxlint-config": ["@ctrl/oxlint-config@1.2.0", "", {}, "sha512-kC470ERhlKSBHDySuCWNLD8LL6A/1G3IOuxSDi53ZkqRU5GX+zSjbK8080nyL5kNlnEePjg0p0PE5FHJj73JbQ=="],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.8", "", { "os": "aix", "cpu": "ppc64" }, "sha512-urAvrUedIqEiFR3FYSLTWQgLu5tb+m0qZw0NBEasUeo6wuqatkMDaRT+1uABiGXEu5vqgPd7FGE1BhsAIy9QVA=="],
 

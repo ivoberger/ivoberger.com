@@ -24,6 +24,7 @@
 		"svelte-seo": "1.6.1"
 	},
 	"devDependencies": {
+		"@ctrl/oxlint-config": "^1.2.0",
 		"@notionhq/client": "4.0.1",
 		"@shikijs/rehype": "3.9.2",
 		"@sveltejs/adapter-static": "3.0.8",
