@@ -25,7 +25,7 @@
 	},
 	"devDependencies": {
 		"@ctrl/oxlint-config": "^1.2.0",
-		"@notionhq/client": "4.0.1",
+		"@notionhq/client": "4.0.2",
 		"@shikijs/rehype": "3.9.2",
 		"@sveltejs/adapter-static": "3.0.9",
 		"@sveltejs/adapter-vercel": "5.8.2",
