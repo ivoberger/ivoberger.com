@@ -4,7 +4,7 @@
     "": {
       "name": "ivoberger.com",
       "dependencies": {
-        "@fontsource-variable/catamaran": "5.2.6",
+        "@fontsource-variable/catamaran": "5.2.7",
         "@fontsource/source-serif-pro": "5.2.5",
         "@fortawesome/fontawesome-svg-core": "7.0.1",
         "@fortawesome/free-brands-svg-icons": "7.0.1",
@@ -112,7 +112,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.8", "", { "os": "win32", "cpu": "x64" }, "sha512-cn3Yr7+OaaZq1c+2pe+8yxC8E144SReCQjN6/2ynubzYjvyqZjTXfQJpAcQpsdJq3My7XADANiYGHoFC69pLQw=="],
 
-    "@fontsource-variable/catamaran": ["@fontsource-variable/catamaran@5.2.6", "", {}, "sha512-nlVixCcXKdWIdrTzgZjcFcJ/zmay95udCVVklNScsKEtc/dVYy20LRm38SP+ueTyogu3hZ0py5s5O+1jzIpMAQ=="],
+    "@fontsource-variable/catamaran": ["@fontsource-variable/catamaran@5.2.7", "", {}, "sha512-wvs0P5om23qU1qldoZ1rzJmvfvubd8MTAwa+Upi3RXCFBhYhwnaGvI+QieCpmXU+4Tgt1bVulCDs/V6R2QX19A=="],
 
     "@fontsource/source-serif-pro": ["@fontsource/source-serif-pro@5.2.5", "", {}, "sha512-MTsjMrl2+81dar37wV1taDYzU+o9ArcuBVBkXRNb6JuNCBmrKOIAAmI1wC3cE+Q0eAlgXlfNrvZ7swP3l2M8tQ=="],
 

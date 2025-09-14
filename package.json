@@ -12,7 +12,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/catamaran": "5.2.6",
+		"@fontsource-variable/catamaran": "5.2.7",
 		"@fontsource/source-serif-pro": "5.2.5",
 		"@fortawesome/fontawesome-svg-core": "7.0.1",
 		"@fortawesome/free-brands-svg-icons": "7.0.1",
