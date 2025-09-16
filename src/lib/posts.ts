@@ -11,7 +11,6 @@ import rehypeMinify from 'rehype-preset-minify';
 import html from 'rehype-stringify';
 import { readingTime } from './readingTime';
 import { format } from 'date-fns';
-
 import { defaultAuthor } from './seoConstants';
 import type {
 	BlockObjectResponse,
@@ -19,9 +18,10 @@ import type {
 	PageObjectResponse,
 	RichTextItemResponse
 } from '@notionhq/client/build/src/api-endpoints';
+import { NOTION_DATASOURCE_ID, NOTION_TOKEN } from '$env/static/private';
 
-const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN });
-const databaseId = import.meta.env.VITE_NOTION_DATABASE_ID;
+const notion = new Client({ auth: NOTION_TOKEN });
+const dataSourceId = NOTION_DATASOURCE_ID;
 
 let posts: Array<PostData>;
 let tags: Array<string>;
@@ -52,8 +52,8 @@ export async function getAllTags(): Promise<Array<string>> {
 
 export async function getAllPosts(): Promise<Array<PostData>> {
 	if (posts) return posts;
-	const pages = await notion.databases.query({
-		database_id: databaseId,
+	const pages = await notion.dataSources.query({
+		data_source_id: dataSourceId,
 		page_size: 500,
 		filter: {
 			property: 'Status',
