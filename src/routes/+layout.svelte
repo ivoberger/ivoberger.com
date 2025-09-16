@@ -1,11 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	import { inject } from '@vercel/analytics';
-
-	import { dev } from '$app/environment';
 	import { Footer } from '$lib/components';
+	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
-	inject({ mode: dev ? 'development' : 'production' });
+	injectSpeedInsights();
 </script>
 
 <slot />

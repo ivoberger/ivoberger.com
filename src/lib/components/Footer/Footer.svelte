@@ -25,7 +25,7 @@
 			title="LinkedIn"
 			link="https://www.linkedin.com/in/ivo-berger-00089b15b/"
 			icon={faLinkedin}
-			class="hover:text-brand-linkedIn"
+			class="hover:text-brand-linked-in"
 		/>
 		<p>
 			<Icon data={faCopyright} class="mt-1 mr-2" />
@@ -42,7 +42,8 @@
 	</nav>
 </footer>
 
-<style>
+<style lang="postcss">
+	@reference "tailwindcss";
 	footer {
 		@apply mx-auto flex max-w-2xl flex-wrap justify-between px-6 py-8 text-sm leading-normal text-gray-700 dark:text-gray-400 sm:px-12 sm:pb-10 md:max-w-3xl xl:max-w-4xl;
 	}

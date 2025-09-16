@@ -84,7 +84,8 @@
 	{/each}
 </Body>
 
-<style>
+<style lang="postcss">
+	@reference "tailwindcss";
 	.title {
 		@apply flex flex-row;
 	}

@@ -26,7 +26,8 @@
 	{/each}
 </main>
 
-<style style="postcss">
+<style lang="postcss">
+	@reference "tailwindcss";
 	.posts {
 		@apply mx-auto mb-10 max-w-3xl px-6;
 	}

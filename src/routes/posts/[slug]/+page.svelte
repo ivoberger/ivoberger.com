@@ -3,7 +3,6 @@
 
 	import SvelteSeo from 'svelte-seo';
 	import { Body } from '$lib/components';
-	import '../_posts.css';
 	import { defaultAuthor, rootUrl, seoData } from '$lib/seoConstants';
 
 	export let data: PageData;
@@ -70,8 +69,12 @@
 		</div>
 		<meta itemProp="description abstract" content={description} />
 		<meta itemProp="url" content={fullPageUrl} />
-		{#if fullImgPath} <meta itemProp="image" content={fullImgPath} /> {/if}
-		{#if !!tags?.length} <meta itemProp="keywords" content={tags.join(',')} /> {/if}
+		{#if fullImgPath}
+			<meta itemProp="image" content={fullImgPath} />
+		{/if}
+		{#if !!tags?.length}
+			<meta itemProp="keywords" content={tags.join(',')} />
+		{/if}
 	</header>
 	<Body
 		itemProp="articleBody"
@@ -81,7 +84,8 @@
 	</Body>
 </main>
 
-<style>
+<style lang="postcss">
+	@reference "tailwindcss";
 	header {
 		@apply relative h-96 overflow-hidden;
 	}

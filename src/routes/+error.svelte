@@ -19,6 +19,7 @@
 </Body>
 
 <style lang="postcss">
+	@reference "tailwindcss";
 	.image-blurred {
 		@apply h-96 w-full bg-[url('/404.jpg')] bg-cover bg-center bg-no-repeat shadow-[0_0_15px_10px_inset] shadow-white dark:shadow-neutral-900;
 	}
