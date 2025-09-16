@@ -5,7 +5,7 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: [sveltePreprocess({ postcss: true })],
+	preprocess: [sveltePreprocess()],
 	kit: {
 		prerender: { concurrency: 4 },
 		adapter: adapter()
