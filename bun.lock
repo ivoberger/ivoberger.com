@@ -17,7 +17,7 @@
       "devDependencies": {
         "@ctrl/oxlint-config": "^1.2.4",
         "@notionhq/client": "5.1.0",
-        "@shikijs/rehype": "3.12.2",
+        "@shikijs/rehype": "3.12.3",
         "@sveltejs/adapter-static": "3.0.9",
         "@sveltejs/adapter-vercel": "5.10.2",
         "@sveltejs/kit": "2.42.2",
@@ -37,7 +37,7 @@
         "remark-parse": "11.0.0",
         "remark-rehype": "11.1.2",
         "remark-squeeze-paragraphs": "6.0.0",
-        "shiki": "3.12.2",
+        "shiki": "3.12.3",
         "svelte": "5.39.3",
         "svelte-check": "4.3.1",
         "svelte-preprocess": "6.0.3",
@@ -207,19 +207,19 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.45.1", "", { "os": "win32", "cpu": "x64" }, "sha512-M/fKi4sasCdM8i0aWJjCSFm2qEnYRR8AMLG2kxp6wD13+tMGA4Z1tVAuHkNRjud5SW2EM3naLuK35w9twvf6aA=="],
 
-    "@shikijs/core": ["@shikijs/core@3.12.2", "", { "dependencies": { "@shikijs/types": "3.12.2", "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4", "hast-util-to-html": "^9.0.5" } }, "sha512-L1Safnhra3tX/oJK5kYHaWmLEBJi1irASwewzY3taX5ibyXyMkkSDZlq01qigjryOBwrXSdFgTiZ3ryzSNeu7Q=="],
+    "@shikijs/core": ["@shikijs/core@3.12.3", "", { "dependencies": { "@shikijs/types": "3.12.3", "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4", "hast-util-to-html": "^9.0.5" } }, "sha512-PPCwgF8HThjLcTTr9J64gBu0U5jKS4NoFNCmZJeVXw1i+6Kf9V3HJFBNUEGTHY2izeeVnF+vHXVo5n5YcEWj+Q=="],
 
-    "@shikijs/engine-javascript": ["@shikijs/engine-javascript@3.12.2", "", { "dependencies": { "@shikijs/types": "3.12.2", "@shikijs/vscode-textmate": "^10.0.2", "oniguruma-to-es": "^4.3.3" } }, "sha512-Nm3/azSsaVS7hk6EwtHEnTythjQfwvrO5tKqMlaH9TwG1P+PNaR8M0EAKZ+GaH2DFwvcr4iSfTveyxMIvXEHMw=="],
+    "@shikijs/engine-javascript": ["@shikijs/engine-javascript@3.12.3", "", { "dependencies": { "@shikijs/types": "3.12.3", "@shikijs/vscode-textmate": "^10.0.2", "oniguruma-to-es": "^4.3.3" } }, "sha512-7czBo1OiIp0FF+tZFbYXFQAIb6w6eBwvcRSTEDOKlEnj5+RMA/D9xgXRftT6awYaEgtv1nXM8gU32K+lD2UTrQ=="],
 
-    "@shikijs/engine-oniguruma": ["@shikijs/engine-oniguruma@3.12.2", "", { "dependencies": { "@shikijs/types": "3.12.2", "@shikijs/vscode-textmate": "^10.0.2" } }, "sha512-hozwnFHsLvujK4/CPVHNo3Bcg2EsnG8krI/ZQ2FlBlCRpPZW4XAEQmEwqegJsypsTAN9ehu2tEYe30lYKSZW/w=="],
+    "@shikijs/engine-oniguruma": ["@shikijs/engine-oniguruma@3.12.3", "", { "dependencies": { "@shikijs/types": "3.12.3", "@shikijs/vscode-textmate": "^10.0.2" } }, "sha512-yvFDzeJkuT/Kt7bc83sV+4taX6RZBfhsx+6/cQKVVaNbkg0HdiuGVF1mNXJ8+CV0i6hIkMZBKnCm3wElM5g2kA=="],
 
-    "@shikijs/langs": ["@shikijs/langs@3.12.2", "", { "dependencies": { "@shikijs/types": "3.12.2" } }, "sha512-bVx5PfuZHDSHoBal+KzJZGheFuyH4qwwcwG/n+MsWno5cTlKmaNtTsGzJpHYQ8YPbB5BdEdKU1rga5/6JGY8ww=="],
+    "@shikijs/langs": ["@shikijs/langs@3.12.3", "", { "dependencies": { "@shikijs/types": "3.12.3" } }, "sha512-9lKnWuO9P06Ro9T8wN0V3rQg3UlKfjCtfDRTnRnFr7szuaGQiQpaAdwFvqkWvHrMNIpfqUEIzAC08b90JONfuQ=="],
 
-    "@shikijs/rehype": ["@shikijs/rehype@3.12.2", "", { "dependencies": { "@shikijs/types": "3.12.2", "@types/hast": "^3.0.4", "hast-util-to-string": "^3.0.1", "shiki": "3.12.2", "unified": "^11.0.5", "unist-util-visit": "^5.0.0" } }, "sha512-9wg+FKv0ByaQScTonpZdrDhADOoJP/yCWLAuiYYG6GehwNV5rGwnLvWKj33UmtLedKMSHzWUdB+Un6rfDFo/FA=="],
+    "@shikijs/rehype": ["@shikijs/rehype@3.12.3", "", { "dependencies": { "@shikijs/types": "3.12.3", "@types/hast": "^3.0.4", "hast-util-to-string": "^3.0.1", "shiki": "3.12.3", "unified": "^11.0.5", "unist-util-visit": "^5.0.0" } }, "sha512-tV8Lf1mtuFja7LRL2waeCaeEHOjfX5MDrWNwYQbLedRUgqaLl0I6G+2O0OJvR0Bku+4k9/5coDUv6byn1+qbDQ=="],
 
-    "@shikijs/themes": ["@shikijs/themes@3.12.2", "", { "dependencies": { "@shikijs/types": "3.12.2" } }, "sha512-fTR3QAgnwYpfGczpIbzPjlRnxyONJOerguQv1iwpyQZ9QXX4qy/XFQqXlf17XTsorxnHoJGbH/LXBvwtqDsF5A=="],
+    "@shikijs/themes": ["@shikijs/themes@3.12.3", "", { "dependencies": { "@shikijs/types": "3.12.3" } }, "sha512-rpqLpI2oMrf2BiJdql8U7ZW1UhfJy9lEj4MRyIeXLlkEe5BwaYseFvSbXhJ/4eS8d3F/zlVUOADFX8WihWlccQ=="],
 
-    "@shikijs/types": ["@shikijs/types@3.12.2", "", { "dependencies": { "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4" } }, "sha512-K5UIBzxCyv0YoxN3LMrKB9zuhp1bV+LgewxuVwHdl4Gz5oePoUFrr9EfgJlGlDeXCU1b/yhdnXeuRvAnz8HN8Q=="],
+    "@shikijs/types": ["@shikijs/types@3.12.3", "", { "dependencies": { "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4" } }, "sha512-spl99dj9qzPcTvYJLhfp6Zw0umQMNN8q3hXo0tbTTylxXtu5Uiy9WLRhuv2P/g+njFd/lSZU7HnctXuxiwEAwg=="],
 
     "@shikijs/vscode-textmate": ["@shikijs/vscode-textmate@10.0.2", "", {}, "sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg=="],
 
@@ -713,7 +713,7 @@
 
     "shebang-regex": ["shebang-regex@3.0.0", "", {}, "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A=="],
 
-    "shiki": ["shiki@3.12.2", "", { "dependencies": { "@shikijs/core": "3.12.2", "@shikijs/engine-javascript": "3.12.2", "@shikijs/engine-oniguruma": "3.12.2", "@shikijs/langs": "3.12.2", "@shikijs/themes": "3.12.2", "@shikijs/types": "3.12.2", "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4" } }, "sha512-uIrKI+f9IPz1zDT+GMz+0RjzKJiijVr6WDWm9Pe3NNY6QigKCfifCEv9v9R2mDASKKjzjQ2QpFLcxaR3iHSnMA=="],
+    "shiki": ["shiki@3.12.3", "", { "dependencies": { "@shikijs/core": "3.12.3", "@shikijs/engine-javascript": "3.12.3", "@shikijs/engine-oniguruma": "3.12.3", "@shikijs/langs": "3.12.3", "@shikijs/themes": "3.12.3", "@shikijs/types": "3.12.3", "@shikijs/vscode-textmate": "^10.0.2", "@types/hast": "^3.0.4" } }, "sha512-9eerTuey4LfmIY/iEv4Zgf+dEpj7lJdnV9lRGFA+BpwrFFlOnXqZVeY6AlJLwcJxpphKA2KybPtEaApnxBuRzw=="],
 
     "signal-exit": ["signal-exit@4.1.0", "", {}, "sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw=="],
 
