@@ -25,7 +25,7 @@
 	"devDependencies": {
 		"@ctrl/oxlint-config": "^1.2.4",
 		"@notionhq/client": "5.3.0",
-		"@shikijs/rehype": "3.13.0",
+		"@shikijs/rehype": "3.14.0",
 		"@sveltejs/adapter-static": "3.0.10",
 		"@sveltejs/adapter-vercel": "6.0.0",
 		"@sveltejs/kit": "2.47.3",
@@ -45,7 +45,7 @@
 		"remark-parse": "11.0.0",
 		"remark-rehype": "11.1.2",
 		"remark-squeeze-paragraphs": "6.0.0",
-		"shiki": "3.13.0",
+		"shiki": "3.14.0",
 		"svelte": "5.42.2",
 		"svelte-check": "4.3.3",
 		"svelte-preprocess": "6.0.3",
