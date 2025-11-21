@@ -27,7 +27,7 @@
 		"@notionhq/client": "5.4.0",
 		"@shikijs/rehype": "3.15.0",
 		"@sveltejs/adapter-static": "3.0.10",
-		"@sveltejs/adapter-vercel": "6.1.1",
+		"@sveltejs/adapter-vercel": "6.1.2",
 		"@sveltejs/kit": "2.48.5",
 		"@sveltejs/vite-plugin-svelte": "6.2.1",
 		"@tailwindcss/typography": "0.5.19",
