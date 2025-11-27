@@ -54,6 +54,6 @@
 		"typescript": "5.9.3",
 		"unified": "11.0.5",
 		"vite": "7.2.4",
-		"xmlbuilder2": "4.0.0"
+		"xmlbuilder2": "4.0.1"
 	}
 }
