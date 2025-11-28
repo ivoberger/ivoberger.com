@@ -27,7 +27,7 @@
         "@tailwindcss/vite": "^4.1.13",
         "date-fns": "4.1.0",
         "oxlint": "^1.15.0",
-        "prettier": "3.7.1",
+        "prettier": "3.7.2",
         "prettier-plugin-svelte": "3.4.0",
         "prettier-plugin-tailwindcss": "^0.7.0",
         "rehype-autolink-headings": "7.1.0",
@@ -598,7 +598,7 @@
 
     "postcss-selector-parser": ["postcss-selector-parser@6.0.10", "", { "dependencies": { "cssesc": "^3.0.0", "util-deprecate": "^1.0.2" } }, "sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w=="],
 
-    "prettier": ["prettier@3.7.1", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ=="],
+    "prettier": ["prettier@3.7.2", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-n3HV2J6QhItCXndGa3oMWvWFAgN1ibnS7R9mt6iokScBOC0Ul9/iZORmU2IWUMcyAQaMPjTlY3uT34TqocUxMA=="],
 
     "prettier-plugin-svelte": ["prettier-plugin-svelte@3.4.0", "", { "peerDependencies": { "prettier": "^3.0.0", "svelte": "^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0" } }, "sha512-pn1ra/0mPObzqoIQn/vUTR3ZZI6UuZ0sHqMK5x2jMLGrs53h0sXhkVuDcrlssHwIMk7FYrMjHBPoUSyyEEDlBQ=="],
 
