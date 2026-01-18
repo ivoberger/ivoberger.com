@@ -34,7 +34,7 @@
 		"@tailwindcss/vite": "^4.1.13",
 		"date-fns": "4.1.0",
 		"oxlint": "^1.15.0",
-		"prettier": "3.7.4",
+		"prettier": "3.8.0",
 		"prettier-plugin-svelte": "3.4.1",
 		"prettier-plugin-tailwindcss": "^0.7.0",
 		"rehype-autolink-headings": "7.1.0",
