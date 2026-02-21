@@ -20,7 +20,7 @@
         "@notionhq/client": "5.9.0",
         "@shikijs/rehype": "3.22.0",
         "@sveltejs/adapter-static": "3.0.10",
-        "@sveltejs/adapter-vercel": "6.3.1",
+        "@sveltejs/adapter-vercel": "6.3.2",
         "@sveltejs/kit": "2.52.0",
         "@sveltejs/vite-plugin-svelte": "6.2.4",
         "@tailwindcss/typography": "0.5.19",
@@ -240,7 +240,7 @@
 
     "@sveltejs/adapter-static": ["@sveltejs/adapter-static@3.0.10", "", { "peerDependencies": { "@sveltejs/kit": "^2.0.0" } }, "sha512-7D9lYFWJmB7zxZyTE/qxjksvMqzMuYrrsyh1f4AlZqeZeACPRySjbC3aFiY55wb1tWUaKOQG9PVbm74JcN2Iew=="],
 
-    "@sveltejs/adapter-vercel": ["@sveltejs/adapter-vercel@6.3.1", "", { "dependencies": { "@vercel/nft": "^1.0.0", "esbuild": "^0.25.4" }, "peerDependencies": { "@sveltejs/kit": "^2.4.0" } }, "sha512-Dn8QCSq63oW1t0DqZrS74HR8RAUG8LcGnGoErJnHU/pDALIxP7qzfWjRDiw7sxrpnfMZzJMOkWPghF3PAhSHYA=="],
+    "@sveltejs/adapter-vercel": ["@sveltejs/adapter-vercel@6.3.2", "", { "dependencies": { "@vercel/nft": "^1.0.0", "esbuild": "^0.25.4" }, "peerDependencies": { "@sveltejs/kit": "^2.4.0" } }, "sha512-b9zkpCDWb5iuNtSgSabd2jBekFk+2WaaH454bC5Kl1dH8Fxt9SP4k4nug/Yek+sLvceK8SKcuuRIFuI91GJ+wA=="],
 
     "@sveltejs/kit": ["@sveltejs/kit@2.52.0", "", { "dependencies": { "@standard-schema/spec": "^1.0.0", "@sveltejs/acorn-typescript": "^1.0.5", "@types/cookie": "^0.6.0", "acorn": "^8.14.1", "cookie": "^0.6.0", "devalue": "^5.6.2", "esm-env": "^1.2.2", "kleur": "^4.1.5", "magic-string": "^0.30.5", "mrmime": "^2.0.0", "sade": "^1.8.1", "set-cookie-parser": "^3.0.0", "sirv": "^3.0.0" }, "peerDependencies": { "@opentelemetry/api": "^1.0.0", "@sveltejs/vite-plugin-svelte": "^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0", "svelte": "^4.0.0 || ^5.0.0-next.0", "typescript": "^5.3.3", "vite": "^5.0.3 || ^6.0.0 || ^7.0.0-beta.0" }, "optionalPeers": ["@opentelemetry/api", "typescript"], "bin": { "svelte-kit": "svelte-kit.js" } }, "sha512-zG+HmJuSF7eC0e7xt2htlOcEMAdEtlVdb7+gAr+ef08EhtwUsjLxcAwBgUCJY3/5p08OVOxVZti91WfXeuLvsg=="],
 
