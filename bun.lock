@@ -17,7 +17,7 @@
       },
       "devDependencies": {
         "@ctrl/oxlint-config": "^1.2.4",
-        "@notionhq/client": "5.9.0",
+        "@notionhq/client": "5.11.0",
         "@shikijs/rehype": "3.23.0",
         "@sveltejs/adapter-static": "3.0.10",
         "@sveltejs/adapter-vercel": "6.3.3",
@@ -134,7 +134,7 @@
 
     "@mapbox/node-pre-gyp": ["@mapbox/node-pre-gyp@2.0.3", "", { "dependencies": { "consola": "^3.2.3", "detect-libc": "^2.0.0", "https-proxy-agent": "^7.0.5", "node-fetch": "^2.6.7", "nopt": "^8.0.0", "semver": "^7.5.3", "tar": "^7.4.0" }, "bin": { "node-pre-gyp": "bin/node-pre-gyp" } }, "sha512-uwPAhccfFJlsfCxMYTwOdVfOz3xqyj8xYL3zJj8f0pb30tLohnnFPhLuqp4/qoEz8sNxe4SESZedcBojRefIzg=="],
 
-    "@notionhq/client": ["@notionhq/client@5.9.0", "", {}, "sha512-TvAVMfwtVv61hsPrRfB9ehgzSjX6DaAi1ZRAnpg8xFjzaXhzhEfbO0PhBRm3ecSv1azDuO2kBuyQHh2/z7G4YQ=="],
+    "@notionhq/client": ["@notionhq/client@5.11.0", "", {}, "sha512-bBP3gZvf2yUzwWJ/oEPf/4DWR4wSrZln0ZtVx3mc3RQaQHjl1/cbqECcsUS6RjKc51PY9598s7WRItxd8X1MAw=="],
 
     "@oozcitak/dom": ["@oozcitak/dom@2.0.2", "", { "dependencies": { "@oozcitak/infra": "^2.0.2", "@oozcitak/url": "^3.0.0", "@oozcitak/util": "^10.0.0" } }, "sha512-GjpKhkSYC3Mj4+lfwEyI1dqnsKTgwGy48ytZEhm4A/xnH/8z9M3ZVXKr/YGQi3uCLs1AEBS+x5T2JPiueEDW8w=="],
 
