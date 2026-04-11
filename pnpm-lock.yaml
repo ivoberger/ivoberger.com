@@ -40,8 +40,8 @@ importers:
         specifier: ^1.2.4
         version: 1.5.0
       '@notionhq/client':
-        specifier: 5.16.0
-        version: 5.16.0
+        specifier: 5.17.0
+        version: 5.17.0
       '@shikijs/rehype':
         specifier: 4.0.2
         version: 4.0.2
@@ -361,8 +361,8 @@ packages:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
 
-  '@notionhq/client@5.16.0':
-    resolution: {integrity: sha512-0mxHJNQBLbcG2Y4+oM+XNySr/3zKtK7FKjWhrUo8TB3WCdwtUMhvuooNmEjOo8NLL9qmKm7cCR4GtEsuTD+SNg==}
+  '@notionhq/client@5.17.0':
+    resolution: {integrity: sha512-hSNm3VUW5+Qs9vPOmegS6r1RT8O1jtTE/22wmSmiJc9kkb2YyddWr8SBQruvp06rALn2r2RAh9mLPirUUonsvw==}
     engines: {node: '>=18'}
 
   '@oozcitak/dom@2.0.2':
@@ -2072,7 +2072,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@notionhq/client@5.16.0': {}
+  '@notionhq/client@5.17.0': {}
 
   '@oozcitak/dom@2.0.2':
     dependencies:
