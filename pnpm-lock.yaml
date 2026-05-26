@@ -64,8 +64,8 @@ importers:
         specifier: ^4.1.13
         version: 4.3.0(vite@8.0.14(jiti@2.7.0))
       date-fns:
-        specifier: 4.2.1
-        version: 4.2.1
+        specifier: 4.3.0
+        version: 4.3.0
       oxlint:
         specifier: ^1.15.0
         version: 1.66.0
@@ -993,8 +993,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  date-fns@4.2.1:
-    resolution: {integrity: sha512-37RhSdxaG1suen6VDCza6rNrQfooyQh57HFVPwQGEq2QWliVLzPQZ8Oa017weOu+HZCnzI7N3Pf/wyoBKfEqrA==}
+  date-fns@4.3.0:
+    resolution: {integrity: sha512-OYcL+3N/jyWbYdFGqoMAhytDgxP9pbYPUUiRCOgn4Fewaadk9l/Wam4Avciiyp2BgkpfQyBV9B+ehnVJych+eQ==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -2550,7 +2550,7 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  date-fns@4.2.1: {}
+  date-fns@4.3.0: {}
 
   debug@4.4.3:
     dependencies:
