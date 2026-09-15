@@ -11,28 +11,29 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@astrojs/rss": "4.0.17",
-		"@astrojs/sitemap": "3.7.1",
+		"@astrojs/rss": "4.0.19",
+		"@astrojs/sitemap": "3.7.4",
 		"@fortawesome/fontawesome-svg-core": "7.3.1",
 		"@fortawesome/free-brands-svg-icons": "7.3.1",
 		"@fortawesome/free-regular-svg-icons": "7.3.1",
 		"@fortawesome/free-solid-svg-icons": "7.3.1",
-		"astro": "6.0.8",
+		"astro": "7.3.2",
 		"date-fns": "4.4.0",
-		"markdown-it": "14.1.0",
-		"rehype-autolink-headings": "7.1.0",
-		"rehype-slug": "6.0.0"
+		"markdown-it": "14.1.0"
 	},
 	"devDependencies": {
-		"@astrojs/check": "0.9.8",
+		"@astrojs/check": "0.9.10",
+		"@astrojs/markdown-satteri": "0.4.1",
 		"@ctrl/oxlint-config": "^1.5.0",
 		"@tailwindcss/typography": "0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/markdown-it": "14.1.2",
+		"github-slugger": "2.0.0",
 		"oxlint": "1.82.0",
 		"prettier": "3.9.6",
 		"prettier-plugin-astro": "0.14.1",
 		"prettier-plugin-tailwindcss": "^0.8.1",
+		"satteri": "0.10.5",
 		"tailwindcss": "^4.3.3",
 		"typescript": "6.0.3"
 	},
