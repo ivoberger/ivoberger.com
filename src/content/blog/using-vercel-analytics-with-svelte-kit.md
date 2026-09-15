@@ -7,6 +7,14 @@ tags: [analytics, svelte, sveltekit, vercel, guide]
 excerpt: Vercel Analytics is a service tracking your website's real-world performance and is available for free if you're deploying on Vercel. This post explains how to use the service with Svelte(Kit) as there is no official support (yet).
 ---
 
+<aside>
+
+📢 This post is **hella old** ({{age}})! Vercel now has an official SvelteKit integration — [you should just follow that instead!](https://vercel.com/docs/analytics/quickstart?framework=sveltekit)
+
+If you're feeling nostalgic, you can still keep reading though :)
+
+</aside>
+
 I recently migrated my [website](https://ivoberger.com?utm_campaign=VercelAnalytics+SvelteKit&utm_source=Medium&utm_medium=Referral) from Next.js to [SvelteKit](https://kit.svelte.dev/) as it reached public beta and I've been meaning to try Svelte for a while now. I've been using [Vercel Analytics](https://vercel.com/docs/analytics) since it was introduced alongside [Next.js 10](https://nextjs.org/blog/next-10) in October 2020 to track my site's real-world performance and wanted keep using it with SvelteKit but (to no ones surprise) there's no official integration (yet).
 
 ## What is Vercel Analytics?

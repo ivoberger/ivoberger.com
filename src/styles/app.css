@@ -38,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-serif;
+	@apply scroll-mt-4 font-serif;
 }
 
 h1 {
@@ -108,6 +108,16 @@ code:not(pre code) {
 	@apply rounded bg-neutral-100 p-1 dark:bg-neutral-800;
 }
 
+.prose aside {
+	@apply border-l-4 border-lime-500 bg-neutral-100 py-2 pl-4 dark:bg-neutral-800/50;
+}
+.prose aside > :first-child {
+	@apply mt-0;
+}
+.prose aside > :last-child {
+	@apply mb-0;
+}
+
 .prose .code-block {
 	@apply relative mt-8;
 }
@@ -115,10 +125,13 @@ code:not(pre code) {
 	@apply mt-0 pt-6;
 }
 .prose .code-block .code-lang {
-	@apply absolute top-0 left-3 -translate-y-1/2 rounded bg-lime-600 px-2 py-0.5 text-xs font-bold tracking-wide text-neutral-900 uppercase;
+	@apply absolute top-0 left-3 flex -translate-y-1/2 items-center gap-1 rounded bg-lime-600 px-2 py-0.5 text-xs leading-none font-bold tracking-wide text-neutral-900 uppercase;
+}
+.prose .code-block .code-lang .lang-icon {
+	@apply size-3.5;
 }
 .prose .code-block .copy-button {
-	@apply absolute top-0 right-3 flex -translate-y-1/2 cursor-pointer items-center gap-1 rounded bg-neutral-700 px-2 py-0.5 text-xs font-medium text-gray-100 opacity-0 transition hover:bg-neutral-600;
+	@apply absolute top-0 right-3 flex -translate-y-1/2 cursor-pointer items-center gap-1 rounded bg-neutral-700 px-2 py-0.5 text-xs leading-none font-medium text-gray-100 opacity-0 transition hover:bg-neutral-600;
 }
 .prose .code-block .copy-button .copy-icon {
 	@apply size-3.5;

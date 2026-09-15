@@ -1,4 +1,25 @@
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import {
+	faDartLang,
+	faHtml5,
+	faJs,
+	faTypescript
+} from '@fortawesome/free-brands-svg-icons';
+import { faCode, faTerminal } from '@fortawesome/free-solid-svg-icons';
 import type { HastContent, HastParentContent, HastPluginDefinition } from 'satteri';
+import { iconNode } from './hast-icons';
+
+const LANG_ICONS: Record<string, IconDefinition> = {
+	html: faHtml5,
+	javascript: faJs,
+	typescript: faTypescript,
+	dart: faDartLang,
+	bash: faTerminal,
+	shell: faTerminal,
+	sh: faTerminal,
+	json: faCode
+};
 
 export function codeBlocks(): HastPluginDefinition {
 	return {
@@ -11,42 +32,13 @@ export function codeBlocks(): HastPluginDefinition {
 					return;
 
 				const lang = String(props.dataLanguage ?? '');
-				const copyIcon: HastContent = {
-					type: 'element',
-					tagName: 'svg',
-					properties: {
-						className: ['copy-icon'],
-						xmlns: 'http://www.w3.org/2000/svg',
-						viewBox: '0 0 24 24',
-						fill: 'none',
-						stroke: 'currentColor',
-						'stroke-width': '2',
-						'stroke-linecap': 'round',
-						'stroke-linejoin': 'round',
-						'aria-hidden': 'true'
-					},
-					children: [
-						{
-							type: 'element',
-							tagName: 'rect',
-							properties: { width: '13', height: '13', x: '9', y: '9', rx: '2', ry: '2' },
-							children: []
-						},
-						{
-							type: 'element',
-							tagName: 'path',
-							properties: { d: 'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1' },
-							children: []
-						}
-					]
-				};
 				const children: HastContent[] = [
 					{
 						type: 'element',
 						tagName: 'button',
 						properties: { type: 'button', className: ['copy-button'], 'aria-label': 'Copy code' },
 						children: [
-							copyIcon,
+							iconNode(faCopy, ['copy-icon']),
 							{
 								type: 'element',
 								tagName: 'span',
@@ -61,7 +53,7 @@ export function codeBlocks(): HastPluginDefinition {
 						type: 'element',
 						tagName: 'span',
 						properties: { className: ['code-lang'], 'aria-hidden': 'true' },
-						children: [{ type: 'text', value: lang }]
+						children: [iconNode(LANG_ICONS[lang] ?? faCode, ['lang-icon']), { type: 'text', value: lang }]
 					});
 				}
 				ctx.wrapNode(node, {

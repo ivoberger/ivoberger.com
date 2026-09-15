@@ -4,6 +4,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 import tailwindcss from '@tailwindcss/vite';
 import { headingAnchors } from './src/lib/heading-anchors';
 import { codeBlocks } from './src/lib/code-blocks';
+import { postTokens } from './src/lib/post-tokens';
 
 export default defineConfig({
 	site: 'https://ivoberger.com',
@@ -27,7 +28,7 @@ export default defineConfig({
 	],
 	markdown: {
 		shikiConfig: { theme: 'dark-plus' },
-		processor: satteri({ hastPlugins: [headingAnchors(), codeBlocks()] })
+		processor: satteri({ hastPlugins: [headingAnchors(), codeBlocks(), postTokens()] })
 	},
 	vite: {
 		plugins: [tailwindcss()]
