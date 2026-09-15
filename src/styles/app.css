@@ -74,6 +74,7 @@ h3 {
 }
 
 svg.fa-icon {
+	display: inline-block;
 	height: 1em;
 	width: 1em;
 	vertical-align: -0.125em;
