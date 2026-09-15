@@ -4,9 +4,6 @@ publishDate: January 1, 2021
 updatedDate: April 30, 2021 11:08 PM
 tags: [dart, flutter, streams]
 excerpt: Streams are a powerful way to propagate updates throughout an application. This post explains how to create a stream from every event of an input stream without leaving any dangling subscriptions.
-seo:
-  image:
-    src: ./blog/dart-stream-events-to-streams-transform.png
 ---
 
 If you need live updates for anything in your Dart application [Streams](https://api.dart.dev/stable/2.8.4/dart-async/Stream-class.html) are the way to go. They are used for the [BloC architecture](https://pub.dev/packages/bloc), [Cloud Firestore](https://pub.dev/packages/cloud_firestore#usage), [reading large files](https://api.dart.dev/stable/2.8.4/dart-io/File-class.html) and so on.
