@@ -10,7 +10,7 @@
 </svelte:head>
 
 <HomeButton />
-<Body class="prose text-center dark:prose-invert">
+<Body class="prose dark:prose-invert text-center">
 	<h1>404</h1>
 	<h1>This page doesn't exist</h1>
 	<p class="text-xl">Here's a cool image of a black hole though.</p>

@@ -13,9 +13,15 @@ const addUrl = (
 ) => {
 	const urlEle = builder.ele('url');
 	urlEle.ele('loc').txt(url);
-	if (changefreq) urlEle.ele('changefreq').txt(changefreq);
-	if (lastmod) urlEle.ele('lastmod').txt(lastmod);
-	if (priority) urlEle.ele('priority').txt(`${priority}`);
+	if (changefreq) {
+		urlEle.ele('changefreq').txt(changefreq);
+	}
+	if (lastmod) {
+		urlEle.ele('lastmod').txt(lastmod);
+	}
+	if (priority) {
+		urlEle.ele('priority').txt(`${priority}`);
+	}
 };
 
 const buildSitemap = async (): Promise<string> => {
