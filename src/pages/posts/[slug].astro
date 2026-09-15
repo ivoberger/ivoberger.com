@@ -65,6 +65,23 @@ const fullImg = meta.cover
 	</main>
 </Base>
 
+<script>
+	document.addEventListener('click', async (event) => {
+		const button = (event.target as HTMLElement).closest('.copy-button');
+		if (!button) return;
+		const code = button.closest('.code-block')?.querySelector('code');
+		if (!code) return;
+		await navigator.clipboard.writeText(code.innerText);
+		const label = button.querySelector('.copy-label');
+		if (label) label.textContent = 'Copied';
+		button.classList.add('copied');
+		setTimeout(() => {
+			if (label) label.textContent = 'Copy';
+			button.classList.remove('copied');
+		}, 1500);
+	});
+</script>
+
 <style>
 	@reference 'tailwindcss';
 	header {

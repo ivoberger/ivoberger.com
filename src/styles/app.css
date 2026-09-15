@@ -104,6 +104,29 @@ svg.fa-icon {
 	@apply border-transparent;
 }
 
-code {
+code:not(pre code) {
 	@apply rounded bg-neutral-100 p-1 dark:bg-neutral-800;
+}
+
+.prose .code-block {
+	@apply relative mt-8;
+}
+.prose .code-block pre.astro-code {
+	@apply mt-0 pt-6;
+}
+.prose .code-block .code-lang {
+	@apply absolute top-0 left-3 -translate-y-1/2 rounded bg-lime-600 px-2 py-0.5 text-xs font-bold tracking-wide text-neutral-900 uppercase;
+}
+.prose .code-block .copy-button {
+	@apply absolute top-0 right-3 flex -translate-y-1/2 cursor-pointer items-center gap-1 rounded bg-neutral-700 px-2 py-0.5 text-xs font-medium text-gray-100 opacity-0 transition hover:bg-neutral-600;
+}
+.prose .code-block .copy-button .copy-icon {
+	@apply size-3.5;
+}
+.prose .code-block:hover .copy-button,
+.prose .code-block .copy-button:focus-visible {
+	@apply opacity-100;
+}
+.prose .code-block .copy-button.copied {
+	@apply bg-lime-600 text-neutral-900 opacity-100;
 }

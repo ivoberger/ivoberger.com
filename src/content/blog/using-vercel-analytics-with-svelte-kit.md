@@ -83,7 +83,7 @@ Vercels docs state that metric are collected in initial page load and not for cl
 
 The Analytics ID is provided when your app builds on Vercel. It's supplied through the environment as the variable`VERCEL_ANALYTICS_ID`. To be able to access it at runtime I had to add 2 lines to my `svelte.config.cjs` so it gets replaced at runtime:
 
-```jsx
+```javascript
 const sveltePreprocess = require('svelte-preprocess');
 const staticAdapter = require('@sveltejs/adapter-static');
 const pkg = require('./package.json');
@@ -117,7 +117,7 @@ We want to trigger the vitals reporting on the initial page load but not for cli
 
 To trigger the reporting we'll call a helper (which will be implemented in the next section) in Svelte's `onMount` lifecycle function:
 
-```tsx
+```typescript
 import { onMount } from 'svelte';
 import { webVitals } from '$lib/webvitals';
 
@@ -132,7 +132,7 @@ onMount(() => {
 
 In addition to the above we need another server-side `script` block which is responsible for retrieving the page path and params in the [`load`](https://kit.svelte.dev/docs#loading) function:
 
-```tsx
+```typescript
 import type { Load } from '@sveltejs/kit';
 export const load: Load = async ({ page: { path, params } }) => ({
 	props: {
@@ -144,7 +144,7 @@ export const load: Load = async ({ page: { path, params } }) => ({
 
 The reasoning for doing it server-side is that the only way to get that data client-side is to subscribe to the [`page` store](https://kit.svelte.dev/docs#modules-app-stores) and populate the `page` and `params` variables from that:
 
-```tsx
+```typescript
 import { onMount } from 'svelte';
 import { page } from '$app/stores';
 import { webVitals } from '$lib/webvitals';
@@ -171,7 +171,7 @@ Lets see what calling`webVitals` actually does. The function is in `src/lib/webv
 
 The `webVitals` function itself is quite simple. It registers a callback for all 4 metrics we want to track using the `web-vitals` library. It takes the options we've gathered in the previous sections. The code is wrapped in a `try-catch` block so fails silently if something goes wrong and doesn't cause issues for the actual page.
 
-```tsx
+```typescript
 import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
 
 type AnalyticsOptions = {
@@ -196,7 +196,7 @@ export function webVitals(options: AnalyticsOptions): void {
 
 Most of the work happens in `sendToAnalytics`:
 
-```tsx
+```typescript
 import type { Metric } from 'web-vitals';
 
 function sendToAnalytics(metric: Metric, options: AnalyticsOptions) {
@@ -238,7 +238,7 @@ function sendToAnalytics(metric: Metric, options: AnalyticsOptions) {
 
 Let's break it down, starting with this:
 
-```tsx
+```typescript
 const page = Object.entries(options.params).reduce(
 	(acc, [key, value]) => acc.replace(value, `[${key}]`),
 	options.path
@@ -249,7 +249,7 @@ Here we're extracting the route from the `page` and `params` options since Svelt
 
 Next we need to build the request body:
 
-```tsx
+```typescript
 const body = {
 	dsn: options.analyticsId,
 	id: metric.id,
@@ -265,7 +265,7 @@ We're just taking all the gathered values and dropping them into an object. we'l
 
 In the next step that object is prepared for for sending it off:
 
-```tsx
+```typescript
 const blob = new Blob([new URLSearchParams(body).toString()], {
 	// This content type is necessary for `sendBeacon`:
 	type: 'application/x-www-form-urlencoded'
@@ -276,7 +276,7 @@ The `body` object is converted into a Blob and with a data type of `application/
 
 The last step is to check if the browser's navigator support the [`sendBeacon` API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) and send the data using that or falling back to a simple `fetch`:
 
-```tsx
+```typescript
 if (navigator.sendBeacon) {
 	navigator.sendBeacon(vitalsUrl, blob);
 } else {
