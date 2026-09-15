@@ -257,6 +257,9 @@ importers:
       vite:
         specifier: ^8.3.0
         version: 8.3.0(@types/node@24.13.4)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
+      wrangler:
+        specifier: ^4.131.2
+        version: 4.131.2(@types/node@24.13.4)
 
 packages:
 
