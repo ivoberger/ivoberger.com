@@ -12,7 +12,7 @@
 			title: 'This Website',
 			url: 'https://ivoberger.com',
 			repoUrl: 'https://github.com/ivoberger/ivoberger.com',
-			description: `The page you're looking at is made with SvelteKit, TypeScript and TailwindCSS and deployed on Vercel.
+			description: `The page you're looking at is made with SvelteKit, TypeScript and TailwindCSS and deployed on Cloudflare.
       It's entirely static through the SvelteKit's SSG feature. Posts are written in Markdown and converted to nice-looking HTML at build-time.
       It was originally built with Gridsome, then moved to NextJS and now to SvelteKit.
       It's an all-in-one blog, portfolio and pet project to try out new shiny things.`

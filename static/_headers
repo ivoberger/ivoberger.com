@@ -1,0 +1,18 @@
+/*
+  Permissions-Policy: interest-cohort=()
+  Cache-Control: public,max-age=60
+  Referrer-Policy: no-referrer-when-downgrade
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Feature-Policy: camera 'none'; geolocation 'none'; microphone 'none'
+  Strict-Transport-Security: max-age=2592000; includeSubDomains
+  Accept-CH: Downlink,RTT,Device-Memory,Save-Data,DPR,Width
+
+/_app/immutable/*
+  Cache-Control: public,max-age=31536000,immutable
+
+/sitemap.xml
+  Cache-Control: max-age=0 must-revalidate,public
+
+/feed.xml
+  Cache-Control: max-age=0 must-revalidate,public
