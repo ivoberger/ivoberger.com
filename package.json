@@ -11,15 +11,18 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
+		"@astrojs/cloudflare": "^14.3.1",
 		"@astrojs/rss": "4.0.19",
 		"@astrojs/sitemap": "3.7.4",
+		"@astrojs/svelte": "^9.0.1",
 		"@fortawesome/fontawesome-svg-core": "7.3.1",
 		"@fortawesome/free-brands-svg-icons": "7.3.1",
 		"@fortawesome/free-regular-svg-icons": "7.3.1",
 		"@fortawesome/free-solid-svg-icons": "7.3.1",
 		"astro": "7.3.2",
 		"date-fns": "4.4.0",
-		"markdown-it": "14.1.0"
+		"markdown-it": "14.1.0",
+		"svelte": "^5.57.0"
 	},
 	"devDependencies": {
 		"@astrojs/check": "0.9.10",
@@ -29,13 +32,16 @@
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/markdown-it": "14.1.2",
 		"github-slugger": "2.0.0",
+		"gray-matter": "^4.0.3",
 		"oxlint": "1.82.0",
 		"prettier": "3.9.6",
 		"prettier-plugin-astro": "0.14.1",
+		"prettier-plugin-svelte": "^4.1.1",
 		"prettier-plugin-tailwindcss": "^0.8.1",
 		"satteri": "0.10.5",
 		"tailwindcss": "^4.3.3",
-		"typescript": "6.0.3"
+		"typescript": "6.0.3",
+		"vite": "^8.3.0"
 	},
 	"packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c"
 }
