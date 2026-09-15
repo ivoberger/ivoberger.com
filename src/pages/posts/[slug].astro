@@ -6,6 +6,7 @@ import Body from '../../components/Body.astro';
 import HomeButton from '../../components/HomeButton.astro';
 import { getAllPosts, toSummary } from '../../lib/posts';
 import { siteUrl, defaultAuthor } from '../../consts';
+import BlueskyComments from '../../components/BlueskyComments.svelte';
 
 export const getStaticPaths = (async () => {
 	const posts = await getAllPosts();
@@ -61,6 +62,7 @@ const fullImg = meta.cover
 			class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10"
 		>
 			<Content />
+			<BlueskyComments client:visible={{ rootMargin: '200px' }} postUrl={canonical} />
 		</Body>
 	</main>
 </Base>
