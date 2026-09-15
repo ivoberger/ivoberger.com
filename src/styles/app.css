@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: var(--font-catamaran), sans-serif;
+	--font-serif: var(--font-source-serif-pro), serif;
+	--color-gray-100-t: rgba(0, 0, 0, 0.1);
+	--color-gray-200-t: rgba(0, 0, 0, 0.2);
+	--color-gray-300-t: rgba(0, 0, 0, 0.3);
+	--color-gray-400-t: rgba(0, 0, 0, 0.4);
+	--color-brand-github: #24292e;
+	--color-brand-bluesky: #1185fe;
+	--color-brand-linkedin: #0077b5;
+	--default-transition-duration: 300ms;
+}
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}
+
+html {
+	@apply scroll-smooth;
+}
+
+body {
+	@apply bg-white font-sans text-gray-900 antialiased dark:bg-neutral-900 dark:text-gray-100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-serif;
+}
+
+h1 {
+	@apply mb-1 text-3xl font-semibold sm:text-4xl md:text-5xl;
+}
+
+h2 {
+	@apply mb-1 text-xl sm:text-2xl;
+}
+
+h3 {
+	@apply my-3 text-3xl font-semibold sm:my-5 sm:text-3xl md:text-4xl;
+}
+
+.visible-hidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.visible-hidden:focus {
+	clip: auto;
+	height: auto;
+	overflow: auto;
+	position: absolute;
+	width: auto;
+}
+
+svg.fa-icon {
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	vertical-align: -0.125em;
+	font-size: inherit;
+	overflow: visible;
+}
+
+.prose a,
+.prose a code {
+	@apply decoration-transparent transition duration-500;
+}
+.prose a:hover {
+	@apply decoration-lime-700 dark:decoration-lime-500;
+}
+
+.prose a .icon.icon-link::before {
+	content: '#';
+	@apply transition-colors duration-500;
+	@apply pl-1 text-gray-400 dark:text-gray-600;
+}
+.prose a .icon.icon-link:hover::before {
+	@apply text-lime-700 dark:text-lime-500;
+}
+.prose h1 a:hover,
+.prose h2 a:hover,
+.prose h3 a:hover,
+.prose h4 a:hover,
+.prose h5 a:hover,
+.prose h6 a:hover {
+	@apply border-transparent;
+}
+
+code {
+	@apply rounded bg-neutral-100 p-1 dark:bg-neutral-800;
+}

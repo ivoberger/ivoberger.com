@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import PostList from '../components/PostList.astro';
+import { getAllSummaries } from '../lib/posts';
+
+const posts = await getAllSummaries();
+---
+
+<Base>
+	<Header title="Ivo Berger" subTitle="Stuff I Made" subTitleLink="/about/" />
+	<PostList posts={posts} />
+</Base>

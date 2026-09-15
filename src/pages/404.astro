@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import HomeButton from '../components/HomeButton.astro';
+import Body from '../components/Body.astro';
+---
+
+<Base seo={{ title: "Ooops, there's no page here" }}>
+	<HomeButton />
+	<Body class="prose dark:prose-invert text-center">
+		<h1>404</h1>
+		<h1>This page doesn't exist</h1>
+		<p class="text-xl">Here's a cool image of a black hole though.</p>
+		<div class="image-blurred"></div>
+		<p>PS.: It might have sucked in the page you're looking for...</p>
+	</Body>
+</Base>
+
+<style>
+	@reference 'tailwindcss';
+	.image-blurred {
+		@apply h-96 w-full bg-[url('/404.jpg')] bg-cover bg-center bg-no-repeat shadow-[0_0_15px_10px_inset] shadow-white dark:shadow-neutral-900;
+	}
+</style>

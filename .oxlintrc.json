@@ -15,12 +15,6 @@
 			"rules": {
 				"typescript/no-require-imports": "off"
 			}
-		},
-		{
-			"files": ["*.svelte"],
-			"rules": {
-				"unicorn/no-useless-undefined": "off"
-			}
 		}
 	]
 }

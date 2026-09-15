@@ -1,5 +1,5 @@
-.svelte-kit/**
-static/**
-build/**
+.astro/**
+dist/**
+public/**
 node_modules/**
 pnpm-lock.yaml

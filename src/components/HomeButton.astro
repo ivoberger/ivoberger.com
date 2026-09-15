@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+---
+
+<nav class="group fixed top-0 left-0 z-50 m-4 mt-8">
+	<a
+		href="/"
+		class="border-gray-100-t rounded-full border bg-black px-5 py-2 transition group-hover:border-gray-600"
+	>
+		<span class="font-sans text-gray-200 transition group-hover:text-gray-100 dark:text-gray-400">
+			<Icon icon={faArrowLeft} class="mr-1" /> Home
+		</span>
+	</a>
+</nav>

@@ -1,0 +1,82 @@
+---
+import { render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Body from '../../components/Body.astro';
+import HomeButton from '../../components/HomeButton.astro';
+import { getAllPosts, toSummary } from '../../lib/posts';
+import { siteUrl, defaultAuthor } from '../../consts';
+
+export const getStaticPaths = (async () => {
+	const posts = await getAllPosts();
+	return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const meta = toSummary(post);
+const { Content } = await render(post);
+
+const canonical = `${siteUrl}/posts/${meta.slug}/`;
+const fullImg = meta.cover
+	? meta.cover.startsWith('http')
+		? meta.cover
+		: `${siteUrl}${meta.cover}`
+	: undefined;
+---
+
+<Base
+	seo={{
+		title: meta.title,
+		description: meta.description,
+		canonical,
+		type: 'article',
+		author: defaultAuthor,
+		tags: meta.tags,
+		image: fullImg,
+		publishedDate: meta.publishedDate
+	}}
+>
+	<HomeButton />
+	<main itemscope itemtype="https://schema.org/TechArticle">
+		<header>
+			{meta.cover && <div class="cover-image" style={`background-image: url(${meta.cover});`} />}
+			<div
+				class:list={[
+					'cover-text',
+					meta.cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'
+				]}
+			>
+				<p class="text-sm uppercase">{meta.readTime}</p>
+				<h1 itemprop="name headline">{meta.title}</h1>
+				<time datetime={meta.publishedDate} itemprop="datePublished">{meta.publishedFormatted}</time
+				>
+				<time datetime={meta.updatedDate} itemprop="dateModified"></time>
+			</div>
+			<meta itemprop="description abstract" content={meta.description} />
+			<meta itemprop="url" content={canonical} />
+			{fullImg && <meta itemprop="image" content={fullImg} />}
+			{meta.tags.length > 0 && <meta itemprop="keywords" content={meta.tags.join(',')} />}
+		</header>
+		<Body
+			class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10"
+		>
+			<Content />
+		</Body>
+	</main>
+</Base>
+
+<style>
+	@reference 'tailwindcss';
+	header {
+		@apply relative h-96 overflow-hidden;
+	}
+	.cover-image {
+		@apply absolute inset-0 scale-105 transform bg-cover bg-center bg-no-repeat blur-sm;
+	}
+	.cover-text {
+		@apply absolute inset-x-0 bottom-0 z-10 mx-auto px-6 pb-14 text-center md:max-w-4xl;
+	}
+	.text-shadow-lg {
+		text-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);
+	}
+</style>
