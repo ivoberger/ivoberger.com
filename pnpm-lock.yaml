@@ -175,12 +175,6 @@ importers:
       '@astrojs/sitemap':
         specifier: 3.7.1
         version: 3.7.1
-      '@fontsource-variable/catamaran':
-        specifier: 5.3.0
-        version: 5.3.0
-      '@fontsource/source-serif-pro':
-        specifier: 5.3.0
-        version: 5.3.0
       '@fortawesome/fontawesome-svg-core':
         specifier: 7.3.1
         version: 7.3.1
@@ -504,12 +498,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@fontsource-variable/catamaran@5.3.0':
-    resolution: {integrity: sha512-MG6ByMbZm7AseTUQh/8M3yBMMR5KIY9wC9J3XzHLKlHgAQVHfMkcCS8ZEQEyI38e5RZiEVhu8E5MMYL6ASCPWw==}
-
-  '@fontsource/source-serif-pro@5.3.0':
-    resolution: {integrity: sha512-YFHaHYBYSgjh2TFvK6r5Rj1B+BQ3GW3VTlS/FyWT5K44OlJTNU2kGjVh66c2nUqIUxPtgJEt+JJNMMaMShtM+A==}
 
   '@fortawesome/fontawesome-common-types@7.3.1':
     resolution: {integrity: sha512-k0C0sdHmZtAo6dRDtd1Z/qcpyHbL0CKsjV8seMY/21xGhY5Wsv0XRmiI/xEEH4y2c9b1+jvgNs/3EqhV27yUEA==}
@@ -2788,10 +2776,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.7':
     optional: true
-
-  '@fontsource-variable/catamaran@5.3.0': {}
-
-  '@fontsource/source-serif-pro@5.3.0': {}
 
   '@fortawesome/fontawesome-common-types@7.3.1': {}
 
