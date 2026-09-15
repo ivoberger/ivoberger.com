@@ -1,0 +1,57 @@
+---
+import type { PostSummary } from '../lib/posts';
+
+interface Props {
+	posts: Array<PostSummary>;
+}
+
+const { posts } = Astro.props;
+---
+
+<main class="posts">
+	{
+		posts.map((post) => (
+			<article class="article-summary">
+				<header>
+					<time class="date" datetime={post.publishedDate}>
+						{post.publishedFormatted}
+					</time>
+					, <span class="readTime"> {post.readTime} </span>
+					<a href={`/posts/${post.slug}/`}>
+						<h3 class="my-0">{post.title}</h3>
+					</a>
+					<p class="flex justify-center gap-1 text-sm leading-normal sm:text-base">
+						{post.tags.map((tag) => (
+							<a href={`/tag/${tag}/`} class="tag-link">
+								#{tag}
+							</a>
+						))}
+					</p>
+				</header>
+				<p class="description">{post.description}</p>
+			</article>
+		))
+	}
+</main>
+
+<style>
+	@reference 'tailwindcss';
+	.posts {
+		@apply mx-auto mb-10 max-w-3xl px-6;
+	}
+	.article-summary {
+		@apply border-b border-lime-300 py-4 text-center text-gray-700 sm:py-8 dark:text-gray-300;
+	}
+	.tag-link {
+		@apply italic underline decoration-transparent transition duration-500 hover:decoration-gray-400;
+	}
+	.date {
+		@apply mb-2 text-xs uppercase;
+	}
+	.readTime {
+		@apply mb-2 ml-1 text-xs uppercase;
+	}
+	.description {
+		@apply mt-6 px-2 text-lg leading-normal sm:px-4 md:px-10;
+	}
+</style>

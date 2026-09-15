@@ -1,0 +1,13 @@
+---
+import { icon, type IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
+interface Props {
+	icon: IconDefinition;
+	class?: string;
+}
+
+const { icon: def, class: className } = Astro.props;
+const rendered = icon(def, { classes: ['fa-icon', ...(className ? className.split(' ') : [])] });
+---
+
+<Fragment set:html={rendered.html.join('')} />

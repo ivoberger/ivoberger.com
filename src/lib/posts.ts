@@ -1,202 +1,49 @@
-import { Client } from '@notionhq/client';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import capitalize from 'remark-capitalize';
-import squeezeParagraphs from 'remark-squeeze-paragraphs';
-import remark2rehype from 'remark-rehype';
-import rehypeShiki from '@shikijs/rehype';
-import slugs from 'rehype-slug';
-import autolink from 'rehype-autolink-headings';
-import rehypeMinify from 'rehype-preset-minify';
-import html from 'rehype-stringify';
-import { readingTime } from './readingTime';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { format } from 'date-fns';
-import { defaultAuthor } from './seoConstants';
-import type {
-	BlockObjectResponse,
-	GetPagePropertyResponse,
-	PageObjectResponse,
-	RichTextItemResponse
-} from '@notionhq/client/build/src/api-endpoints';
-import { NOTION_DATASOURCE_ID, NOTION_TOKEN } from '$env/static/private';
+import { readingTime } from './readingTime';
 
-const notion = new Client({ auth: NOTION_TOKEN });
-const dataSourceId = NOTION_DATASOURCE_ID;
-
-let posts: Array<PostData>;
-let tags: Array<string>;
-const postsBySlug: { [slug: string]: PostData } = {};
-const postsByTag: { [tag: string]: Array<PostData> } = {};
-
-export async function getPostsByTag(tag: string): Promise<Array<PostSpec>> {
-	await getAllPosts();
-	if (!postsByTag[tag]) {
-		postsByTag[tag] = posts.filter((post) => post.meta.tags.includes(tag));
-	}
-	return postsByTag[tag];
+export interface PostSummary {
+	slug: string;
+	title: string;
+	description: string;
+	publishedDate: string;
+	publishedFormatted: string;
+	updatedDate: string;
+	readTime: string;
+	tags: Array<string>;
+	cover?: string;
 }
 
-export async function getPostBySlug(slug: string): Promise<PostData> {
-	if (!postsBySlug[slug]) {
-		await getAllPosts();
-	}
-	return postsBySlug[slug];
+const coverFrom = (entry: CollectionEntry<'blog'>): string | undefined =>
+	entry.data.seo?.image?.src?.replace(/^\.\//, '/');
+
+export function toSummary(entry: CollectionEntry<'blog'>): PostSummary {
+	const { data, body, id } = entry;
+	return {
+		slug: id,
+		title: data.title,
+		description: data.excerpt,
+		publishedDate: data.publishDate.toISOString(),
+		publishedFormatted: format(data.publishDate, "do 'of' MMMM yyyy"),
+		updatedDate: (data.updatedDate ?? data.publishDate).toISOString(),
+		readTime: readingTime(body ?? '').text,
+		tags: [...data.tags].sort((a, b) => a.localeCompare(b)),
+		cover: coverFrom(entry)
+	};
+}
+
+export async function getAllPosts(): Promise<Array<CollectionEntry<'blog'>>> {
+	const posts = await getCollection('blog');
+	return posts.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+}
+
+export async function getAllSummaries(): Promise<Array<PostSummary>> {
+	return (await getAllPosts()).map(toSummary);
 }
 
 export async function getAllTags(): Promise<Array<string>> {
-	if (tags) {
-		return tags;
-	}
-	await getAllPosts();
-	const tagsSet = new Set<string>();
-	posts.forEach(({ meta: { tags: postTags } }) => postTags.forEach((tag) => tagsSet.add(tag)));
-	tags = [...tagsSet.values()];
-	return tags;
-}
-
-export async function getAllPosts(): Promise<Array<PostData>> {
-	if (posts) {
-		return posts;
-	}
-	const pages = await notion.dataSources.query({
-		data_source_id: dataSourceId,
-		page_size: 500,
-		filter: {
-			property: 'Status',
-			select: { equals: 'Published' }
-		},
-		sorts: [{ property: 'Publish Date', direction: 'descending' }]
-	});
-	return (posts = await Promise.all(pages.results.map(fetchPostFromApi)));
-}
-
-async function fetchPostFromApi(page: PageObjectResponse): Promise<PostData> {
-	const properties: Record<string, GetPagePropertyResponse> = Object.fromEntries(
-		await Promise.all(
-			Object.entries(page.properties).map(async ([key, { id }]) => [
-				key,
-				await notion.pages.properties.retrieve({ page_id: page.id, property_id: id })
-			])
-		)
-	);
-	const slug =
-		properties.Slug.object === 'list' &&
-		properties.Slug.results[0].type === 'rich_text' &&
-		properties.Slug.results[0].rich_text.plain_text;
-	const publishedDate =
-		properties['Publish Date'].type === 'date' && properties['Publish Date'].date.start;
-
-	const blocks = await notion.blocks.children.list({ block_id: page.id, page_size: 1000 });
-	const markdown = blocksToMarkdown(blocks.results as Array<BlockObjectResponse>);
-
-	const content = (await processor.process(markdown)).toString();
-
-	const meta: PostMetadata = {
-		title:
-			properties.Name.object === 'list' &&
-			properties.Name.results[0].type === 'title' &&
-			properties.Name.results[0].title.plain_text,
-		author: defaultAuthor,
-		description:
-			properties.Description.object === 'list' &&
-			properties.Description.results[0].type === 'rich_text' &&
-			properties.Description.results[0].rich_text.plain_text,
-		updatedDate:
-			properties['Last Updated'].type === 'last_edited_time' &&
-			properties['Last Updated'].last_edited_time,
-		publishedDate: publishedDate,
-		publishedFormatted: format(new Date(publishedDate), "do 'of' MMMM yyyy"),
-		readTime: readingTime(markdown).text,
-		tags:
-			properties.Tags.type === 'multi_select' &&
-			properties.Tags.multi_select.map(({ name }) => name).sort((a, b) => a.localeCompare(b)),
-		slug
-	};
-
-	const post: PostData = { meta, content };
-	postsBySlug[meta.slug] = post;
-
-	return post;
-}
-
-const processor = unified()
-	.use(remarkParse)
-	.use(squeezeParagraphs)
-	.use(capitalize)
-	.use(remark2rehype)
-	.use(rehypeShiki, { themes: { dark: 'dark-plus', light: 'dark-plus' } })
-	.use(slugs)
-	.use(autolink, { behavior: 'append' })
-	.use(rehypeMinify)
-	.use(html);
-
-function blocksToMarkdown(blocks: Array<BlockObjectResponse>): string {
-	let result = '';
-
-	for (const block of blocks) {
-		if (block.type === 'unsupported') {
-			continue;
-		}
-
-		const richText = getTextFromBlock(block);
-		const text = richTextToMarkdown(richText);
-		switch (block.type) {
-			case 'heading_1': {
-				result += `# ${text}`;
-				break;
-			}
-			case 'heading_2': {
-				result += `## ${text}`;
-				break;
-			}
-			case 'heading_3': {
-				result += `### ${text}`;
-				break;
-			}
-			case 'code': {
-				result += `\`\`\`${block.code.language}\n${text}\n\`\`\``;
-				break;
-			}
-			case 'numbered_list_item': {
-				result += `1. ${text}`;
-				break;
-			}
-			case 'bulleted_list_item': {
-				result += `- ${text}`;
-				break;
-			}
-			default: {
-				result += text;
-				break;
-			}
-		}
-		result += '\n\n';
-	}
-	return result;
-}
-
-const getTextFromBlock = (block: BlockObjectResponse) => block[block.type].rich_text;
-function richTextToMarkdown(richText: Array<RichTextItemResponse>): string {
-	let result = '';
-
-	for (const text of richText) {
-		const annotations = text.annotations;
-		let res = text.plain_text;
-		if (annotations.code) {
-			res = `\`${res}\``;
-		}
-		if (annotations.bold) {
-			res = `**${res}**`;
-		}
-		if (annotations.italic) {
-			res = `*${res}*`;
-		}
-		if (text.href) {
-			res = `[${res}](${text.href})`;
-		}
-
-		result += res;
-	}
-
-	return result;
+	const posts = await getAllPosts();
+	const set = new Set<string>();
+	posts.forEach((post) => post.data.tags.forEach((tag) => set.add(tag)));
+	return [...set];
 }

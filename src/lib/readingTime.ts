@@ -15,11 +15,11 @@ interface ReadingTime {
 }
 
 const parseWords = (data: string): RegExpMatchArray =>
-	data.match(/[\w\d\s,.\u00C0-\u024F]+/giu) ?? ([] as unknown as RegExpMatchArray);
+	data.match(/[\w\d\s,.À-ɏ]+/giu) ?? ([] as unknown as RegExpMatchArray);
 
-const parseChineseWords = (data: string) => data.match(/[\u4E00-\u9FA5]/gu) ?? [];
+const parseChineseWords = (data: string) => data.match(/[一-龥]/gu) ?? [];
 
-const parseJapaneseWords = (data: string) => data.match(/[\u3041-\u3096]/gu) ?? [];
+const parseJapaneseWords = (data: string) => data.match(/[ぁ-ゖ]/gu) ?? [];
 
 const getNumberOfWords = (data: string) =>
 	parseWords(data).reduce(
@@ -34,7 +34,7 @@ const isLessThanAMinute = (minutes: number) => minutes < 1 + Number.EPSILON;
 
 const getLocale = (minutes: number) => en[isLessThanAMinute(minutes) ? 'less' : 'default'];
 
-const readingTime = (data: string, wordsPerMinute = 300): ReadingTime => {
+export const readingTime = (data: string, wordsPerMinute = 300): ReadingTime => {
 	const words = getNumberOfWords(data ?? '');
 	const minutes = +Math.round(words / wordsPerMinute).toFixed(2);
 
@@ -44,5 +44,3 @@ const readingTime = (data: string, wordsPerMinute = 300): ReadingTime => {
 		text: `${isLessThanAMinute(minutes) ? '' : minutes} ${getLocale(minutes)}`.trimStart()
 	};
 };
-
-export { readingTime };

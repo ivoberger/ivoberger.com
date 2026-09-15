@@ -1,0 +1,33 @@
+---
+interface Props {
+	title: string;
+	subTitle?: string;
+	subTitleLink?: string;
+}
+
+const { title, subTitle, subTitleLink } = Astro.props;
+---
+
+<header class="mb-10">
+	<div
+		class="mx-auto max-w-xl border-b border-lime-500 px-6 py-10 text-center md:max-w-3xl md:py-32 xl:max-w-4xl"
+	>
+		<h1 class="text-4xl sm:text-5xl md:text-6xl">{title}</h1>
+		{
+			subTitle && (
+				<h2>
+					{subTitleLink ? (
+						<a
+							href={subTitleLink}
+							class="border-b border-transparent text-gray-700 transition duration-500 hover:border-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+						>
+							{subTitle}
+						</a>
+					) : (
+						<span class="text-gray-800 dark:text-gray-200">{subTitle}</span>
+					)}
+				</h2>
+			)
+		}
+	</div>
+</header>

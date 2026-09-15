@@ -1,0 +1,76 @@
+---
+import Icon from './Icon.astro';
+import { faGithub, faLinkedin, faBluesky } from '@fortawesome/free-brands-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
+
+const navLinks = [
+	{ text: 'Home', link: '/' },
+	{ text: 'About', link: '/about/' },
+	{ text: 'Sitemap', link: '/sitemap-index.xml' },
+	{ text: 'RSS Feed', link: '/feed.xml' }
+];
+---
+
+<footer>
+	<div class="links">
+		<a
+			href="https://github.com/ivoberger"
+			target="_blank"
+			rel="noreferrer"
+			class="hover:text-brand-github pr-4 transition dark:hover:text-gray-100"
+		>
+			<span class="visible-hidden">GitHub</span>
+			<Icon icon={faGithub} />
+		</a>
+		<a
+			href="https://bsky.app/profile/ivoberger.com"
+			target="_blank"
+			rel="noreferrer"
+			class="hover:text-brand-bluesky pr-4 transition"
+		>
+			<span class="visible-hidden">Bluesky</span>
+			<Icon icon={faBluesky} />
+		</a>
+		<a
+			href="https://www.linkedin.com/in/ivo-berger/"
+			target="_blank"
+			rel="noreferrer"
+			class="hover:text-brand-linked-in pr-4 transition"
+		>
+			<span class="visible-hidden">LinkedIn</span>
+			<Icon icon={faLinkedin} />
+		</a>
+		<p>
+			<Icon icon={faCopyright} class="mt-1 mr-2" /> 2019 - present, Ivo Berger
+		</p>
+	</div>
+	<nav class="w-full sm:w-1/2">
+		<ul class="-mx-2 flex sm:justify-end">
+			{
+				navLinks.map((item) => (
+					<li class="px-2">
+						<a
+							href={item.link}
+							class="underline decoration-transparent transition duration-500 hover:decoration-gray-400"
+						>
+							{item.text}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</footer>
+
+<style>
+	@reference 'tailwindcss';
+	footer {
+		@apply mx-auto flex max-w-2xl flex-wrap justify-between px-6 py-8 text-sm leading-normal text-gray-700 sm:px-12 sm:pb-10 md:max-w-3xl xl:max-w-4xl dark:text-gray-400;
+	}
+	.links {
+		@apply mb-4 w-full sm:mb-0 sm:w-1/2;
+	}
+	nav {
+		@apply mb-4 w-full sm:mb-0 sm:w-1/2;
+	}
+</style>

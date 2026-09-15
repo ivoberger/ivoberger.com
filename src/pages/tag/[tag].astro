@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import HomeButton from '../../components/HomeButton.astro';
+import PostList from '../../components/PostList.astro';
+import { getAllSummaries, getAllTags } from '../../lib/posts';
+import { siteUrl } from '../../consts';
+
+export const getStaticPaths = (async () => {
+	const [tags, summaries] = await Promise.all([getAllTags(), getAllSummaries()]);
+	return tags.map((tag) => ({
+		params: { tag },
+		props: { tag, posts: summaries.filter((post) => post.tags.includes(tag)) }
+	}));
+}) satisfies GetStaticPaths;
+
+const { tag, posts } = Astro.props;
+const title = `#${tag}`;
+const canonical = `${siteUrl}/tag/${tag}/`;
+---
+
+<Base seo={{ title, description: `Articles on ${title}`, canonical, type: 'article' }}>
+	<HomeButton />
+	<Header title={title} />
+	<PostList posts={posts} />
+</Base>
