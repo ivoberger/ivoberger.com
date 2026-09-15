@@ -17,7 +17,7 @@
 		/>
 		<SocialLink
 			title="Bluesky"
-			link="https://bsky.app/profile/berginator.dev"
+			link="https://bsky.app/profile/ivoberger.com"
 			icon={faBluesky}
 			class="hover:text-brand-bluesky"
 		/>
