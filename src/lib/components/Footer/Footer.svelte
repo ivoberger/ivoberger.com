@@ -45,7 +45,7 @@
 <style lang="postcss">
 	@reference "tailwindcss";
 	footer {
-		@apply mx-auto flex max-w-2xl flex-wrap justify-between px-6 py-8 text-sm leading-normal text-gray-700 dark:text-gray-400 sm:px-12 sm:pb-10 md:max-w-3xl xl:max-w-4xl;
+		@apply mx-auto flex max-w-2xl flex-wrap justify-between px-6 py-8 text-sm leading-normal text-gray-700 sm:px-12 sm:pb-10 md:max-w-3xl xl:max-w-4xl dark:text-gray-400;
 	}
 	.links {
 		@apply mb-4 w-full sm:mb-0 sm:w-1/2;

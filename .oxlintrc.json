@@ -1,11 +1,26 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"extends": ["@ctrl/oxlint-config"],
+	"extends": ["./node_modules/@ctrl/oxlint-config/.oxlintrc.json"],
 	"rules": {
 		"typescript/array-type": ["error", { "default": "generic" }],
-		"eqeqeq": ["error", "smart"]
+		"eqeqeq": ["error", "smart"],
+		"import/unambiguous": "off"
 	},
 	"env": {
 		"builtin": true
-	}
+	},
+	"overrides": [
+		{
+			"files": ["*.cjs"],
+			"rules": {
+				"typescript/no-require-imports": "off"
+			}
+		},
+		{
+			"files": ["*.svelte"],
+			"rules": {
+				"unicorn/no-useless-undefined": "off"
+			}
+		}
+	]
 }

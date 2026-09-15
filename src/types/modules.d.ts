@@ -1,15 +1,15 @@
-declare module "@mapbox/rehype-prism";
-declare module "rehype-stringify" {
-  import { Plugin } from "unified";
+declare module '@mapbox/rehype-prism';
+declare module 'rehype-stringify' {
+	import { Plugin } from 'unified';
 
-  const html: Plugin;
+	const html: Plugin;
 
-  export default html;
+	export default html;
 }
-declare module "remark-rehype" {
-  import { Plugin } from "unified";
+declare module 'remark-rehype' {
+	import { Plugin } from 'unified';
 
-  const remark2rehype: Plugin;
+	const remark2rehype: Plugin;
 
-  export default remark2rehype;
+	export default remark2rehype;
 }

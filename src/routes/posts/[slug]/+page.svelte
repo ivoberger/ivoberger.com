@@ -25,7 +25,9 @@
 
 	const baseUrl = `https://${rootUrl}`;
 	const fullPageUrl = `${baseUrl}${data.path}`;
-	if (cover) fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
+	if (cover) {
+		fullImgPath = `${cover?.includes('http') ? '' : baseUrl}${cover}`;
+	}
 
 	$: seo = seoData({
 		title,
@@ -78,7 +80,7 @@
 	</header>
 	<Body
 		itemProp="articleBody"
-		class="prose mb-10 prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg"
+		class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10"
 	>
 		{@html content}
 	</Body>

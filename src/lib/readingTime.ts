@@ -24,7 +24,7 @@ const parseJapaneseWords = (data: string) => data.match(/[\u3041-\u3096]/gu) ?? 
 const getNumberOfWords = (data: string) =>
 	parseWords(data).reduce(
 		(accumulator, word) =>
-			accumulator + (!word.trim().length ? 0 : word.trim().split(/\s+/u).length),
+			accumulator + (word.trim().length === 0 ? 0 : word.trim().split(/\s+/u).length),
 		0
 	) +
 	parseChineseWords(data).length +

@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 import { unified } from 'unified';
-import markdown from 'remark-parse';
+import remarkParse from 'remark-parse';
 import capitalize from 'remark-capitalize';
 import squeezeParagraphs from 'remark-squeeze-paragraphs';
 import remark2rehype from 'remark-rehype';
@@ -37,21 +37,27 @@ export async function getPostsByTag(tag: string): Promise<Array<PostSpec>> {
 }
 
 export async function getPostBySlug(slug: string): Promise<PostData> {
-	if (!postsBySlug[slug]) await getAllPosts();
+	if (!postsBySlug[slug]) {
+		await getAllPosts();
+	}
 	return postsBySlug[slug];
 }
 
 export async function getAllTags(): Promise<Array<string>> {
-	if (tags) return tags;
+	if (tags) {
+		return tags;
+	}
 	await getAllPosts();
 	const tagsSet = new Set<string>();
-	posts.forEach(({ meta: { tags } }) => tags.forEach(tagsSet.add, tagsSet));
+	posts.forEach(({ meta: { tags: postTags } }) => postTags.forEach((tag) => tagsSet.add(tag)));
 	tags = [...tagsSet.values()];
 	return tags;
 }
 
 export async function getAllPosts(): Promise<Array<PostData>> {
-	if (posts) return posts;
+	if (posts) {
+		return posts;
+	}
 	const pages = await notion.dataSources.query({
 		data_source_id: dataSourceId,
 		page_size: 500,
@@ -114,7 +120,7 @@ async function fetchPostFromApi(page: PageObjectResponse): Promise<PostData> {
 }
 
 const processor = unified()
-	.use(markdown)
+	.use(remarkParse)
 	.use(squeezeParagraphs)
 	.use(capitalize)
 	.use(remark2rehype)
@@ -128,32 +134,41 @@ function blocksToMarkdown(blocks: Array<BlockObjectResponse>): string {
 	let result = '';
 
 	for (const block of blocks) {
-		if (block.type === 'unsupported') continue;
+		if (block.type === 'unsupported') {
+			continue;
+		}
 
 		const richText = getTextFromBlock(block);
 		const text = richTextToMarkdown(richText);
 		switch (block.type) {
-			case 'heading_1':
+			case 'heading_1': {
 				result += `# ${text}`;
 				break;
-			case 'heading_2':
+			}
+			case 'heading_2': {
 				result += `## ${text}`;
 				break;
-			case 'heading_3':
+			}
+			case 'heading_3': {
 				result += `### ${text}`;
 				break;
-			case 'code':
+			}
+			case 'code': {
 				result += `\`\`\`${block.code.language}\n${text}\n\`\`\``;
 				break;
-			case 'numbered_list_item':
+			}
+			case 'numbered_list_item': {
 				result += `1. ${text}`;
 				break;
-			case 'bulleted_list_item':
+			}
+			case 'bulleted_list_item': {
 				result += `- ${text}`;
 				break;
-			default:
+			}
+			default: {
 				result += text;
 				break;
+			}
 		}
 		result += '\n\n';
 	}
@@ -167,10 +182,18 @@ function richTextToMarkdown(richText: Array<RichTextItemResponse>): string {
 	for (const text of richText) {
 		const annotations = text.annotations;
 		let res = text.plain_text;
-		if (annotations.code) res = `\`${res}\``;
-		if (annotations.bold) res = `**${res}**`;
-		if (annotations.italic) res = `*${res}*`;
-		if (text.href) res = `[${res}](${text.href})`;
+		if (annotations.code) {
+			res = `\`${res}\``;
+		}
+		if (annotations.bold) {
+			res = `**${res}**`;
+		}
+		if (annotations.italic) {
+			res = `*${res}*`;
+		}
+		if (text.href) {
+			res = `[${res}](${text.href})`;
+		}
 
 		result += res;
 	}

@@ -9,7 +9,7 @@
 	export { classes as class };
 </script>
 
-<a href={link} target="_blank" rel="noreferrer" class={`transition pr-4 ${classes}`}>
+<a href={link} target="_blank" rel="noreferrer" class={`pr-4 transition ${classes}`}>
 	<span class="visible-hidden">{title}</span>
 	<Icon data={icon} label={title} />
 </a>
