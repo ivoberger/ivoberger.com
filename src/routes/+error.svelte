@@ -4,9 +4,6 @@
 
 <svelte:head>
 	<title>Ooops, there's no page here</title>
-	<script lang="ts">
-		plausible('404', { props: { path: document.location.pathname } });
-	</script>
 </svelte:head>
 
 <HomeButton />
