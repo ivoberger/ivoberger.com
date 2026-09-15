@@ -1,8 +1,10 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { satteri } from '@astrojs/markdown-satteri';
 import tailwindcss from '@tailwindcss/vite';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { headingAnchors } from './src/lib/heading-anchors';
+import { codeBlocks } from './src/lib/code-blocks';
+import { postTokens } from './src/lib/post-tokens';
 
 export default defineConfig({
 	site: 'https://ivoberger.com',
@@ -26,7 +28,7 @@ export default defineConfig({
 	],
 	markdown: {
 		shikiConfig: { theme: 'dark-plus' },
-		rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }]]
+		processor: satteri({ hastPlugins: [headingAnchors(), codeBlocks(), postTokens()] })
 	},
 	vite: {
 		plugins: [tailwindcss()]
