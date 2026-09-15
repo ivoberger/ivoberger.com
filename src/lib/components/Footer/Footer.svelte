@@ -23,7 +23,7 @@
 		/>
 		<SocialLink
 			title="LinkedIn"
-			link="https://www.linkedin.com/in/ivo-berger-00089b15b/"
+			link="https://www.linkedin.com/in/ivo-berger/"
 			icon={faLinkedin}
 			class="hover:text-brand-linked-in"
 		/>
