@@ -25,18 +25,71 @@ const { seo } = Astro.props;
 		<Font cssVariable="--font-catamaran" preload />
 		<Font cssVariable="--font-source-serif-pro" preload />
 		<SEO {...seo} />
-		{
-			import.meta.env.PROD && (
-				<script
-					is:inline
-					defer
-					src="/s/script.js"
-					data-website-id="5a82ae78-e617-4994-85a1-4072ccd559cf"
-					data-host-url="/s"
-					data-domains={`${rootUrl},www.${rootUrl}`}
-				/>
-			)
-		}
+		{import.meta.env.PROD && (
+			<script
+				is:inline
+				defer
+				src="/s/script.js"
+				data-website-id="5a82ae78-e617-4994-85a1-4072ccd559cf"
+				data-host-url="/s"
+				data-domains={`${rootUrl},www.${rootUrl}`}
+			/>
+		)}
+		<script is:inline>
+			const path = (u) => {
+				const url = new URL(u ?? '', location.href);
+				return url.origin === location.origin ? url.pathname : '';
+			};
+			const postSlug = (p) => p.match(/^\/posts\/([^/]+)\/?$/)?.[1];
+			const here = postSlug(location.pathname);
+			const isList = (p) => p === '/' || p.startsWith('/tag/');
+			const scopeFor = (slug) =>
+				here ? (here === slug ? document.body : null) : document.getElementById(slug);
+			let generation = 0;
+			const tag = (slug, transition) => {
+				const current = ++generation;
+				const els = scopeFor(slug)?.querySelectorAll('[data-vt]') ?? [];
+				els.forEach((el) =>
+					el.style.setProperty('view-transition-name', `${el.dataset.vt}-${slug}`)
+				);
+				transition.finished.finally(() => {
+					if (current === generation) {
+						els.forEach((el) => el.style.removeProperty('view-transition-name'));
+					}
+				});
+			};
+			const titleInView = () => {
+				const r = document.querySelector('[data-vt="title"]')?.getBoundingClientRect();
+				return !!r && r.bottom > 0 && r.top < innerHeight;
+			};
+			const markBack = (transition) => {
+				document.documentElement.setAttribute('data-vt-back', '');
+				transition.finished.finally(() => document.documentElement.removeAttribute('data-vt-back'));
+			};
+			addEventListener('pageswap', (e) => {
+				sessionStorage.removeItem('vt');
+				if (!e.viewTransition) {
+					return;
+				}
+				const to = path(e.activation?.entry?.url ?? (here ? document.referrer : ''));
+				const slug = here ? (isList(to) && titleInView() ? here : null) : postSlug(to);
+				if (slug) {
+					sessionStorage.setItem('vt', slug);
+					tag(slug, e.viewTransition);
+				}
+			});
+			addEventListener('pagereveal', (e) => {
+				const slug = sessionStorage.getItem('vt');
+				sessionStorage.removeItem('vt');
+				if (!e.viewTransition || !slug || (here && here !== slug)) {
+					return;
+				}
+				if (!here) {
+					markBack(e.viewTransition);
+				}
+				tag(slug, e.viewTransition);
+			});
+		</script>
 		<slot name="head" />
 	</head>
 	<body>

@@ -1,6 +1,9 @@
+autoDedupe: true
 allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
 overrides:
   brace-expansion: 5.0.9
+minimumReleaseAgeExclude:
+  - '@tanstack/markdown@1.0.0'

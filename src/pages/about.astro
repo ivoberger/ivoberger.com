@@ -57,31 +57,29 @@ const portfolioEntries: Array<PortfolioEntry> = [
 ---
 
 <Base seo={{ title: 'About Me', description: 'My Portfolio' }}>
-	<Header title="Stuff I Made" subTitle="You could call it a Portfolio" />
+	<Header title="Stuff I Made" clearHome />
 	<HomeButton />
 	<Body>
-		{
-			portfolioEntries.map(({ title, description, url, repoUrl }) => (
-				<article class="mb-10">
-					<header class="title">
-						<h2 class="mr-1">{title}</h2>
-						{repoUrl && (
-							<a href={repoUrl} target="_blank" rel="noreferrer" class="icon-link">
-								<span class="visible-hidden">Repository for {title}</span>
-								<Icon icon={faGithub} />
-							</a>
-						)}
-						{url && (
-							<a href={url} target="_blank" rel="noreferrer" class="icon-link">
-								<span class="visible-hidden">Link to {title}</span>
-								<Icon icon={faLink} />
-							</a>
-						)}
-					</header>
-					<p class="prose dark:prose-invert max-w-none">{description}</p>
-				</article>
-			))
-		}
+		{portfolioEntries.map(({ title, description, url, repoUrl }) => (
+			<article class="mb-10">
+				<header class="title">
+					<h2 class="mr-1">{title}</h2>
+					{repoUrl && (
+						<a href={repoUrl} target="_blank" rel="noreferrer" class="icon-link">
+							<span class="visible-hidden">Repository for {title}</span>
+							<Icon icon={faGithub} />
+						</a>
+					)}
+					{url && (
+						<a href={url} target="_blank" rel="noreferrer" class="icon-link">
+							<span class="visible-hidden">Link to {title}</span>
+							<Icon icon={faLink} />
+						</a>
+					)}
+				</header>
+				<p class="prose dark:prose-invert max-w-none">{description}</p>
+			</article>
+		))}
 	</Body>
 </Base>
 

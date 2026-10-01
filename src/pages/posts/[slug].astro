@@ -37,7 +37,7 @@ const fullImg = meta.cover
 		publishedDate: meta.publishedDate
 	}}
 >
-	<HomeButton />
+	<HomeButton href={`/#${meta.slug}`} />
 	<main itemscope itemtype="https://schema.org/TechArticle">
 		<header>
 			{meta.cover && <div class="cover-image" style={`background-image: url(${meta.cover});`} />}
@@ -47,10 +47,20 @@ const fullImg = meta.cover
 					meta.cover ? 'text-white text-shadow-lg' : 'text-black dark:text-white'
 				]}
 			>
-				<p class="text-sm uppercase">{meta.readTime}</p>
-				<h1 itemprop="name headline">{meta.title}</h1>
-				<time datetime={meta.publishedDate} itemprop="datePublished">{meta.publishedFormatted}</time
+				<p class="post-meta text-sm uppercase opacity-80" data-vt="read">
+					{meta.readTime}
+				</p>
+				<h1 class="post-title" itemprop="name headline" data-vt="title">
+					{meta.title}
+				</h1>
+				<time
+					class="post-meta opacity-80"
+					datetime={meta.publishedDate}
+					itemprop="datePublished"
+					data-vt="date"
 				>
+					{meta.publishedFormatted}
+				</time>
 				<time datetime={meta.updatedDate} itemprop="dateModified"></time>
 			</div>
 			<meta itemprop="description abstract" content={meta.description} />
@@ -58,9 +68,7 @@ const fullImg = meta.cover
 			{fullImg && <meta itemprop="image" content={fullImg} />}
 			{meta.tags.length > 0 && <meta itemprop="keywords" content={meta.tags.join(',')} />}
 		</header>
-		<Body
-			class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10"
-		>
+		<Body class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10">
 			<Content />
 			<BlueskyComments client:visible={{ rootMargin: '200px' }} postUrl={canonical} />
 		</Body>
@@ -93,7 +101,7 @@ const fullImg = meta.cover
 		@apply absolute inset-0 scale-105 transform bg-cover bg-center bg-no-repeat blur-sm;
 	}
 	.cover-text {
-		@apply absolute inset-x-0 bottom-0 z-10 mx-auto px-6 pb-14 text-center md:max-w-4xl;
+		@apply absolute inset-x-0 bottom-0 z-10 mx-auto px-6 pb-14 text-center md:max-w-6xl;
 	}
 	.text-shadow-lg {
 		text-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);

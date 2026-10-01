@@ -1,11 +1,6 @@
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import {
-	faDartLang,
-	faHtml5,
-	faJs,
-	faTypescript
-} from '@fortawesome/free-brands-svg-icons';
+import { faDartLang, faHtml5, faJs, faTypescript } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faTerminal } from '@fortawesome/free-solid-svg-icons';
 import type { HastContent, HastParentContent, HastPluginDefinition } from 'satteri';
 import { iconNode } from './hast-icons';
@@ -53,7 +48,10 @@ export function codeBlocks(): HastPluginDefinition {
 						type: 'element',
 						tagName: 'span',
 						properties: { className: ['code-lang'], 'aria-hidden': 'true' },
-						children: [iconNode(LANG_ICONS[lang] ?? faCode, ['lang-icon']), { type: 'text', value: lang }]
+						children: [
+							iconNode(LANG_ICONS[lang] ?? faCode, ['lang-icon']),
+							{ type: 'text', value: lang }
+						]
 					});
 				}
 				ctx.wrapNode(node, {
