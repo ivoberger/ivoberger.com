@@ -4,6 +4,7 @@ import { Font } from 'astro:assets';
 import SEO from '../components/SEO.astro';
 import Footer from '../components/Footer.astro';
 import type { ComponentProps } from 'astro/types';
+import { rootUrl } from '../consts';
 
 interface Props {
 	seo?: ComponentProps<typeof SEO>;
@@ -32,6 +33,7 @@ const { seo } = Astro.props;
 					src="/s/script.js"
 					data-website-id="5a82ae78-e617-4994-85a1-4072ccd559cf"
 					data-host-url="/s"
+					data-domains={`${rootUrl},www.${rootUrl}`}
 				/>
 			)
 		}
