@@ -16,7 +16,7 @@ const env = loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), 'ATPROT
 
 export default defineConfig({
 	site: 'https://ivoberger.com',
-	trailingSlash: 'always',
+	trailingSlash: 'ignore',
 	adapter: cloudflare(),
 	integrations: [
 		sitemap(),
