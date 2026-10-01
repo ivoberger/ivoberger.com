@@ -11,7 +11,7 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@astrojs/cloudflare": "^14.3.1",
+		"@astrojs/cloudflare": "^14.3.3",
 		"@astrojs/rss": "4.0.19",
 		"@astrojs/sitemap": "3.7.4",
 		"@astrojs/svelte": "^9.0.1",
@@ -19,30 +19,29 @@
 		"@fortawesome/free-brands-svg-icons": "7.3.1",
 		"@fortawesome/free-regular-svg-icons": "7.3.1",
 		"@fortawesome/free-solid-svg-icons": "7.3.1",
-		"astro": "7.3.2",
+		"@tanstack/markdown": "1.0.0",
+		"astro": "7.3.5",
 		"date-fns": "4.4.0",
-		"markdown-it": "14.1.0",
-		"svelte": "^5.57.0"
+		"svelte": "^5.57.1"
 	},
 	"devDependencies": {
 		"@astrojs/check": "0.9.10",
-		"@astrojs/markdown-satteri": "0.4.1",
+		"@astrojs/markdown-satteri": "0.4.2",
 		"@ctrl/oxlint-config": "^1.5.0",
 		"@tailwindcss/typography": "0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
-		"@types/markdown-it": "14.1.2",
 		"github-slugger": "2.0.0",
 		"gray-matter": "^4.0.3",
-		"oxlint": "1.82.0",
-		"prettier": "3.9.6",
-		"prettier-plugin-astro": "0.14.1",
+		"oxlint": "1.86.0",
+		"prettier": "3.9.9",
+		"prettier-plugin-astro": "1.1.0",
 		"prettier-plugin-svelte": "^4.1.1",
 		"prettier-plugin-tailwindcss": "^0.8.1",
 		"satteri": "0.10.5",
 		"tailwindcss": "^4.3.3",
 		"typescript": "6.0.3",
-		"vite": "^8.3.0",
-		"wrangler": "^4.131.2"
+		"vite": "^8.3.1",
+		"wrangler": "^4.144.0"
 	},
-	"packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c"
+	"packageManager": "pnpm@12.8.2+sha512.a5941679663d952c5f0ecc38ba98af98b4dc01b95780354f6894f2f873973cef2f7e2989d7db3ee5393938ae21f62fe06bcdf685d475ddad829a62095d2b8b11"
 }

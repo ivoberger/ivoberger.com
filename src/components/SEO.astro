@@ -37,11 +37,9 @@ const fullTitle = title === defaultTitle ? title : `${title} | ${defaultTitle}`;
 <meta property="og:description" content={description} />
 <meta property="og:author" content={author} />
 {image && <meta property="og:image" content={image} />}
-{
-	type === 'article' && publishedDate && (
-		<meta property="article:published_time" content={publishedDate} />
-	)
-}
+{type === 'article' && publishedDate && (
+	<meta property="article:published_time" content={publishedDate} />
+)}
 {type === 'article' && tags.map((tag) => <meta property="article:tag" content={tag} />)}
 
 <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />

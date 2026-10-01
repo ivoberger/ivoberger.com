@@ -57,8 +57,10 @@ const fullImg = meta.cover
 					class="post-meta opacity-80"
 					datetime={meta.publishedDate}
 					itemprop="datePublished"
-					data-vt="date">{meta.publishedFormatted}</time
+					data-vt="date"
 				>
+					{meta.publishedFormatted}
+				</time>
 				<time datetime={meta.updatedDate} itemprop="dateModified"></time>
 			</div>
 			<meta itemprop="description abstract" content={meta.description} />
@@ -66,9 +68,7 @@ const fullImg = meta.cover
 			{fullImg && <meta itemprop="image" content={fullImg} />}
 			{meta.tags.length > 0 && <meta itemprop="keywords" content={meta.tags.join(',')} />}
 		</header>
-		<Body
-			class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10"
-		>
+		<Body class="prose prose-a:text-lime-600 dark:prose-invert dark:prose-a:text-lime-500 xl:prose-lg mb-10">
 			<Content />
 			<BlueskyComments client:visible={{ rootMargin: '200px' }} postUrl={canonical} />
 		</Body>

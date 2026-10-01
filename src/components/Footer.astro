@@ -46,18 +46,16 @@ const navLinks = [
 	</div>
 	<nav class="w-full sm:w-1/2">
 		<ul class="-mx-2 flex sm:justify-end">
-			{
-				navLinks.map((item) => (
-					<li class="px-2">
-						<a
-							href={item.link}
-							class="underline decoration-transparent transition duration-500 hover:decoration-gray-400"
-						>
-							{item.text}
-						</a>
-					</li>
-				))
-			}
+			{navLinks.map((item) => (
+				<li class="px-2">
+					<a
+						href={item.link}
+						class="underline decoration-transparent transition duration-500 hover:decoration-gray-400"
+					>
+						{item.text}
+					</a>
+				</li>
+			))}
 		</ul>
 	</nav>
 </footer>

@@ -17,21 +17,19 @@ const { title, subTitle, subTitleLink, clearHome } = Astro.props;
 		]}
 	>
 		<h1 class="text-4xl sm:text-5xl md:text-6xl">{title}</h1>
-		{
-			subTitle && (
-				<h2>
-					{subTitleLink ? (
-						<a
-							href={subTitleLink}
-							class="border-b border-transparent text-gray-700 transition duration-500 hover:border-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
-						>
-							{subTitle}
-						</a>
-					) : (
-						<span class="text-gray-800 dark:text-gray-200">{subTitle}</span>
-					)}
-				</h2>
-			)
-		}
+		{subTitle && (
+			<h2>
+				{subTitleLink ? (
+					<a
+						href={subTitleLink}
+						class="border-b border-transparent text-gray-700 transition duration-500 hover:border-gray-400 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+					>
+						{subTitle}
+					</a>
+				) : (
+					<span class="text-gray-800 dark:text-gray-200">{subTitle}</span>
+				)}
+			</h2>
+		)}
 	</div>
 </header>

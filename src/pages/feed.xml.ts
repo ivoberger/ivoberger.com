@@ -1,10 +1,8 @@
 import rss from '@astrojs/rss';
-import MarkdownIt from 'markdown-it';
+import { renderHtml } from '@tanstack/markdown/html';
 import type { APIContext } from 'astro';
 import { getAllPosts, toSummary } from '../lib/posts';
 import { defaultTitle, defaultDesc, siteUrl } from '../consts';
-
-const parser = new MarkdownIt();
 
 export async function GET(context: APIContext) {
 	const posts = await getAllPosts();
@@ -21,7 +19,7 @@ export async function GET(context: APIContext) {
 				link: `/posts/${meta.slug}/`,
 				pubDate: post.data.publishDate,
 				categories: meta.tags,
-				content: parser.render(post.body ?? '')
+				content: renderHtml(post.body ?? '')
 			};
 		})
 	});

@@ -25,18 +25,16 @@ const { seo } = Astro.props;
 		<Font cssVariable="--font-catamaran" preload />
 		<Font cssVariable="--font-source-serif-pro" preload />
 		<SEO {...seo} />
-		{
-			import.meta.env.PROD && (
-				<script
-					is:inline
-					defer
-					src="/s/script.js"
-					data-website-id="5a82ae78-e617-4994-85a1-4072ccd559cf"
-					data-host-url="/s"
-					data-domains={`${rootUrl},www.${rootUrl}`}
-				/>
-			)
-		}
+		{import.meta.env.PROD && (
+			<script
+				is:inline
+				defer
+				src="/s/script.js"
+				data-website-id="5a82ae78-e617-4994-85a1-4072ccd559cf"
+				data-host-url="/s"
+				data-domains={`${rootUrl},www.${rootUrl}`}
+			/>
+		)}
 		<script is:inline>
 			const path = (u) => {
 				const url = new URL(u ?? '', location.href);
