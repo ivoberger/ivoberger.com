@@ -11,14 +11,19 @@ const { posts } = Astro.props;
 <main class="posts">
 	{
 		posts.map((post) => (
-			<article class="article-summary">
+			<article id={post.slug} class="article-summary scroll-mt-8">
 				<header>
-					<time class="date" datetime={post.publishedDate}>
+					<time class="date post-meta" datetime={post.publishedDate} data-vt="date">
 						{post.publishedFormatted}
 					</time>
-					, <span class="readTime"> {post.readTime} </span>
+					,{' '}
+					<span class="readTime post-meta" data-vt="read">
+						{post.readTime}
+					</span>
 					<a href={`/posts/${post.slug}/`}>
-						<h3 class="my-0">{post.title}</h3>
+						<h3 class="post-title" data-vt="title">
+							{post.title}
+						</h3>
 					</a>
 					<p class="flex justify-center gap-1 text-sm leading-normal sm:text-base">
 						{post.tags.map((tag) => (
@@ -37,7 +42,8 @@ const { posts } = Astro.props;
 <style>
 	@reference 'tailwindcss';
 	.posts {
-		@apply mx-auto mb-10 max-w-3xl px-6;
+		@apply mb-10 px-6;
+		margin-inline: max(0px, round(up, (100% - 48rem) / 2, 1px));
 	}
 	.article-summary {
 		@apply border-b border-lime-300 py-4 text-center text-gray-700 sm:py-8 dark:text-gray-300;
@@ -46,12 +52,12 @@ const { posts } = Astro.props;
 		@apply italic underline decoration-transparent transition duration-500 hover:decoration-gray-400;
 	}
 	.date {
-		@apply mb-2 text-xs uppercase;
+		@apply text-xs uppercase;
 	}
 	.readTime {
-		@apply mb-2 ml-1 text-xs uppercase;
+		@apply ml-1 text-xs uppercase;
 	}
 	.description {
-		@apply mt-6 px-2 text-lg leading-normal sm:px-4 md:px-10;
+		@apply mt-6 px-2 text-base leading-normal sm:px-4 sm:text-lg md:px-10;
 	}
 </style>

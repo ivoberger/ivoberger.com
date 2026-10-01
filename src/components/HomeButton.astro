@@ -1,11 +1,18 @@
 ---
 import Icon from './Icon.astro';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+interface Props {
+	href?: string;
+}
+
+const { href = '/' } = Astro.props;
 ---
 
 <nav class="group fixed top-0 left-0 z-50 m-4 mt-8">
 	<a
-		href="/"
+		{href}
+		data-home
 		class="border-gray-100-t rounded-full border bg-black px-5 py-2 transition group-hover:border-gray-600"
 	>
 		<span class="font-sans text-gray-200 transition group-hover:text-gray-100 dark:text-gray-400">
@@ -13,3 +20,13 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 		</span>
 	</a>
 </nav>
+
+<script>
+	document.querySelector('[data-home]')?.addEventListener('click', (e) => {
+		const ref = document.referrer && new URL(document.referrer);
+		if (ref && ref.origin === location.origin && ref.pathname === '/' && history.length > 1) {
+			e.preventDefault();
+			history.back();
+		}
+	});
+</script>

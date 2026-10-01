@@ -28,6 +28,10 @@ html {
 	@apply scroll-smooth;
 }
 
+html:has(.article-summary:target) {
+	@apply scroll-auto;
+}
+
 body {
 	@apply bg-white font-sans text-gray-900 antialiased dark:bg-neutral-900 dark:text-gray-100;
 }
@@ -39,6 +43,41 @@ h4,
 h5,
 h6 {
 	@apply scroll-mt-4 font-serif;
+}
+
+.post-title {
+	view-transition-class: vt vt-title;
+	--cap: 11em;
+	margin-inline: max(0px, round(up, (100% - var(--cap)) / 2, 1px));
+	line-height: round(1.15em, 1px);
+}
+
+h1.post-title {
+	font-size: round(clamp(1.625rem, 7.8vw, 3rem), 1px);
+}
+
+h3.post-title {
+	margin-block: 0.25rem 0;
+	font-size: round(clamp(1.375rem, 6.5vw, 2.25rem), 1px);
+}
+
+@media (width >= 48rem) {
+	.post-title {
+		--cap: 18em;
+	}
+
+	h1.post-title {
+		font-size: round(min(3rem, (100vw - 5rem) / 18), 1px);
+	}
+
+	h3.post-title {
+		font-size: round(min(2.25rem, (min(100vw, 48rem) - 5rem) / 18), 1px);
+	}
+}
+
+.post-meta {
+	@apply inline-block;
+	view-transition-class: vt;
 }
 
 h1 {
@@ -142,4 +181,123 @@ code:not(pre code) {
 }
 .prose .code-block .copy-button.copied {
 	@apply bg-lime-600 text-neutral-900 opacity-100;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+
+	::view-transition-old(root) {
+		animation: vt-out 150ms ease-in both;
+	}
+
+	::view-transition-new(root) {
+		animation: vt-in 250ms 100ms ease-out both;
+	}
+
+	:root[data-vt-back]::view-transition-old(root) {
+		animation-name: vt-fade-out;
+	}
+
+	:root[data-vt-back]::view-transition-new(root) {
+		animation-name: vt-fade-in;
+	}
+
+	@keyframes vt-fade-out {
+		to {
+			opacity: 0;
+		}
+	}
+
+	::view-transition-group(*.vt) {
+		animation-duration: 200ms;
+		animation-timing-function: ease-out;
+	}
+
+	:root[data-vt-back]::view-transition-group(*.vt) {
+		animation-duration: 380ms;
+		animation-timing-function: cubic-bezier(0.85, 0, 0.2, 1);
+	}
+
+	:root[data-vt-back]::view-transition-old(*.vt),
+	:root[data-vt-back]::view-transition-new(*.vt) {
+		animation-duration: 380ms;
+	}
+
+	:root[data-vt-back]::view-transition-image-pair(*.vt-title) {
+		animation: vt-straw 380ms ease-in-out;
+	}
+
+	@keyframes vt-straw {
+		40% {
+			scale: 0.7;
+		}
+		80% {
+			scale: 1;
+		}
+	}
+
+	::view-transition-old(*.vt),
+	::view-transition-new(*.vt) {
+		animation-duration: 200ms;
+	}
+
+	:root:not([data-vt-back])::view-transition-old(*.vt-title) {
+		animation: vt-ghost 950ms linear both;
+	}
+
+	:root:not([data-vt-back])::view-transition-new(*.vt-title) {
+		animation:
+			vt-fade-in 200ms ease-out both,
+			vt-snap 220ms 250ms;
+	}
+
+	@keyframes vt-ghost {
+		0% {
+			opacity: 1;
+		}
+		21%,
+		26.2% {
+			opacity: 0;
+		}
+		26.3% {
+			opacity: 0.25;
+			animation-timing-function: ease-out;
+		}
+		100% {
+			opacity: 0;
+			scale: 2.3;
+		}
+	}
+
+	@keyframes vt-fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@keyframes vt-snap {
+		0% {
+			animation-timing-function: ease-in;
+		}
+		22% {
+			scale: 1.16;
+			animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+		}
+	}
+
+	@keyframes vt-out {
+		to {
+			opacity: 0;
+			translate: 0 -0.5rem;
+		}
+	}
+
+	@keyframes vt-in {
+		from {
+			opacity: 0;
+			translate: 0 0.5rem;
+		}
+	}
 }
