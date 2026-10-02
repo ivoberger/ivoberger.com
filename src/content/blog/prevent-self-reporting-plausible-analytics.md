@@ -1,8 +1,8 @@
 ---
 title: The easy way to prevent self-reporting with Plausible Analytics
 
-publishDate: May 22, 2021
-updatedDate: July 10, 2022 2:12 PM
+publishDate: 2021-05-22
+updatedDate: 2022-07-10T14:12:00.000Z
 tags: [analytics, netlify, plausible, vercel, guide]
 excerpt: A quick guide on how to exclude yourself from analytics on all branch deploys, PR previews etc. when using Plausible Analytics. The fix is very simple and works on any host (Netlify, Vercel, Firebase etc.).
 ---
