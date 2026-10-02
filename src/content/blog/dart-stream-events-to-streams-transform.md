@@ -1,7 +1,7 @@
 ---
 title: Transform each Event of a Dart Stream into a new Stream
-publishDate: January 1, 2021
-updatedDate: April 30, 2021 11:08 PM
+publishDate: 2021-01-01
+updatedDate: 2021-04-30T23:08:00.000Z
 tags: [dart, flutter, streams]
 excerpt: Streams are a powerful way to propagate updates throughout an application. This post explains how to create a stream from every event of an input stream without leaving any dangling subscriptions.
 ---

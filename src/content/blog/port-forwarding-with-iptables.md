@@ -1,8 +1,8 @@
 ---
 title: How to Set up Port Forwarding with iptables
 
-publishDate: July 20, 2019
-updatedDate: May 22, 2021 4:36 PM
+publishDate: 2019-07-20
+updatedDate: 2021-05-22T16:36:00.000Z
 tags: [iptables, linux, networking, ubuntu, guide]
 excerpt: If you have a server on a private network and need to access it from the outside (but can't simply give it an external IP) you can use port forwarding on an externally accessible server to get around it.
 isFeatured: true

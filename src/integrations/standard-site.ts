@@ -32,7 +32,12 @@ async function readPosts(): Promise<Array<Post>> {
 	const posts: Array<Post> = [];
 	for (const file of files) {
 		const { data } = matter(await readFile(path.join(dir, file), 'utf8'));
-		const publishedAt = new Date(data.publishDate);
+		if (!(data.publishDate instanceof Date)) {
+			throw new Error(
+				`${file}: publishDate must be an ISO date, local-time strings change the rkey`
+			);
+		}
+		const publishedAt = data.publishDate;
 		posts.push({
 			slug: file.replace(/\.mdx?$/, ''),
 			title: data.title,

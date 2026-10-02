@@ -1,8 +1,8 @@
 ---
 title: How to use Vercel Analytics with SvelteKit
 
-publishDate: April 4, 2021
-updatedDate: May 22, 2021 4:35 PM
+publishDate: 2021-04-04
+updatedDate: 2021-05-22T16:35:00.000Z
 tags: [analytics, svelte, sveltekit, vercel, guide]
 excerpt: Vercel Analytics is a service tracking your website's real-world performance and is available for free if you're deploying on Vercel. This post explains how to use the service with Svelte(Kit) as there is no official support (yet).
 ---
